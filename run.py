@@ -13,6 +13,7 @@ from src.namefinder import NameFinder
 import xml.dom.minidom
 import xml.etree.ElementTree as ET
 from src.las_query import lasQuery
+from distutils.util import strtobool
 
 app = Flask(__name__)
 
@@ -29,9 +30,16 @@ def parse_input(request):
     input = None
     sentences = None
     text = ""
+    gender = None
+    title = None
+    date = None
     if request.method == 'GET':
         text = request.args.get('text')
+        gender = extract_value(get_args_data('gender'))
+        title = extract_value(get_args_data('title'))
+        date = extract_value(get_args_data('date'))
         input = {0:text}
+        print(gender, text)
         sentence_data, indeces = tokenization(text)
         #print("tokenization results",sentences)
         sentences, index_list = do_lemmatization(sentence_data, indeces)
@@ -40,11 +48,20 @@ def parse_input(request):
         if request.headers['Content-Type'] == 'text/plain' and len(request.data)>0:
             text = str(request.data.decode('utf-8'))
         elif 'text' in request.form:
-            text = request.form['text']
+            text = get_form_data('text')
+            gender = extract_value(get_form_data('gender'))
+            title = extract_value(get_form_data('title'))
+            date = extract_value(get_form_data('date'))
         elif 'text' in request.args:
             text = request.args.get('text')
+            gender = extract_value(get_args_data('gender'))
+            title = extract_value(get_args_data('title'))
+            date = extract_value(get_args_data('date'))
         elif 'Text' in request.headers:
             text = request.headers['Text']
+            gender = extract_value(get_header_data('gender'))
+            title = extract_value(get_header_data('title'))
+            date = extract_value(get_header_data('date'))
         else:
             print("Unable to process the request! When using post, give param text using raw data or add it to form, url, or header.")
             print("Bad type", request.headers['Content-Type'])
@@ -54,6 +71,7 @@ def parse_input(request):
             print("Missing from args", request.args)
 
         if len(text) > 0:
+            print(gender, text)
             sentence_data, indeces = tokenization(text)
             print("sentences dataset:", sentence_data)
             sentences, index_list = do_lemmatization(sentence_data, indeces)
@@ -62,7 +80,33 @@ def parse_input(request):
             print("sentences:", sentences)
     else:
         print("This method is not yet supported:", request.method)
-    return input, sentences, index_list
+    return input, sentences, index_list, gender, title, date
+
+
+def extract_value(value):
+    if value != None:
+        return bool(strtobool(value))
+    return False
+
+
+def get_form_data(field):
+    if field in request.form:
+        return request.form[field]
+    return None
+
+
+def get_args_data(field):
+    if field in request.args:
+        return request.args.get(field)
+    return None
+
+
+def get_header_data(field):
+    Field = field[0].upper() + field[1:]
+    if Field in request.headers:
+        return request.headers[Field]
+    return None
+
 
 def setup_tokenizer():
     tokenizer = nltk.data.load('tokenizers/punkt/finnish.pickle')
@@ -72,6 +116,7 @@ def setup_tokenizer():
             print("Add abbreviation", row[0])
             tokenizer._params.abbrev_types.add(row[0])
     return tokenizer
+
 
 def tokenization(text):
     result = list()
@@ -97,6 +142,7 @@ def tokenization(text):
     print("Splitted:", result)
     return result, structure
 
+
 def do_lemmatization(sentence_data, indeces):
     output = dict()
     index_lists = dict()
@@ -110,20 +156,22 @@ def do_lemmatization(sentence_data, indeces):
     #{i: lemmatize(sentence_data[i]) for i in range(0, len(sentence_data))}
     return output, index_lists
 
+
 def lemmatize(text):
     las = lasQuery()
     lemmatized = las.lexical_analysis(text, 'fi')
     print("Lemmatized:", lemmatized)
     return lemmatized
 
+
 @app.route('/', methods=['POST', 'GET'])
 def index():
     print("APP name",__name__)
-    input_data, sentences, index_list = parse_input(request)
+    input_data, sentences, index_list, gender, title, date = parse_input(request)
     print("DATA", sentences)
     if input_data != None:
         name_finder = NameFinder()
-        results, code = name_finder.identify_name(sentences, index_list)
+        results, code = name_finder.identify_name(sentences, index_list, gender=gender, title=title, date=date)
 
         if code == 1:
             print('results',results)

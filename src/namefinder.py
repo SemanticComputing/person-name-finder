@@ -1,6 +1,8 @@
 from src.sparqlqueries import SparqlQuries
 import json
 import string
+from requests import Request, Session
+import requests
 
 class NameFinder:
     def __init__(self):
@@ -8,7 +10,7 @@ class NameFinder:
         self.last_names = dict()
         self.first_names = dict()
 
-    def identify_name(self, name_strings, index_list):
+    def identify_name(self, name_strings, index_list, gender=False, title=False, date=False):
         names = dict()
         for i,name_string in name_strings.items():
             self.last_names[i] = list()
@@ -18,7 +20,7 @@ class NameFinder:
             if len(arr_names) > 0:
                 queried_names = self.sparql.query_names(arr_names)
                 nr = NameRidler(queried_names, arr_names)
-                name_list = nr.get_names()
+                name_list = nr.get_names(gender=gender, titles=title, dates=date)
                 print("Using index:", index_list[i])
                 if index_list[i] not in names.keys():
                     names[index_list[i]] = list()
@@ -95,7 +97,7 @@ class NameRidler:
         self.parse(names)
 
 
-    def get_names(self):
+    def get_names(self, gender=False, titles=False, dates=False):
 
         entities = list()
         for name, arr in self.full_names.items():
@@ -104,6 +106,8 @@ class NameRidler:
             print("For name: ", name, arr)
             if len(name.strip()) > 0:
                 entity['full_name'] = name.strip()
+                if gender:
+                    entity['gender'] = self.guess_gender(name.strip())
                 for item in arr:
                     if item.get_json() not in items:
                         print("Item:", item)
@@ -111,7 +115,6 @@ class NameRidler:
                 entity['names'] = items
                 entities.append(entity)
         return entities
-
 
     def parse(self, queried_names):
         arr = dict()
@@ -279,6 +282,44 @@ class NameRidler:
             return True
         return False
 
+    def guess_gender(self, name):
+
+        s = Session()
+        data = None
+
+        # api-endpoint
+        URL = "http://nlp.ldf.fi/gender-guess"
+
+        # defining a params dict for the parameters to be sent to the API
+        params = {'name': name, 'threshold':'0.8'}
+
+        req = Request('GET', URL, params=params)
+
+        prepared = s.prepare_request(req)
+        print("Url:",prepared.url)
+
+        print("Header:", prepared.headers)
+        print("Body:", prepared.body)
+
+        try:
+            resp = s.send(prepared)
+            print(resp)
+            data = resp.json()
+        except requests.ConnectionError as ce:
+            print("Unable to open with native function. Error: "  + str(ce))
+        except Exception as e:
+            print("Unable to process a request:", resp, resp.text)
+            print(e)
+            print(e.with_traceback())
+            return "Unknown"
+
+        print(data)
+
+        if 'gender' in data['results']:
+            return data['results']['gender']
+        else:
+            return "Unknown"
+
 
 class Name:
     def __init__(self, label, count, type, location, linkage):
@@ -294,8 +335,6 @@ class Name:
 
     def get_name(self):
         return self.label
-
-    def get_count(self):
         return self.count
 
     def get_type(self):
@@ -303,6 +342,9 @@ class Name:
 
     def get_location(self):
         return self.location
+
+    def get_count(self):
+        return self.count
 
     def add_link(self, link):
         if link not in self.linkage:
