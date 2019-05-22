@@ -11,6 +11,7 @@ Using person name ontology (http://light.onki.fi/henkilonimisto/en/) and LAS (ht
 * flask
 * flask_cors
 * nltk
+* requests
 
 For more information, check requirements.txt
 
