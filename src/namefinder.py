@@ -8,20 +8,27 @@ class NameFinder:
         self.last_names = dict()
         self.first_names = dict()
 
-    def identify_name(self, name_strings):
+    def identify_name(self, name_strings, index_list):
         names = dict()
         for i,name_string in name_strings.items():
             self.last_names[i] = list()
             self.first_names[i] = list()
 
             arr_names = self.split_names_to_arr(name_string, i)
-            queried_names = self.sparql.query_names(arr_names)
-            nr = NameRidler(queried_names, arr_names)
-            names[i] = nr.get_names()
+            if len(arr_names) > 0:
+                queried_names = self.sparql.query_names(arr_names)
+                nr = NameRidler(queried_names, arr_names)
+                name_list = nr.get_names()
+                print("Using index:", index_list[i])
+                if index_list[i] not in names.keys():
+                    names[index_list[i]] = list()
+                names[index_list[i]].extend(name_list)
+
 
         return names, 1
 
     def split_names_to_arr(self, name_string, j):
+        print("Process string:",name_string)
         names = name_string.split(" ")
 
         helper = list()
@@ -46,28 +53,37 @@ class NameFinder:
                 next = i + 1
                 prev = i - 1
 
-            if name.lower() not in binders and len(builder) == 0:
+            if name.lower() not in binders and len(builder) == 0 and name[0].isupper():
                 self.first_names[j].append(name)
             elif name.lower() in binders and len(builder) == 0:
                 builder = name
             elif len(builder) > 0:
                 builder = builder + " " + name
-            elif i == last:
-                if len(builder) > 0:
-                    self.last_names[j].append(builder)
-                else:
-                    if name[0].isupper():
-                        self.last_names[j].append(name)
+            #elif i == last:
+            #    if len(builder) > 0:
+            #        self.last_names[j].append(builder)
+            #    else:
+            #        print('skip', name)
+                    #if len(self.first_names[j])>0:
+                    #    if name[0].isupper():
+                    #        self.last_names[j].append(name)
+                    #else:
+                    #    if name[0].isupper():
+                    #        self.last_names[j].append(name)
+                    #        self.first_names[j].append(name)
+
             else:
                 print("Unable to identify name:", name)
 
         if i == last:
+            print('Add name,', name)
             if len(builder) > 0:
                 self.last_names[j].append(builder)
             else:
-                self.last_names[j].append(name)
+                if name[0].isupper():
+                    self.last_names[j].append(name)
 
-        print(self.first_names[j], self.last_names[j])
+        print("Names:",self.first_names[j], self.last_names[j])
 
         return self.first_names[j] + self.last_names[j]
 
@@ -100,6 +116,7 @@ class NameRidler:
     def parse(self, queried_names):
         arr = dict()
         helper_arr = dict()
+        name_links = dict()
         counter = 0
         label = ""
         prev = None
@@ -155,7 +172,7 @@ class NameRidler:
                 arr[label] = list()
             arr[label].append(name)
 
-        argh, full_name = self.determine_name(arr, helper_arr)
+        argh, full_name = self.determine_name(arr, helper_arr, name_links)
 
         print("Full name:", full_name)
 
@@ -163,7 +180,7 @@ class NameRidler:
 
         #return self.full_names #self.determine_name(arr, helper_arr)
 
-    def determine_name(self, names, helper):
+    def determine_name(self, names, helper, links):
         family_names = list()
         first_names = list()
         last = len(helper)
@@ -173,9 +190,11 @@ class NameRidler:
             for name in names:
                 print("Process:", name)
                 if self.is_family_name(name, last):
-                    family_names.append(name)
+                    if name not in family_names:
+                        family_names.append(name)
                 elif self.is_first_name(name, last):
-                    first_names.append(name)
+                    if name not in first_names:
+                        first_names.append(name)
                 else:
                     if name.get_type() == "Sukunimen käyttö" and name.get_location() > 1 and not(self.is_first_name(name, last)):
                         family_names.append(name)
@@ -200,6 +219,7 @@ class NameRidler:
         return full, full_name
 
     def reduce_overlapping(self, label, fnames, lnames, last):
+        # compare two names: fname and lname
         if fnames != None and lnames != None:
             fname = self.find_name(fnames, label)
             lname = self.find_name(lnames, label)
@@ -210,11 +230,23 @@ class NameRidler:
             f_last = len(fnames)-1
 
             if fname != None and lname != None:
+                if fname == lname:
+                    if fname.get_link() != lname.get_link():
+                        lname.add_link(fname.get_link())
+                    elif fname.get_link() != lname.get_link():
+                        fname.add_link(lname.get_link())
                 if fname.get_location() == lname.get_location() and self.is_family_name(lname, last) and not(self.is_first_name(fname, last)):
                     fnames.remove(fname)
                 elif fname.get_location() == lname.get_location() and not(self.is_family_name(lname, last)) and self.is_first_name(fname, last):
                     lnames.remove(lname)
+                elif fname.get_location() == lname.get_location() and self.is_family_name(lname, last) and self.is_first_name(fname, last):
+                    if fname.get_count() > lname.get_count():
+                        lnames.remove(lname)
+                    elif fname.get_count() < lname.get_count():
+                        fnames.remove(fname)
                 else:
+                    prob_A = fname.get_count()
+                    print("Probability that it is a last name:", fname.get_count())
                     print("Label:", label)
                     print("Locations:", fname.get_location(), lname.get_location())
                     print("Is family name? ", self.is_family_name(lname, last))
@@ -243,7 +275,7 @@ class NameRidler:
 
     def is_first_name(self, name, last):
         print("Location of last:", last, name.get_location())
-        if name.get_type() == "Etunimen käyttö" and (name.get_location() < last and name.get_location() < 5):
+        if name.get_type() == "Etunimen käyttö" and ((last == 1 or name.get_location() < last) and name.get_location() < 5):
             return True
         return False
 
@@ -254,7 +286,8 @@ class Name:
         self.count = count
         self.type = type
         self.location = location
-        self.linkage = linkage
+        self.linkage = list()
+        self.linkage.append(linkage)
 
     def get_link(self):
         return self.linkage
@@ -270,6 +303,10 @@ class Name:
 
     def get_location(self):
         return self.location
+
+    def add_link(self, link):
+        if link not in self.linkage:
+            self.linkage.append(link)
 
     def clarify_type(self, lang='fi'):
         if self.type == "Sukunimen käyttö":
@@ -290,5 +327,14 @@ class Name:
 
     def __str__(self):
         return self.label + " (" + str(self.count) + "): " + self.type + " @ " + str(self.location)
+
+    def __eq__(self, other):
+        if other != None:
+            if self.get_name() == other.get_name():
+                if self.get_type() == other.get_type():
+                    if self.get_location() == other.get_location():
+                        return True
+        return False
+
 
 
