@@ -28,6 +28,7 @@ def before_request():
 def parse_input(request):
     input = None
     sentences = None
+    text = ""
     if request.method == 'GET':
         text = request.args.get('text')
         input = {0:text}
@@ -36,15 +37,29 @@ def parse_input(request):
         sentences, index_list = do_lemmatization(sentence_data, indeces)
         #print("data", input)
     elif request.method == "POST":
-        if request.headers['Content-Type'] == 'text/plain':
-            sentence_data = tokenization(str(request.data.decode('utf-8')))
+        if request.headers['Content-Type'] == 'text/plain' and len(request.data)>0:
+            text = str(request.data.decode('utf-8'))
+        elif 'text' in request.form:
+            text = request.form['text']
+        elif 'text' in request.args:
+            text = request.args.get('text')
+        elif 'Text' in request.headers:
+            text = request.headers['Text']
+        else:
+            print("Unable to process the request! When using post, give param text using raw data or add it to form, url, or header.")
+            print("Bad type", request.headers['Content-Type'])
+            print("Missing data", request.data)
+            print("Missing from header", request.headers)
+            print("Missing from form", request.form)
+            print("Missing from args", request.args)
+
+        if len(text) > 0:
+            sentence_data, indeces = tokenization(text)
             print("sentences dataset:", sentence_data)
-            sentences = {i:lemmatize(sentence_data[i]) for i in range(0, len(sentence_data))}
-            input = {0:str(request.data.decode('utf-8'))}
+            sentences, index_list = do_lemmatization(sentence_data, indeces)
+            input = {0: str(request.data.decode('utf-8'))}
             print("data:", input)
             print("sentences:", sentences)
-        else:
-            print("Bad type", request.headers['Content-Type'])
     else:
         print("This method is not yet supported:", request.method)
     return input, sentences, index_list
