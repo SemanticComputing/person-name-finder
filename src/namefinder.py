@@ -293,24 +293,26 @@ class NameRidler:
         # defining a params dict for the parameters to be sent to the API
         params = {'name': name, 'threshold':'0.8'}
 
-        req = Request('GET', URL, params=params)
+        #req = Request('GET', URL, params=params)
+        resp = requests.get(URL, params=params)
 
-        prepared = s.prepare_request(req)
-        print("Url:",prepared.url)
+        #prepared = s.prepare_request(req)
+        #print("Url:",prepared.url)
 
-        print("Header:", prepared.headers)
-        print("Body:", prepared.body)
-
+        #print("Header:", prepared.headers)
+        #print("Body:", prepared.body)
+        #resp = None
         try:
-            resp = s.send(prepared)
+            #resp = s.send(prepared)
             print(resp)
             data = resp.json()
         except requests.ConnectionError as ce:
             print("Unable to open with native function. Error: "  + str(ce))
         except Exception as e:
-            print("Unable to process a request:", resp, resp.text)
+            if resp != None:
+                print("Unable to process a request:", resp, resp.text)
             print(e)
-            print(e.with_traceback())
+
             return "Unknown"
 
         print(data)
