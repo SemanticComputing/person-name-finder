@@ -29,40 +29,47 @@ class SparqlQuries:
         return results
 
     def query_names(self, names):
+        result_set = list()
         print(names)
         if len(names) < 1:
             return {}
-        # http://yasgui.org/short/ATCBjNyFz
-        endpoint = "http://ldf.fi/henkilonimisto/sparql"
-        query = """ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-                    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-                    PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-                    SELECT DISTINCT ?label ?nameLabel ?nameType ?count  WHERE {
-                      VALUES ?names { $names }
-                      BIND(STRLANG(?names,'fi') AS ?label)
-                      ?sub skos:prefLabel ?label .
-                      ?sub <http://ldf.fi/schema/henkilonimisto/usedAs> ?nameType .
-                      ?nameType a ?type .
-                      ?type skos:prefLabel ?typeLabel .
-                      ?nameType <http://ldf.fi/schema/henkilonimisto/count> ?count .                      
-                      FILTER (lang(?typeLabel) = 'fi')
-                      BIND(STR(?typeLabel) AS ?nameLabel) .
-                      #FILTER(STRSTARTS(STR(?type), 'http://ldf.fi/schema/henkilonimisto/'))
-                    } """
 
-        query = query.replace('$names', " ".join(['"{0}"'.format(x) for x in names]))
+        for i, name in names.items():
+            print("Query names:",name)
+            # http://yasgui.org/short/ATCBjNyFz
+            endpoint = "http://ldf.fi/henkilonimisto/sparql"
 
-        print("endpoint:", endpoint)
-        print("query:", query)
+            query = """ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+                        PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+                        SELECT DISTINCT ?label ?nameLabel ?nameType ?count  WHERE {
+                          VALUES ?names { $names }
+                          BIND(STRLANG(?names,'fi') AS ?label)
+                          ?sub skos:prefLabel ?label .
+                          ?sub <http://ldf.fi/schema/henkilonimisto/usedAs> ?nameType .
+                          ?nameType a ?type .
+                          ?type skos:prefLabel ?typeLabel .
+                          ?nameType <http://ldf.fi/schema/henkilonimisto/count> ?count .                      
+                          FILTER (lang(?typeLabel) = 'fi')
+                          BIND(STR(?typeLabel) AS ?nameLabel) .
+                          #FILTER(STRSTARTS(STR(?type), 'http://ldf.fi/schema/henkilonimisto/'))
+                        } """
 
-        sparql = SPARQLWrapper(endpoint)
-        sparql.setQuery(query)
+            query = query.replace('$names', " ".join(['"{0}"'.format(x) for x in name]))
 
-        sparql.setReturnFormat(JSON)
-        results = sparql.query().convert()
+            print("endpoint:", endpoint)
+            print("query:", query)
 
-        print("results:", results)
-        return results
+            sparql = SPARQLWrapper(endpoint)
+            sparql.setQuery(query)
+
+            sparql.setReturnFormat(JSON)
+            results = sparql.query().convert()
+
+            print("results:", results)
+            result_set.append(results)
+
+        return result_set
 
 
     def query_sentences(self):

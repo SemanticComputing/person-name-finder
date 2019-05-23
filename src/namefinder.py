@@ -16,9 +16,9 @@ class NameFinder:
             self.last_names[i] = list()
             self.first_names[i] = list()
 
-            arr_names = self.split_names_to_arr(name_string, i)
+            dict_names, arr_names = self.split_names_to_arr(name_string, i)
             if len(arr_names) > 0:
-                queried_names = self.sparql.query_names(arr_names)
+                queried_names = self.sparql.query_names(dict_names)
                 nr = NameRidler(queried_names, arr_names)
                 name_list = nr.get_names(gender=gender, titles=title, dates=date)
                 print("Using index:", index_list[i])
@@ -32,12 +32,16 @@ class NameFinder:
     def split_names_to_arr(self, name_string, j):
         print("Process string:",name_string)
         names = name_string.split(" ")
+        dict_names = dict()
+        first_names = list()
+        last_names = list()
 
         helper = list()
         binders = ['de', 'la', 'af', 'i', 'von', 'van', 'le', 'les', 'der', 'du', 'of', 'in', 'av']
         builder = ""
         prev = None
         next = None
+        namecounter = 1
         last = len(names) -1
 
         for i in range(len(names)):
@@ -56,38 +60,53 @@ class NameFinder:
                 prev = i - 1
 
             if name.lower() not in binders and len(builder) == 0 and name[0].isupper():
-                self.first_names[j].append(name)
+                first_names.append(name)
             elif name.lower() in binders and len(builder) == 0:
                 builder = name
-            elif len(builder) > 0:
+            elif len(builder) > 0 and (name.lower() in binders or name[0].isupper()):
                 builder = builder + " " + name
-            #elif i == last:
-            #    if len(builder) > 0:
-            #        self.last_names[j].append(builder)
-            #    else:
-            #        print('skip', name)
-                    #if len(self.first_names[j])>0:
-                    #    if name[0].isupper():
-                    #        self.last_names[j].append(name)
-                    #else:
-                    #    if name[0].isupper():
-                    #        self.last_names[j].append(name)
-                    #        self.first_names[j].append(name)
-
             else:
                 print("Unable to identify name:", name)
+                print('Add name,', name)
+                if len(builder) > 0 and (name.lower() in binders or name[0].isupper()):
+                    last_names.append(builder)
+
+                else:
+                    if name[0].isupper():
+                        prev_s = names[prev]
+                        prev_name = prev_s.translate(table)
+                        last_names.append(prev_name)
+
+                if len(first_names)>0 or len(last_names) >0:
+                    dict_names[namecounter] = first_names + last_names
+                    namecounter += 1
+
+                self.last_names[j].extend(last_names)
+                self.first_names[j].extend(first_names)
+
+                print("Names in dict:", dict_names)
+
+                first_names = list()
+                last_names = list()
 
         if i == last:
             print('Add name,', name)
             if len(builder) > 0:
-                self.last_names[j].append(builder)
+                last_names.append(builder)
             else:
                 if name[0].isupper():
-                    self.last_names[j].append(name)
+                    last_names.append(name)
+
+        if len(first_names) > 0 or len(last_names) > 0:
+            dict_names[namecounter] = first_names + last_names
+
+        self.last_names[j].extend(last_names)
+        self.first_names[j].extend(first_names)
 
         print("Names:",self.first_names[j], self.last_names[j])
+        print("Names in dict:", dict_names)
 
-        return self.first_names[j] + self.last_names[j]
+        return dict_names, self.first_names[j] + self.last_names[j]
 
 class NameRidler:
     def __init__(self, names, ordered_names):
@@ -126,64 +145,72 @@ class NameRidler:
         name = None
         full_name = ""
         prev_names =list()
-        for result in queried_names["results"]["bindings"]:
-            #print(result)
-            prev = name
-            prev_names.append(label)
-            label = str(result["label"]["value"])
-            count = int(result["count"]["value"])
-            type = str(result["nameLabel"]["value"])
-            linkage = str(result["nameType"]["value"])
+        for queried_name in queried_names:
+            for result in queried_name["results"]["bindings"]:
+                #print(result)
+                prev = name
+                prev_names.append(label)
+                label = str(result["label"]["value"])
+                count = int(result["count"]["value"])
+                type = str(result["nameLabel"]["value"])
+                linkage = str(result["nameType"]["value"])
 
-            if counter == 0:
-                counter += 1
-            elif prev.get_name() != label:
-                counter += 1
-            else:
-                print("Name occured twice:", name, prev)
-
-            if prev != None:
-                if (prev.get_type() == "Sukunimen käyttö" and type == "Etunimen käyttö") and (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1):
-                    counter = 1
-
-                    argh, full_name = self.determine_name(arr, helper_arr)
-                    print("Full name in the middle:", full_name, '[', prev.get_name().strip(), '], [', label.strip(),
-                          ']')
-                    self.full_names[full_name] = argh
-                    arr = dict()
-                    helper_arr = dict()
-                    prev = None
-                    name = None
-                    full_name = ""
+                if counter == 0:
+                    counter += 1
+                elif prev != None:
+                    if prev.get_name() != label:
+                        counter += 1
+                else:
+                    print("Name occured twice:", name, prev)
 
                 if prev != None:
-                    if label != prev.get_name():
-                        full_name += label + " "
+                    if (prev.get_type() == "Sukunimen käyttö" and type == "Etunimen käyttö") and (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1):
+                        counter = 1
 
-            #if prev == None and len(full_name) == 0:
-            #    full_name = label + " "
+                        argh, full_name = self.determine_name(arr, helper_arr)
+                        print("Full name in the middle:", full_name, '[', prev.get_name().strip(), '], [', label.strip(),
+                              ']')
+                        self.full_names[full_name] = argh
+                        arr = dict()
+                        helper_arr = dict()
+                        prev = None
+                        name = None
+                        full_name = ""
 
-            name = Name(label, count, type, counter, linkage)
+                    if prev != None:
+                        if label != prev.get_name():
+                            full_name += label + " "
 
-            print("Adding name:", name, full_name)
+                #if prev == None and len(full_name) == 0:
+                #    full_name = label + " "
 
-            if counter not in helper_arr.keys():
-                helper_arr[counter] = list()
-            helper_arr[counter].append(name)
+                name = Name(label, count, type, counter, linkage)
 
-            if label not in arr.keys():
-                arr[label] = list()
-            arr[label].append(name)
+                print("Adding name:", name, full_name)
 
-        argh, full_name = self.determine_name(arr, helper_arr, name_links)
+                if counter not in helper_arr.keys():
+                    helper_arr[counter] = list()
+                helper_arr[counter].append(name)
 
-        print("Full name:", full_name)
+                if label not in arr.keys():
+                    arr[label] = list()
+                arr[label].append(name)
 
-        self.full_names[full_name] = self.full_names[full_name] = argh
+            argh, full_name = self.determine_name(arr, helper_arr)
+
+            print("Full name:", full_name)
+
+            self.full_names[full_name] = self.full_names[full_name] = argh
+
+            arr = dict()
+            helper_arr = dict()
+            prev = None
+            name = None
+            full_name = ""
 
         #return self.full_names #self.determine_name(arr, helper_arr)
 
-    def determine_name(self, names, helper, links):
+    def determine_name(self, names, helper):
         family_names = list()
         first_names = list()
         last = len(helper)

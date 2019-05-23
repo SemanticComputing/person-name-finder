@@ -122,6 +122,7 @@ def tokenization(text):
     result = list()
     structure = dict()
     counter = 0
+    chunk_counter = 0
     print('Tokenize this:', text)
     tokenizer = setup_tokenizer()
     sentences = tokenizer.tokenize(text)
@@ -131,12 +132,15 @@ def tokenization(text):
         if len(splitted) > 1:
             for chunk in splitted:
                 result.append(chunk)
-                if chunk not in structure:
-                    structure[chunk] = counter
+                if chunk_counter not in structure:
+                    structure[chunk_counter] = counter
+                    chunk_counter += 1
+
         else:
             result.append(sentence)
-            if sentence not in structure:
-                structure[sentence] = counter
+            if chunk_counter not in structure:
+                structure[chunk_counter] = counter
+                chunk_counter += 1
         counter += 1
 
     print("Splitted:", result)
@@ -149,8 +153,8 @@ def do_lemmatization(sentence_data, indeces):
     for i in range(0, len(sentence_data)):
         output[i] = lemmatize(sentence_data[i])
 
-        index_lists[i] = indeces[sentence_data[i]]
-        print("Index list:", i, indeces[sentence_data[i]], sentence_data[i])
+        index_lists[i] = indeces[i]
+        print("Index list:", i, indeces[i], sentence_data[i])
 
 
     #{i: lemmatize(sentence_data[i]) for i in range(0, len(sentence_data))}
