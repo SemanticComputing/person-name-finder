@@ -312,7 +312,27 @@ class NameRidler:
 
     def guess_gender(self, name):
 
-        s = Session()
+        import requests
+        import logging
+
+        # These two lines enable debugging at httplib level (requests->urllib3->http.client)
+        # You will see the REQUEST, including HEADERS and DATA, and RESPONSE with HEADERS but without DATA.
+        # The only thing missing will be the response.body which is not logged.
+        try:
+            import http.client as http_client
+        except ImportError:
+            # Python 2
+            import httplib as http_client
+        http_client.HTTPConnection.debuglevel = 1
+
+        # You must initialize logging, otherwise you'll not see debug output.
+        logging.basicConfig()
+        logging.getLogger().setLevel(logging.DEBUG)
+        requests_log = logging.getLogger("requests.packages.urllib3")
+        requests_log.setLevel(logging.DEBUG)
+        requests_log.propagate = True
+
+        #s = Session()
         data = None
 
         # api-endpoint
@@ -322,8 +342,11 @@ class NameRidler:
         # defining a params dict for the parameters to be sent to the API
         params = {'name': name, 'threshold':'0.8'}
 
+        # header
+        headers = {'content-type': 'application/json'}
+
         #req = Request('GET', URL, params=params)
-        resp = requests.get(URL, params=params)
+        resp = requests.get(URL, params=params, headers=headers, stream=True)
 
         #prepared = s.prepare_request(req)
         #print("Url:",prepared.url)
@@ -334,9 +357,12 @@ class NameRidler:
         try:
             #resp = s.send(prepared)
             if resp != None:
+                print("Request parameters:", params)
                 print("Response status:", resp.status_code)
-                print("RESPONSE HEADER:", resp.headers)
-                print("RESPONSE RAW:", resp.raw)
+                print("RESPONSE header:", resp.headers)
+                print("RESPONSE raw:", resp.raw)
+                print("RESPONSE content:", resp.content)
+                print("RESPONSE request URL:", resp.url)
             else:
                 print("Raw response")
             data = resp.json()

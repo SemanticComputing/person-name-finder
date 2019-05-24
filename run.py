@@ -186,7 +186,8 @@ def index():
                 print("NAME", name)
                 print("Response status:", resp.status_code)
                 print("RESPONSE HEADER:", resp.headers)
-                print("RESPONSE RAW:", resp.raw)
+                print("RESPONSE raw:", resp.raw.data)
+                print("RESPONSE request URL:", resp.url)
 
         if code == 1:
             print('results',results)
@@ -201,5 +202,5 @@ def index():
     return message
 
 
-#if __name__ == '__main__':
-#    app.run(debug=True,port=5000, host='0.0.0.0')
+if __name__ == '__main__':
+    app.run(debug=True)
