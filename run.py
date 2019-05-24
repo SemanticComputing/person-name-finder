@@ -14,6 +14,7 @@ import xml.dom.minidom
 import xml.etree.ElementTree as ET
 from src.las_query import lasQuery
 from distutils.util import strtobool
+from datetime import datetime as dt
 
 app = Flask(__name__)
 
@@ -181,20 +182,12 @@ def index():
         name_finder = NameFinder()
         results, code, responses = name_finder.identify_name(sentences, index_list, gender=gender, title=title, date=date)
 
-        for name, resp in responses.items():
-            if resp != None:
-                print("NAME", name)
-                print("Response status:", resp.status_code)
-                print("RESPONSE HEADER:", resp.headers)
-                print("RESPONSE raw:", resp.raw.data)
-                print("RESPONSE request URL:", resp.url)
-
         if code == 1:
             print('results',results)
-            data = {"status":200,"data":results}
+            data = {"status":200,"data":results, "service":"name-finder", "date":dt.today().strftime('%Y-%m-%d')}
             return json.dumps(data, ensure_ascii=False)
         else:
-            data = {"status":-1,"Error":str(results)}
+            data = {"status":-1,"error":str(results), "service":"name-finder", "date":dt.today().strftime('%Y-%m-%d')}
             return json.dumps(data, ensure_ascii=False)
     message = "<h3>Unable to process request</h3><p>Unable to retrieve results for text (%s).</p>" % str(request.args.get('text'))
     message += "<p>Please give parameters using GET or POST method. GET method example: <a href='http://127.0.0.1:5000/?text=Minna Susanna Claire Tamper' target='_blank'>http://127.0.0.1:5000/?text=Minna Susanna Claire Tamper</a></p>"+\
