@@ -33,17 +33,19 @@ def parse_input(request):
     gender = None
     title = None
     date = None
+    index_list = None
     if request.method == 'GET':
         text = request.args.get('text')
         gender = extract_value(get_args_data('gender'))
         title = extract_value(get_args_data('title'))
         date = extract_value(get_args_data('date'))
-        input = {0:text}
-        print(gender, text)
-        sentence_data, indeces = tokenization(text)
-        #print("tokenization results",sentences)
-        sentences, index_list = do_lemmatization(sentence_data, indeces)
-        #print("data", input)
+        if text != None:
+            input = {0:text}
+            print(gender, text)
+            sentence_data, indeces = tokenization(text)
+            #print("tokenization results",sentences)
+            sentences, index_list = do_lemmatization(sentence_data, indeces)
+            #print("data", input)
     elif request.method == "POST":
         if request.headers['Content-Type'] == 'text/plain' and len(request.data)>0:
             text = str(request.data.decode('utf-8'))
@@ -70,6 +72,8 @@ def parse_input(request):
             print("Missing from form", request.form)
             print("Missing from args", request.args)
 
+        if text == None:
+            return input, sentences, index_list, gender, title, date
         if len(text) > 0:
             print(gender, text)
             sentence_data, indeces = tokenization(text)
