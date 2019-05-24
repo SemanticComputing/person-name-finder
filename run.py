@@ -179,7 +179,14 @@ def index():
     print("DATA", sentences)
     if input_data != None:
         name_finder = NameFinder()
-        results, code = name_finder.identify_name(sentences, index_list, gender=gender, title=title, date=date)
+        results, code, responses = name_finder.identify_name(sentences, index_list, gender=gender, title=title, date=date)
+
+        for name, resp in responses.items():
+            if resp != None:
+                print("NAME", name)
+                print("Response status:", resp.status_code)
+                print("RESPONSE HEADER:", resp.headers)
+                print("RESPONSE RAW:", resp.raw)
 
         if code == 1:
             print('results',results)

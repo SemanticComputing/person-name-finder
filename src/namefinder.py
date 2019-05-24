@@ -20,14 +20,14 @@ class NameFinder:
             if len(arr_names) > 0:
                 queried_names = self.sparql.query_names(dict_names)
                 nr = NameRidler(queried_names, arr_names)
-                name_list = nr.get_names(gender=gender, titles=title, dates=date)
+                name_list, resp = nr.get_names(gender=gender, titles=title, dates=date)
                 print("Using index:", index_list[i])
                 if index_list[i] not in names.keys():
                     names[index_list[i]] = list()
                 names[index_list[i]].extend(name_list)
 
 
-        return names, 1
+        return names, 1, resp
 
     def split_names_to_arr(self, name_string, j):
         print("Process string:",name_string)
@@ -117,7 +117,7 @@ class NameRidler:
 
 
     def get_names(self, gender=False, titles=False, dates=False):
-
+        responses = dict()
         entities = list()
         for name, arr in self.full_names.items():
             entity = dict()
@@ -126,14 +126,15 @@ class NameRidler:
             if len(name.strip()) > 0:
                 entity['full_name'] = name.strip()
                 if gender:
-                    entity['gender'] = self.guess_gender(name.strip())
+                    entity['gender'], resp = self.guess_gender(name.strip())
+                    responses[name.strip()] = resp
                 for item in arr:
                     if item.get_json() not in items:
                         print("Item:", item)
                         items.append(item.get_json())
                 entity['names'] = items
                 entities.append(entity)
-        return entities
+        return entities, responses
 
     def parse(self, queried_names):
         arr = dict()
@@ -316,6 +317,7 @@ class NameRidler:
 
         # api-endpoint
         URL = "http://nlp.ldf.fi/gender-guess"
+        URL = "http://gender-guess.nlp.ldf.fi/"
 
         # defining a params dict for the parameters to be sent to the API
         params = {'name': name, 'threshold':'0.8'}
@@ -331,23 +333,29 @@ class NameRidler:
         #resp = None
         try:
             #resp = s.send(prepared)
-            print(resp)
+            if resp != None:
+                print("Response status:", resp.status_code)
+                print("RESPONSE HEADER:", resp.headers)
+                print("RESPONSE RAW:", resp.raw)
+            else:
+                print("Raw response")
             data = resp.json()
         except requests.ConnectionError as ce:
             print("Unable to open with native function. Error: "  + str(ce))
         except Exception as e:
             if resp != None:
                 print("Unable to process a request:", resp, resp.text)
+                return "Unknown", resp
             print(e)
 
-            return "Unknown"
+            return "Unknown", resp
 
         print(data)
 
         if 'gender' in data['results']:
-            return data['results']['gender']
+            return data['results']['gender'], resp
         else:
-            return "Unknown"
+            return "Unknown", resp
 
 
 class Name:
