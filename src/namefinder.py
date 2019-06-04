@@ -3,6 +3,8 @@ import json
 import string
 from requests import Request, Session
 import requests
+import configparser
+
 
 class NameFinder:
     def __init__(self):
@@ -10,7 +12,7 @@ class NameFinder:
         self.last_names = dict()
         self.first_names = dict()
 
-    def identify_name(self, name_strings, index_list, gender=False, title=False, date=False):
+    def identify_name(self, name_strings, index_list, gender=False, title=False, date=False, word=False):
         names = dict()
         for i,name_string in name_strings.items():
             self.last_names[i] = list()
@@ -20,12 +22,11 @@ class NameFinder:
             if len(arr_names) > 0:
                 queried_names = self.sparql.query_names(dict_names)
                 nr = NameRidler(queried_names, arr_names)
-                name_list, resp = nr.get_names(gender=gender, titles=title, dates=date)
+                name_list, resp = nr.get_names(gender=gender, titles=title, dates=date, word=word)
                 print("Using index:", index_list[i])
                 if index_list[i] not in names.keys():
                     names[index_list[i]] = list()
                 names[index_list[i]].extend(name_list)
-
 
         return names, 1, resp
 
@@ -108,15 +109,27 @@ class NameFinder:
 
         return dict_names, self.first_names[j] + self.last_names[j]
 
+
 class NameRidler:
     def __init__(self, names, ordered_names):
         self.ord_names = ordered_names
         self.full_names = dict()
+        self.gender_guess_url = "http://nlp.ldf.fi/gender-guess"
 
+        # configure
+        self.read_configs()
+
+        # parse
         self.parse(names)
 
+    def read_configs(self):
 
-    def get_names(self, gender=False, titles=False, dates=False):
+        config = configparser.ConfigParser()
+        config.read('conf/config.ini')
+
+        self.gender_guess_url = config['DEFAULT']['gender_guess_url']
+
+    def get_names(self, gender=False, titles=False, dates=False, word=False):
         responses = dict()
         entities = list()
         for name, arr in self.full_names.items():
@@ -336,8 +349,8 @@ class NameRidler:
         data = None
 
         # api-endpoint
-        URL = "http://nlp.ldf.fi/gender-guess"
-        URL = "http://gender-guess.nlp.ldf.fi/"
+        URL = self.gender_guess_url
+        #URL = "http://gender-guess.nlp.ldf.fi/"
 
         # defining a params dict for the parameters to be sent to the API
         params = {'name': name, 'threshold':'0.8'}

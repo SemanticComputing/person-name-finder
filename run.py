@@ -34,12 +34,14 @@ def parse_input(request):
     gender = None
     title = None
     date = None
+    word = None
     index_list = None
     if request.method == 'GET':
         text = request.args.get('text')
         gender = extract_value(get_args_data('gender'))
         title = extract_value(get_args_data('title'))
         date = extract_value(get_args_data('date'))
+        word = extract_value(get_args_data('word'))
         if text != None:
             input = {0:text}
             print(gender, text)
@@ -55,16 +57,19 @@ def parse_input(request):
             gender = extract_value(get_form_data('gender'))
             title = extract_value(get_form_data('title'))
             date = extract_value(get_form_data('date'))
+            word = extract_value(get_form_data('word'))
         elif 'text' in request.args:
             text = request.args.get('text')
             gender = extract_value(get_args_data('gender'))
             title = extract_value(get_args_data('title'))
             date = extract_value(get_args_data('date'))
+            word = extract_value(get_args_data('word'))
         elif 'Text' in request.headers:
             text = request.headers['Text']
             gender = extract_value(get_header_data('gender'))
             title = extract_value(get_header_data('title'))
             date = extract_value(get_header_data('date'))
+            word = extract_value(get_header_data('word'))
         else:
             print("Unable to process the request! When using post, give param text using raw data or add it to form, url, or header.")
             print("Bad type", request.headers['Content-Type'])
@@ -85,7 +90,7 @@ def parse_input(request):
             print("sentences:", sentences)
     else:
         print("This method is not yet supported:", request.method)
-    return input, sentences, index_list, gender, title, date
+    return input, sentences, index_list, gender, title, date, word
 
 
 def extract_value(value):
@@ -176,11 +181,11 @@ def lemmatize(text):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     print("APP name",__name__)
-    input_data, sentences, index_list, gender, title, date = parse_input(request)
+    input_data, sentences, index_list, gender, title, date, word = parse_input(request)
     print("DATA", sentences)
     if input_data != None:
         name_finder = NameFinder()
-        results, code, responses = name_finder.identify_name(sentences, index_list, gender=gender, title=title, date=date)
+        results, code, responses = name_finder.identify_name(sentences, index_list, gender=gender, title=title, date=date, word=word)
 
         if code == 1:
             print('results',results)

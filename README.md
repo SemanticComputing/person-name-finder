@@ -28,10 +28,17 @@ To run use flask as follows:
 The http interface supports GET and POST methods for the users. Therefore users can give the parameters for GET method in the url:
 
 ```
-http://127.0.0.1:5000/?text=Minna Susanna Claire Tamper
+http://nlp.ldf.fi/name-finder?text=Minna Susanna Claire Tamper
 ```
 Post requests support parameters in the url, header, and from a form.
 
+It is also possible to guess the gender of the name by adding url-parameter gender with a boolean value (true, 1, false, 0, etc.):
+
+```
+http://nlp.ldf.fi/name-finder?text=Minna Susanna Claire Tamper&gender=True
+```
+
+By default, the attribute gender is False.
 
 #### Results
 
