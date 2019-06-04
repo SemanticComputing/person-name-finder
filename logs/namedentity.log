@@ -3226,3 +3226,19 @@
 2019-05-24 16:07:20,032 NamedEntity INFO locale=fi&text=jotka+takaavat
 2019-05-24 16:07:20,075 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '130'}
 2019-05-24 16:07:20,076 NamedEntity INFO locale=fi&text=ett%C3%A4+heid%C3%A4n+tiimil%C3%A4isens%C3%A4+sitoutuvat+kovaan+treenaamiseen+sek%C3%A4+terveelliseen+ruokavalioon.
+2019-06-04 12:37:32,781 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '44', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 12:37:32,783 NamedEntity INFO text=Nyt+karistetaan+kilot+pois%21&locale=fi
+2019-06-04 12:37:32,935 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '147', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 12:37:32,935 NamedEntity INFO text=Suurin+pudottaja+Suomessa+julkkisosallistujat+kisaavat+kahdessa+joukkueessa+tavoitteenaan+pudottaa+painoa+sek%C3%A4+kohottaa+kuntoa.&locale=fi
+2019-06-04 12:37:33,128 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 12:37:33,128 NamedEntity INFO text=Joukkueet+ottavat+toisistaan+mittaa+erilaisissa+kest%C3%A4vyytt%C3%A4&locale=fi
+2019-06-04 12:37:33,255 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '44', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 12:37:33,255 NamedEntity INFO text=voimaa+vaativissa+haasteissa.&locale=fi
+2019-06-04 12:37:33,342 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 12:37:33,342 NamedEntity INFO text=Joukkueita+valmentavat+Janni+Hussi&locale=fi
+2019-06-04 12:37:33,496 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '27', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 12:37:33,496 NamedEntity INFO text=Aki+Manninen&locale=fi
+2019-06-04 12:37:33,591 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '29', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 12:37:33,591 NamedEntity INFO text=jotka+takaavat&locale=fi
+2019-06-04 12:37:33,684 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '130', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 12:37:33,684 NamedEntity INFO text=ett%C3%A4+heid%C3%A4n+tiimil%C3%A4isens%C3%A4+sitoutuvat+kovaan+treenaamiseen+sek%C3%A4+terveelliseen+ruokavalioon.&locale=fi
