@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d31704e3-0677-4e93-9a3a-6fd23a93f8fc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/conf/config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/namedentity.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/namedentity.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/namefinder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/namefinder.py" afterDir="false" />
-    </list>
+    <list default="true" id="d31704e3-0677-4e93-9a3a-6fd23a93f8fc" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/namefinder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="973">
-              <caret line="153" column="29" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="29" />
+            <state relative-caret-position="585">
+              <caret line="135" column="47" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="47" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -101,6 +95,7 @@
       <find>nlp.ldf</find>
       <find>parse_input</find>
       <find>tokeni</find>
+      <find>gender_guess_url</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -267,13 +262,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/config.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="1" column="16" selection-start-line="1" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
@@ -284,10 +272,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/conf/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="29">
+          <caret line="1" column="16" selection-start-line="1" selection-end-line="1" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/namefinder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="973">
-          <caret line="153" column="29" selection-start-line="153" selection-start-column="29" selection-end-line="153" selection-end-column="29" />
+        <state relative-caret-position="585">
+          <caret line="135" column="47" selection-start-line="135" selection-start-column="40" selection-end-line="135" selection-end-column="47" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
