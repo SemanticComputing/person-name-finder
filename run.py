@@ -129,7 +129,7 @@ def setup_tokenizer():
 
 
 def tokenization(text):
-    separators = [', ','; ', ' (', ') ', ' ja ', ' tai ']
+    separators = [', ','; ', ' (', ') ', ')', ' ja ', ' tai ']
     exceptional_separators = [' (', ') ']
     regex_check = dict()
     chunk_regex_check = 0
@@ -141,7 +141,7 @@ def tokenization(text):
     tokenizer = setup_tokenizer()
     sentences = tokenizer.tokenize(text)
     for sentence in sentences:
-        splitted = re.split(r'(, |; | \(|\) | ja | tai )', sentence) #sentence.split('[,;]')
+        splitted = re.split(r'(, |; | \(|\)| ja | tai )', sentence) #sentence.split('[,;]')
 
         if len(splitted) > 1:
             for chunk in splitted:
@@ -158,7 +158,7 @@ def tokenization(text):
                 elif chunk == ' (':
                     print('Start bracket checking')
                     chunk_regex_check = 1
-                elif chunk == ') ':
+                elif chunk == ')' or chunk == ') ':
                     chunk_regex_check = 0
                     print('End bracket checking')
 

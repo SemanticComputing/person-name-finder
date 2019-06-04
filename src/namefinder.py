@@ -20,9 +20,11 @@ class NameFinder:
 
             dict_names, arr_names = self.split_names_to_arr(name_string, i)
             if len(arr_names) > 0:
+                print("CHECK dates:", check_date, i)
                 checking_date = None
-                if date is True and i in check_date:
-                    checking_date = check_date[i]
+                ind = i + 1
+                if date is True and ind in check_date:
+                    checking_date = check_date[ind]
 
                 queried_names = self.sparql.query_names(dict_names)
                 nr = NameRidler(queried_names, arr_names)
@@ -64,43 +66,49 @@ class NameFinder:
                 next = i + 1
                 prev = i - 1
 
-            if name.lower() not in binders and len(builder) == 0 and name[0].isupper():
-                first_names.append(name)
-            elif name.lower() in binders and len(builder) == 0:
-                builder = name
-            elif len(builder) > 0 and (name.lower() in binders or name[0].isupper()):
-                builder = builder + " " + name
-            else:
-                print("Unable to identify name:", name)
-                print('Add name,', name)
-                if len(builder) > 0 and (name.lower() in binders or name[0].isupper()):
-                    last_names.append(builder)
+            if len(name) > 0:
 
+                if name.lower() not in binders and len(builder) == 0 and name[0].isupper():
+                    first_names.append(name)
+                elif name.lower() in binders and len(builder) == 0:
+                    builder = name
+                elif len(builder) > 0 and (name.lower() in binders or name[0].isupper()):
+                    builder = builder + " " + name
                 else:
-                    if name[0].isupper():
-                        prev_s = names[prev]
-                        prev_name = prev_s.translate(table)
-                        last_names.append(prev_name)
+                    print("Unable to identify name:", name)
 
-                if len(first_names)>0 or len(last_names) >0:
-                    dict_names[namecounter] = first_names + last_names
-                    namecounter += 1
+                    print('Add name,', name)
+                    if len(builder) > 0 and (name.lower() in binders or name[0].isupper()):
+                        last_names.append(builder)
 
-                self.last_names[j].extend(last_names)
-                self.first_names[j].extend(first_names)
+                    else:
+                        if name[0].isupper():
+                            prev_s = names[prev]
+                            prev_name = prev_s.translate(table)
+                            last_names.append(prev_name)
 
-                print("Names in dict:", dict_names)
+                    if len(first_names)>0 or len(last_names) >0:
+                        dict_names[namecounter] = first_names + last_names
+                        namecounter += 1
 
-                first_names = list()
-                last_names = list()
+                    self.last_names[j].extend(last_names)
+                    self.first_names[j].extend(first_names)
+
+                    print("Names in dict:", dict_names)
+
+                    first_names = list()
+                    last_names = list()
+            else:
+                print("Name:", name, " len:", len(name))
 
         if i == last:
-            print('Add name,', name)
-            if len(builder) > 0:
-                last_names.append(builder)
-            else:
-                if name[0].isupper():
-                    last_names.append(name)
+            if len(name) > 0:
+                print('Add name,', name)
+                if len(builder) > 0:
+                    last_names.append(builder)
+                else:
+                    if name[0].isupper():
+                        last_names.append(name)
 
         if len(first_names) > 0 or len(last_names) > 0:
             dict_names[namecounter] = first_names + last_names
@@ -132,15 +140,30 @@ class NameRidler:
 
         config = configparser.ConfigParser()
         config.read('conf/config.ini')
+        if 'DEFAULT' in config:
+            if 'gender_guess_url' in config['DEFAULT']:
+                self.gender_guess_url = config['DEFAULT']['gender_guess_url']
+            else:
+                print("Unable to find: gender_guess_url in ", config['DEFAULT'])
+                self.gender_guess_url = "http://nlp.ldf.fi/gender-guess"
 
-        self.gender_guess_url = config['DEFAULT']['gender_guess_url']
-        self.gender_guess_threshold = float(config['DEFAULT']['gender_guess_threshold'])
-        self.regex_url = config['DEFAULT']['regex_url']
+            if 'gender_guess_threshold' in config['DEFAULT']:
+                self.gender_guess_threshold = float(config['DEFAULT']['gender_guess_threshold'])
+            else:
+                print("Unable to find: gender_guess_threshold in ", config['DEFAULT'])
+                self.gender_guess_threshold = 0.8
+
+            if 'regex_url' in config['DEFAULT']:
+                self.regex_url = config['DEFAULT']['regex_url']
+            else:
+                print("Unable to find: regex_url in ", config['DEFAULT'])
+                self.regex_url = "http://nlp.ldf.fi/regex"
 
     def get_names(self, check_for_dates=None, gender=False, titles=False, dates=False, word=False):
         responses = dict()
         entities = list()
         prev_entity = None
+        print("Status:",check_for_dates, dates)
         for name, arr in self.full_names.items():
             entity = dict()
             items = list()
@@ -151,8 +174,20 @@ class NameRidler:
                     entity['gender'], resp = self.guess_gender(name.strip())
                     responses[name.strip()] = resp
                 if check_for_dates != None and dates is True:
-                    output = self.query_dates(check_for_dates)
-                    print("Got output:", output)
+                    output,resp = self.query_dates(check_for_dates)
+                    print("GOT OUTPUT:", output)
+                    date_type = self.check_string_start(check_for_dates)
+                    if date_type > 0:
+                        print("Contextual info")
+                        counter = 0
+                        for item in output[check_for_dates]:
+                            if '–' in item[0] or '-' in item[0]:
+                                entity['lifespan_time'] = item[0]
+                            else:
+                                if counter == 0:
+                                    entity['birth_date'] = item[0]
+                                else:
+                                    entity['death_date'] = item[0]
                 for item in arr:
                     if item.get_json() not in items:
                         print("Item:", item)
@@ -161,6 +196,30 @@ class NameRidler:
                 entities.append(entity)
                 prev_entity = entity
         return entities, responses
+
+    def check_string_start(self, string):
+        birth = ['s.', 'syntynyt']
+        death = ['k.', 'kuollut']
+        for b in birth:
+            if string.startswith(b):
+                return 1
+        for d in death:
+            if string.startswith(d):
+                return 2
+        splitted = string.split()
+        if splitted[0].isdigit():
+            return 3
+
+        splitted = string.split('–')
+        if splitted[0].isdigit():
+            return 3
+
+        splitted = string.split('-')
+        if splitted[0].isdigit():
+            return 3
+
+
+        return 0
 
     def parse(self, queried_names):
         arr = dict()
@@ -465,23 +524,40 @@ class NameRidler:
                 print("RESPONSE request URL:", resp.url)
             else:
                 print("Raw response")
-            data = resp.json()
+            resultset = resp.json()
+            data = None
+            if resultset['status'] == 200:
+                data = resultset['data']
         except requests.ConnectionError as ce:
             print("Unable to open with native function. Error: "  + str(ce))
         except Exception as e:
             if resp != None:
                 print("Unable to process a request:", resp, resp.text)
-                return "Unknown", resp
+                #return "Unknown 1", resp
             print(e)
 
-            return "Unknown", resp
+            return "Unknown 2", resp
 
         print(data)
+        results = dict()
 
-        if 'gender' in data['results']:
-            return data['results']['gender'], resp
-        else:
-            return "Unknown", resp
+        if data != None:
+            for item in data:
+                print('Item:',item)
+                for i in item['results']:
+                    if 'type' in i and 'entity' in i:
+                        if i['type'] == 'DATETIME':
+                            start = i['start_index']
+                            end = i['end_index']
+                            if 'string' not in results:
+                                results[string] = list()
+                            results[string].append((i['entity'], start, end))
+                        else:
+                            print("Wrong type:", item['results'])
+                else:
+                    print("Unable to find entity in results:", item['results'])
+
+        return results, resp
 
 
 class Name:
