@@ -12,7 +12,7 @@ class NameFinder:
         self.last_names = dict()
         self.first_names = dict()
 
-    def identify_name(self, name_strings, index_list, gender=False, title=False, date=False, word=False):
+    def identify_name(self, name_strings, index_list, check_date=None, gender=False, title=False, date=False, word=False):
         names = dict()
         for i,name_string in name_strings.items():
             self.last_names[i] = list()
@@ -20,9 +20,13 @@ class NameFinder:
 
             dict_names, arr_names = self.split_names_to_arr(name_string, i)
             if len(arr_names) > 0:
+                checking_date = None
+                if date is True and i in check_date:
+                    checking_date = check_date[i]
+
                 queried_names = self.sparql.query_names(dict_names)
                 nr = NameRidler(queried_names, arr_names)
-                name_list, resp = nr.get_names(gender=gender, titles=title, dates=date, word=word)
+                name_list, resp = nr.get_names(check_for_dates=checking_date, gender=gender, titles=title, dates=date, word=word)
                 print("Using index:", index_list[i])
                 if index_list[i] not in names.keys():
                     names[index_list[i]] = list()
@@ -115,6 +119,8 @@ class NameRidler:
         self.ord_names = ordered_names
         self.full_names = dict()
         self.gender_guess_url = "http://nlp.ldf.fi/gender-guess"
+        self.gender_guess_threshold = 0.8
+        self.regex_url = "http://nlp.ldf.fi/regex"
 
         # configure
         self.read_configs()
@@ -128,10 +134,13 @@ class NameRidler:
         config.read('conf/config.ini')
 
         self.gender_guess_url = config['DEFAULT']['gender_guess_url']
+        self.gender_guess_threshold = float(config['DEFAULT']['gender_guess_threshold'])
+        self.regex_url = config['DEFAULT']['regex_url']
 
-    def get_names(self, gender=False, titles=False, dates=False, word=False):
+    def get_names(self, check_for_dates=None, gender=False, titles=False, dates=False, word=False):
         responses = dict()
         entities = list()
+        prev_entity = None
         for name, arr in self.full_names.items():
             entity = dict()
             items = list()
@@ -141,12 +150,16 @@ class NameRidler:
                 if gender:
                     entity['gender'], resp = self.guess_gender(name.strip())
                     responses[name.strip()] = resp
+                if check_for_dates != None and dates is True:
+                    output = self.query_dates(check_for_dates)
+                    print("Got output:", output)
                 for item in arr:
                     if item.get_json() not in items:
                         print("Item:", item)
                         items.append(item.get_json())
                 entity['names'] = items
                 entities.append(entity)
+                prev_entity = entity
         return entities, responses
 
     def parse(self, queried_names):
@@ -353,7 +366,81 @@ class NameRidler:
         #URL = "http://gender-guess.nlp.ldf.fi/"
 
         # defining a params dict for the parameters to be sent to the API
-        params = {'name': name, 'threshold':'0.8'}
+        params = {'name': name, 'threshold': self.gender_guess_threshold}
+
+        # header
+        headers = {'content-type': 'application/json'}
+
+        #req = Request('GET', URL, params=params)
+        resp = requests.get(URL, params=params, headers=headers, stream=True)
+
+        #prepared = s.prepare_request(req)
+        #print("Url:",prepared.url)
+
+        #print("Header:", prepared.headers)
+        #print("Body:", prepared.body)
+        #resp = None
+        try:
+            #resp = s.send(prepared)
+            if resp != None:
+                print("Request parameters:", params)
+                print("Response status:", resp.status_code)
+                print("RESPONSE header:", resp.headers)
+                print("RESPONSE raw:", resp.raw)
+                print("RESPONSE content:", resp.content)
+                print("RESPONSE request URL:", resp.url)
+            else:
+                print("Raw response")
+            data = resp.json()
+        except requests.ConnectionError as ce:
+            print("Unable to open with native function. Error: "  + str(ce))
+        except Exception as e:
+            if resp != None:
+                print("Unable to process a request:", resp, resp.text)
+                return "Unknown", resp
+            print(e)
+
+            return "Unknown", resp
+
+        print(data)
+
+        if 'gender' in data['results']:
+            return data['results']['gender'], resp
+        else:
+            return "Unknown", resp
+
+    def query_dates(self, string):
+
+        print("CHECK DATE")
+
+        import requests
+        import logging
+
+        # These two lines enable debugging at httplib level (requests->urllib3->http.client)
+        # You will see the REQUEST, including HEADERS and DATA, and RESPONSE with HEADERS but without DATA.
+        # The only thing missing will be the response.body which is not logged.
+        try:
+            import http.client as http_client
+        except ImportError:
+            # Python 2
+            import httplib as http_client
+        http_client.HTTPConnection.debuglevel = 1
+
+        # You must initialize logging, otherwise you'll not see debug output.
+        logging.basicConfig()
+        logging.getLogger().setLevel(logging.DEBUG)
+        requests_log = logging.getLogger("requests.packages.urllib3")
+        requests_log.setLevel(logging.DEBUG)
+        requests_log.propagate = True
+
+        #s = Session()
+        data = None
+
+        # api-endpoint
+        URL = self.regex_url
+
+        # defining a params dict for the parameters to be sent to the API
+        params = {'text': string}
 
         # header
         headers = {'content-type': 'application/json'}

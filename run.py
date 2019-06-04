@@ -45,7 +45,7 @@ def parse_input(request):
         if text != None:
             input = {0:text}
             print(gender, text)
-            sentence_data, indeces = tokenization(text)
+            sentence_data, indeces, regex_checks = tokenization(text)
             #print("tokenization results",sentences)
             sentences, index_list = do_lemmatization(sentence_data, indeces)
             #print("data", input)
@@ -82,7 +82,7 @@ def parse_input(request):
             return input, sentences, index_list, gender, title, date
         if len(text) > 0:
             print(gender, text)
-            sentence_data, indeces = tokenization(text)
+            sentence_data, indeces, regex_checks = tokenization(text)
             print("sentences dataset:", sentence_data)
             sentences, index_list = do_lemmatization(sentence_data, indeces)
             input = {0: str(request.data.decode('utf-8'))}
@@ -90,7 +90,7 @@ def parse_input(request):
             print("sentences:", sentences)
     else:
         print("This method is not yet supported:", request.method)
-    return input, sentences, index_list, gender, title, date, word
+    return input, sentences, index_list, gender, title, date, word, regex_checks
 
 
 def extract_value(value):
@@ -129,6 +129,10 @@ def setup_tokenizer():
 
 
 def tokenization(text):
+    separators = [', ','; ', ' (', ') ', ' ja ', ' tai ']
+    exceptional_separators = [' (', ') ']
+    regex_check = dict()
+    chunk_regex_check = 0
     result = list()
     structure = dict()
     counter = 0
@@ -137,14 +141,27 @@ def tokenization(text):
     tokenizer = setup_tokenizer()
     sentences = tokenizer.tokenize(text)
     for sentence in sentences:
-        splitted = re.split(r', |; | \(|\) | ja | tai ', sentence) #sentence.split('[,;]')
+        splitted = re.split(r'(, |; | \(|\) | ja | tai )', sentence) #sentence.split('[,;]')
 
         if len(splitted) > 1:
             for chunk in splitted:
-                result.append(chunk)
-                if chunk_counter not in structure:
-                    structure[chunk_counter] = counter
-                    chunk_counter += 1
+                if chunk not in separators:
+                    result.append(chunk)
+                    if chunk_counter not in structure:
+                        structure[chunk_counter] = counter
+                        if chunk_regex_check > 0:
+                            print("Check chunk? ", chunk)
+                            if has_numbers(chunk):
+                                print("This chunk has to be checked!")
+                                regex_check[chunk_counter] = chunk
+                        chunk_counter += 1
+                elif chunk == ' (':
+                    print('Start bracket checking')
+                    chunk_regex_check = 1
+                elif chunk == ') ':
+                    chunk_regex_check = 0
+                    print('End bracket checking')
+
 
         else:
             result.append(sentence)
@@ -154,7 +171,11 @@ def tokenization(text):
         counter += 1
 
     print("Splitted:", result)
-    return result, structure
+    return result, structure, regex_check
+
+
+def has_numbers(inputString):
+    return any(char.isdigit() for char in inputString)
 
 
 def do_lemmatization(sentence_data, indeces):
@@ -181,11 +202,11 @@ def lemmatize(text):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     print("APP name",__name__)
-    input_data, sentences, index_list, gender, title, date, word = parse_input(request)
+    input_data, sentences, index_list, gender, title, date, word, regex_check = parse_input(request)
     print("DATA", sentences)
     if input_data != None:
         name_finder = NameFinder()
-        results, code, responses = name_finder.identify_name(sentences, index_list, gender=gender, title=title, date=date, word=word)
+        results, code, responses = name_finder.identify_name(sentences, index_list, check_date=regex_check, gender=gender, title=title, date=date, word=word)
 
         if code == 1:
             print('results',results)

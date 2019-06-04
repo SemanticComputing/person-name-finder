@@ -3242,3 +3242,87 @@
 2019-06-04 12:37:33,591 NamedEntity INFO text=jotka+takaavat&locale=fi
 2019-06-04 12:37:33,684 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '130', 'Content-Type': 'application/x-www-form-urlencoded'}
 2019-06-04 12:37:33,684 NamedEntity INFO text=ett%C3%A4+heid%C3%A4n+tiimil%C3%A4isens%C3%A4+sitoutuvat+kovaan+treenaamiseen+sek%C3%A4+terveelliseen+ruokavalioon.&locale=fi
+2019-06-04 13:50:25,189 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '44', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:50:25,189 NamedEntity INFO locale=fi&text=Nyt+karistetaan+kilot+pois%21
+2019-06-04 13:50:25,298 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '147', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:50:25,299 NamedEntity INFO locale=fi&text=Suurin+pudottaja+Suomessa+julkkisosallistujat+kisaavat+kahdessa+joukkueessa+tavoitteenaan+pudottaa+painoa+sek%C3%A4+kohottaa+kuntoa.
+2019-06-04 13:50:25,498 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:50:25,498 NamedEntity INFO locale=fi&text=Joukkueet+ottavat+toisistaan+mittaa+erilaisissa+kest%C3%A4vyytt%C3%A4
+2019-06-04 13:50:25,764 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '44', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:50:25,765 NamedEntity INFO locale=fi&text=voimaa+vaativissa+haasteissa.
+2019-06-04 13:50:25,836 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:50:25,836 NamedEntity INFO locale=fi&text=Joukkueita+valmentavat+Janni+Hussi
+2019-06-04 13:50:25,923 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '27', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:50:25,924 NamedEntity INFO locale=fi&text=Aki+Manninen
+2019-06-04 13:50:25,963 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '29', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:50:25,963 NamedEntity INFO locale=fi&text=jotka+takaavat
+2019-06-04 13:50:26,004 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '130', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:50:26,004 NamedEntity INFO locale=fi&text=ett%C3%A4+heid%C3%A4n+tiimil%C3%A4isens%C3%A4+sitoutuvat+kovaan+treenaamiseen+sek%C3%A4+terveelliseen+ruokavalioon.
+2019-06-04 13:51:11,219 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '44'}
+2019-06-04 13:51:11,219 NamedEntity INFO text=Nyt+karistetaan+kilot+pois%21&locale=fi
+2019-06-04 13:51:11,264 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '147'}
+2019-06-04 13:51:11,264 NamedEntity INFO text=Suurin+pudottaja+Suomessa+julkkisosallistujat+kisaavat+kahdessa+joukkueessa+tavoitteenaan+pudottaa+painoa+sek%C3%A4+kohottaa+kuntoa.&locale=fi
+2019-06-04 13:51:11,450 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '84'}
+2019-06-04 13:51:11,450 NamedEntity INFO text=Joukkueet+ottavat+toisistaan+mittaa+erilaisissa+kest%C3%A4vyytt%C3%A4&locale=fi
+2019-06-04 13:51:11,557 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '44'}
+2019-06-04 13:51:11,558 NamedEntity INFO text=voimaa+vaativissa+haasteissa.&locale=fi
+2019-06-04 13:51:11,650 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '49'}
+2019-06-04 13:51:11,650 NamedEntity INFO text=Joukkueita+valmentavat+Janni+Hussi&locale=fi
+2019-06-04 13:51:11,738 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '27'}
+2019-06-04 13:51:11,738 NamedEntity INFO text=Aki+Manninen&locale=fi
+2019-06-04 13:51:11,824 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '29'}
+2019-06-04 13:51:11,824 NamedEntity INFO text=jotka+takaavat&locale=fi
+2019-06-04 13:51:11,862 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '130'}
+2019-06-04 13:51:11,862 NamedEntity INFO text=ett%C3%A4+heid%C3%A4n+tiimil%C3%A4isens%C3%A4+sitoutuvat+kovaan+treenaamiseen+sek%C3%A4+terveelliseen+ruokavalioon.&locale=fi
+2019-06-04 13:53:35,117 NamedEntity INFO {'Content-Length': '44', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:53:35,117 NamedEntity INFO text=Nyt+karistetaan+kilot+pois%21&locale=fi
+2019-06-04 13:53:35,206 NamedEntity INFO {'Content-Length': '147', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:53:35,206 NamedEntity INFO text=Suurin+pudottaja+Suomessa+julkkisosallistujat+kisaavat+kahdessa+joukkueessa+tavoitteenaan+pudottaa+painoa+sek%C3%A4+kohottaa+kuntoa.&locale=fi
+2019-06-04 13:53:35,373 NamedEntity INFO {'Content-Length': '84', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:53:35,374 NamedEntity INFO text=Joukkueet+ottavat+toisistaan+mittaa+erilaisissa+kest%C3%A4vyytt%C3%A4&locale=fi
+2019-06-04 13:53:35,464 NamedEntity INFO {'Content-Length': '44', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:53:35,464 NamedEntity INFO text=voimaa+vaativissa+haasteissa.&locale=fi
+2019-06-04 13:53:35,516 NamedEntity INFO {'Content-Length': '49', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:53:35,516 NamedEntity INFO text=Joukkueita+valmentavat+Janni+Hussi&locale=fi
+2019-06-04 13:53:35,579 NamedEntity INFO {'Content-Length': '27', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:53:35,579 NamedEntity INFO text=Aki+Manninen&locale=fi
+2019-06-04 13:53:35,674 NamedEntity INFO {'Content-Length': '29', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:53:35,674 NamedEntity INFO text=jotka+takaavat&locale=fi
+2019-06-04 13:53:35,777 NamedEntity INFO {'Content-Length': '130', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:53:35,778 NamedEntity INFO text=ett%C3%A4+heid%C3%A4n+tiimil%C3%A4isens%C3%A4+sitoutuvat+kovaan+treenaamiseen+sek%C3%A4+terveelliseen+ruokavalioon.&locale=fi
+2019-06-04 13:54:55,245 NamedEntity INFO {'Content-Length': '57', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:54:55,245 NamedEntity INFO text=Sauli+V%C3%A4in%C3%A4m%C3%B6+Niinist%C3%B6&locale=fi
+2019-06-04 13:54:55,294 NamedEntity INFO {'Content-Length': '40', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:54:55,294 NamedEntity INFO text=s.+24.+elokuuta+1948+Salo&locale=fi
+2019-06-04 13:54:55,383 NamedEntity INFO {'Content-Length': '59', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:54:55,383 NamedEntity INFO text=on+suomalainen+kokoomustaustainen+poliitikko&locale=fi
+2019-06-04 13:54:55,472 NamedEntity INFO {'Content-Length': '49', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:54:55,473 NamedEntity INFO text=Suomen+tasavallan+12.+presidentti.&locale=fi
+2019-06-04 13:54:55,526 NamedEntity INFO {'Content-Length': '57', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:54:55,527 NamedEntity INFO text=H%C3%A4n+astui+virkaan+1.+maaliskuuta+2012&locale=fi
+2019-06-04 13:54:55,589 NamedEntity INFO {'Content-Length': '75', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:54:55,590 NamedEntity INFO text=ja+h%C3%A4net+valittiin+uudelleen+presidentiksi+vuonna+2018.&locale=fi
+2019-06-04 13:55:37,343 NamedEntity INFO {'Content-Length': '57', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:55:37,344 NamedEntity INFO text=Sauli+V%C3%A4in%C3%A4m%C3%B6+Niinist%C3%B6&locale=fi
+2019-06-04 13:55:37,447 NamedEntity INFO {'Content-Length': '40', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:55:37,447 NamedEntity INFO text=s.+24.+elokuuta+1948+Salo&locale=fi
+2019-06-04 13:55:37,522 NamedEntity INFO {'Content-Length': '59', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:55:37,522 NamedEntity INFO text=on+suomalainen+kokoomustaustainen+poliitikko&locale=fi
+2019-06-04 13:55:37,626 NamedEntity INFO {'Content-Length': '49', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:55:37,626 NamedEntity INFO text=Suomen+tasavallan+12.+presidentti.&locale=fi
+2019-06-04 13:55:37,719 NamedEntity INFO {'Content-Length': '57', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:55:37,719 NamedEntity INFO text=H%C3%A4n+astui+virkaan+1.+maaliskuuta+2012&locale=fi
+2019-06-04 13:55:37,816 NamedEntity INFO {'Content-Length': '75', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-04 13:55:37,816 NamedEntity INFO text=ja+h%C3%A4net+valittiin+uudelleen+presidentiksi+vuonna+2018.&locale=fi
+2019-06-04 13:58:46,227 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '57'}
+2019-06-04 13:58:46,227 NamedEntity INFO text=Sauli+V%C3%A4in%C3%A4m%C3%B6+Niinist%C3%B6&locale=fi
+2019-06-04 13:58:46,303 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '40'}
+2019-06-04 13:58:46,303 NamedEntity INFO text=s.+24.+elokuuta+1948+Salo&locale=fi
+2019-06-04 13:58:46,354 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '59'}
+2019-06-04 13:58:46,354 NamedEntity INFO text=on+suomalainen+kokoomustaustainen+poliitikko&locale=fi
+2019-06-04 13:58:46,425 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '49'}
+2019-06-04 13:58:46,425 NamedEntity INFO text=Suomen+tasavallan+12.+presidentti.&locale=fi
+2019-06-04 13:58:46,526 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '57'}
+2019-06-04 13:58:46,527 NamedEntity INFO text=H%C3%A4n+astui+virkaan+1.+maaliskuuta+2012&locale=fi
+2019-06-04 13:58:46,617 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '75'}
+2019-06-04 13:58:46,617 NamedEntity INFO text=ja+h%C3%A4net+valittiin+uudelleen+presidentiksi+vuonna+2018.&locale=fi
