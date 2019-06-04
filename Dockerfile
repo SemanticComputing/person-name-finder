@@ -9,12 +9,17 @@ RUN apk add python3 && rm -rf /var/cache/apk/*
 COPY requirements.txt ./requirements.txt
 RUN pip3 install -r requirements.txt
 
+RUN python3 -c "import nltk; nltk.download('punkt', '/usr/share/nltk_data')"
+
 RUN pip3 install gunicorn
 
 WORKDIR /app
 
 COPY src ./src
-COPY httpInterface.py ./
+COPY data ./data
+COPY run.py ./
+
+RUN mkdir logs
 
 RUN chgrp -R 0 /app \
  && chmod -R g+rwX /app
