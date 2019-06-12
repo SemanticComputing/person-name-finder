@@ -20,11 +20,11 @@ class NameFinder:
 
             dict_names, arr_names = self.split_names_to_arr(name_string, i)
             if len(arr_names) > 0:
-                print("CHECK dates:", check_date, i)
+                print("CHECK dates:", check_date, i, arr_names)
                 checking_date = None
-                ind = i + 1
-                if date is True and ind in check_date:
-                    checking_date = check_date[ind]
+                #ind = i + 1
+                if date is True and i in check_date:
+                    checking_date = check_date[i]
 
                 queried_names = self.sparql.query_names(dict_names)
                 nr = NameRidler(queried_names, arr_names)
@@ -129,6 +129,12 @@ class NameRidler:
         self.gender_guess_url = "http://nlp.ldf.fi/gender-guess"
         self.gender_guess_threshold = 0.8
         self.regex_url = "http://nlp.ldf.fi/regex"
+        self.ord_full_names = dict()
+        self.string_chunking_pattern = r'(, |; | \(|\)| ja | tai )'
+        self.contextual_chunking_single_separators = ['S', 'V']
+        self.context_birth_identifiers = ['s.', 'syntynyt']
+        self.context_death_identifiers = ['k.', 'kuollut']
+        self.context_lifespan_separators = ['-', '–']
 
         # configure
         self.read_configs()
@@ -159,6 +165,12 @@ class NameRidler:
                 print("Unable to find: regex_url in ", config['DEFAULT'])
                 self.regex_url = "http://nlp.ldf.fi/regex"
 
+            if 'string_chunking_pattern' in config['DEFAULT']:
+                self.string_chunking_pattern = config['DEFAULT']['string_chunking_pattern'].split(',')
+            else:
+                self.string_chunking_pattern = r'(, |; | \(|\)| ja | tai )'
+
+
     def get_names(self, check_for_dates=None, gender=False, titles=False, dates=False, word=False):
         responses = dict()
         entities = list()
@@ -168,12 +180,15 @@ class NameRidler:
             entity = dict()
             items = list()
             print("For name: ", name, arr)
-            if len(name.strip()) > 0:
-                entity['full_name'] = name.strip()
+            str_name = name.strip()
+            if len(str_name) > 0:
+                entity['full_name'] = str_name
+                check_name_i = max(list(self.ord_full_names.keys()))
+                check_name = self.ord_full_names[check_name_i].strip()
                 if gender:
-                    entity['gender'], resp = self.guess_gender(name.strip())
+                    entity['gender'], resp = self.guess_gender(str_name)
                     responses[name.strip()] = resp
-                if check_for_dates != None and dates is True:
+                if check_for_dates != None and dates is True and check_name == str_name:
                     output,resp = self.query_dates(check_for_dates)
                     print("GOT OUTPUT:", output)
                     date_type = self.check_string_start(check_for_dates)
@@ -200,10 +215,10 @@ class NameRidler:
     def check_string_start(self, string):
         birth = ['s.', 'syntynyt']
         death = ['k.', 'kuollut']
-        for b in birth:
+        for b in self.self.context_birth_identifiers:
             if string.startswith(b):
                 return 1
-        for d in death:
+        for d in self.self.context_death_identifiers:
             if string.startswith(d):
                 return 2
         splitted = string.split()
@@ -226,6 +241,7 @@ class NameRidler:
         helper_arr = dict()
         name_links = dict()
         counter = 0
+        full_name_counter = 0
         label = ""
         prev = None
         name = None
@@ -284,9 +300,11 @@ class NameRidler:
 
             argh, full_name = self.determine_name(arr, helper_arr)
 
-            print("Full name:", full_name)
+            print("Full name:", full_name, argh)
 
             self.full_names[full_name] = self.full_names[full_name] = argh
+            self.ord_full_names[full_name_counter] = full_name
+            full_name_counter += 1
 
             arr = dict()
             helper_arr = dict()

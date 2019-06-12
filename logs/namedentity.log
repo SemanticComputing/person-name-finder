@@ -4166,3 +4166,79 @@
 2019-06-04 19:53:50,102 NamedEntity INFO text=1793%E2%80%931860&locale=fi
 2019-06-04 19:53:50,189 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '21', 'Content-Type': 'application/x-www-form-urlencoded'}
 2019-06-04 19:53:50,189 NamedEntity INFO text=+1859.&locale=fi
+2019-06-05 10:29:35,775 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '55', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 10:29:35,775 NamedEntity INFO text=Nimityksen+taustalla+lienee+kuitenkin+se&locale=fi
+2019-06-05 10:29:35,925 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '123', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 10:29:35,925 NamedEntity INFO text=ett%C3%A4+kuningas+Kustaa+IV+Adolf+oli+samana+vuonna+Turussa+k%C3%A4ydess%C3%A4%C3%A4n+havainnut+miehen+avut&locale=fi
+2019-06-05 10:29:36,061 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '88', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 10:29:36,062 NamedEntity INFO text=palkitsi+siksi+h%C3%A4net+harvinaisella+kauppaneuvoksen+arvonimell%C3%A4.&locale=fi
+2019-06-05 10:29:36,155 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '44', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 10:29:36,155 NamedEntity INFO text=Trappin+poika+Christian+Trapp&locale=fi
+2019-06-05 10:29:36,258 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '32', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 10:29:36,258 NamedEntity INFO text=1769%E2%80%931841&locale=fi
+2019-06-05 10:29:36,356 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '67', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 10:29:36,357 NamedEntity INFO text=+sai+kauppaneuvoksen+arvonimen+1809+suurisuhtinaalta&locale=fi
+2019-06-05 10:29:36,462 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 10:29:36,462 NamedEntity INFO text=pojanpoika+Christian+Trapp&locale=fi
+2019-06-05 10:29:36,558 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '32', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 10:29:36,558 NamedEntity INFO text=1793%E2%80%931860&locale=fi
+2019-06-05 10:29:36,592 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '21', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 10:29:36,592 NamedEntity INFO text=+1859.&locale=fi
+2019-06-05 11:11:26,507 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '55', 'X-Custom': 'Test'}
+2019-06-05 11:11:26,507 NamedEntity INFO text=Nimityksen+taustalla+lienee+kuitenkin+se&locale=fi
+2019-06-05 11:11:26,727 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '123', 'X-Custom': 'Test'}
+2019-06-05 11:11:26,727 NamedEntity INFO text=ett%C3%A4+kuningas+Kustaa+IV+Adolf+oli+samana+vuonna+Turussa+k%C3%A4ydess%C3%A4%C3%A4n+havainnut+miehen+avut&locale=fi
+2019-06-05 11:11:26,930 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '88', 'X-Custom': 'Test'}
+2019-06-05 11:11:26,930 NamedEntity INFO text=palkitsi+siksi+h%C3%A4net+harvinaisella+kauppaneuvoksen+arvonimell%C3%A4.&locale=fi
+2019-06-05 11:11:27,036 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '44', 'X-Custom': 'Test'}
+2019-06-05 11:11:27,037 NamedEntity INFO text=Trappin+poika+Christian+Trapp&locale=fi
+2019-06-05 11:11:27,131 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '32', 'X-Custom': 'Test'}
+2019-06-05 11:11:27,131 NamedEntity INFO text=1769%E2%80%931841&locale=fi
+2019-06-05 11:11:27,233 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '67', 'X-Custom': 'Test'}
+2019-06-05 11:11:27,233 NamedEntity INFO text=+sai+kauppaneuvoksen+arvonimen+1809+suurisuhtinaalta&locale=fi
+2019-06-05 11:11:27,314 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '41', 'X-Custom': 'Test'}
+2019-06-05 11:11:27,314 NamedEntity INFO text=pojanpoika+Christian+Trapp&locale=fi
+2019-06-05 11:11:27,426 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '32', 'X-Custom': 'Test'}
+2019-06-05 11:11:27,426 NamedEntity INFO text=1793%E2%80%931860&locale=fi
+2019-06-05 11:11:27,508 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '21', 'X-Custom': 'Test'}
+2019-06-05 11:11:27,508 NamedEntity INFO text=+1859.&locale=fi
+2019-06-05 13:16:20,467 NamedEntity INFO {'Content-Length': '55', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:16:20,467 NamedEntity INFO locale=fi&text=Nimityksen+taustalla+lienee+kuitenkin+se
+2019-06-05 13:16:20,743 NamedEntity INFO {'Content-Length': '123', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:16:20,744 NamedEntity INFO locale=fi&text=ett%C3%A4+kuningas+Kustaa+IV+Adolf+oli+samana+vuonna+Turussa+k%C3%A4ydess%C3%A4%C3%A4n+havainnut+miehen+avut
+2019-06-05 13:16:21,120 NamedEntity INFO {'Content-Length': '88', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:16:21,120 NamedEntity INFO locale=fi&text=palkitsi+siksi+h%C3%A4net+harvinaisella+kauppaneuvoksen+arvonimell%C3%A4.
+2019-06-05 13:16:21,454 NamedEntity INFO {'Content-Length': '44', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:16:21,454 NamedEntity INFO locale=fi&text=Trappin+poika+Christian+Trapp
+2019-06-05 13:16:21,510 NamedEntity INFO {'Content-Length': '32', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:16:21,510 NamedEntity INFO locale=fi&text=1769%E2%80%931841
+2019-06-05 13:16:21,593 NamedEntity INFO {'Content-Length': '67', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:16:21,594 NamedEntity INFO locale=fi&text=+sai+kauppaneuvoksen+arvonimen+1809+suurisuhtinaalta
+2019-06-05 13:16:21,684 NamedEntity INFO {'Content-Length': '41', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:16:21,684 NamedEntity INFO locale=fi&text=pojanpoika+Christian+Trapp
+2019-06-05 13:16:21,730 NamedEntity INFO {'Content-Length': '32', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:16:21,730 NamedEntity INFO locale=fi&text=1793%E2%80%931860
+2019-06-05 13:16:21,790 NamedEntity INFO {'Content-Length': '21', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:16:21,790 NamedEntity INFO locale=fi&text=+1859.
+2019-06-05 13:33:47,890 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '55', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:33:47,891 NamedEntity INFO text=Nimityksen+taustalla+lienee+kuitenkin+se&locale=fi
+2019-06-05 13:33:48,143 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '123', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:33:48,143 NamedEntity INFO text=ett%C3%A4+kuningas+Kustaa+IV+Adolf+oli+samana+vuonna+Turussa+k%C3%A4ydess%C3%A4%C3%A4n+havainnut+miehen+avut&locale=fi
+2019-06-05 13:33:48,237 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '88', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:33:48,237 NamedEntity INFO text=palkitsi+siksi+h%C3%A4net+harvinaisella+kauppaneuvoksen+arvonimell%C3%A4.&locale=fi
+2019-06-05 13:33:48,311 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '44', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:33:48,311 NamedEntity INFO text=Trappin+poika+Christian+Trapp&locale=fi
+2019-06-05 13:33:48,408 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '32', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:33:48,409 NamedEntity INFO text=1769%E2%80%931841&locale=fi
+2019-06-05 13:33:48,487 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '67', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:33:48,487 NamedEntity INFO text=+sai+kauppaneuvoksen+arvonimen+1809+suurisuhtinaalta&locale=fi
+2019-06-05 13:33:48,587 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:33:48,587 NamedEntity INFO text=pojanpoika+Christian+Trapp&locale=fi
+2019-06-05 13:33:48,668 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '32', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:33:48,668 NamedEntity INFO text=1793%E2%80%931860&locale=fi
+2019-06-05 13:33:48,748 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '21', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-05 13:33:48,748 NamedEntity INFO text=+1859.&locale=fi
+2019-06-05 14:39:07,337 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '216'}
+2019-06-05 14:39:07,337 NamedEntity INFO locale=fi&text=Rehn+oli+tuolloin+aktiivinen+nuori+keskustaliikkeess%C3%A4+ja+kuului+ryhm%C3%A4%C3%A4n%2C+jossa+vaikuttivat+esimerkiksi+Maria++Kaisa+Aula+%281962%E2%80%93%29ja+Anu+Vehvil%C3%A4inen+%281963%E2%80%93%29.
+2019-06-05 14:39:27,357 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '171'}
+2019-06-05 14:39:27,357 NamedEntity INFO locale=fi&text=Rehnist%C3%A4+tuli+aluksi++Paavo+V%C3%A4yrysen+suojatti%2C+mutta+h%C3%A4n+irtaantui+pian+keskustaliberaalina+V%C3%A4yrysen+vanhoillisemmasta+aatemaailmasta.

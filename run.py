@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask import request
 import argparse
 import sys, os
@@ -10,6 +10,7 @@ import csv
 import nltk
 import nltk.data
 from src.namefinder import NameFinder
+from src.text_structure import Sentence
 import xml.dom.minidom
 import xml.etree.ElementTree as ET
 from src.las_query import lasQuery
@@ -127,8 +128,22 @@ def setup_tokenizer():
             tokenizer._params.abbrev_types.add(row[0])
     return tokenizer
 
-
 def tokenization(text):
+    print('Tokenize this:', text)
+    sentence_list = list()
+    tokenizer = setup_tokenizer()
+    sentences = tokenizer.tokenize(text)
+    sentence_len = 0
+    counter = 0
+    for sentence in sentences:
+        s = Sentence()
+        s.set_sentence(sentence, "", counter, sentence_len)
+        sentence_len += len(sentence) + 1
+        counter += 1
+        sentence_list.append(s)
+
+def old_tokenization(text):
+
     separators = [', ','; ', ' (', ') ', ')', ' ja ', ' tai ']
     exceptional_separators = [' (', ') ']
     regex_check = dict()
@@ -153,11 +168,15 @@ def tokenization(text):
                             print("Check chunk? ", chunk)
                             if has_numbers(chunk):
                                 print("This chunk has to be checked!")
-                                regex_check[chunk_counter] = chunk
+                                if regex_chunk_counter not in regex_check:
+                                    regex_check[regex_chunk_counter] = chunk
+                                else:
+                                    regex_check[regex_chunk_counter] += chunk
                         chunk_counter += 1
                 elif chunk == ' (':
                     print('Start bracket checking')
                     chunk_regex_check = 1
+                    regex_chunk_counter = chunk_counter-1
                 elif chunk == ')' or chunk == ') ':
                     chunk_regex_check = 0
                     print('End bracket checking')
@@ -211,14 +230,16 @@ def index():
         if code == 1:
             print('results',results)
             data = {"status":200,"data":results, "service":"name-finder", "date":dt.today().strftime('%Y-%m-%d')}
-            return json.dumps(data, ensure_ascii=False)
+            return jsonify(json.dumps(data, ensure_ascii=False))
         else:
             data = {"status":-1,"error":str(results), "service":"name-finder", "date":dt.today().strftime('%Y-%m-%d')}
-            return json.dumps(data, ensure_ascii=False)
+            return jsonify(json.dumps(data, ensure_ascii=False))
     message = "<h3>Unable to process request</h3><p>Unable to retrieve results for text (%s).</p>" % str(request.args.get('text'))
     message += "<p>Please give parameters using GET or POST method. GET method example: <a href='http://127.0.0.1:5000/?text=Minna Susanna Claire Tamper' target='_blank'>http://127.0.0.1:5000/?text=Minna Susanna Claire Tamper</a></p>"+\
                     "POST method can be used by transmitting the parameters using url, header, or a form."
-    return message
+    data = {"status": -1, "error": str(message), "service": "name-finder", "date": dt.today().strftime('%Y-%m-%d')}
+
+    return jsonify(json.dumps(data, ensure_ascii=False))
 
 
 if __name__ == '__main__':
