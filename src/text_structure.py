@@ -13,6 +13,7 @@ from distutils.util import strtobool
 from datetime import datetime as dt
 from nltk.tokenize import word_tokenize
 import numpy as np
+from collections import OrderedDict
 
 class TextParser:
     def __init__(self, string):
@@ -128,8 +129,8 @@ class Sentence:
         self.ord = None
         self.location = None
         self.regex_check = dict()
-        self.words = dict()
-        self.lemma_words = dict()
+        self.words = OrderedDict()
+        self.lemma_words = OrderedDict()
 
         # settings
 
@@ -145,7 +146,7 @@ class Sentence:
         self.ord = ord
         self.location = location
 
-        self.word_tokenization(self.string)
+        self.words = self.word_tokenization(self.string)
         if len(lemma) < 1:
             self.lemmatized = self.lemmatize(string)
             self.lemma_words = self.word_tokenization(self.lemmatized)
@@ -212,11 +213,15 @@ class Sentence:
         return result, structure, self.regex_check
 
     def word_tokenization(self, string):
-        words_dct = dict()
+        punct = ['.','?',';',',','!']
+        words_dct = OrderedDict()
         prev = 0
         string_len = len(string)
         words = word_tokenize(string)
+        print("WORDS:", words)
         for word in words:
+            if prev != 0 and word not in punct:
+                prev += 1
             end_ind = len(word) + prev
             w = Word(word, prev, end_ind)
             words_dct[word]=w

@@ -10,7 +10,9 @@ class NameFinder:
     def __init__(self):
         self.sparql = SparqlQuries()
         self.last_names = dict()
+        self.last_name_ind = dict()
         self.first_names = dict()
+        self.first_name_ind = dict()
 
     def identify_name(self, name_strings, index_list, check_date=None, gender=False, title=False, date=False, word=False):
         names = dict()
@@ -27,7 +29,7 @@ class NameFinder:
                     checking_date = check_date[i]
 
                 queried_names = self.sparql.query_names(dict_names)
-                nr = NameRidler(queried_names, arr_names)
+                nr = NameRidler(queried_names, arr_names, name_string)
                 name_list, resp = nr.get_names(check_for_dates=checking_date, gender=gender, titles=title, dates=date, word=word)
                 print("Using index:", index_list[i])
                 if index_list[i] not in names.keys():
@@ -36,7 +38,8 @@ class NameFinder:
 
         return names, 1, resp
 
-    def split_names_to_arr(self, name_string, j):
+    def split_names_to_arr(self, name_string_obj, j):
+        name_string = name_string_obj.get_lemma()
         print("Process string:",name_string)
         names = name_string.split(" ")
         dict_names = dict()
@@ -70,6 +73,7 @@ class NameFinder:
 
                 if name.lower() not in binders and len(builder) == 0 and name[0].isupper():
                     first_names.append(name)
+                    loc = name_string_obj.find_name_location(name)
                 elif name.lower() in binders and len(builder) == 0:
                     builder = name
                 elif len(builder) > 0 and (name.lower() in binders or name[0].isupper()):
@@ -80,7 +84,6 @@ class NameFinder:
                     print('Add name,', name)
                     if len(builder) > 0 and (name.lower() in binders or name[0].isupper()):
                         last_names.append(builder)
-
                     else:
                         if name[0].isupper():
                             prev_s = names[prev]
@@ -123,13 +126,14 @@ class NameFinder:
 
 
 class NameRidler:
-    def __init__(self, names, ordered_names):
+    def __init__(self, names, ordered_names, sentence_obj):
         self.ord_names = ordered_names
         self.full_names = dict()
         self.gender_guess_url = "http://nlp.ldf.fi/gender-guess"
         self.gender_guess_threshold = 0.8
         self.regex_url = "http://nlp.ldf.fi/regex"
         self.ord_full_names = dict()
+
         self.string_chunking_pattern = r'(, |; | \(|\)| ja | tai )'
         self.contextual_chunking_single_separators = ['S', 'V']
         self.context_birth_identifiers = ['s.', 'syntynyt']
@@ -140,7 +144,7 @@ class NameRidler:
         self.read_configs()
 
         # parse
-        self.parse(names)
+        self.parse(names, sentence_obj)
 
     def read_configs(self):
 
@@ -236,7 +240,7 @@ class NameRidler:
 
         return 0
 
-    def parse(self, queried_names):
+    def parse(self, queried_names, sentence_obj):
         arr = dict()
         helper_arr = dict()
         name_links = dict()
@@ -247,7 +251,11 @@ class NameRidler:
         name = None
         full_name = ""
         prev_names =list()
+        string_start = 0
+        string_end = 0
+
         for queried_name in queried_names:
+            last_item = len(queried_name["results"]["bindings"])
             for result in queried_name["results"]["bindings"]:
                 #print(result)
                 prev = name
@@ -266,13 +274,18 @@ class NameRidler:
                 else:
                     print("Name occured twice:", name, prev)
 
+                string_start, string_end = sentence_obj.find_name_location(label)
+
+
                 if prev != None:
-                    if (prev.get_type() == "Sukunimen käyttö" and type == "Etunimen käyttö") and (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1):
+                    print("Indeces:", prev.get_string_start(), string_start)
+                    if (prev.get_type() == "Sukunimen käyttö" and type == "Etunimen käyttö") and (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1): # and (prev.get_string_start()!=string_start-1 and prev.get_string_start()!=string_start):
                         counter = 1
 
                         argh, full_name = self.determine_name(arr, helper_arr)
                         print("Full name in the middle:", full_name, '[', prev.get_name().strip(), '], [', label.strip(),
                               ']')
+
                         self.full_names[full_name] = argh
                         arr = dict()
                         helper_arr = dict()
@@ -287,7 +300,7 @@ class NameRidler:
                 #if prev == None and len(full_name) == 0:
                 #    full_name = label + " "
 
-                name = Name(label, count, type, counter, name, linkage)
+                name = Name(label, count, type, counter, name, linkage, string_start)
 
                 print("Adding name:", name, full_name)
 
@@ -318,24 +331,57 @@ class NameRidler:
     def determine_name(self, names, helper):
         family_names = list()
         first_names = list()
-        last = len(helper)
+        last = len(helper) + 1
         full_name = ""
+        prev = None
+        name_unidentified = False
 
         for loc, names in helper.items():
             for name in names:
+                if prev != None:
+                    if name_unidentified == True:
+                        name_unidentified = False
+                        if prev.get_type() == "Sukunimen käyttö":
+                            family_names.append(prev)
+                            name_unidentified = False
+                        elif prev.get_type() == "Etunimen käyttö":
+                            first_names.append(prev)
+                            name_unidentified = False
+                        else:
+                            print("Cannot add,", prev)
+
                 print("Process:", name)
-                if self.is_family_name(name, last):
+                if self.is_family_name(name, last) and not(self.is_first_name(name, last)):
                     if name not in family_names:
                         family_names.append(name)
-                elif self.is_first_name(name, last):
+                        prev = name
+                        name_unidentified = False
+                elif self.is_first_name(name, last) and not(self.is_family_name(name, last)):
                     if name not in first_names:
                         first_names.append(name)
+                        prev = name
+                        name_unidentified = False
                 else:
                     if name.get_type() == "Sukunimen käyttö" and name.get_location() > 1 and not(self.is_first_name(name, last)):
                         family_names.append(name)
+                        prev = name
+                        name_unidentified = False
                     else:
-                        print("Unable to identify name", name)
+                        print("Unable to identify name --> ", name)
+                        name_unidentified = True
+                        prev = name
 
+        if prev != None:
+            if name_unidentified == True:
+                name_unidentified = False
+                if prev.get_type() == "Sukunimen käyttö":
+                    family_names.append(prev)
+                    name_unidentified = False
+                elif prev.get_type() == "Etunimen käyttö":
+                    first_names.append(prev)
+                    name_unidentified = False
+                else:
+                    print("Cannot add,", prev)
 
         fnames = [fn.get_name() for fn in first_names]
         lnames = [fn.get_name() for fn in family_names]
@@ -580,7 +626,7 @@ class NameRidler:
 
 
 class Name:
-    def __init__(self, label, count, type, location, name_uri, linkage):
+    def __init__(self, label, count, type, location, name_uri, linkage, string_start):
         self.label = label
         self.count = count
         self.type = type
@@ -588,6 +634,8 @@ class Name:
         self.name_uri = name_uri
         self.linkage = list()
         self.linkage.append(linkage)
+        self.string_start = string_start
+        self.string_end = self.string_start + len(self.label)
 
     def get_link(self):
         return self.linkage
@@ -604,6 +652,12 @@ class Name:
 
     def get_count(self):
         return self.count
+
+    def get_string_start(self):
+        return self.string_start
+
+    def get_string_end(self):
+        return self.string_end
 
     def add_link(self, link):
         if link not in self.linkage:
@@ -624,7 +678,7 @@ class Name:
 
 
     def get_json(self):
-        return {'name':str(self.label), 'type':str(self.clarify_type()), 'location':str(self.location), 'uri':self.name_uri}
+        return {'name':str(self.label), 'type':str(self.clarify_type()), 'location':str(self.location), 'uri':self.name_uri, 'start_ind':self.string_start, 'end_ind':self.string_end}
 
     def __str__(self):
         return self.label + " (" + str(self.count) + "): " + self.type + " @ " + str(self.location)

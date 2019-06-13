@@ -199,7 +199,7 @@ def do_lemmatization(sentence_data, indeces):
     output = dict()
     index_lists = dict()
     for i in range(0, len(sentence_data)):
-        output[i] = sentence_data[i].get_lemma()
+        output[i] = sentence_data[i]#.get_lemma()
 
         index_lists[i] = indeces[i]
         print("Index list:", i, indeces[i], sentence_data[i])
