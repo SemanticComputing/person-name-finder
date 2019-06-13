@@ -10,7 +10,7 @@ import csv
 import nltk
 import nltk.data
 from src.namefinder import NameFinder
-from src.text_structure import Sentence
+from src.text_structure import Sentence, TextParser
 import xml.dom.minidom
 import xml.etree.ElementTree as ET
 from src.las_query import lasQuery
@@ -131,16 +131,14 @@ def setup_tokenizer():
 def tokenization(text):
     print('Tokenize this:', text)
     sentence_list = list()
+    regex_check = dict()
+    structure = dict()
+
     tokenizer = setup_tokenizer()
-    sentences = tokenizer.tokenize(text)
-    sentence_len = 0
-    counter = 0
-    for sentence in sentences:
-        s = Sentence()
-        s.set_sentence(sentence, "", counter, sentence_len)
-        sentence_len += len(sentence) + 1
-        counter += 1
-        sentence_list.append(s)
+    tp = TextParser(text)
+    sentence_list, structure, regex_check = tp.parse_input(tokenizer)
+
+    return sentence_list, structure, regex_check
 
 def old_tokenization(text):
 
@@ -201,13 +199,11 @@ def do_lemmatization(sentence_data, indeces):
     output = dict()
     index_lists = dict()
     for i in range(0, len(sentence_data)):
-        output[i] = lemmatize(sentence_data[i])
+        output[i] = sentence_data[i].get_lemma()
 
         index_lists[i] = indeces[i]
         print("Index list:", i, indeces[i], sentence_data[i])
 
-
-    #{i: lemmatize(sentence_data[i]) for i in range(0, len(sentence_data))}
     return output, index_lists
 
 
@@ -230,16 +226,16 @@ def index():
         if code == 1:
             print('results',results)
             data = {"status":200,"data":results, "service":"name-finder", "date":dt.today().strftime('%Y-%m-%d')}
-            return jsonify(json.dumps(data, ensure_ascii=False))
+            return jsonify(data)
         else:
-            data = {"status":-1,"error":str(results), "service":"name-finder", "date":dt.today().strftime('%Y-%m-%d')}
-            return jsonify(json.dumps(data, ensure_ascii=False))
+            data = {"status":-1,"error":results, "service":"name-finder", "date":dt.today().strftime('%Y-%m-%d')}
+            return jsonify(data)
     message = "<h3>Unable to process request</h3><p>Unable to retrieve results for text (%s).</p>" % str(request.args.get('text'))
     message += "<p>Please give parameters using GET or POST method. GET method example: <a href='http://127.0.0.1:5000/?text=Minna Susanna Claire Tamper' target='_blank'>http://127.0.0.1:5000/?text=Minna Susanna Claire Tamper</a></p>"+\
                     "POST method can be used by transmitting the parameters using url, header, or a form."
     data = {"status": -1, "error": str(message), "service": "name-finder", "date": dt.today().strftime('%Y-%m-%d')}
 
-    return jsonify(json.dumps(data, ensure_ascii=False))
+    return jsonify(data)
 
 
 if __name__ == '__main__':

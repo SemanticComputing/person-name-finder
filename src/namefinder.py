@@ -215,10 +215,10 @@ class NameRidler:
     def check_string_start(self, string):
         birth = ['s.', 'syntynyt']
         death = ['k.', 'kuollut']
-        for b in self.self.context_birth_identifiers:
+        for b in self.context_birth_identifiers:
             if string.startswith(b):
                 return 1
-        for d in self.self.context_death_identifiers:
+        for d in self.context_death_identifiers:
             if string.startswith(d):
                 return 2
         splitted = string.split()
@@ -252,6 +252,7 @@ class NameRidler:
                 #print(result)
                 prev = name
                 prev_names.append(label)
+                name = str(result["name"]["value"])
                 label = str(result["label"]["value"])
                 count = int(result["count"]["value"])
                 type = str(result["nameLabel"]["value"])
@@ -286,7 +287,7 @@ class NameRidler:
                 #if prev == None and len(full_name) == 0:
                 #    full_name = label + " "
 
-                name = Name(label, count, type, counter, linkage)
+                name = Name(label, count, type, counter, name, linkage)
 
                 print("Adding name:", name, full_name)
 
@@ -562,28 +563,29 @@ class NameRidler:
         if data != None:
             for item in data:
                 print('Item:',item)
-                for i in item['results']:
-                    if 'type' in i and 'entity' in i:
-                        if i['type'] == 'DATETIME':
+                for i in item['entities']:
+                    if 'category' in i and 'entity' in i:
+                        if i['category'] == 'DATETIME':
                             start = i['start_index']
                             end = i['end_index']
                             if 'string' not in results:
                                 results[string] = list()
                             results[string].append((i['entity'], start, end))
                         else:
-                            print("Wrong type:", item['results'])
+                            print("Wrong type:", item['entities'])
                 else:
-                    print("Unable to find entity in results:", item['results'])
+                    print("Unable to find entity in results:", item['entities'])
 
         return results, resp
 
 
 class Name:
-    def __init__(self, label, count, type, location, linkage):
+    def __init__(self, label, count, type, location, name_uri, linkage):
         self.label = label
         self.count = count
         self.type = type
         self.location = location
+        self.name_uri = name_uri
         self.linkage = list()
         self.linkage.append(linkage)
 
@@ -622,7 +624,7 @@ class Name:
 
 
     def get_json(self):
-        return {'name':str(self.label), 'type':str(self.clarify_type()), 'location':str(self.location), 'uri':self.linkage}
+        return {'name':str(self.label), 'type':str(self.clarify_type()), 'location':str(self.location), 'uri':self.name_uri}
 
     def __str__(self):
         return self.label + " (" + str(self.count) + "): " + self.type + " @ " + str(self.location)

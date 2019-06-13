@@ -42,11 +42,11 @@ class SparqlQuries:
             query = """ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
                         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
                         PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-                        SELECT DISTINCT ?label ?nameLabel ?nameType ?count  WHERE {
+                        SELECT DISTINCT ?name ?label ?nameLabel ?nameType ?count  WHERE {
                           VALUES ?names { $names }
                           BIND(STRLANG(?names,'fi') AS ?label)
-                          ?sub skos:prefLabel ?label .
-                          ?sub <http://ldf.fi/schema/henkilonimisto/usedAs> ?nameType .
+                          ?name skos:prefLabel ?label .
+                          ?name <http://ldf.fi/schema/henkilonimisto/usedAs> ?nameType .
                           ?nameType a ?type .
                           ?type skos:prefLabel ?typeLabel .
                           ?nameType <http://ldf.fi/schema/henkilonimisto/count> ?count .                      
