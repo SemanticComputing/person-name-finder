@@ -8,6 +8,7 @@ itsdangerous==1.1.0
 Jinja2==2.10.1
 MarkupSafe==1.1.1
 nltk==3.4.1
+numpy==1.16.4
 pyparsing==2.4.0
 rdflib==4.2.2
 requests==2.21.0
