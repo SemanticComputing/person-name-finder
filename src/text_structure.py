@@ -220,13 +220,16 @@ class Sentence:
         words = word_tokenize(string)
         print("WORDS:", words)
         for word in words:
+
             if prev != 0 and word not in punct:
                 prev += 1
             end_ind = len(word) + prev
+            print(word, prev, end_ind, len(word))
             w = Word(word, prev, end_ind)
             words_dct[word]=w
+
             if end_ind < string_len:
-                prev += end_ind + 1
+                prev = end_ind + 1
             else:
                 print("End of a string!")
                 prev = end_ind
@@ -263,13 +266,26 @@ class Sentence:
         print("Name listing:", name_list)
 
         ind = self.find_subarray(np.array(lemma_list), np.array(name_list))
-        end_ind = len(name_list)
+        end_ind = ind + len(name_list) -1
 
         start = self.words[word_list[ind]]
         stop = self.words[word_list[end_ind]]
 
+        print(start, stop)
+
         if start != None and stop != None:
+            #text = "The cat sat on the mat"
+            #text = text[:8] + "slept" + text[11:]
+            #print("Test:", name, start.get_start_location(), "-", stop.get_end_location())
+            #print("START: ", self.string[:start.get_start_location()] )
+            #print("END: ", self.string[stop.get_end_location():])
+            #test = self.string[:start.get_start_location()] + "###" + self.string[stop.get_end_location():]
+
+            #print("Name LOC check:", test, "(",name,")", "/",  self.string)
+
             return start.get_start_location(), stop.get_end_location()
+
+
 
         return None, None
 
@@ -281,9 +297,16 @@ class Word:
         self.string = string
         self.start_location = start_ind
         self.end_location = end_ind
+        print("CREATE word:", string, start_ind, end_ind)
 
     def get_start_location(self):
         return self.start_location
 
     def get_end_location(self):
         return self.end_location
+
+    def __str__(self):
+        return str(self.string + "(" + str(self.start_location) + ":" + str(self.end_location) + ")")
+
+    def __repr__(self):
+        return str(self.string + "(" + str(self.start_location) + ":" + str(self.end_location) + ")")

@@ -280,7 +280,7 @@ class NameRidler:
 
                 if prev != None:
                     #print("Indeces:", prev.get_string_start(), string_start)
-                    if (prev.get_type() == "Sukunimen käyttö" and type == "Etunimen käyttö") and (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1) and (prev.get_string_end()<string_start-1):
+                    if (prev.get_type() == "Sukunimen käyttö" and type == "Etunimen käyttö") and (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1) and (prev.get_string_end()<string_start-2):
                         counter = 1
 
                         argh, full_name = self.determine_name(arr, helper_arr)
