@@ -256,6 +256,7 @@ class NameRidler:
 
         for queried_name in queried_names:
             last_item = len(queried_name["results"]["bindings"])
+            counter = 1
             for result in queried_name["results"]["bindings"]:
                 #print(result)
                 prev = name
@@ -279,7 +280,7 @@ class NameRidler:
 
                 if prev != None:
                     print("Indeces:", prev.get_string_start(), string_start)
-                    if (prev.get_type() == "Sukunimen käyttö" and type == "Etunimen käyttö") and (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1): # and (prev.get_string_start()!=string_start-1 and prev.get_string_start()!=string_start):
+                    if (prev.get_type() == "Sukunimen käyttö" and type == "Etunimen käyttö") and (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1) and (prev.get_string_end()<string_start-1):
                         counter = 1
 
                         argh, full_name = self.determine_name(arr, helper_arr)
@@ -297,12 +298,9 @@ class NameRidler:
                         if label != prev.get_name():
                             full_name += label + " "
 
-                #if prev == None and len(full_name) == 0:
-                #    full_name = label + " "
-
                 name = Name(label, count, type, counter, name, linkage, string_start)
 
-                print("Adding name:", name, full_name)
+                print("Adding name:", name, full_name, " to ", counter)
 
                 if counter not in helper_arr.keys():
                     helper_arr[counter] = list()
@@ -391,6 +389,7 @@ class NameRidler:
         if len(overlap) > 0:
             print("Overlapping names:", overlap)
             for o in overlap:
+                print("Before, check last", last, helper, names)
                 first_names, family_names = self.reduce_overlapping(o, first_names, family_names, last)
 
         print("Return names:", first_names + family_names)
@@ -427,7 +426,8 @@ class NameRidler:
                         fnames.remove(fname)
                 else:
                     prob_A = fname.get_count()
-                    print("Probability that it is a last name:", fname.get_count())
+                    prob_B = lname.get_count()
+                    print("Probability that it is a first name:", fname.get_count())
                     print("Label:", label)
                     print("Locations:", fname.get_location(), lname.get_location())
                     print("Is family name? ", self.is_family_name(lname, last))
@@ -449,15 +449,22 @@ class NameRidler:
         return None
 
     def is_family_name(self, name, last):
-        print("Location of last:", last)
+        print("Location of last:", last, name.get_location(), name.get_type())
         if name.get_type() == "Sukunimen käyttö" and name.get_location() == last:
             return True
         return False
 
     def is_first_name(self, name, last):
-        print("Location of last:", last, name.get_location())
+        print("Location of first:", last, name.get_location(), name.get_type())
         if name.get_type() == "Etunimen käyttö" and ((last == 1 or name.get_location() < last) and name.get_location() < 5):
             return True
+        else:
+            if name.get_type() != "Etunimen käyttö":
+                print("Type FAIL")
+            if (last != 1 or name.get_location() > last):
+                print("location and last FAIL")
+            if name.get_location() >= 5:
+                print("Too long, FAIL")
         return False
 
     def guess_gender(self, name):

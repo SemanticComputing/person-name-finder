@@ -4932,3 +4932,137 @@
 2019-06-13 17:00:31,769 NamedEntity INFO locale=fi&text=Rehnist%C3%A4+tuli+aluksi++Paavo+V%C3%A4yrysen+suojatti
 2019-06-13 17:00:31,849 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '112', 'Content-Type': 'application/x-www-form-urlencoded'}
 2019-06-13 17:00:31,849 NamedEntity INFO locale=fi&text=mutta+h%C3%A4n+irtaantui+pian+keskustaliberaalina+V%C3%A4yrysen+vanhoillisemmasta+aatemaailmasta.
+2019-06-14 11:48:12,337 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '73'}
+2019-06-14 11:48:12,338 NamedEntity INFO locale=fi&text=Rehn+oli+tuolloin+aktiivinen+nuori+keskustaliikkeess%C3%A4
+2019-06-14 11:48:12,394 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '39'}
+2019-06-14 11:48:12,394 NamedEntity INFO locale=fi&text=kuului+ryhm%C3%A4%C3%A4n
+2019-06-14 11:48:12,421 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '61'}
+2019-06-14 11:48:12,421 NamedEntity INFO locale=fi&text=jossa+vaikuttivat+esimerkiksi+Maria+Kaisa+Aula
+2019-06-14 11:48:12,463 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '28'}
+2019-06-14 11:48:12,463 NamedEntity INFO locale=fi&text=1962%E2%80%93
+2019-06-14 11:48:12,494 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '35'}
+2019-06-14 11:48:12,494 NamedEntity INFO locale=fi&text=Anu+Vehvil%C3%A4inen
+2019-06-14 11:48:12,522 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '28'}
+2019-06-14 11:48:12,522 NamedEntity INFO locale=fi&text=1963%E2%80%93
+2019-06-14 11:48:12,589 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '16'}
+2019-06-14 11:48:12,589 NamedEntity INFO locale=fi&text=.
+2019-06-14 11:48:12,633 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '70'}
+2019-06-14 11:48:12,634 NamedEntity INFO locale=fi&text=Rehnist%C3%A4+tuli+aluksi++Paavo+V%C3%A4yrysen+suojatti
+2019-06-14 11:48:12,713 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '112'}
+2019-06-14 11:48:12,713 NamedEntity INFO locale=fi&text=mutta+h%C3%A4n+irtaantui+pian+keskustaliberaalina+V%C3%A4yrysen+vanhoillisemmasta+aatemaailmasta.
+2019-06-14 11:54:32,683 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '73'}
+2019-06-14 11:54:32,683 NamedEntity INFO text=Rehn+oli+tuolloin+aktiivinen+nuori+keskustaliikkeess%C3%A4&locale=fi
+2019-06-14 11:54:32,875 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '39'}
+2019-06-14 11:54:32,875 NamedEntity INFO text=kuului+ryhm%C3%A4%C3%A4n&locale=fi
+2019-06-14 11:54:32,940 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '61'}
+2019-06-14 11:54:32,941 NamedEntity INFO text=jossa+vaikuttivat+esimerkiksi+Maria+Kaisa+Aula&locale=fi
+2019-06-14 11:54:33,033 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '28'}
+2019-06-14 11:54:33,033 NamedEntity INFO text=1962%E2%80%93&locale=fi
+2019-06-14 11:54:33,063 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '35'}
+2019-06-14 11:54:33,063 NamedEntity INFO text=Anu+Vehvil%C3%A4inen&locale=fi
+2019-06-14 11:54:33,145 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '28'}
+2019-06-14 11:54:33,145 NamedEntity INFO text=1963%E2%80%93&locale=fi
+2019-06-14 11:54:33,183 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '16'}
+2019-06-14 11:54:33,183 NamedEntity INFO text=.&locale=fi
+2019-06-14 11:54:33,239 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '70'}
+2019-06-14 11:54:33,239 NamedEntity INFO text=Rehnist%C3%A4+tuli+aluksi++Paavo+V%C3%A4yrysen+suojatti&locale=fi
+2019-06-14 11:54:33,281 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '112'}
+2019-06-14 11:54:33,281 NamedEntity INFO text=mutta+h%C3%A4n+irtaantui+pian+keskustaliberaalina+V%C3%A4yrysen+vanhoillisemmasta+aatemaailmasta.&locale=fi
+2019-06-14 11:55:17,970 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '87'}
+2019-06-14 11:55:17,971 NamedEntity INFO text=Johan+Julius+Christian+Sibelius+avioitu+Mia+Magdalena+Tamperin+kanssa+v.&locale=fi
+2019-06-14 11:55:18,083 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '20'}
+2019-06-14 11:55:18,084 NamedEntity INFO text=1976.&locale=fi
+2019-06-14 11:55:18,114 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '73'}
+2019-06-14 11:55:18,114 NamedEntity INFO text=Rehn+oli+tuolloin+aktiivinen+nuori+keskustaliikkeess%C3%A4&locale=fi
+2019-06-14 11:55:18,219 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '39'}
+2019-06-14 11:55:18,219 NamedEntity INFO text=kuului+ryhm%C3%A4%C3%A4n&locale=fi
+2019-06-14 11:55:18,295 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '126'}
+2019-06-14 11:55:18,295 NamedEntity INFO text=jossa+vaikuttivat+esimerkiksi+Maria+Kaisa+Aula+%281962%E2%80%93%29+ja+Anu+Vehvil%C3%A4inen+%281963%E2%80%93%29.&locale=fi
+2019-06-14 11:55:18,388 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '70'}
+2019-06-14 11:55:18,388 NamedEntity INFO text=Rehnist%C3%A4+tuli+aluksi++Paavo+V%C3%A4yrysen+suojatti&locale=fi
+2019-06-14 11:55:18,485 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '112'}
+2019-06-14 11:55:18,486 NamedEntity INFO text=mutta+h%C3%A4n+irtaantui+pian+keskustaliberaalina+V%C3%A4yrysen+vanhoillisemmasta+aatemaailmasta.&locale=fi
+2019-06-14 12:02:52,334 NamedEntity INFO {'Content-Length': '87', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:02:52,335 NamedEntity INFO text=Johan+Julius+Christian+Sibelius+avioitu+Mia+Magdalena+Tamperin+kanssa+v.&locale=fi
+2019-06-14 12:02:52,509 NamedEntity INFO {'Content-Length': '20', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:02:52,509 NamedEntity INFO text=1976.&locale=fi
+2019-06-14 12:02:52,541 NamedEntity INFO {'Content-Length': '73', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:02:52,541 NamedEntity INFO text=Rehn+oli+tuolloin+aktiivinen+nuori+keskustaliikkeess%C3%A4&locale=fi
+2019-06-14 12:02:52,629 NamedEntity INFO {'Content-Length': '39', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:02:52,629 NamedEntity INFO text=kuului+ryhm%C3%A4%C3%A4n&locale=fi
+2019-06-14 12:02:52,697 NamedEntity INFO {'Content-Length': '126', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:02:52,697 NamedEntity INFO text=jossa+vaikuttivat+esimerkiksi+Maria+Kaisa+Aula+%281962%E2%80%93%29+ja+Anu+Vehvil%C3%A4inen+%281963%E2%80%93%29.&locale=fi
+2019-06-14 12:02:52,785 NamedEntity INFO {'Content-Length': '70', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:02:52,785 NamedEntity INFO text=Rehnist%C3%A4+tuli+aluksi++Paavo+V%C3%A4yrysen+suojatti&locale=fi
+2019-06-14 12:02:52,848 NamedEntity INFO {'Content-Length': '112', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:02:52,848 NamedEntity INFO text=mutta+h%C3%A4n+irtaantui+pian+keskustaliberaalina+V%C3%A4yrysen+vanhoillisemmasta+aatemaailmasta.&locale=fi
+2019-06-14 12:05:09,821 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '87', 'X-Custom': 'Test'}
+2019-06-14 12:05:09,821 NamedEntity INFO locale=fi&text=Johan+Julius+Christian+Sibelius+avioitu+Mia+Magdalena+Tamperin+kanssa+v.
+2019-06-14 12:05:09,989 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '20', 'X-Custom': 'Test'}
+2019-06-14 12:05:09,989 NamedEntity INFO locale=fi&text=1976.
+2019-06-14 12:05:10,019 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '73', 'X-Custom': 'Test'}
+2019-06-14 12:05:10,019 NamedEntity INFO locale=fi&text=Rehn+oli+tuolloin+aktiivinen+nuori+keskustaliikkeess%C3%A4
+2019-06-14 12:05:10,113 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '39', 'X-Custom': 'Test'}
+2019-06-14 12:05:10,113 NamedEntity INFO locale=fi&text=kuului+ryhm%C3%A4%C3%A4n
+2019-06-14 12:05:10,189 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '126', 'X-Custom': 'Test'}
+2019-06-14 12:05:10,189 NamedEntity INFO locale=fi&text=jossa+vaikuttivat+esimerkiksi+Maria+Kaisa+Aula+%281962%E2%80%93%29+ja+Anu+Vehvil%C3%A4inen+%281963%E2%80%93%29.
+2019-06-14 12:05:10,281 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '70', 'X-Custom': 'Test'}
+2019-06-14 12:05:10,281 NamedEntity INFO locale=fi&text=Rehnist%C3%A4+tuli+aluksi++Paavo+V%C3%A4yrysen+suojatti
+2019-06-14 12:05:10,372 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '112', 'X-Custom': 'Test'}
+2019-06-14 12:05:10,372 NamedEntity INFO locale=fi&text=mutta+h%C3%A4n+irtaantui+pian+keskustaliberaalina+V%C3%A4yrysen+vanhoillisemmasta+aatemaailmasta.
+2019-06-14 12:09:32,929 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '87', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:09:32,929 NamedEntity INFO locale=fi&text=Johan+Julius+Christian+Sibelius+avioitu+Mia+Magdalena+Tamperin+kanssa+v.
+2019-06-14 12:09:33,073 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '20', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:09:33,073 NamedEntity INFO locale=fi&text=1976.
+2019-06-14 12:09:33,165 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '73', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:09:33,165 NamedEntity INFO locale=fi&text=Rehn+oli+tuolloin+aktiivinen+nuori+keskustaliikkeess%C3%A4
+2019-06-14 12:09:33,265 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '39', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:09:33,265 NamedEntity INFO locale=fi&text=kuului+ryhm%C3%A4%C3%A4n
+2019-06-14 12:09:33,350 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '126', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:09:33,351 NamedEntity INFO locale=fi&text=jossa+vaikuttivat+esimerkiksi+Maria+Kaisa+Aula+%281962%E2%80%93%29+ja+Anu+Vehvil%C3%A4inen+%281963%E2%80%93%29.
+2019-06-14 12:09:33,543 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '70', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:09:33,543 NamedEntity INFO locale=fi&text=Rehnist%C3%A4+tuli+aluksi++Paavo+V%C3%A4yrysen+suojatti
+2019-06-14 12:09:33,619 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '112', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:09:33,619 NamedEntity INFO locale=fi&text=mutta+h%C3%A4n+irtaantui+pian+keskustaliberaalina+V%C3%A4yrysen+vanhoillisemmasta+aatemaailmasta.
+2019-06-14 12:12:41,579 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '87', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:12:41,579 NamedEntity INFO text=Johan+Julius+Christian+Sibelius+avioitu+Mia+Magdalena+Tamperin+kanssa+v.&locale=fi
+2019-06-14 12:12:41,689 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '20', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:12:41,689 NamedEntity INFO text=1976.&locale=fi
+2019-06-14 12:12:41,751 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '73', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:12:41,751 NamedEntity INFO text=Rehn+oli+tuolloin+aktiivinen+nuori+keskustaliikkeess%C3%A4&locale=fi
+2019-06-14 12:12:41,838 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '39', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:12:41,839 NamedEntity INFO text=kuului+ryhm%C3%A4%C3%A4n&locale=fi
+2019-06-14 12:12:41,919 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '126', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:12:41,919 NamedEntity INFO text=jossa+vaikuttivat+esimerkiksi+Maria+Kaisa+Aula+%281962%E2%80%93%29+ja+Anu+Vehvil%C3%A4inen+%281963%E2%80%93%29.&locale=fi
+2019-06-14 12:12:42,033 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '70', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:12:42,033 NamedEntity INFO text=Rehnist%C3%A4+tuli+aluksi++Paavo+V%C3%A4yrysen+suojatti&locale=fi
+2019-06-14 12:12:42,140 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '112', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-06-14 12:12:42,140 NamedEntity INFO text=mutta+h%C3%A4n+irtaantui+pian+keskustaliberaalina+V%C3%A4yrysen+vanhoillisemmasta+aatemaailmasta.&locale=fi
+2019-06-14 12:17:32,080 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '87', 'X-Custom': 'Test'}
+2019-06-14 12:17:32,080 NamedEntity INFO text=Johan+Julius+Christian+Sibelius+avioitu+Mia+Magdalena+Tamperin+kanssa+v.&locale=fi
+2019-06-14 12:17:32,212 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '20', 'X-Custom': 'Test'}
+2019-06-14 12:17:32,212 NamedEntity INFO text=1976.&locale=fi
+2019-06-14 12:17:32,271 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '73', 'X-Custom': 'Test'}
+2019-06-14 12:17:32,271 NamedEntity INFO text=Rehn+oli+tuolloin+aktiivinen+nuori+keskustaliikkeess%C3%A4&locale=fi
+2019-06-14 12:17:32,389 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '39', 'X-Custom': 'Test'}
+2019-06-14 12:17:32,390 NamedEntity INFO text=kuului+ryhm%C3%A4%C3%A4n&locale=fi
+2019-06-14 12:17:32,422 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '126', 'X-Custom': 'Test'}
+2019-06-14 12:17:32,423 NamedEntity INFO text=jossa+vaikuttivat+esimerkiksi+Maria+Kaisa+Aula+%281962%E2%80%93%29+ja+Anu+Vehvil%C3%A4inen+%281963%E2%80%93%29.&locale=fi
+2019-06-14 12:17:32,596 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '70', 'X-Custom': 'Test'}
+2019-06-14 12:17:32,596 NamedEntity INFO text=Rehnist%C3%A4+tuli+aluksi++Paavo+V%C3%A4yrysen+suojatti&locale=fi
+2019-06-14 12:17:32,692 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '112', 'X-Custom': 'Test'}
+2019-06-14 12:17:32,692 NamedEntity INFO text=mutta+h%C3%A4n+irtaantui+pian+keskustaliberaalina+V%C3%A4yrysen+vanhoillisemmasta+aatemaailmasta.&locale=fi
+2019-06-14 12:25:10,353 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '87', 'X-Custom': 'Test'}
+2019-06-14 12:25:10,353 NamedEntity INFO locale=fi&text=Johan+Julius+Christian+Sibelius+avioitu+Mia+Magdalena+Tamperin+kanssa+v.
+2019-06-14 12:25:10,415 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '20', 'X-Custom': 'Test'}
+2019-06-14 12:25:10,416 NamedEntity INFO locale=fi&text=1976.
+2019-06-14 12:25:10,446 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '73', 'X-Custom': 'Test'}
+2019-06-14 12:25:10,446 NamedEntity INFO locale=fi&text=Rehn+oli+tuolloin+aktiivinen+nuori+keskustaliikkeess%C3%A4
+2019-06-14 12:25:10,493 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '39', 'X-Custom': 'Test'}
+2019-06-14 12:25:10,494 NamedEntity INFO locale=fi&text=kuului+ryhm%C3%A4%C3%A4n
+2019-06-14 12:25:10,523 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '126', 'X-Custom': 'Test'}
+2019-06-14 12:25:10,524 NamedEntity INFO locale=fi&text=jossa+vaikuttivat+esimerkiksi+Maria+Kaisa+Aula+%281962%E2%80%93%29+ja+Anu+Vehvil%C3%A4inen+%281963%E2%80%93%29.
+2019-06-14 12:25:10,583 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '70', 'X-Custom': 'Test'}
+2019-06-14 12:25:10,584 NamedEntity INFO locale=fi&text=Rehnist%C3%A4+tuli+aluksi++Paavo+V%C3%A4yrysen+suojatti
+2019-06-14 12:25:10,622 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '112', 'X-Custom': 'Test'}
+2019-06-14 12:25:10,623 NamedEntity INFO locale=fi&text=mutta+h%C3%A4n+irtaantui+pian+keskustaliberaalina+V%C3%A4yrysen+vanhoillisemmasta+aatemaailmasta.
