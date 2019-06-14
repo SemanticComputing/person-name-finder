@@ -279,7 +279,7 @@ class NameRidler:
 
 
                 if prev != None:
-                    print("Indeces:", prev.get_string_start(), string_start)
+                    #print("Indeces:", prev.get_string_start(), string_start)
                     if (prev.get_type() == "Sukunimen käyttö" and type == "Etunimen käyttö") and (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1) and (prev.get_string_end()<string_start-1):
                         counter = 1
 
@@ -449,13 +449,13 @@ class NameRidler:
         return None
 
     def is_family_name(self, name, last):
-        print("Location of last:", last, name.get_location(), name.get_type())
+        #print("Location of last:", last, name.get_location(), name.get_type())
         if name.get_type() == "Sukunimen käyttö" and name.get_location() == last:
             return True
         return False
 
     def is_first_name(self, name, last):
-        print("Location of first:", last, name.get_location(), name.get_type())
+        #print("Location of first:", last, name.get_location(), name.get_type())
         if name.get_type() == "Etunimen käyttö" and ((last == 1 or name.get_location() < last) and name.get_location() < 5):
             return True
         else:

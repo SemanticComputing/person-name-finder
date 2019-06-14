@@ -5066,3 +5066,17 @@
 2019-06-14 12:25:10,584 NamedEntity INFO locale=fi&text=Rehnist%C3%A4+tuli+aluksi++Paavo+V%C3%A4yrysen+suojatti
 2019-06-14 12:25:10,622 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '112', 'X-Custom': 'Test'}
 2019-06-14 12:25:10,623 NamedEntity INFO locale=fi&text=mutta+h%C3%A4n+irtaantui+pian+keskustaliberaalina+V%C3%A4yrysen+vanhoillisemmasta+aatemaailmasta.
+2019-06-14 12:25:54,213 NamedEntity INFO {'Content-Length': '83', 'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test'}
+2019-06-14 12:25:54,213 NamedEntity INFO text=Johan+Julius+Christian+Sibelius+avioitu+Mia+Maria+Tamperin+kanssa+v.&locale=fi
+2019-06-14 12:25:54,306 NamedEntity INFO {'Content-Length': '20', 'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test'}
+2019-06-14 12:25:54,307 NamedEntity INFO text=1976.&locale=fi
+2019-06-14 12:25:54,367 NamedEntity INFO {'Content-Length': '73', 'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test'}
+2019-06-14 12:25:54,367 NamedEntity INFO text=Rehn+oli+tuolloin+aktiivinen+nuori+keskustaliikkeess%C3%A4&locale=fi
+2019-06-14 12:25:54,515 NamedEntity INFO {'Content-Length': '39', 'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test'}
+2019-06-14 12:25:54,515 NamedEntity INFO text=kuului+ryhm%C3%A4%C3%A4n&locale=fi
+2019-06-14 12:25:54,571 NamedEntity INFO {'Content-Length': '126', 'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test'}
+2019-06-14 12:25:54,571 NamedEntity INFO text=jossa+vaikuttivat+esimerkiksi+Maria+Kaisa+Aula+%281962%E2%80%93%29+ja+Anu+Vehvil%C3%A4inen+%281963%E2%80%93%29.&locale=fi
+2019-06-14 12:25:54,706 NamedEntity INFO {'Content-Length': '70', 'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test'}
+2019-06-14 12:25:54,706 NamedEntity INFO text=Rehnist%C3%A4+tuli+aluksi++Paavo+V%C3%A4yrysen+suojatti&locale=fi
+2019-06-14 12:25:54,795 NamedEntity INFO {'Content-Length': '112', 'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test'}
+2019-06-14 12:25:54,795 NamedEntity INFO text=mutta+h%C3%A4n+irtaantui+pian+keskustaliberaalina+V%C3%A4yrysen+vanhoillisemmasta+aatemaailmasta.&locale=fi
