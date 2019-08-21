@@ -16,7 +16,7 @@ RUN pip3 install gunicorn
 WORKDIR /app
 
 COPY src ./src
-COPY data ./data
+COPY language-resources ./language-resources
 COPY run.py ./
 
 RUN mkdir logs
