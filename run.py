@@ -121,7 +121,7 @@ def get_header_data(field):
 
 def setup_tokenizer():
     tokenizer = nltk.data.load('tokenizers/punkt/finnish.pickle')
-    with open('language_resources/abbreviations.csv') as csv_file:
+    with open('language-resources/abbreviations.csv') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=';')
         for row in csv_reader:
             print("Add abbreviation", row[0])
