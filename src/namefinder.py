@@ -610,11 +610,11 @@ class NameRidler:
 
             return "Unknown 2", resp
 
-        print(data)
+        print("DATA:",data)
         results = dict()
 
         if data != None:
-            for item in data:
+            for key,item in data.items():
                 print('Item:',item)
                 for i in item['entities']:
                     if 'category' in i and 'entity' in i:
