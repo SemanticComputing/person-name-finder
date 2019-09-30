@@ -42,18 +42,20 @@ class SparqlQuries:
             query = """ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
                         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
                         PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-                        SELECT DISTINCT ?name ?label ?nameLabel ?nameType ?count  WHERE {
+                        SELECT DISTINCT ?name ?label ?nameLabel ?nameType (sum(?lkm)as ?count)   WHERE {
                           VALUES ?names { $names }
                           BIND(STRLANG(?names,'fi') AS ?label)
                           ?name skos:prefLabel ?label .
-                          ?name <http://ldf.fi/schema/henkilonimisto/usedAs> ?nameType .
+                          ?nameUsage <http://ldf.fi/schema/henkilonimisto/hasName> ?name .
+                          ?nameUsage <http://ldf.fi/schema/henkilonimisto/count> ?lkm .
+                          ?nameType <http://ldf.fi/schema/henkilonimisto/isUsed> ?nameUsage .
+                          OPTIONAL { ?nameType <http://ldf.fi/schema/henkilonimisto/gender> ?gender . }
                           ?nameType a ?type .
-                          ?type skos:prefLabel ?typeLabel .
-                          ?nameType <http://ldf.fi/schema/henkilonimisto/count> ?count .                      
+                          ?type skos:prefLabel ?typeLabel .                      
                           FILTER (lang(?typeLabel) = 'fi')
                           BIND(STR(?typeLabel) AS ?nameLabel) .
                           #FILTER(STRSTARTS(STR(?type), 'http://ldf.fi/schema/henkilonimisto/'))
-                        } """
+                        } GROUP BY ?name ?label ?nameLabel ?nameType ?gender """
 
             query = query.replace('$names', " ".join(['"{0}"'.format(x) for x in name]))
 
