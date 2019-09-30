@@ -5334,3 +5334,171 @@
 2019-09-30 12:52:06,721 NamedEntity INFO text=Minna+on+kotona.&locale=fi
 2019-09-30 12:54:11,033 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '31'}
 2019-09-30 12:54:11,033 NamedEntity INFO text=Minna+on+kotona.&locale=fi
+2019-09-30 15:38:00,220 NamedEntity INFO {'Content-Length': '84', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:00,220 NamedEntity INFO locale=fi&text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985
+2019-09-30 15:38:00,340 NamedEntity INFO {'Content-Length': '100', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:00,341 NamedEntity INFO locale=fi&text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut
+2019-09-30 15:38:00,445 NamedEntity INFO {'Content-Length': '322', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:00,445 NamedEntity INFO locale=fi&text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.
+2019-09-30 15:38:00,871 NamedEntity INFO {'Content-Length': '86', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:00,872 NamedEntity INFO locale=fi&text=Luovutushinnaksi+oli+30.000+markan+rahasuorituksen+lis%C3%A4ksi+sovittu
+2019-09-30 15:38:00,972 NamedEntity INFO {'Content-Length': '378', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:00,972 NamedEntity INFO locale=fi&text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+sitoutui+niin+kauan+kuin+Lankosken+koskessa+yhti%C3%B6n+toimesta+ja+sen+laittein+kehitettiin+s%C3%A4hk%C3%B6virtaa+kosken+vesivoimalla%2C+enint%C3%A4%C3%A4n+kuitenkin+99+vuoden+ajan+kaupantekop%C3%A4iv%C3%A4st%C3%A4+lukien%2C+maksutta+antamaan+Heikintalon+tilaa+varten+s%C3%A4hk%C3%B6virtaa+vuosittain+5.000+kilowattituntia.
+2019-09-30 15:38:01,339 NamedEntity INFO {'Content-Length': '123', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:01,339 NamedEntity INFO locale=fi&text=Mik%C3%A4li+s%C3%A4hk%C3%B6virran+k%C3%A4ytt%C3%B6+ylitti+5.000+kilowattitunnin+vuotuism%C3%A4%C3%A4r%C3%A4n
+2019-09-30 15:38:01,497 NamedEntity INFO {'Content-Length': '152', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:01,497 NamedEntity INFO locale=fi&text=perittiin+yli+menev%C3%A4lt%C3%A4+osalta+maksu+samojen+perusteiden+mukaan+kuin+tilap%C3%A4isilt%C3%A4+s%C3%A4hk%C3%B6virran+kuluttajilta.
+2019-09-30 15:38:01,614 NamedEntity INFO {'Content-Length': '108', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:01,614 NamedEntity INFO locale=fi&text=Aarno+Antero+Tarkkio+oli+7.12.1982+allekirjoitetulla+kauppakirjalla+ostanut+Heikintalon+tilan
+2019-09-30 15:38:01,779 NamedEntity INFO {'Content-Length': '59', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:01,780 NamedEntity INFO locale=fi&text=silloiselta+rekisterinumeroltaan+1%3A41+niin
+2019-09-30 15:38:01,889 NamedEntity INFO {'Content-Length': '76', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:01,890 NamedEntity INFO locale=fi&text=ett%C3%A4+omistusoikeus+oli+siirtynyt+h%C3%A4nelle+31.1.1983.
+2019-09-30 15:38:01,982 NamedEntity INFO {'Content-Length': '89', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:01,982 NamedEntity INFO locale=fi&text=Tilan+s%C3%A4hk%C3%B6nkulutus+oli+ollut+vuonna+1983+19.905+kilowattituntia
+2019-09-30 15:38:02,082 NamedEntity INFO {'Content-Length': '50', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:02,082 NamedEntity INFO locale=fi&text=vuonna+1984+24.523+kilowattituntia.
+2019-09-30 15:38:02,126 NamedEntity INFO {'Content-Length': '181', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:02,126 NamedEntity INFO locale=fi&text=Aarno+Antero+Tarkkio+oli+maksanut+5.000+kilowattituntia+ylitt%C3%A4v%C3%A4lt%C3%A4+osalta+tilap%C3%A4iskuluttajan+tariffin+mukaan+52%2C5+penni%C3%A4+kilowattitunnilta
+2019-09-30 15:38:02,263 NamedEntity INFO {'Content-Length': '119', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:02,263 NamedEntity INFO locale=fi&text=kun+taas+normaalikuluttajan+yleistariffin+mukainen+hinta+kilowattitunnilta+oli+ollut+29%2C5+penni%C3%A4.
+2019-09-30 15:38:02,356 NamedEntity INFO {'Content-Length': '46', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:02,356 NamedEntity INFO locale=fi&text=H%C3%A4n+oli+siten+vuosina+1983
+2019-09-30 15:38:02,434 NamedEntity INFO {'Content-Length': '151', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:02,435 NamedEntity INFO locale=fi&text=1984+joutunut+maksamaan+s%C3%A4hk%C3%B6st%C3%A4+yhteens%C3%A4+3.708%2C43+markkaa+enemm%C3%A4n+kuin+tavallinen+s%C3%A4hk%C3%B6nkuluttaja.
+2019-09-30 15:38:02,582 NamedEntity INFO {'Content-Length': '133', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:02,582 NamedEntity INFO locale=fi&text=Viel%C3%A4+yhti%C3%B6+oli+mainituilta+vuosilta+perinyt+Aarno+Antero+Tarkkiolta+perusmaksua+yhteens%C3%A4+1.060+markkaa
+2019-09-30 15:38:02,732 NamedEntity INFO {'Content-Length': '130', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:02,732 NamedEntity INFO locale=fi&text=vaikka+h%C3%A4nt%C3%A4+vuoden+1963+kauppakirjan+ehtojen+mukaan+ei+voitu+katsoa+velvolliseksi+perusmaksua+maksamaan.
+2019-09-30 15:38:02,902 NamedEntity INFO {'Content-Length': '25', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:02,902 NamedEntity INFO locale=fi&text=Sen+vuoksi
+2019-09-30 15:38:02,988 NamedEntity INFO {'Content-Length': '36', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:02,988 NamedEntity INFO locale=fi&text=kun+kauppakirjan+ehto
+2019-09-30 15:38:03,062 NamedEntity INFO {'Content-Length': '197', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:03,062 NamedEntity INFO locale=fi&text=jonka+mukaan+maksu+5.000+kilowattitunnin+vuotuisen+kulutusm%C3%A4%C3%A4r%C3%A4n+ylitt%C3%A4v%C3%A4lt%C3%A4+osalta+perittiin+tilap%C3%A4iskuluttajiin+sovellettavien+perusteiden+mukaan
+2019-09-30 15:38:03,191 NamedEntity INFO {'Content-Length': '34', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:03,191 NamedEntity INFO locale=fi&text=oli+johtanut+siihen
+2019-09-30 15:38:03,255 NamedEntity INFO {'Content-Length': '119', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:03,256 NamedEntity INFO locale=fi&text=ett%C3%A4+Aarno+Antero+Tarkkio+oli+joutunut+huonompaan+asemaan+kuin+tavallinen+s%C3%A4hk%C3%B6nkuluttaja
+2019-09-30 15:38:03,378 NamedEntity INFO {'Content-Length': '124', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:03,378 NamedEntity INFO locale=fi&text=Aarno+Antero+Tarkkio+on+varallisuusoikeudellisista+oikeustoimista+annetun+lain+36+%C2%A7%3An+nojalla+vaatinut
+2019-09-30 15:38:03,488 NamedEntity INFO {'Content-Length': '76', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:03,488 NamedEntity INFO locale=fi&text=ett%C3%A4+ehto+kohtuuttomana+j%C3%A4tett%C3%A4isiin+huomiotta
+2019-09-30 15:38:03,600 NamedEntity INFO {'Content-Length': '54', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:03,601 NamedEntity INFO locale=fi&text=ett%C3%A4+sit%C3%A4+soviteltaisiin+niin
+2019-09-30 15:38:03,706 NamedEntity INFO {'Content-Length': '186', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:03,707 NamedEntity INFO locale=fi&text=ett%C3%A4+h%C3%A4nelt%C3%A4+peritt%C3%A4isiin+sanotun+k%C3%A4ytt%C3%B6m%C3%A4%C3%A4r%C3%A4n+ylitt%C3%A4v%C3%A4lt%C3%A4+osalta+maksu+yleistariffin+mukaan+ilman+perusmaksua.
+2019-09-30 15:38:03,833 NamedEntity INFO {'Content-Length': '361', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:38:03,834 NamedEntity INFO locale=fi&text=Lis%C3%A4ksi+Aarno+Antero+Tarkkio+on+vaatinut+yhti%C3%B6n+velvoittamista+suorittamaan+h%C3%A4nelle+takaisin+31.1.1983+j%C3%A4lkeiselt%C3%A4+ajalta+liikaa+perittyj%C3%A4+s%C3%A4hk%C3%B6maksuja+4.768%2C43+markkaa+16+prosentin+korkoineen+haasteen+tiedoksiantop%C3%A4iv%C3%A4st%C3%A4+lukien+sek%C3%A4+korvaamaan+h%C3%A4nen+oikeudenk%C3%A4yntikulunsa.
+2019-09-30 15:39:35,110 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:35,110 NamedEntity INFO text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985&locale=fi
+2019-09-30 15:39:35,166 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '100', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:35,166 NamedEntity INFO text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut&locale=fi
+2019-09-30 15:39:35,309 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '322', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:35,310 NamedEntity INFO text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.&locale=fi
+2019-09-30 15:39:35,708 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '86', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:35,708 NamedEntity INFO text=Luovutushinnaksi+oli+30.000+markan+rahasuorituksen+lis%C3%A4ksi+sovittu&locale=fi
+2019-09-30 15:39:35,799 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '378', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:35,799 NamedEntity INFO text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+sitoutui+niin+kauan+kuin+Lankosken+koskessa+yhti%C3%B6n+toimesta+ja+sen+laittein+kehitettiin+s%C3%A4hk%C3%B6virtaa+kosken+vesivoimalla%2C+enint%C3%A4%C3%A4n+kuitenkin+99+vuoden+ajan+kaupantekop%C3%A4iv%C3%A4st%C3%A4+lukien%2C+maksutta+antamaan+Heikintalon+tilaa+varten+s%C3%A4hk%C3%B6virtaa+vuosittain+5.000+kilowattituntia.&locale=fi
+2019-09-30 15:39:36,193 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '123', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:36,193 NamedEntity INFO text=Mik%C3%A4li+s%C3%A4hk%C3%B6virran+k%C3%A4ytt%C3%B6+ylitti+5.000+kilowattitunnin+vuotuism%C3%A4%C3%A4r%C3%A4n&locale=fi
+2019-09-30 15:39:36,328 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '152', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:36,328 NamedEntity INFO text=perittiin+yli+menev%C3%A4lt%C3%A4+osalta+maksu+samojen+perusteiden+mukaan+kuin+tilap%C3%A4isilt%C3%A4+s%C3%A4hk%C3%B6virran+kuluttajilta.&locale=fi
+2019-09-30 15:39:36,477 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '108', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:36,478 NamedEntity INFO text=Aarno+Antero+Tarkkio+oli+7.12.1982+allekirjoitetulla+kauppakirjalla+ostanut+Heikintalon+tilan&locale=fi
+2019-09-30 15:39:36,567 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '59', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:36,568 NamedEntity INFO text=silloiselta+rekisterinumeroltaan+1%3A41+niin&locale=fi
+2019-09-30 15:39:36,668 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '76', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:36,669 NamedEntity INFO text=ett%C3%A4+omistusoikeus+oli+siirtynyt+h%C3%A4nelle+31.1.1983.&locale=fi
+2019-09-30 15:39:36,754 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '89', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:36,754 NamedEntity INFO text=Tilan+s%C3%A4hk%C3%B6nkulutus+oli+ollut+vuonna+1983+19.905+kilowattituntia&locale=fi
+2019-09-30 15:39:36,811 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '50', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:36,811 NamedEntity INFO text=vuonna+1984+24.523+kilowattituntia.&locale=fi
+2019-09-30 15:39:36,895 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '181', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:36,895 NamedEntity INFO text=Aarno+Antero+Tarkkio+oli+maksanut+5.000+kilowattituntia+ylitt%C3%A4v%C3%A4lt%C3%A4+osalta+tilap%C3%A4iskuluttajan+tariffin+mukaan+52%2C5+penni%C3%A4+kilowattitunnilta&locale=fi
+2019-09-30 15:39:37,050 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '119', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:37,051 NamedEntity INFO text=kun+taas+normaalikuluttajan+yleistariffin+mukainen+hinta+kilowattitunnilta+oli+ollut+29%2C5+penni%C3%A4.&locale=fi
+2019-09-30 15:39:37,221 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '46', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:37,222 NamedEntity INFO text=H%C3%A4n+oli+siten+vuosina+1983&locale=fi
+2019-09-30 15:39:37,306 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '151', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:37,307 NamedEntity INFO text=1984+joutunut+maksamaan+s%C3%A4hk%C3%B6st%C3%A4+yhteens%C3%A4+3.708%2C43+markkaa+enemm%C3%A4n+kuin+tavallinen+s%C3%A4hk%C3%B6nkuluttaja.&locale=fi
+2019-09-30 15:39:37,438 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '133', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:37,438 NamedEntity INFO text=Viel%C3%A4+yhti%C3%B6+oli+mainituilta+vuosilta+perinyt+Aarno+Antero+Tarkkiolta+perusmaksua+yhteens%C3%A4+1.060+markkaa&locale=fi
+2019-09-30 15:39:37,532 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '130', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:37,532 NamedEntity INFO text=vaikka+h%C3%A4nt%C3%A4+vuoden+1963+kauppakirjan+ehtojen+mukaan+ei+voitu+katsoa+velvolliseksi+perusmaksua+maksamaan.&locale=fi
+2019-09-30 15:39:37,630 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '25', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:37,630 NamedEntity INFO text=Sen+vuoksi&locale=fi
+2019-09-30 15:39:37,728 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '36', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:37,728 NamedEntity INFO text=kun+kauppakirjan+ehto&locale=fi
+2019-09-30 15:39:37,807 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '197', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:37,808 NamedEntity INFO text=jonka+mukaan+maksu+5.000+kilowattitunnin+vuotuisen+kulutusm%C3%A4%C3%A4r%C3%A4n+ylitt%C3%A4v%C3%A4lt%C3%A4+osalta+perittiin+tilap%C3%A4iskuluttajiin+sovellettavien+perusteiden+mukaan&locale=fi
+2019-09-30 15:39:37,980 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '34', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:37,980 NamedEntity INFO text=oli+johtanut+siihen&locale=fi
+2019-09-30 15:39:38,075 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '119', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:38,075 NamedEntity INFO text=ett%C3%A4+Aarno+Antero+Tarkkio+oli+joutunut+huonompaan+asemaan+kuin+tavallinen+s%C3%A4hk%C3%B6nkuluttaja&locale=fi
+2019-09-30 15:39:38,179 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '124', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:38,179 NamedEntity INFO text=Aarno+Antero+Tarkkio+on+varallisuusoikeudellisista+oikeustoimista+annetun+lain+36+%C2%A7%3An+nojalla+vaatinut&locale=fi
+2019-09-30 15:39:38,273 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '76', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:38,273 NamedEntity INFO text=ett%C3%A4+ehto+kohtuuttomana+j%C3%A4tett%C3%A4isiin+huomiotta&locale=fi
+2019-09-30 15:39:38,378 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:38,379 NamedEntity INFO text=ett%C3%A4+sit%C3%A4+soviteltaisiin+niin&locale=fi
+2019-09-30 15:39:38,452 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '186', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:38,453 NamedEntity INFO text=ett%C3%A4+h%C3%A4nelt%C3%A4+peritt%C3%A4isiin+sanotun+k%C3%A4ytt%C3%B6m%C3%A4%C3%A4r%C3%A4n+ylitt%C3%A4v%C3%A4lt%C3%A4+osalta+maksu+yleistariffin+mukaan+ilman+perusmaksua.&locale=fi
+2019-09-30 15:39:38,620 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '361', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:39:38,620 NamedEntity INFO text=Lis%C3%A4ksi+Aarno+Antero+Tarkkio+on+vaatinut+yhti%C3%B6n+velvoittamista+suorittamaan+h%C3%A4nelle+takaisin+31.1.1983+j%C3%A4lkeiselt%C3%A4+ajalta+liikaa+perittyj%C3%A4+s%C3%A4hk%C3%B6maksuja+4.768%2C43+markkaa+16+prosentin+korkoineen+haasteen+tiedoksiantop%C3%A4iv%C3%A4st%C3%A4+lukien+sek%C3%A4+korvaamaan+h%C3%A4nen+oikeudenk%C3%A4yntikulunsa.&locale=fi
+2019-09-30 15:41:55,394 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:55,394 NamedEntity INFO locale=fi&text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985
+2019-09-30 15:41:55,511 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '100', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:55,512 NamedEntity INFO locale=fi&text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut
+2019-09-30 15:41:55,588 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '322', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:55,588 NamedEntity INFO locale=fi&text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.
+2019-09-30 15:41:55,972 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '86', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:55,972 NamedEntity INFO locale=fi&text=Luovutushinnaksi+oli+30.000+markan+rahasuorituksen+lis%C3%A4ksi+sovittu
+2019-09-30 15:41:56,080 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '378', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:56,081 NamedEntity INFO locale=fi&text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+sitoutui+niin+kauan+kuin+Lankosken+koskessa+yhti%C3%B6n+toimesta+ja+sen+laittein+kehitettiin+s%C3%A4hk%C3%B6virtaa+kosken+vesivoimalla%2C+enint%C3%A4%C3%A4n+kuitenkin+99+vuoden+ajan+kaupantekop%C3%A4iv%C3%A4st%C3%A4+lukien%2C+maksutta+antamaan+Heikintalon+tilaa+varten+s%C3%A4hk%C3%B6virtaa+vuosittain+5.000+kilowattituntia.
+2019-09-30 15:41:56,480 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '123', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:56,481 NamedEntity INFO locale=fi&text=Mik%C3%A4li+s%C3%A4hk%C3%B6virran+k%C3%A4ytt%C3%B6+ylitti+5.000+kilowattitunnin+vuotuism%C3%A4%C3%A4r%C3%A4n
+2019-09-30 15:41:56,557 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '152', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:56,557 NamedEntity INFO locale=fi&text=perittiin+yli+menev%C3%A4lt%C3%A4+osalta+maksu+samojen+perusteiden+mukaan+kuin+tilap%C3%A4isilt%C3%A4+s%C3%A4hk%C3%B6virran+kuluttajilta.
+2019-09-30 15:41:56,703 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '108', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:56,703 NamedEntity INFO locale=fi&text=Aarno+Antero+Tarkkio+oli+7.12.1982+allekirjoitetulla+kauppakirjalla+ostanut+Heikintalon+tilan
+2019-09-30 15:41:56,816 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '59', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:56,816 NamedEntity INFO locale=fi&text=silloiselta+rekisterinumeroltaan+1%3A41+niin
+2019-09-30 15:41:56,919 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '76', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:56,919 NamedEntity INFO locale=fi&text=ett%C3%A4+omistusoikeus+oli+siirtynyt+h%C3%A4nelle+31.1.1983.
+2019-09-30 15:41:57,053 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '89', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:57,054 NamedEntity INFO locale=fi&text=Tilan+s%C3%A4hk%C3%B6nkulutus+oli+ollut+vuonna+1983+19.905+kilowattituntia
+2019-09-30 15:41:57,151 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '50', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:57,152 NamedEntity INFO locale=fi&text=vuonna+1984+24.523+kilowattituntia.
+2019-09-30 15:41:57,242 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '181', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:57,242 NamedEntity INFO locale=fi&text=Aarno+Antero+Tarkkio+oli+maksanut+5.000+kilowattituntia+ylitt%C3%A4v%C3%A4lt%C3%A4+osalta+tilap%C3%A4iskuluttajan+tariffin+mukaan+52%2C5+penni%C3%A4+kilowattitunnilta
+2019-09-30 15:41:57,363 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '119', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:57,364 NamedEntity INFO locale=fi&text=kun+taas+normaalikuluttajan+yleistariffin+mukainen+hinta+kilowattitunnilta+oli+ollut+29%2C5+penni%C3%A4.
+2019-09-30 15:41:57,465 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '46', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:57,466 NamedEntity INFO locale=fi&text=H%C3%A4n+oli+siten+vuosina+1983
+2019-09-30 15:41:57,529 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '151', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:57,529 NamedEntity INFO locale=fi&text=1984+joutunut+maksamaan+s%C3%A4hk%C3%B6st%C3%A4+yhteens%C3%A4+3.708%2C43+markkaa+enemm%C3%A4n+kuin+tavallinen+s%C3%A4hk%C3%B6nkuluttaja.
+2019-09-30 15:41:57,692 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '133', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:57,693 NamedEntity INFO locale=fi&text=Viel%C3%A4+yhti%C3%B6+oli+mainituilta+vuosilta+perinyt+Aarno+Antero+Tarkkiolta+perusmaksua+yhteens%C3%A4+1.060+markkaa
+2019-09-30 15:41:57,821 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '130', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:57,821 NamedEntity INFO locale=fi&text=vaikka+h%C3%A4nt%C3%A4+vuoden+1963+kauppakirjan+ehtojen+mukaan+ei+voitu+katsoa+velvolliseksi+perusmaksua+maksamaan.
+2019-09-30 15:41:57,974 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '25', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:57,975 NamedEntity INFO locale=fi&text=Sen+vuoksi
+2019-09-30 15:41:58,056 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '36', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:58,056 NamedEntity INFO locale=fi&text=kun+kauppakirjan+ehto
+2019-09-30 15:41:58,136 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '197', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:58,136 NamedEntity INFO locale=fi&text=jonka+mukaan+maksu+5.000+kilowattitunnin+vuotuisen+kulutusm%C3%A4%C3%A4r%C3%A4n+ylitt%C3%A4v%C3%A4lt%C3%A4+osalta+perittiin+tilap%C3%A4iskuluttajiin+sovellettavien+perusteiden+mukaan
+2019-09-30 15:41:58,271 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '34', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:58,271 NamedEntity INFO locale=fi&text=oli+johtanut+siihen
+2019-09-30 15:41:58,351 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '119', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:58,351 NamedEntity INFO locale=fi&text=ett%C3%A4+Aarno+Antero+Tarkkio+oli+joutunut+huonompaan+asemaan+kuin+tavallinen+s%C3%A4hk%C3%B6nkuluttaja
+2019-09-30 15:41:58,492 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '124', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:58,493 NamedEntity INFO locale=fi&text=Aarno+Antero+Tarkkio+on+varallisuusoikeudellisista+oikeustoimista+annetun+lain+36+%C2%A7%3An+nojalla+vaatinut
+2019-09-30 15:41:58,644 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '76', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:58,644 NamedEntity INFO locale=fi&text=ett%C3%A4+ehto+kohtuuttomana+j%C3%A4tett%C3%A4isiin+huomiotta
+2019-09-30 15:41:58,732 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '54', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:58,732 NamedEntity INFO locale=fi&text=ett%C3%A4+sit%C3%A4+soviteltaisiin+niin
+2019-09-30 15:41:58,818 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '186', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:58,818 NamedEntity INFO locale=fi&text=ett%C3%A4+h%C3%A4nelt%C3%A4+peritt%C3%A4isiin+sanotun+k%C3%A4ytt%C3%B6m%C3%A4%C3%A4r%C3%A4n+ylitt%C3%A4v%C3%A4lt%C3%A4+osalta+maksu+yleistariffin+mukaan+ilman+perusmaksua.
+2019-09-30 15:41:58,962 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '361', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:41:58,963 NamedEntity INFO locale=fi&text=Lis%C3%A4ksi+Aarno+Antero+Tarkkio+on+vaatinut+yhti%C3%B6n+velvoittamista+suorittamaan+h%C3%A4nelle+takaisin+31.1.1983+j%C3%A4lkeiselt%C3%A4+ajalta+liikaa+perittyj%C3%A4+s%C3%A4hk%C3%B6maksuja+4.768%2C43+markkaa+16+prosentin+korkoineen+haasteen+tiedoksiantop%C3%A4iv%C3%A4st%C3%A4+lukien+sek%C3%A4+korvaamaan+h%C3%A4nen+oikeudenk%C3%A4yntikulunsa.

@@ -266,6 +266,8 @@ class Sentence:
         print("Name listing:", name_list)
 
         ind = self.find_subarray(np.array(lemma_list), np.array(name_list))
+        if ind == -1:
+            return None, None
         end_ind = ind + len(name_list) -1
 
         start = self.words[word_list[ind]]
@@ -290,7 +292,10 @@ class Sentence:
         return None, None
 
     def find_subarray(self, a,b):
-        return a.tostring().index(b.tostring()) // a.itemsize
+        print("[find_subarray]:",a, b)
+        if b.tostring() in a.tostring():
+            return a.tostring().index(b.tostring()) // a.itemsize
+        return -1
 
 class Word:
     def __init__(self, string, start_ind, end_ind):
