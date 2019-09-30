@@ -280,7 +280,7 @@ class NameRidler:
 
                 if prev != None:
                     #print("Indeces:", prev.get_string_start(), string_start)
-                    if (prev.get_type() == "Sukunimen käyttö" and type == "Etunimen käyttö") and (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1) and (prev.get_string_end()<string_start-2):
+                    if (prev.get_type() == "Sukunimi" and type == "Etunimi") and (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1) and (prev.get_string_end()<string_start-2):
                         counter = 1
 
                         argh, full_name = self.determine_name(arr, helper_arr)
@@ -339,10 +339,10 @@ class NameRidler:
                 if prev != None:
                     if name_unidentified == True:
                         name_unidentified = False
-                        if prev.get_type() == "Sukunimen käyttö":
+                        if prev.get_type() == "Sukunimi":
                             family_names.append(prev)
                             name_unidentified = False
-                        elif prev.get_type() == "Etunimen käyttö":
+                        elif prev.get_type() == "Etunimi":
                             first_names.append(prev)
                             name_unidentified = False
                         else:
@@ -360,7 +360,7 @@ class NameRidler:
                         prev = name
                         name_unidentified = False
                 else:
-                    if name.get_type() == "Sukunimen käyttö" and name.get_location() > 1 and not(self.is_first_name(name, last)):
+                    if name.get_type() == "Sukunimi" and name.get_location() > 1 and not(self.is_first_name(name, last)):
                         family_names.append(name)
                         prev = name
                         name_unidentified = False
@@ -372,10 +372,10 @@ class NameRidler:
         if prev != None:
             if name_unidentified == True:
                 name_unidentified = False
-                if prev.get_type() == "Sukunimen käyttö":
+                if prev.get_type() == "Sukunimi":
                     family_names.append(prev)
                     name_unidentified = False
-                elif prev.get_type() == "Etunimen käyttö":
+                elif prev.get_type() == "Etunimi":
                     first_names.append(prev)
                     name_unidentified = False
                 else:
@@ -450,16 +450,16 @@ class NameRidler:
 
     def is_family_name(self, name, last):
         #print("Location of last:", last, name.get_location(), name.get_type())
-        if name.get_type() == "Sukunimen käyttö" and name.get_location() == last:
+        if name.get_type() == "Sukunimi" and name.get_location() == last:
             return True
         return False
 
     def is_first_name(self, name, last):
         #print("Location of first:", last, name.get_location(), name.get_type())
-        if name.get_type() == "Etunimen käyttö" and ((last == 1 or name.get_location() < last) and name.get_location() < 5):
+        if name.get_type() == "Etunimi" and ((last == 1 or name.get_location() < last) and name.get_location() < 5):
             return True
         else:
-            if name.get_type() != "Etunimen käyttö":
+            if name.get_type() != "Etunimi":
                 print("Type FAIL")
             if (last != 1 or name.get_location() > last):
                 print("location and last FAIL")
@@ -671,12 +671,12 @@ class Name:
             self.linkage.append(link)
 
     def clarify_type(self, lang='fi'):
-        if self.type == "Sukunimen käyttö":
+        if self.type == "Sukunimi":
             if lang == 'fi':
                 return "Sukunimi"
             else:
                 return "Last name"
-        if self.type == "Etunimen käyttö":
+        if self.type == "Etunimi":
             if lang == 'fi':
                 return "Etunimi"
             else:

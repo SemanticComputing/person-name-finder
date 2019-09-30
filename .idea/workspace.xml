@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d31704e3-0677-4e93-9a3a-6fd23a93f8fc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sparqlqueries.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/sparqlqueries.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/namedentity.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/namedentity.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/namefinder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/namefinder.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,8 +16,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1697">
-              <caret line="223" column="51" selection-start-line="223" selection-start-column="51" selection-end-line="223" selection-end-column="51" />
+            <state relative-caret-position="1002">
+              <caret line="223" column="54" lean-forward="true" selection-start-line="223" selection-start-column="54" selection-end-line="223" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -34,7 +34,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sparqlqueries.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1334">
@@ -46,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/namefinder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-604">
-              <caret line="285" column="25" lean-forward="true" selection-start-line="285" selection-start-column="25" selection-end-line="285" selection-end-column="25" />
+            <state relative-caret-position="857">
+              <caret line="678" column="32" selection-start-line="678" selection-start-column="32" selection-end-line="678" selection-end-column="32" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -105,7 +105,6 @@
       <find>name_links</find>
       <find>Using</find>
       <find>nlp.ldf</find>
-      <find>parse_input</find>
       <find>gender_guess_url</find>
       <find>gender</find>
       <find>tokeni</find>
@@ -125,6 +124,8 @@
       <find>abb</find>
       <find>619</find>
       <find>query_names</find>
+      <find>tokenization</find>
+      <find>parse_input</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -140,8 +141,8 @@
         <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/src/text_structure.py" />
         <option value="$PROJECT_DIR$/data/abbreviations.csv" />
-        <option value="$PROJECT_DIR$/src/namefinder.py" />
         <option value="$PROJECT_DIR$/src/sparqlqueries.py" />
+        <option value="$PROJECT_DIR$/src/namefinder.py" />
       </list>
     </option>
   </component>
@@ -297,29 +298,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1697">
-          <caret line="223" column="51" selection-start-line="223" selection-start-column="51" selection-end-line="223" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/namefinder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-604">
-          <caret line="285" column="25" lean-forward="true" selection-start-line="285" selection-start-column="25" selection-end-line="285" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sparqlqueries.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1334">
           <caret line="57" column="77" selection-start-line="57" selection-start-column="77" selection-end-line="57" selection-end-column="77" />
           <folding>
             <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1002">
+          <caret line="223" column="54" lean-forward="true" selection-start-line="223" selection-start-column="54" selection-end-line="223" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/namefinder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="857">
+          <caret line="678" column="32" selection-start-line="678" selection-start-column="32" selection-end-line="678" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
