@@ -4,7 +4,7 @@ import string
 from requests import Request, Session
 import requests
 import configparser
-
+from collections import OrderedDict
 
 class NameFinder:
     def __init__(self):
@@ -129,6 +129,7 @@ class NameRidler:
     def __init__(self, names, ordered_names, sentence_obj):
         self.ord_names = ordered_names
         self.full_names = dict()
+        self.full_name_lemmas = dict()
         self.gender_guess_url = "http://nlp.ldf.fi/gender-guess"
         self.gender_guess_threshold = 0.8
         self.regex_url = "http://nlp.ldf.fi/regex"
@@ -187,8 +188,10 @@ class NameRidler:
             str_name = name.strip()
             if len(str_name) > 0:
                 entity['full_name'] = str_name
+                entity['full_name_lemma'] = self.full_name_lemmas[name]
                 check_name_i = max(list(self.ord_full_names.keys()))
                 check_name = self.ord_full_names[check_name_i].strip()
+                print("Full name:", check_name_i, check_name, str_name)
                 print("Full name:", check_name_i, check_name, str_name)
                 if gender:
                     entity['gender'], resp = self.guess_gender(str_name)
@@ -243,7 +246,7 @@ class NameRidler:
 
     def parse(self, queried_names, sentence_obj):
         arr = dict()
-        helper_arr = dict()
+        helper_arr = OrderedDict()
         name_links = dict()
         counter = 0
         full_name_counter = 0
@@ -311,11 +314,14 @@ class NameRidler:
                     arr[label] = list()
                 arr[label].append(name)
 
-            argh, full_name = self.determine_name(arr, helper_arr)
+            argh, full_name, full_name_lemma = self.determine_name(arr, helper_arr)
 
             print("Full name:", full_name, argh)
 
-            self.full_names[full_name] = self.full_names[full_name] = argh
+            if full_name in self.full_names:
+                print("Already in the arr", full_name)
+            self.full_names[full_name] = argh
+            self.full_name_lemmas[full_name] = full_name_lemma
             self.ord_full_names[full_name_counter] = full_name
             full_name_counter += 1
 
@@ -396,8 +402,9 @@ class NameRidler:
         print("Return names:", first_names + family_names)
 
         full = first_names + family_names
+        full_name_lemma = ' '.join(str(e.get_name_lemma()) for e in full)
         full_name = ' '.join(str(e.get_name()) for e in full)
-        return full, full_name
+        return full, full_name, full_name_lemma
 
     def reduce_overlapping(self, label, fnames, lnames, last):
         # compare two names: fname and lname
@@ -439,6 +446,11 @@ class NameRidler:
                 if fname == None:
                     print("Unable to find label from firstnames: ", label, fnames)
 
+            fnames.sort(key=lambda x: x.get_string_start(), reverse=False)
+            lnames.sort(key=lambda x: x.get_string_start(), reverse=False)
+            #lname_list = sorted(lnames, key=lambda x: x.string_start, reverse=False)
+            #print("[COMPARE]",fnames, fname_list)
+            #print("[COMPARE]",lnames, lname_list)
             return fnames, lnames
 
     def find_name(self, arr, label):
@@ -650,8 +662,10 @@ class Name:
         return self.linkage
 
     def get_name(self):
+        return self.original_form
+
+    def get_name_lemma(self):
         return self.label
-        return self.count
 
     def get_type(self):
         return self.type
@@ -690,6 +704,9 @@ class Name:
         return {'name':str(self.original_form), 'lemma':str(self.label), 'type':str(self.clarify_type()), 'location':str(self.location), 'uri':self.name_uri, 'start_ind':self.string_start, 'end_ind':self.string_end}
 
     def __str__(self):
+        return self.label + " (" + str(self.count) + "): " + self.type + " @ " + str(self.location)
+
+    def __repr__(self):
         return self.label + " (" + str(self.count) + "): " + self.type + " @ " + str(self.location)
 
     def __eq__(self, other):

@@ -4,7 +4,6 @@
     <list default="true" id="d31704e3-0677-4e93-9a3a-6fd23a93f8fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/logs/namedentity.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/namedentity.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/namefinder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/namefinder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/text_structure.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/text_structure.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,14 +22,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/text_structure.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="638">
-              <caret line="309" column="31" selection-start-line="309" selection-start-column="31" selection-end-line="309" selection-end-column="31" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="435">
+              <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -47,11 +43,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/namefinder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="605">
-              <caret line="279" column="51" selection-start-line="279" selection-start-column="51" selection-end-line="279" selection-end-column="51" />
+            <state relative-caret-position="692">
+              <caret line="452" column="13" selection-start-line="452" selection-start-column="13" selection-end-line="452" selection-end-column="13" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -100,7 +96,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>builder</find>
       <find>arr_</find>
       <find>prepared_request_morphological</find>
       <find>name_links</find>
@@ -128,6 +123,9 @@
       <find>parse_input</find>
       <find>query_names</find>
       <find>full_name</find>
+      <find>Return nam</find>
+      <find>ordere</find>
+      <find>helper</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -143,8 +141,8 @@
         <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/data/abbreviations.csv" />
         <option value="$PROJECT_DIR$/src/sparqlqueries.py" />
-        <option value="$PROJECT_DIR$/src/namefinder.py" />
         <option value="$PROJECT_DIR$/src/text_structure.py" />
+        <option value="$PROJECT_DIR$/src/namefinder.py" />
       </list>
     </option>
   </component>
@@ -307,22 +305,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/namefinder.py">
+    <entry file="file://$PROJECT_DIR$/src/text_structure.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="279" column="51" selection-start-line="279" selection-start-column="51" selection-end-line="279" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="435">
+          <caret line="15" selection-start-line="15" selection-end-line="15" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/text_structure.py">
+    <entry file="file://$PROJECT_DIR$/src/namefinder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="638">
-          <caret line="309" column="31" selection-start-line="309" selection-start-column="31" selection-end-line="309" selection-end-column="31" />
+        <state relative-caret-position="692">
+          <caret line="452" column="13" selection-start-line="452" selection-start-column="13" selection-end-line="452" selection-end-column="13" />
           <folding>
-            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>
