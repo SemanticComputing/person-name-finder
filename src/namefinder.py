@@ -189,6 +189,7 @@ class NameRidler:
                 entity['full_name'] = str_name
                 check_name_i = max(list(self.ord_full_names.keys()))
                 check_name = self.ord_full_names[check_name_i].strip()
+                print("Full name:", check_name_i, check_name, str_name)
                 if gender:
                     entity['gender'], resp = self.guess_gender(str_name)
                     responses[name.strip()] = resp
@@ -276,7 +277,7 @@ class NameRidler:
                     print("Name occured twice:", name, prev)
 
                 string_start, string_end = sentence_obj.find_name_location(label)
-
+                original_form = sentence_obj.find_from_text(string_start, string_end)
 
                 if prev != None:
                     #print("Indeces:", prev.get_string_start(), string_start)
@@ -298,7 +299,7 @@ class NameRidler:
                         if label != prev.get_name():
                             full_name += label + " "
 
-                name = Name(label, count, type, counter, name, linkage, string_start)
+                name = Name(label, original_form, count, type, counter, name, linkage, string_start)
 
                 print("Adding name:", name, full_name, " to ", counter)
 
@@ -633,8 +634,9 @@ class NameRidler:
 
 
 class Name:
-    def __init__(self, label, count, type, location, name_uri, linkage, string_start):
+    def __init__(self, label, original_form, count, type, location, name_uri, linkage, string_start):
         self.label = label
+        self.original_form = original_form
         self.count = count
         self.type = type
         self.location = location
@@ -685,7 +687,7 @@ class Name:
 
 
     def get_json(self):
-        return {'name':str(self.label), 'type':str(self.clarify_type()), 'location':str(self.location), 'uri':self.name_uri, 'start_ind':self.string_start, 'end_ind':self.string_end}
+        return {'name':str(self.original_form), 'lemma':str(self.label), 'type':str(self.clarify_type()), 'location':str(self.location), 'uri':self.name_uri, 'start_ind':self.string_start, 'end_ind':self.string_end}
 
     def __str__(self):
         return self.label + " (" + str(self.count) + "): " + self.type + " @ " + str(self.location)

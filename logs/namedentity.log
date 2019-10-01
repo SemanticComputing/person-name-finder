@@ -5502,3 +5502,463 @@
 2019-09-30 15:41:58,818 NamedEntity INFO locale=fi&text=ett%C3%A4+h%C3%A4nelt%C3%A4+peritt%C3%A4isiin+sanotun+k%C3%A4ytt%C3%B6m%C3%A4%C3%A4r%C3%A4n+ylitt%C3%A4v%C3%A4lt%C3%A4+osalta+maksu+yleistariffin+mukaan+ilman+perusmaksua.
 2019-09-30 15:41:58,962 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '361', 'Content-Type': 'application/x-www-form-urlencoded'}
 2019-09-30 15:41:58,963 NamedEntity INFO locale=fi&text=Lis%C3%A4ksi+Aarno+Antero+Tarkkio+on+vaatinut+yhti%C3%B6n+velvoittamista+suorittamaan+h%C3%A4nelle+takaisin+31.1.1983+j%C3%A4lkeiselt%C3%A4+ajalta+liikaa+perittyj%C3%A4+s%C3%A4hk%C3%B6maksuja+4.768%2C43+markkaa+16+prosentin+korkoineen+haasteen+tiedoksiantop%C3%A4iv%C3%A4st%C3%A4+lukien+sek%C3%A4+korvaamaan+h%C3%A4nen+oikeudenk%C3%A4yntikulunsa.
+2019-09-30 15:43:09,800 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '95', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:09,800 NamedEntity INFO text=Sauli+V%C3%A4in%C3%A4m%C3%B6+Niinist%C3%B6+on+Suomen+tasavallan+12.+presidentti.&locale=fi
+2019-09-30 15:43:09,972 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '58', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:09,973 NamedEntity INFO text=H%C3%A4n+ryhtyi+toimeen+1.+maaliskuuta+2012&locale=fi
+2019-09-30 15:43:10,081 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '88', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:10,082 NamedEntity INFO text=h%C3%A4net+valittiin+uudelleen+tasavallan+presidentiksi+tammikuussa+2018.&locale=fi
+2019-09-30 15:43:10,209 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '43', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:10,209 NamedEntity INFO text=Toinen+kausi+alkoi+1.2.2018.&locale=fi
+2019-09-30 15:43:10,301 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '68', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:10,301 NamedEntity INFO text=Sauli+Niinist%C3%B6+syntyi+Salossa+24.+elokuuta+1948.&locale=fi
+2019-09-30 15:43:10,389 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '92', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:10,389 NamedEntity INFO text=H%C3%A4n+valmistui+oikeustieteen+kandidaatiksi+Turun+yliopistosta+vuonna+1974&locale=fi
+2019-09-30 15:43:10,476 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '59', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:10,476 NamedEntity INFO text=toimi+sen+j%C3%A4lkeen+mm.+nimismiehen%C3%A4&locale=fi
+2019-09-30 15:43:10,540 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '87', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:10,541 NamedEntity INFO text=runsaan+kymmenen+vuoden+ajan+tuomioistuinjuristina+Turun+hovioikeudessa.&locale=fi
+2019-09-30 15:43:10,654 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '125', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:10,655 NamedEntity INFO text=Juristinuran+ajalta+h%C3%A4nell%C3%A4+on+kokemusta+my%C3%B6s+asianajotoimesta+sek%C3%A4+yritysten+hallinnosta.&locale=fi
+2019-09-30 15:43:10,764 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '77', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:10,764 NamedEntity INFO text=Niinist%C3%B6+valittiin+Salon+kaupunginvaltuustoon+vuonna+1977&locale=fi
+2019-09-30 15:43:10,861 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '87', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:10,861 NamedEntity INFO text=h%C3%A4n+toimi+kunnallisissa+luottamusteht%C3%A4viss%C3%A4+1990-luvulle.&locale=fi
+2019-09-30 15:43:32,672 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '95', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:32,673 NamedEntity INFO text=Sauli+V%C3%A4in%C3%A4m%C3%B6+Niinist%C3%B6+on+Suomen+tasavallan+12.+presidentti.&locale=fi
+2019-09-30 15:43:32,781 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '58', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:32,781 NamedEntity INFO text=H%C3%A4n+ryhtyi+toimeen+1.+maaliskuuta+2012&locale=fi
+2019-09-30 15:43:32,882 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '88', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:32,882 NamedEntity INFO text=h%C3%A4net+valittiin+uudelleen+tasavallan+presidentiksi+tammikuussa+2018.&locale=fi
+2019-09-30 15:43:33,013 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '43', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:33,013 NamedEntity INFO text=Toinen+kausi+alkoi+1.2.2018.&locale=fi
+2019-09-30 15:43:33,099 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '68', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:33,100 NamedEntity INFO text=Sauli+Niinist%C3%B6+syntyi+Salossa+24.+elokuuta+1948.&locale=fi
+2019-09-30 15:43:33,239 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '92', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:33,240 NamedEntity INFO text=H%C3%A4n+valmistui+oikeustieteen+kandidaatiksi+Turun+yliopistosta+vuonna+1974&locale=fi
+2019-09-30 15:43:33,340 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '59', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:33,340 NamedEntity INFO text=toimi+sen+j%C3%A4lkeen+mm.+nimismiehen%C3%A4&locale=fi
+2019-09-30 15:43:33,420 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '87', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:33,420 NamedEntity INFO text=runsaan+kymmenen+vuoden+ajan+tuomioistuinjuristina+Turun+hovioikeudessa.&locale=fi
+2019-09-30 15:43:33,509 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '125', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:33,509 NamedEntity INFO text=Juristinuran+ajalta+h%C3%A4nell%C3%A4+on+kokemusta+my%C3%B6s+asianajotoimesta+sek%C3%A4+yritysten+hallinnosta.&locale=fi
+2019-09-30 15:43:33,597 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '77', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:33,597 NamedEntity INFO text=Niinist%C3%B6+valittiin+Salon+kaupunginvaltuustoon+vuonna+1977&locale=fi
+2019-09-30 15:43:33,702 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '87', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:33,702 NamedEntity INFO text=h%C3%A4n+toimi+kunnallisissa+luottamusteht%C3%A4viss%C3%A4+1990-luvulle.&locale=fi
+2019-09-30 15:43:59,955 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '95', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:43:59,955 NamedEntity INFO text=Sauli+V%C3%A4in%C3%A4m%C3%B6+Niinist%C3%B6+on+Suomen+tasavallan+12.+presidentti.&locale=fi
+2019-09-30 15:44:00,093 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '58', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:00,093 NamedEntity INFO text=H%C3%A4n+ryhtyi+toimeen+1.+maaliskuuta+2012&locale=fi
+2019-09-30 15:44:00,147 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '88', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:00,148 NamedEntity INFO text=h%C3%A4net+valittiin+uudelleen+tasavallan+presidentiksi+tammikuussa+2018.&locale=fi
+2019-09-30 15:44:00,298 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '43', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:00,298 NamedEntity INFO text=Toinen+kausi+alkoi+1.2.2018.&locale=fi
+2019-09-30 15:44:00,406 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '68', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:00,407 NamedEntity INFO text=Sauli+Niinist%C3%B6+syntyi+Salossa+24.+elokuuta+1948.&locale=fi
+2019-09-30 15:44:00,470 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '92', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:00,470 NamedEntity INFO text=H%C3%A4n+valmistui+oikeustieteen+kandidaatiksi+Turun+yliopistosta+vuonna+1974&locale=fi
+2019-09-30 15:44:00,587 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '59', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:00,587 NamedEntity INFO text=toimi+sen+j%C3%A4lkeen+mm.+nimismiehen%C3%A4&locale=fi
+2019-09-30 15:44:00,688 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '87', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:00,688 NamedEntity INFO text=runsaan+kymmenen+vuoden+ajan+tuomioistuinjuristina+Turun+hovioikeudessa.&locale=fi
+2019-09-30 15:44:00,775 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '125', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:00,776 NamedEntity INFO text=Juristinuran+ajalta+h%C3%A4nell%C3%A4+on+kokemusta+my%C3%B6s+asianajotoimesta+sek%C3%A4+yritysten+hallinnosta.&locale=fi
+2019-09-30 15:44:00,942 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '77', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:00,942 NamedEntity INFO text=Niinist%C3%B6+valittiin+Salon+kaupunginvaltuustoon+vuonna+1977&locale=fi
+2019-09-30 15:44:01,046 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '87', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:01,046 NamedEntity INFO text=h%C3%A4n+toimi+kunnallisissa+luottamusteht%C3%A4viss%C3%A4+1990-luvulle.&locale=fi
+2019-09-30 15:44:01,122 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '87', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:01,122 NamedEntity INFO text=Eduskuntaan+Niinist%C3%B6+valittiin+ensimm%C3%A4isen+kerran+vuonna+1987.&locale=fi
+2019-09-30 15:44:01,250 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '101', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:01,250 NamedEntity INFO text=Kansanedustajana+ollessaan+h%C3%A4n+toimi+mm.+perustuslakivaliokunnan+puheenjohtajana.&locale=fi
+2019-09-30 15:44:01,410 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '86', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:01,410 NamedEntity INFO text=Ministerin+ura+alkoi+1995+Lipposen+hallituksessa+oikeusministerin%C3%A4&locale=fi
+2019-09-30 15:44:01,551 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:01,551 NamedEntity INFO text=p%C3%A4%C3%A4ministerin+sijaisena.&locale=fi
+2019-09-30 15:44:01,651 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '83', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:01,652 NamedEntity INFO text=Vuonna+1996+Niinist%C3%B6+siirtyi+valtiovarainministeri%C3%B6%C3%B6n&locale=fi
+2019-09-30 15:44:01,762 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '89', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:01,762 NamedEntity INFO text=ja+h%C3%A4nest%C3%A4+tuli+Suomen+pitk%C3%A4aikaisin+valtiovarainministeri.&locale=fi
+2019-09-30 15:44:01,859 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '100', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:01,859 NamedEntity INFO text=Toimikauden+alussa+90-luvun+laman+vaikutukset+julkiseen+talouteen+olivat+pahimmillaan&locale=fi
+2019-09-30 15:44:01,977 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '51', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:01,978 NamedEntity INFO text=ty%C3%B6tt%C3%B6myys+korkeimmillaan.&locale=fi
+2019-09-30 15:44:02,023 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '39', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:02,024 NamedEntity INFO text=Nuo+vaikeudet+voitettiin&locale=fi
+2019-09-30 15:44:02,104 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '61', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:02,104 NamedEntity INFO text=ja+Suomi+tuli+uudelle+vuosituhannelle+vahvana.&locale=fi
+2019-09-30 15:44:02,228 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '89', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:02,229 NamedEntity INFO text=Niinist%C3%B6+oli+Kansallisen+Kokoomuksen+puheenjohtaja+vuosina+1994-2001.&locale=fi
+2019-09-30 15:44:02,326 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '122', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:02,327 NamedEntity INFO text=Kotimaan+politiikan+lis%C3%A4ksi+h%C3%A4n+toimi+1998-2002+puheenjohtajana+Euroopan+Demokraattisen+Unionissa&locale=fi
+2019-09-30 15:44:02,412 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '18', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:02,412 NamedEntity INFO text=EDU&locale=fi
+2019-09-30 15:44:02,461 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '82', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:02,461 NamedEntity INFO text=johon+kuului+porvarillisia+puolueita+liki+kaikista+Euroopan+maista.&locale=fi
+2019-09-30 15:44:02,562 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '75', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:02,562 NamedEntity INFO text=Niinist%C3%B6+oli+avainasemassa+yhdistett%C3%A4ess%C3%A4+EDU&locale=fi
+2019-09-30 15:44:02,671 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '40', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:02,671 NamedEntity INFO text=Euroopan+Kansanpuolue+EPP&locale=fi
+2019-09-30 15:44:02,725 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '74', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:02,726 NamedEntity INFO text=jonka+toiseksi+kunniapuheenjohtajaksi+h%C3%A4net+nimettiin.&locale=fi
+2019-09-30 15:44:02,790 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '117', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:02,790 NamedEntity INFO text=Vuonna+2003+Niinist%C3%B6+siirtyi+Euroopan+Investointipankin+varap%C3%A4%C3%A4johtajaksi+Luxemburgiin.&locale=fi
+2019-09-30 15:44:02,874 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '62', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:02,874 NamedEntity INFO text=Vastuualueena+h%C3%A4nell%C3%A4+oli+tutkimuksen&locale=fi
+2019-09-30 15:44:02,944 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '73', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:02,945 NamedEntity INFO text=kehityksen+rahoitus+sek%C3%A4+rahoitustoimet+Pohjoismaissa&locale=fi
+2019-09-30 15:44:03,018 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '39', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:03,018 NamedEntity INFO text=Ven%C3%A4j%C3%A4ll%C3%A4&locale=fi
+2019-09-30 15:44:03,090 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '103', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:03,090 NamedEntity INFO text=lis%C3%A4ksi+h%C3%A4n+toimi+puheenjohtajana+Pohjoisen+ulottuvuuden+kumppanuusohjelmassa.&locale=fi
+2019-09-30 15:44:03,236 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '81', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:03,237 NamedEntity INFO text=Niinist%C3%B6+on+toiminut+my%C3%B6s+Euroopan+j%C3%A4lleenrakennus-&locale=fi
+2019-09-30 15:44:03,321 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '28', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:03,321 NamedEntity INFO text=kehityspankin&locale=fi
+2019-09-30 15:44:03,404 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '19', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:03,405 NamedEntity INFO text=EBRD&locale=fi
+2019-09-30 15:44:03,492 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '52', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:03,492 NamedEntity INFO text=+hallintoneuvoston+j%C3%A4senen%C3%A4&locale=fi
+2019-09-30 15:44:03,575 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '87', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:03,575 NamedEntity INFO text=puheenjohtajana+sek%C3%A4+Kansainv%C3%A4lisen+valuuttarahaston+valuutta-&locale=fi
+2019-09-30 15:44:03,681 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '31', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:03,682 NamedEntity INFO text=rahoituskomitean&locale=fi
+2019-09-30 15:44:03,745 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '19', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:03,745 NamedEntity INFO text=IMFC&locale=fi
+2019-09-30 15:44:03,845 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '35', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:03,845 NamedEntity INFO text=+j%C3%A4senen%C3%A4.&locale=fi
+2019-09-30 15:44:03,920 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '162', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:03,921 NamedEntity INFO text=Niinist%C3%B6+palasi+eduskuntaan+vuoden+2007+vaaleissa+saaden+kaikkien+aikojen+suurimman+henkil%C3%B6kohtaisen+%C3%A4%C3%A4nim%C3%A4%C3%A4r%C3%A4n.&locale=fi
+2019-09-30 15:44:04,079 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '68', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:04,079 NamedEntity INFO text=H%C3%A4n+toimi+eduskunnan+puhemiehen%C3%A4+2007-2011.&locale=fi
+2019-09-30 15:44:04,173 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '75', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:04,173 NamedEntity INFO text=Presidentti+Niinist%C3%B6+on+naimisissa+Jenni+Haukion+kanssa&locale=fi
+2019-09-30 15:44:04,271 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '34', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:04,271 NamedEntity INFO text=heille+syntyi+poika&locale=fi
+2019-09-30 15:44:04,348 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '19', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:04,348 NamedEntity INFO text=Aaro&locale=fi
+2019-09-30 15:44:04,396 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '32', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:04,396 NamedEntity INFO text=helmikuussa+2018.&locale=fi
+2019-09-30 15:44:04,470 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '66', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:04,470 NamedEntity INFO text=Perheeseen+kuuluu+my%C3%B6s+bostoninterrieri+Lennu.&locale=fi
+2019-09-30 15:44:04,552 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '114', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:04,553 NamedEntity INFO text=Lis%C3%A4ksi+presidentti+Niinist%C3%B6ll%C3%A4+on+kaksi+aikuista+poikaa+aikaisemmasta+avioliitosta.&locale=fi
+2019-09-30 15:44:04,698 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '60', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:04,698 NamedEntity INFO text=Presidentti+Niinist%C3%B6+harrastaa+liikuntaa&locale=fi
+2019-09-30 15:44:04,775 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '191', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:04,775 NamedEntity INFO text=ja+h%C3%A4n+on+mm.+toiminut+Suomen+Palloliiton+puheenjohtajana+vuosina+2009-2012+sek%C3%A4+vuoden+2009+taitoluistelun+EM-kilpailujen+j%C3%A4rjestelytoimikunnan+puheenjohtajana.&locale=fi
+2019-09-30 15:44:04,908 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '53', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-09-30 15:44:04,908 NamedEntity INFO text=H%C3%A4n+on+kirjoittanut+kaksi+kirjaa.&locale=fi
+2019-10-01 11:41:58,879 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '95'}
+2019-10-01 11:41:58,880 NamedEntity INFO text=Sauli+V%C3%A4in%C3%A4m%C3%B6+Niinist%C3%B6+on+Suomen+tasavallan+12.+presidentti.&locale=fi
+2019-10-01 11:41:58,986 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '58'}
+2019-10-01 11:41:58,987 NamedEntity INFO text=H%C3%A4n+ryhtyi+toimeen+1.+maaliskuuta+2012&locale=fi
+2019-10-01 11:41:59,072 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '88'}
+2019-10-01 11:41:59,072 NamedEntity INFO text=h%C3%A4net+valittiin+uudelleen+tasavallan+presidentiksi+tammikuussa+2018.&locale=fi
+2019-10-01 11:41:59,163 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '43'}
+2019-10-01 11:41:59,164 NamedEntity INFO text=Toinen+kausi+alkoi+1.2.2018.&locale=fi
+2019-10-01 11:41:59,222 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '68'}
+2019-10-01 11:41:59,223 NamedEntity INFO text=Sauli+Niinist%C3%B6+syntyi+Salossa+24.+elokuuta+1948.&locale=fi
+2019-10-01 11:41:59,316 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '92'}
+2019-10-01 11:41:59,317 NamedEntity INFO text=H%C3%A4n+valmistui+oikeustieteen+kandidaatiksi+Turun+yliopistosta+vuonna+1974&locale=fi
+2019-10-01 11:41:59,444 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '59'}
+2019-10-01 11:41:59,444 NamedEntity INFO text=toimi+sen+j%C3%A4lkeen+mm.+nimismiehen%C3%A4&locale=fi
+2019-10-01 11:41:59,536 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '87'}
+2019-10-01 11:41:59,536 NamedEntity INFO text=runsaan+kymmenen+vuoden+ajan+tuomioistuinjuristina+Turun+hovioikeudessa.&locale=fi
+2019-10-01 11:41:59,665 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '125'}
+2019-10-01 11:41:59,665 NamedEntity INFO text=Juristinuran+ajalta+h%C3%A4nell%C3%A4+on+kokemusta+my%C3%B6s+asianajotoimesta+sek%C3%A4+yritysten+hallinnosta.&locale=fi
+2019-10-01 11:41:59,768 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '77'}
+2019-10-01 11:41:59,769 NamedEntity INFO text=Niinist%C3%B6+valittiin+Salon+kaupunginvaltuustoon+vuonna+1977&locale=fi
+2019-10-01 11:41:59,842 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '87'}
+2019-10-01 11:41:59,842 NamedEntity INFO text=h%C3%A4n+toimi+kunnallisissa+luottamusteht%C3%A4viss%C3%A4+1990-luvulle.&locale=fi
+2019-10-01 11:41:59,929 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '87'}
+2019-10-01 11:41:59,930 NamedEntity INFO text=Eduskuntaan+Niinist%C3%B6+valittiin+ensimm%C3%A4isen+kerran+vuonna+1987.&locale=fi
+2019-10-01 11:42:00,044 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '101'}
+2019-10-01 11:42:00,044 NamedEntity INFO text=Kansanedustajana+ollessaan+h%C3%A4n+toimi+mm.+perustuslakivaliokunnan+puheenjohtajana.&locale=fi
+2019-10-01 11:42:00,144 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '86'}
+2019-10-01 11:42:00,144 NamedEntity INFO text=Ministerin+ura+alkoi+1995+Lipposen+hallituksessa+oikeusministerin%C3%A4&locale=fi
+2019-10-01 11:42:00,270 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '49'}
+2019-10-01 11:42:00,270 NamedEntity INFO text=p%C3%A4%C3%A4ministerin+sijaisena.&locale=fi
+2019-10-01 11:42:00,384 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '83'}
+2019-10-01 11:42:00,384 NamedEntity INFO text=Vuonna+1996+Niinist%C3%B6+siirtyi+valtiovarainministeri%C3%B6%C3%B6n&locale=fi
+2019-10-01 11:42:00,435 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '89'}
+2019-10-01 11:42:00,435 NamedEntity INFO text=ja+h%C3%A4nest%C3%A4+tuli+Suomen+pitk%C3%A4aikaisin+valtiovarainministeri.&locale=fi
+2019-10-01 11:42:00,549 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '100'}
+2019-10-01 11:42:00,549 NamedEntity INFO text=Toimikauden+alussa+90-luvun+laman+vaikutukset+julkiseen+talouteen+olivat+pahimmillaan&locale=fi
+2019-10-01 11:42:00,685 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '51'}
+2019-10-01 11:42:00,686 NamedEntity INFO text=ty%C3%B6tt%C3%B6myys+korkeimmillaan.&locale=fi
+2019-10-01 11:42:00,754 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '39'}
+2019-10-01 11:42:00,754 NamedEntity INFO text=Nuo+vaikeudet+voitettiin&locale=fi
+2019-10-01 11:42:00,829 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '61'}
+2019-10-01 11:42:00,829 NamedEntity INFO text=ja+Suomi+tuli+uudelle+vuosituhannelle+vahvana.&locale=fi
+2019-10-01 11:42:00,915 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '89'}
+2019-10-01 11:42:00,916 NamedEntity INFO text=Niinist%C3%B6+oli+Kansallisen+Kokoomuksen+puheenjohtaja+vuosina+1994-2001.&locale=fi
+2019-10-01 11:42:01,054 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '122'}
+2019-10-01 11:42:01,054 NamedEntity INFO text=Kotimaan+politiikan+lis%C3%A4ksi+h%C3%A4n+toimi+1998-2002+puheenjohtajana+Euroopan+Demokraattisen+Unionissa&locale=fi
+2019-10-01 11:42:01,155 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '18'}
+2019-10-01 11:42:01,155 NamedEntity INFO text=EDU&locale=fi
+2019-10-01 11:42:01,227 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '82'}
+2019-10-01 11:42:01,227 NamedEntity INFO text=johon+kuului+porvarillisia+puolueita+liki+kaikista+Euroopan+maista.&locale=fi
+2019-10-01 11:42:01,368 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '75'}
+2019-10-01 11:42:01,368 NamedEntity INFO text=Niinist%C3%B6+oli+avainasemassa+yhdistett%C3%A4ess%C3%A4+EDU&locale=fi
+2019-10-01 11:42:01,482 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '40'}
+2019-10-01 11:42:01,482 NamedEntity INFO text=Euroopan+Kansanpuolue+EPP&locale=fi
+2019-10-01 11:42:01,535 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '74'}
+2019-10-01 11:42:01,535 NamedEntity INFO text=jonka+toiseksi+kunniapuheenjohtajaksi+h%C3%A4net+nimettiin.&locale=fi
+2019-10-01 11:42:01,633 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '117'}
+2019-10-01 11:42:01,634 NamedEntity INFO text=Vuonna+2003+Niinist%C3%B6+siirtyi+Euroopan+Investointipankin+varap%C3%A4%C3%A4johtajaksi+Luxemburgiin.&locale=fi
+2019-10-01 11:42:01,791 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '62'}
+2019-10-01 11:42:01,791 NamedEntity INFO text=Vastuualueena+h%C3%A4nell%C3%A4+oli+tutkimuksen&locale=fi
+2019-10-01 11:42:01,893 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '73'}
+2019-10-01 11:42:01,894 NamedEntity INFO text=kehityksen+rahoitus+sek%C3%A4+rahoitustoimet+Pohjoismaissa&locale=fi
+2019-10-01 11:42:01,960 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '39'}
+2019-10-01 11:42:01,960 NamedEntity INFO text=Ven%C3%A4j%C3%A4ll%C3%A4&locale=fi
+2019-10-01 11:42:02,039 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '103'}
+2019-10-01 11:42:02,040 NamedEntity INFO text=lis%C3%A4ksi+h%C3%A4n+toimi+puheenjohtajana+Pohjoisen+ulottuvuuden+kumppanuusohjelmassa.&locale=fi
+2019-10-01 11:42:02,146 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '81'}
+2019-10-01 11:42:02,146 NamedEntity INFO text=Niinist%C3%B6+on+toiminut+my%C3%B6s+Euroopan+j%C3%A4lleenrakennus-&locale=fi
+2019-10-01 11:42:02,275 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '28'}
+2019-10-01 11:42:02,275 NamedEntity INFO text=kehityspankin&locale=fi
+2019-10-01 11:42:02,339 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '19'}
+2019-10-01 11:42:02,339 NamedEntity INFO text=EBRD&locale=fi
+2019-10-01 11:42:02,377 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '52'}
+2019-10-01 11:42:02,377 NamedEntity INFO text=+hallintoneuvoston+j%C3%A4senen%C3%A4&locale=fi
+2019-10-01 11:42:02,423 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '87'}
+2019-10-01 11:42:02,424 NamedEntity INFO text=puheenjohtajana+sek%C3%A4+Kansainv%C3%A4lisen+valuuttarahaston+valuutta-&locale=fi
+2019-10-01 11:42:02,536 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '31'}
+2019-10-01 11:42:02,536 NamedEntity INFO text=rahoituskomitean&locale=fi
+2019-10-01 11:42:02,624 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '19'}
+2019-10-01 11:42:02,624 NamedEntity INFO text=IMFC&locale=fi
+2019-10-01 11:42:02,708 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '35'}
+2019-10-01 11:42:02,708 NamedEntity INFO text=+j%C3%A4senen%C3%A4.&locale=fi
+2019-10-01 11:42:02,790 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '162'}
+2019-10-01 11:42:02,791 NamedEntity INFO text=Niinist%C3%B6+palasi+eduskuntaan+vuoden+2007+vaaleissa+saaden+kaikkien+aikojen+suurimman+henkil%C3%B6kohtaisen+%C3%A4%C3%A4nim%C3%A4%C3%A4r%C3%A4n.&locale=fi
+2019-10-01 11:42:02,922 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '68'}
+2019-10-01 11:42:02,922 NamedEntity INFO text=H%C3%A4n+toimi+eduskunnan+puhemiehen%C3%A4+2007-2011.&locale=fi
+2019-10-01 11:42:03,014 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '75'}
+2019-10-01 11:42:03,014 NamedEntity INFO text=Presidentti+Niinist%C3%B6+on+naimisissa+Jenni+Haukion+kanssa&locale=fi
+2019-10-01 11:42:03,106 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '34'}
+2019-10-01 11:42:03,106 NamedEntity INFO text=heille+syntyi+poika&locale=fi
+2019-10-01 11:42:03,173 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '19'}
+2019-10-01 11:42:03,173 NamedEntity INFO text=Aaro&locale=fi
+2019-10-01 11:42:03,237 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '32'}
+2019-10-01 11:42:03,238 NamedEntity INFO text=helmikuussa+2018.&locale=fi
+2019-10-01 11:42:03,304 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '66'}
+2019-10-01 11:42:03,304 NamedEntity INFO text=Perheeseen+kuuluu+my%C3%B6s+bostoninterrieri+Lennu.&locale=fi
+2019-10-01 11:42:03,342 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '114'}
+2019-10-01 11:42:03,342 NamedEntity INFO text=Lis%C3%A4ksi+presidentti+Niinist%C3%B6ll%C3%A4+on+kaksi+aikuista+poikaa+aikaisemmasta+avioliitosta.&locale=fi
+2019-10-01 11:42:03,428 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '60'}
+2019-10-01 11:42:03,428 NamedEntity INFO text=Presidentti+Niinist%C3%B6+harrastaa+liikuntaa&locale=fi
+2019-10-01 11:42:03,486 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '191'}
+2019-10-01 11:42:03,486 NamedEntity INFO text=ja+h%C3%A4n+on+mm.+toiminut+Suomen+Palloliiton+puheenjohtajana+vuosina+2009-2012+sek%C3%A4+vuoden+2009+taitoluistelun+EM-kilpailujen+j%C3%A4rjestelytoimikunnan+puheenjohtajana.&locale=fi
+2019-10-01 11:42:03,656 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '53'}
+2019-10-01 11:42:03,656 NamedEntity INFO text=H%C3%A4n+on+kirjoittanut+kaksi+kirjaa.&locale=fi
+2019-10-01 11:46:21,696 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '95', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:21,696 NamedEntity INFO locale=fi&text=Sauli+V%C3%A4in%C3%A4m%C3%B6+Niinist%C3%B6+on+Suomen+tasavallan+12.+presidentti.
+2019-10-01 11:46:21,762 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '58', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:21,762 NamedEntity INFO locale=fi&text=H%C3%A4n+ryhtyi+toimeen+1.+maaliskuuta+2012
+2019-10-01 11:46:21,802 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '88', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:21,802 NamedEntity INFO locale=fi&text=h%C3%A4net+valittiin+uudelleen+tasavallan+presidentiksi+tammikuussa+2018.
+2019-10-01 11:46:21,845 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '43', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:21,845 NamedEntity INFO locale=fi&text=Toinen+kausi+alkoi+1.2.2018.
+2019-10-01 11:46:21,940 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '68', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:21,940 NamedEntity INFO locale=fi&text=Sauli+Niinist%C3%B6+syntyi+Salossa+24.+elokuuta+1948.
+2019-10-01 11:46:22,017 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '92', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:22,017 NamedEntity INFO locale=fi&text=H%C3%A4n+valmistui+oikeustieteen+kandidaatiksi+Turun+yliopistosta+vuonna+1974
+2019-10-01 11:46:22,109 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '59', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:22,109 NamedEntity INFO locale=fi&text=toimi+sen+j%C3%A4lkeen+mm.+nimismiehen%C3%A4
+2019-10-01 11:46:22,195 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '87', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:22,195 NamedEntity INFO locale=fi&text=runsaan+kymmenen+vuoden+ajan+tuomioistuinjuristina+Turun+hovioikeudessa.
+2019-10-01 11:46:22,292 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '125', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:22,292 NamedEntity INFO locale=fi&text=Juristinuran+ajalta+h%C3%A4nell%C3%A4+on+kokemusta+my%C3%B6s+asianajotoimesta+sek%C3%A4+yritysten+hallinnosta.
+2019-10-01 11:46:22,398 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '77', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:22,398 NamedEntity INFO locale=fi&text=Niinist%C3%B6+valittiin+Salon+kaupunginvaltuustoon+vuonna+1977
+2019-10-01 11:46:22,431 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '87', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:22,431 NamedEntity INFO locale=fi&text=h%C3%A4n+toimi+kunnallisissa+luottamusteht%C3%A4viss%C3%A4+1990-luvulle.
+2019-10-01 11:46:22,469 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '87', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:22,470 NamedEntity INFO locale=fi&text=Eduskuntaan+Niinist%C3%B6+valittiin+ensimm%C3%A4isen+kerran+vuonna+1987.
+2019-10-01 11:46:22,591 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '101', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:22,592 NamedEntity INFO locale=fi&text=Kansanedustajana+ollessaan+h%C3%A4n+toimi+mm.+perustuslakivaliokunnan+puheenjohtajana.
+2019-10-01 11:46:22,659 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '86', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:22,659 NamedEntity INFO locale=fi&text=Ministerin+ura+alkoi+1995+Lipposen+hallituksessa+oikeusministerin%C3%A4
+2019-10-01 11:46:22,774 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:22,774 NamedEntity INFO locale=fi&text=p%C3%A4%C3%A4ministerin+sijaisena.
+2019-10-01 11:46:22,856 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '83', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:22,856 NamedEntity INFO locale=fi&text=Vuonna+1996+Niinist%C3%B6+siirtyi+valtiovarainministeri%C3%B6%C3%B6n
+2019-10-01 11:46:22,945 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '89', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:22,945 NamedEntity INFO locale=fi&text=ja+h%C3%A4nest%C3%A4+tuli+Suomen+pitk%C3%A4aikaisin+valtiovarainministeri.
+2019-10-01 11:46:23,051 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '100', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:23,051 NamedEntity INFO locale=fi&text=Toimikauden+alussa+90-luvun+laman+vaikutukset+julkiseen+talouteen+olivat+pahimmillaan
+2019-10-01 11:46:23,158 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '51', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:23,158 NamedEntity INFO locale=fi&text=ty%C3%B6tt%C3%B6myys+korkeimmillaan.
+2019-10-01 11:46:23,238 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '39', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:23,239 NamedEntity INFO locale=fi&text=Nuo+vaikeudet+voitettiin
+2019-10-01 11:46:23,322 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '61', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:23,322 NamedEntity INFO locale=fi&text=ja+Suomi+tuli+uudelle+vuosituhannelle+vahvana.
+2019-10-01 11:46:23,421 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '89', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:23,422 NamedEntity INFO locale=fi&text=Niinist%C3%B6+oli+Kansallisen+Kokoomuksen+puheenjohtaja+vuosina+1994-2001.
+2019-10-01 11:46:23,528 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '122', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:23,528 NamedEntity INFO locale=fi&text=Kotimaan+politiikan+lis%C3%A4ksi+h%C3%A4n+toimi+1998-2002+puheenjohtajana+Euroopan+Demokraattisen+Unionissa
+2019-10-01 11:46:23,599 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '18', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:23,599 NamedEntity INFO locale=fi&text=EDU
+2019-10-01 11:46:23,695 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '82', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:23,696 NamedEntity INFO locale=fi&text=johon+kuului+porvarillisia+puolueita+liki+kaikista+Euroopan+maista.
+2019-10-01 11:46:23,765 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '75', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:23,765 NamedEntity INFO locale=fi&text=Niinist%C3%B6+oli+avainasemassa+yhdistett%C3%A4ess%C3%A4+EDU
+2019-10-01 11:46:23,872 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '40', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:23,872 NamedEntity INFO locale=fi&text=Euroopan+Kansanpuolue+EPP
+2019-10-01 11:46:23,971 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '74', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:23,971 NamedEntity INFO locale=fi&text=jonka+toiseksi+kunniapuheenjohtajaksi+h%C3%A4net+nimettiin.
+2019-10-01 11:46:24,055 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '117', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:24,055 NamedEntity INFO locale=fi&text=Vuonna+2003+Niinist%C3%B6+siirtyi+Euroopan+Investointipankin+varap%C3%A4%C3%A4johtajaksi+Luxemburgiin.
+2019-10-01 11:46:24,148 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '62', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:24,149 NamedEntity INFO locale=fi&text=Vastuualueena+h%C3%A4nell%C3%A4+oli+tutkimuksen
+2019-10-01 11:46:24,221 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '73', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:24,221 NamedEntity INFO locale=fi&text=kehityksen+rahoitus+sek%C3%A4+rahoitustoimet+Pohjoismaissa
+2019-10-01 11:46:24,288 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '39', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:24,288 NamedEntity INFO locale=fi&text=Ven%C3%A4j%C3%A4ll%C3%A4
+2019-10-01 11:46:24,384 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '103', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:24,384 NamedEntity INFO locale=fi&text=lis%C3%A4ksi+h%C3%A4n+toimi+puheenjohtajana+Pohjoisen+ulottuvuuden+kumppanuusohjelmassa.
+2019-10-01 11:46:24,499 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '81', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:24,499 NamedEntity INFO locale=fi&text=Niinist%C3%B6+on+toiminut+my%C3%B6s+Euroopan+j%C3%A4lleenrakennus-
+2019-10-01 11:46:24,608 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '28', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:24,609 NamedEntity INFO locale=fi&text=kehityspankin
+2019-10-01 11:46:24,718 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '19', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:24,718 NamedEntity INFO locale=fi&text=EBRD
+2019-10-01 11:46:24,799 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '52', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:24,800 NamedEntity INFO locale=fi&text=+hallintoneuvoston+j%C3%A4senen%C3%A4
+2019-10-01 11:46:24,902 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '87', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:24,903 NamedEntity INFO locale=fi&text=puheenjohtajana+sek%C3%A4+Kansainv%C3%A4lisen+valuuttarahaston+valuutta-
+2019-10-01 11:46:25,014 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '31', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:25,015 NamedEntity INFO locale=fi&text=rahoituskomitean
+2019-10-01 11:46:25,100 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '19', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:25,100 NamedEntity INFO locale=fi&text=IMFC
+2019-10-01 11:46:25,140 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '35', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:25,140 NamedEntity INFO locale=fi&text=+j%C3%A4senen%C3%A4.
+2019-10-01 11:46:25,215 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '162', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:25,215 NamedEntity INFO locale=fi&text=Niinist%C3%B6+palasi+eduskuntaan+vuoden+2007+vaaleissa+saaden+kaikkien+aikojen+suurimman+henkil%C3%B6kohtaisen+%C3%A4%C3%A4nim%C3%A4%C3%A4r%C3%A4n.
+2019-10-01 11:46:25,399 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '68', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:25,399 NamedEntity INFO locale=fi&text=H%C3%A4n+toimi+eduskunnan+puhemiehen%C3%A4+2007-2011.
+2019-10-01 11:46:25,498 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '75', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:25,498 NamedEntity INFO locale=fi&text=Presidentti+Niinist%C3%B6+on+naimisissa+Jenni+Haukion+kanssa
+2019-10-01 11:46:25,591 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '34', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:25,591 NamedEntity INFO locale=fi&text=heille+syntyi+poika
+2019-10-01 11:46:25,686 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '19', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:25,686 NamedEntity INFO locale=fi&text=Aaro
+2019-10-01 11:46:25,778 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '32', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:25,778 NamedEntity INFO locale=fi&text=helmikuussa+2018.
+2019-10-01 11:46:25,864 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '66', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:25,865 NamedEntity INFO locale=fi&text=Perheeseen+kuuluu+my%C3%B6s+bostoninterrieri+Lennu.
+2019-10-01 11:46:25,967 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '114', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:25,967 NamedEntity INFO locale=fi&text=Lis%C3%A4ksi+presidentti+Niinist%C3%B6ll%C3%A4+on+kaksi+aikuista+poikaa+aikaisemmasta+avioliitosta.
+2019-10-01 11:46:26,153 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '60', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:26,153 NamedEntity INFO locale=fi&text=Presidentti+Niinist%C3%B6+harrastaa+liikuntaa
+2019-10-01 11:46:26,260 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '191', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:26,261 NamedEntity INFO locale=fi&text=ja+h%C3%A4n+on+mm.+toiminut+Suomen+Palloliiton+puheenjohtajana+vuosina+2009-2012+sek%C3%A4+vuoden+2009+taitoluistelun+EM-kilpailujen+j%C3%A4rjestelytoimikunnan+puheenjohtajana.
+2019-10-01 11:46:26,410 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '53', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-01 11:46:26,411 NamedEntity INFO locale=fi&text=H%C3%A4n+on+kirjoittanut+kaksi+kirjaa.
+2019-10-01 11:51:57,813 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '95', 'X-Custom': 'Test'}
+2019-10-01 11:51:57,813 NamedEntity INFO locale=fi&text=Sauli+V%C3%A4in%C3%A4m%C3%B6+Niinist%C3%B6+on+Suomen+tasavallan+12.+presidentti.
+2019-10-01 11:51:57,897 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '58', 'X-Custom': 'Test'}
+2019-10-01 11:51:57,898 NamedEntity INFO locale=fi&text=H%C3%A4n+ryhtyi+toimeen+1.+maaliskuuta+2012
+2019-10-01 11:51:57,947 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '88', 'X-Custom': 'Test'}
+2019-10-01 11:51:57,947 NamedEntity INFO locale=fi&text=h%C3%A4net+valittiin+uudelleen+tasavallan+presidentiksi+tammikuussa+2018.
+2019-10-01 11:51:57,994 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '43', 'X-Custom': 'Test'}
+2019-10-01 11:51:57,995 NamedEntity INFO locale=fi&text=Toinen+kausi+alkoi+1.2.2018.
+2019-10-01 11:51:58,040 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '68', 'X-Custom': 'Test'}
+2019-10-01 11:51:58,040 NamedEntity INFO locale=fi&text=Sauli+Niinist%C3%B6+syntyi+Salossa+24.+elokuuta+1948.
+2019-10-01 11:51:58,078 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '92', 'X-Custom': 'Test'}
+2019-10-01 11:51:58,078 NamedEntity INFO locale=fi&text=H%C3%A4n+valmistui+oikeustieteen+kandidaatiksi+Turun+yliopistosta+vuonna+1974
+2019-10-01 11:51:58,133 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '59', 'X-Custom': 'Test'}
+2019-10-01 11:51:58,134 NamedEntity INFO locale=fi&text=toimi+sen+j%C3%A4lkeen+mm.+nimismiehen%C3%A4
+2019-10-01 11:51:58,174 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '87', 'X-Custom': 'Test'}
+2019-10-01 11:51:58,174 NamedEntity INFO locale=fi&text=runsaan+kymmenen+vuoden+ajan+tuomioistuinjuristina+Turun+hovioikeudessa.
+2019-10-01 11:51:58,242 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '125', 'X-Custom': 'Test'}
+2019-10-01 11:51:58,242 NamedEntity INFO locale=fi&text=Juristinuran+ajalta+h%C3%A4nell%C3%A4+on+kokemusta+my%C3%B6s+asianajotoimesta+sek%C3%A4+yritysten+hallinnosta.
+2019-10-01 11:51:58,311 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '77', 'X-Custom': 'Test'}
+2019-10-01 11:51:58,311 NamedEntity INFO locale=fi&text=Niinist%C3%B6+valittiin+Salon+kaupunginvaltuustoon+vuonna+1977
+2019-10-01 11:51:58,363 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '87', 'X-Custom': 'Test'}
+2019-10-01 11:51:58,363 NamedEntity INFO locale=fi&text=h%C3%A4n+toimi+kunnallisissa+luottamusteht%C3%A4viss%C3%A4+1990-luvulle.
+2019-10-01 11:51:58,432 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '87', 'X-Custom': 'Test'}
+2019-10-01 11:51:58,432 NamedEntity INFO locale=fi&text=Eduskuntaan+Niinist%C3%B6+valittiin+ensimm%C3%A4isen+kerran+vuonna+1987.
+2019-10-01 11:51:58,489 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '101', 'X-Custom': 'Test'}
+2019-10-01 11:51:58,489 NamedEntity INFO locale=fi&text=Kansanedustajana+ollessaan+h%C3%A4n+toimi+mm.+perustuslakivaliokunnan+puheenjohtajana.
+2019-10-01 11:51:58,555 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '86', 'X-Custom': 'Test'}
+2019-10-01 11:51:58,555 NamedEntity INFO locale=fi&text=Ministerin+ura+alkoi+1995+Lipposen+hallituksessa+oikeusministerin%C3%A4
+2019-10-01 11:51:58,629 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '49', 'X-Custom': 'Test'}
+2019-10-01 11:51:58,629 NamedEntity INFO locale=fi&text=p%C3%A4%C3%A4ministerin+sijaisena.
+2019-10-01 11:51:58,685 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '83', 'X-Custom': 'Test'}
+2019-10-01 11:51:58,686 NamedEntity INFO locale=fi&text=Vuonna+1996+Niinist%C3%B6+siirtyi+valtiovarainministeri%C3%B6%C3%B6n
+2019-10-01 11:51:58,745 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '89', 'X-Custom': 'Test'}
+2019-10-01 11:51:58,745 NamedEntity INFO locale=fi&text=ja+h%C3%A4nest%C3%A4+tuli+Suomen+pitk%C3%A4aikaisin+valtiovarainministeri.
+2019-10-01 11:51:58,814 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '100', 'X-Custom': 'Test'}
+2019-10-01 11:51:58,815 NamedEntity INFO locale=fi&text=Toimikauden+alussa+90-luvun+laman+vaikutukset+julkiseen+talouteen+olivat+pahimmillaan
+2019-10-01 11:51:58,901 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '51', 'X-Custom': 'Test'}
+2019-10-01 11:51:58,901 NamedEntity INFO locale=fi&text=ty%C3%B6tt%C3%B6myys+korkeimmillaan.
+2019-10-01 11:51:58,954 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '39', 'X-Custom': 'Test'}
+2019-10-01 11:51:58,954 NamedEntity INFO locale=fi&text=Nuo+vaikeudet+voitettiin
+2019-10-01 11:51:58,994 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '61', 'X-Custom': 'Test'}
+2019-10-01 11:51:58,994 NamedEntity INFO locale=fi&text=ja+Suomi+tuli+uudelle+vuosituhannelle+vahvana.
+2019-10-01 11:51:59,055 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '89', 'X-Custom': 'Test'}
+2019-10-01 11:51:59,055 NamedEntity INFO locale=fi&text=Niinist%C3%B6+oli+Kansallisen+Kokoomuksen+puheenjohtaja+vuosina+1994-2001.
+2019-10-01 11:51:59,116 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '122', 'X-Custom': 'Test'}
+2019-10-01 11:51:59,116 NamedEntity INFO locale=fi&text=Kotimaan+politiikan+lis%C3%A4ksi+h%C3%A4n+toimi+1998-2002+puheenjohtajana+Euroopan+Demokraattisen+Unionissa
+2019-10-01 11:51:59,199 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '18', 'X-Custom': 'Test'}
+2019-10-01 11:51:59,199 NamedEntity INFO locale=fi&text=EDU
+2019-10-01 11:51:59,235 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '82', 'X-Custom': 'Test'}
+2019-10-01 11:51:59,236 NamedEntity INFO locale=fi&text=johon+kuului+porvarillisia+puolueita+liki+kaikista+Euroopan+maista.
+2019-10-01 11:51:59,329 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '75', 'X-Custom': 'Test'}
+2019-10-01 11:51:59,329 NamedEntity INFO locale=fi&text=Niinist%C3%B6+oli+avainasemassa+yhdistett%C3%A4ess%C3%A4+EDU
+2019-10-01 11:51:59,399 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '40', 'X-Custom': 'Test'}
+2019-10-01 11:51:59,399 NamedEntity INFO locale=fi&text=Euroopan+Kansanpuolue+EPP
+2019-10-01 11:51:59,463 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '74', 'X-Custom': 'Test'}
+2019-10-01 11:51:59,463 NamedEntity INFO locale=fi&text=jonka+toiseksi+kunniapuheenjohtajaksi+h%C3%A4net+nimettiin.
+2019-10-01 11:51:59,530 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '117', 'X-Custom': 'Test'}
+2019-10-01 11:51:59,530 NamedEntity INFO locale=fi&text=Vuonna+2003+Niinist%C3%B6+siirtyi+Euroopan+Investointipankin+varap%C3%A4%C3%A4johtajaksi+Luxemburgiin.
+2019-10-01 11:51:59,597 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '62', 'X-Custom': 'Test'}
+2019-10-01 11:51:59,597 NamedEntity INFO locale=fi&text=Vastuualueena+h%C3%A4nell%C3%A4+oli+tutkimuksen
+2019-10-01 11:51:59,651 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '73', 'X-Custom': 'Test'}
+2019-10-01 11:51:59,652 NamedEntity INFO locale=fi&text=kehityksen+rahoitus+sek%C3%A4+rahoitustoimet+Pohjoismaissa
+2019-10-01 11:51:59,698 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '39', 'X-Custom': 'Test'}
+2019-10-01 11:51:59,698 NamedEntity INFO locale=fi&text=Ven%C3%A4j%C3%A4ll%C3%A4
+2019-10-01 11:51:59,739 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '103', 'X-Custom': 'Test'}
+2019-10-01 11:51:59,740 NamedEntity INFO locale=fi&text=lis%C3%A4ksi+h%C3%A4n+toimi+puheenjohtajana+Pohjoisen+ulottuvuuden+kumppanuusohjelmassa.
+2019-10-01 11:51:59,802 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '81', 'X-Custom': 'Test'}
+2019-10-01 11:51:59,802 NamedEntity INFO locale=fi&text=Niinist%C3%B6+on+toiminut+my%C3%B6s+Euroopan+j%C3%A4lleenrakennus-
+2019-10-01 11:51:59,867 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '28', 'X-Custom': 'Test'}
+2019-10-01 11:51:59,867 NamedEntity INFO locale=fi&text=kehityspankin
+2019-10-01 11:51:59,910 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '19', 'X-Custom': 'Test'}
+2019-10-01 11:51:59,910 NamedEntity INFO locale=fi&text=EBRD
+2019-10-01 11:51:59,956 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '52', 'X-Custom': 'Test'}
+2019-10-01 11:51:59,956 NamedEntity INFO locale=fi&text=+hallintoneuvoston+j%C3%A4senen%C3%A4
+2019-10-01 11:52:00,012 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '87', 'X-Custom': 'Test'}
+2019-10-01 11:52:00,012 NamedEntity INFO locale=fi&text=puheenjohtajana+sek%C3%A4+Kansainv%C3%A4lisen+valuuttarahaston+valuutta-
+2019-10-01 11:52:00,132 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '31', 'X-Custom': 'Test'}
+2019-10-01 11:52:00,132 NamedEntity INFO locale=fi&text=rahoituskomitean
+2019-10-01 11:52:00,201 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '19', 'X-Custom': 'Test'}
+2019-10-01 11:52:00,201 NamedEntity INFO locale=fi&text=IMFC
+2019-10-01 11:52:00,260 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '35', 'X-Custom': 'Test'}
+2019-10-01 11:52:00,260 NamedEntity INFO locale=fi&text=+j%C3%A4senen%C3%A4.
+2019-10-01 11:52:00,323 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '162', 'X-Custom': 'Test'}
+2019-10-01 11:52:00,324 NamedEntity INFO locale=fi&text=Niinist%C3%B6+palasi+eduskuntaan+vuoden+2007+vaaleissa+saaden+kaikkien+aikojen+suurimman+henkil%C3%B6kohtaisen+%C3%A4%C3%A4nim%C3%A4%C3%A4r%C3%A4n.
+2019-10-01 11:52:00,408 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '68', 'X-Custom': 'Test'}
+2019-10-01 11:52:00,408 NamedEntity INFO locale=fi&text=H%C3%A4n+toimi+eduskunnan+puhemiehen%C3%A4+2007-2011.
+2019-10-01 11:52:00,460 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '75', 'X-Custom': 'Test'}
+2019-10-01 11:52:00,460 NamedEntity INFO locale=fi&text=Presidentti+Niinist%C3%B6+on+naimisissa+Jenni+Haukion+kanssa
+2019-10-01 11:52:00,530 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '34', 'X-Custom': 'Test'}
+2019-10-01 11:52:00,530 NamedEntity INFO locale=fi&text=heille+syntyi+poika
+2019-10-01 11:52:00,575 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '19', 'X-Custom': 'Test'}
+2019-10-01 11:52:00,576 NamedEntity INFO locale=fi&text=Aaro
+2019-10-01 11:52:00,614 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '32', 'X-Custom': 'Test'}
+2019-10-01 11:52:00,614 NamedEntity INFO locale=fi&text=helmikuussa+2018.
+2019-10-01 11:52:00,659 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '66', 'X-Custom': 'Test'}
+2019-10-01 11:52:00,660 NamedEntity INFO locale=fi&text=Perheeseen+kuuluu+my%C3%B6s+bostoninterrieri+Lennu.
+2019-10-01 11:52:00,722 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '114', 'X-Custom': 'Test'}
+2019-10-01 11:52:00,722 NamedEntity INFO locale=fi&text=Lis%C3%A4ksi+presidentti+Niinist%C3%B6ll%C3%A4+on+kaksi+aikuista+poikaa+aikaisemmasta+avioliitosta.
+2019-10-01 11:52:00,791 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '60', 'X-Custom': 'Test'}
+2019-10-01 11:52:00,791 NamedEntity INFO locale=fi&text=Presidentti+Niinist%C3%B6+harrastaa+liikuntaa
+2019-10-01 11:52:00,864 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '191', 'X-Custom': 'Test'}
+2019-10-01 11:52:00,864 NamedEntity INFO locale=fi&text=ja+h%C3%A4n+on+mm.+toiminut+Suomen+Palloliiton+puheenjohtajana+vuosina+2009-2012+sek%C3%A4+vuoden+2009+taitoluistelun+EM-kilpailujen+j%C3%A4rjestelytoimikunnan+puheenjohtajana.
+2019-10-01 11:52:01,007 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '53', 'X-Custom': 'Test'}
+2019-10-01 11:52:01,007 NamedEntity INFO locale=fi&text=H%C3%A4n+on+kirjoittanut+kaksi+kirjaa.

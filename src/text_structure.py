@@ -287,9 +287,31 @@ class Sentence:
 
             return start.get_start_location(), stop.get_end_location()
 
+        return None, None, None
 
+    def find_from_text(self, start, end):
+        try:
+            if start != None and end != None:
+                values = self.words.values()
+                org_form = ""
+                print("printing values:",values)
+                for v in values:
+                    print("Value", v)
+                    if v.get_start_location() == start and v.get_end_location() == end:
+                        return v.get_string()
+                    elif v.get_start_location() >= start and v.get_end_location() < end:
+                        if org_form == "":
+                            org_form = v.get_string()
+                        else:
+                            org_form = org_form + " " + v.get_string()
+                    elif v.get_start_location() > start and v.get_end_location() == end:
+                        org_form = org_form + " " + v.get_string()
+                        return org_form
+                return org_form
+        except Exception as err:
+            print("[Exception] Error happened while trying to find original formed string, ", start, end, self.words)
 
-        return None, None
+        return None
 
     def find_subarray(self, a,b):
         print("[find_subarray]:",a, b)
@@ -309,6 +331,9 @@ class Word:
 
     def get_end_location(self):
         return self.end_location
+
+    def get_string(self):
+        return self.string
 
     def __str__(self):
         return str(self.string + "(" + str(self.start_location) + ":" + str(self.end_location) + ")")
