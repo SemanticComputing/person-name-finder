@@ -1,5 +1,6 @@
 from SPARQLWrapper import SPARQLWrapper, JSON, BASIC
 import logging
+from collections import OrderedDict
 import requests, json
 
 logger = logging.getLogger('SparqlQuries')
@@ -29,7 +30,7 @@ class SparqlQuries:
         return results
 
     def query_names(self, names):
-        result_set = list()
+        result_set = OrderedDict()
         print(names)
         if len(names) < 1:
             return {}
@@ -42,7 +43,7 @@ class SparqlQuries:
             query = """ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
                         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
                         PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-                        SELECT DISTINCT ?name ?label ?nameLabel ?nameType (sum(?lkm)as ?count)   WHERE {
+                        SELECT DISTINCT ?names ?name ?label ?nameLabel ?nameType (sum(?lkm)as ?count)   WHERE {
                           VALUES ?names { $names }
                           BIND(STRLANG(?names,'fi') AS ?label)
                           ?name skos:prefLabel ?label .
@@ -55,12 +56,12 @@ class SparqlQuries:
                           FILTER (lang(?typeLabel) = 'fi')
                           BIND(STR(?typeLabel) AS ?nameLabel) .
                           #FILTER(STRSTARTS(STR(?type), 'http://ldf.fi/schema/henkilonimisto/'))
-                        } GROUP BY ?name ?label ?nameLabel ?nameType ?gender """
+                        } GROUP BY ?names ?name ?label ?nameLabel ?nameType ?gender """
 
             query = query.replace('$names', " ".join(['"{0}"'.format(x) for x in name]))
 
-            print("endpoint:", endpoint)
-            print("query:", query)
+            #print("endpoint:", endpoint)
+            #print("query:", query)
 
             sparql = SPARQLWrapper(endpoint)
             sparql.setQuery(query)
@@ -68,301 +69,153 @@ class SparqlQuries:
             sparql.setReturnFormat(JSON)
             results = sparql.query().convert()
 
-            print("results:", results)
-            result_set.append(results)
+            #print("results:", results)
+            n = str(i) + "_" + " ".join(name)
+            if n not in result_set.keys():
+                result_set[n] = list()
+            result_set[n]=self.parse_sparql_result(name, results)
 
         return result_set
 
-
-    def query_sentences(self):
-        sparql = SPARQLWrapper("http://localhost:3030/test-nif-conversion/query")
-        sparql.setQuery("""
-            SELECT *
-            WHERE {
-              GRAPH <http://localhost:3030/test-nif-conversion/data/bio>
-             { ?s ?p ?o }
-            }
-        """)
-        sparql.setReturnFormat(JSON)
-        results = sparql.query().convert()
-
-        return results
-
-    def query_words_from_graph(self, uri, graph, endpoint):
-
-        sparql = SPARQLWrapper(endpoint)
-
-        query = """
-            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-            PREFIX dct: <http://purl.org/dc/terms/>
-            SELECT * WHERE {
-                GRAPH <"""+str(graph)+"""> {
-                    ?s a <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                       <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#WORD> ?word ;
-                       <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#ID> ?id ;
-                       <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentenceOrder> ?sID ;
-                       <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence> ?sentence ;
-                       <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#structure> ?structure .
-  					?sentence dct:isPartOf ?paragraph .
-  					?paragraph <"""+str(uri)+"""/data#order> ?i .
-                   OPTIONAL {
-                       ?s <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#UPOS> ?upos .
-                   }
-                   OPTIONAL {
-                       ?s <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#FEAT> ?feat .
-                   }
-                   OPTIONAL {
-                       ?s <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#EDGE> ?edge .
-                   }
-                }
-              BIND(xsd:integer(?id) as ?x)
-              BIND(xsd:decimal(STR(?sID)) as ?y)
-  			  BIND(xsd:integer(?i) as ?z)
-            } ORDER BY ASC(?structure) ASC(?z) ASC(?y) ASC(?x)
-        """
-
-        logging.info("endpoint= %s", endpoint)
-        logging.info("query= %s", query)
-
-        sparql.setQuery(query)
-        sparql.setReturnFormat(JSON)
-        results = sparql.query().convert()
-
-        return results
-
-    def query_words(self, uri, endpoint, structure):
-        endpoint = "http://ldf.fi/nbf-nlp/sparql"
-        sparql = SPARQLWrapper(endpoint)
-
-        query = """
-            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-            PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-            PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-            PREFIX dct: <http://purl.org/dc/terms/>
-            SELECT * WHERE {
-                BIND( <"""+structure+"""> AS ?structure)
-                ?s a <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                   <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#WORD> ?word ;
-                   <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#ID> ?id ;
-                   <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentenceOrder> ?sID ;
-                   <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence> ?sentence ;
-                   <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#structure> ?structure .
-                ?sentence dct:isPartOf ?paragraph .
-                ?paragraph <""" + str(uri) + """/data#order> ?i .
-                ?paragraph <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#isString> ?paragraphText .
-               OPTIONAL {
-                   ?s <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#UPOS> ?upos .
-               }
-               OPTIONAL {
-                   ?s <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#FEAT> ?feat .
-               }
-               OPTIONAL {
-                   ?s <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#EDGE> ?edge .
-               }
-               OPTIONAL {
-                   ?s <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#LEMMA> ?lemma .
-               }
-
-              BIND(xsd:integer(?id) as ?x)
-              BIND(xsd:decimal(STR(?sID)) as ?y)
-              BIND(xsd:integer(?i) as ?z)
-            } ORDER BY ASC(?structure) ASC(?z) ASC(?y) ASC(?x)
-        """
-
-        logging.info("endpoint= %s", endpoint)
-        logging.info("query= %s", query)
-        #(query)
-        #sparql.setQuery(query)
-        #sparql.setReturnFormat(JSON)
-        #results = sparql.query().convert()
-        print("Check:",endpoint, query)
-        results = self.makeSparqlQuery(query, endpoint)
-        print(results)
-        return results
-
-    def parse_values(self, input):
-        documents = list()
-
-        if len(input["results"]["bindings"]) > 0:
-            for result in input["results"]["bindings"]:
-                logging.info("Res %s", result)
-                if 'id' in result:
-                    uri = "<" + result["id"]["value"] + ">"
-                    documents.append(uri)
-        logging.info("Documents %s",documents)
-        return documents
+    def parse_sparql_result(self, values, results):
+        resultset = SparqlResultSet()
+        resultset.parse(values, results)
+        return resultset
 
 
-    def query_values(self, uri, endpoint, offsetid, limit):
-        endpoint = "http://ldf.fi/nbf/sparql"
-        sparql = SPARQLWrapper(endpoint)
+class SparqlResultSet():
+    def __init__(self):
+        self.resultset = OrderedDict()
+        self.id_map = OrderedDict()
+        self.len = 0
 
-        query = """
-        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-        PREFIX bioc:  <http://ldf.fi/schema/bioc/>
-        PREFIX rdfs:  <http://www.w3.org/2000/01/rdf-schema#>
-        PREFIX schema: <http://schema.org/>
-        PREFIX skos:  <http://www.w3.org/2004/02/skos/core#>
-        PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#>
-        PREFIX nbf:    <http://ldf.fi/nbf/>
-        PREFIX categories:    <http://ldf.fi/nbf/categories/>
-        PREFIX gvp:    <http://vocab.getty.edu/ontology#>
-        PREFIX crm:   <http://www.cidoc-crm.org/cidoc-crm/>
-        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        PREFIX dcterms: <http://purl.org/dc/terms/>
-        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-        PREFIX gvp: <http://vocab.getty.edu/ontology#>
-        PREFIX relations:    <http://ldf.fi/nbf/relations/>
-        PREFIX sources:    <http://ldf.fi/nbf/sources/>
-    
-        SELECT distinct ?id ?structure
-        WHERE {
-            {
-                SELECT distinct ?id WHERE {
-                    {  ?id a <http://ldf.fi/nbf/PersonConcept> .  }
-                    ?id foaf:focus/^crm:P98_brought_into_life/nbf:time/gvp:estStart ?birth  .
-                    ?id dcterms:source <http://ldf.fi/nbf/sources/source1> .
-        
-                }  ORDER BY DESC(?birth) OFFSET $offsetid #1455 #1222
-            }
-            ?id skosxl:prefLabel ?id__label .
-                OPTIONAL { ?id__label schema:familyName ?id__fname }
-                OPTIONAL { ?id__label schema:givenName ?id__gname }
-                BIND (CONCAT(COALESCE(?id__gname, "")," ",COALESCE(?id__fname, "")) AS ?id__name)
-        
-            ?id foaf:focus/schema:gender ?gender .
-            ?id foaf:focus/nbf:has_category ?cat .
-            FILTER (?cat IN (categories:c133, categories:c44, categories:c41, categories:c12, categories:c43, categories:c51, categories:c61, categories:c46) )
-        
-            ?id foaf:focus/nbf:has_biography/nbf:has_paragraph [ nbf:content ?content ; nbf:id ?ordinal ] .
-            ?structure <http://ldf.fi/nbf/biography/data#docRef> ?id .
-            BIND(STR(?content) AS ?str_content)
-    
-        } $limit
-        """
+    def parse(self, values, results):
+        #self.len = 0
+        for val in values:
+            self.resultset[self.len] = list()
+            item = SparqlResultSetItem()
+            item.set_label(val)
+            item.set_ord(self.len)
+            self.id_map[self.len] = item
+            self.len += 1
+        #print(self.id_map)
+        #print(self.resultset)
 
-        query = query.replace("$offsetid",str(offsetid))
-        query = query.replace("$limit", str(limit))
+        for result in results["results"]["bindings"]:
+            for i in self.resultset.keys():
+                item = SparqlResultSetItem()
+                item.parse(result, i)
+                #print(item)
+                if item == self.id_map[i]:
+                    self.resultset[i].append(item)
+                #else:
+                #    print(item, "not in", self.id_map[i])
 
-        # ?structure <http://ldf.fi/nbf/biography/data#bioId> <http://ldf.fi/nbf/p874> .
-        print("endpoint:", endpoint)
-        print("query:", query)
+    def get_item(self, ind, item):
+        for i in self.resultset[ind]:
+            if self.resultset[ind][i] == item:
+                return self.resultset[ind][i]
+        return None
 
-        #sparql.setQuery(query)
-        #sparql.setHTTPAuth(BASIC)
-        #sparql.setCredentials("Basic", "c2Vjbzpsb2dvczAz")
-        #sparql.setReturnFormat(JSON)
-        results = self.makeSparqlQuery(query, endpoint)
-        #sparql.query().convert()
+    def get_resultset(self):
+        return self.resultset
 
-        #logging.info("Results %s ", results)
+class SparqlResultSetItem():
+    def __init__(self):
+        self.uri = None
+        self.name = ""
+        self.ord = 0
+        self.label = ""
+        self.linkage = None
+        self.type = ""
+        self.count = 0
 
-        return results
+    def parse(self, result, ord):
+        self.ord = ord
+        self.uri = str(result["name"]["value"])
+        self.name = str(result["names"]["value"])
+        self.label = str(result["label"]["value"])
+        self.count = int(result["count"]["value"])
+        self.type = str(result["nameLabel"]["value"])
+        self.linkage = str(result["nameType"]["value"])
 
-    def query_predifined_structures(self, uri, endpoint, offsetid, limit=1):
-        strlimit = ""
-        if limit > 0:
-            strlimit = "LIMIT " + str(limit)
-        else:
-            strlimit = ""
+    def set(self, ord, uri, name, label, count, type, linkage):
+        self.name = name
+        self.uri = uri
+        self.ord = ord
+        self.label = label
+        self.linkage = linkage
+        self.type = type
+        self.count = count
 
-        results = self.query_values(None, None, offsetid, strlimit)
-        print("Results:", results, limit)
+    # getters and setters
 
-        return results
+    def get_name(self):
+        return self.name
 
-    def query_structures(self, uri, endpoint):
-        sparql = SPARQLWrapper(endpoint)
+    def set_name(self, name):
+        self.name = name
 
-        query = """
-            SELECT distinct ?structure
-            WHERE {
-              ?sentence a <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Sentence> .
-              ?sentence <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#structure> ?structure .
+    def get_ord(self):
+        return self.ord
 
-            } LIMIT 5
-        """
-        # ?structure <http://ldf.fi/nbf/biography/data#bioId> <http://ldf.fi/nbf/p874> .
-        #logging.info("endpoint= %s", endpoint)
-        #logging.info("query= %s", query)
+    def set_ord(self, ord):
+        self.ord = ord
 
-        sparql.setQuery(query)
-        sparql.setReturnFormat(JSON)
-        results = makeSparqlQuery(query, endpoint)#sparql.query().convert()
+    def get_label(self):
+        return self.label
 
-        return results
+    def set_label(self, value):
+        self.label = value
 
-    def default_query_words(self, url):
-        #logging.info(url)
-        endpoint = str(url) + "query"
+    def get_linkage(self):
+        return self.linkage
 
-        sparql = SPARQLWrapper(endpoint)
+    def set_linkage(self, value):
+        self.linkage = value
 
-        query = """
-               PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-               PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-               PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-               PREFIX dct: <http://purl.org/dc/terms/>
-               SELECT ?x ?y ?sID ?z ?structure ?word ?s ?sentence ?paragraph ?upos ?feat ?edge WHERE {
-                   ?s a <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#Word> ;
-                       <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#WORD> ?word ;
-                       <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#ID> ?id ;
-                       <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentenceOrder> ?sID ;
-                       <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#sentence> ?sentence ;
-                       <http://persistence.uni-leipzig.org/nlp2rdf/ontologies/nif-core#structure> ?structure .
-  					?sentence dct:isPartOf ?paragraph .
-  					?paragraph <http://ldf.fi/nbf/biography/data#order> ?i .
-                   OPTIONAL {
-                       ?s <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#UPOS> ?upos .
-                   }
-                   OPTIONAL {
-                       ?s <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#FEAT> ?feat .
-                   }
-                   OPTIONAL {
-                       ?s <http://ufal.mff.cuni.cz/conll2009-st/task-description.html#EDGE> ?edge .
-                   }
-                 BIND(xsd:integer(?id) as ?x)
-  				BIND(xsd:decimal(STR(?sID)) as ?y)
-  				BIND(xsd:integer(?i) as ?z)
-               } ORDER BY ASC(?structure) ASC(?z) ASC(?y) ASC(?x)
-           """
+    def get_type(self):
+        return self.type
 
-        sparql.setQuery(query)
-        sparql.setReturnFormat(JSON)
-        results = sparql.query().convert()
+    def set_type(self, value):
+        self.type = value
 
-        return results
+    def get_count(self):
+        return self.count
 
-    def makeSparqlQuery(self, query, endpoint):
-        AUTHORIZATION_HEADER = {'Authorization': "Basic c2Vjbzpsb2dvczAz"}
+    def set_count(self, value):
+        self.count = value
 
-        #print("Endpoint:", endpoint)
-        #print("Query:", query)
-        #print("Auth:", AUTHORIZATION_HEADER)
+    def get_uri(self):
+        return self.uri
 
-        try:
-            r = requests.post(endpoint,
-                              data={'query': query, 'format': 'json'},
-                              headers=dict({'Accept': 'application/sparql-results+json'}, **AUTHORIZATION_HEADER))
-            #print(r.text)
-            cont = json.loads(r.text)
-            #fields = cont['head']['vars']
+    def set_uri(self, value):
+        self.uri = value
 
-            #bind = cont['results']['bindings']
-            #res = []
-            #for x in bind:
-            #    row = {}
-            #    for f in fields:
-            #        if f in x and 'value' in x[f] and x[f]['value'] != "":
-            #            row[f] = x[f]['value']
-            #    res.append(row)
-            return cont
-        except Exception as e:
-            # KeyError: no result
-            raise e
-        return []
+    def __str__(self):
+        return str(self.ord) + ". " + str(self.name) + " (" + str(self.label) + ", " + str(self.count) + ")"
+
+    def __repr__(self):
+        return str(self.ord) + ". " + str(self.name) + " (" + str(self.label) + ", " + str(self.count) + ")"
+
+    def __eq__(self, other):
+        if self.label == other.get_label():
+            if self.ord == other.get_ord():
+                return True
+        return False
+
+    def __lt__(self, other):
+        if self.ord < other.get_ord():
+            return True
+        return False
+
+    def __gt__(self, other):
+        if self.ord > other.get_ord():
+            return True
+        return False
+
+
+
+
+
 

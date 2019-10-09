@@ -10,7 +10,7 @@ import csv
 import nltk
 import nltk.data
 from src.namefinder import NameFinder
-from src.text_structure import Sentence, TextParser
+from src.text_structure import SentenceChunk, TextParser
 import xml.dom.minidom
 import xml.etree.ElementTree as ET
 from src.las_query import lasQuery
@@ -187,7 +187,7 @@ def old_tokenization(text):
                 chunk_counter += 1
         counter += 1
 
-    print("Splitted:", result)
+    #print("Splitted:", result)
     return result, structure, regex_check
 
 
@@ -202,7 +202,7 @@ def do_lemmatization(sentence_data, indeces):
         output[i] = sentence_data[i]#.get_lemma()
 
         index_lists[i] = indeces[i]
-        print("Index list:", i, indeces[i], sentence_data[i])
+        #print("Index list:", i, indeces[i], sentence_data[i])
 
     return output, index_lists
 
@@ -210,7 +210,7 @@ def do_lemmatization(sentence_data, indeces):
 def lemmatize(text):
     las = lasQuery()
     lemmatized = las.lexical_analysis(text, 'fi')
-    print("Lemmatized:", lemmatized)
+    #print("Lemmatized:", lemmatized)
     return lemmatized
 
 
