@@ -7856,3 +7856,117 @@
 2019-10-09 14:01:19,253 NamedEntity INFO locale=fi&text=ett%C3%A4+h%C3%A4nelt%C3%A4+peritt%C3%A4isiin+sanotun+k%C3%A4ytt%C3%B6m%C3%A4%C3%A4r%C3%A4n+ylitt%C3%A4v%C3%A4lt%C3%A4+osalta+maksu+yleistariffin+mukaan+ilman+perusmaksua.
 2019-10-09 14:01:19,398 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '360', 'Content-Type': 'application/x-www-form-urlencoded'}
 2019-10-09 14:01:19,398 NamedEntity INFO locale=fi&text=Lis%C3%A4ksi+Aarno+Antero+Tarkkio+on+vaatinut+yhti%C3%B6n+velvoittamista+suorittamaan+h%C3%A4nelle+takaisin+31.1.1983+j%C3%A4lkeiselt%C3%A4+ajalta+liikaa+perittyj%C3%A4+s%C3%A4hk%C3%B6maksuja+4.768%2C43+markkaa+16+prosentin+korkoineen+haasteen+tiedoksiantop%C3%A4iv%C3%A4st%C3%A4+lukien+sek%C3%A4+korvaamaan+h%C3%A4nen+oikeudenk%C3%A4yntikulunsa
+2019-10-10 07:56:10,999 NamedEntity INFO {'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test'}
+2019-10-10 07:56:10,999 NamedEntity INFO locale=fi&text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985
+2019-10-10 07:56:13,539 NamedEntity INFO {'Content-Length': '100', 'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test'}
+2019-10-10 07:56:13,540 NamedEntity INFO locale=fi&text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut
+2019-10-10 07:56:13,745 NamedEntity INFO {'Content-Length': '322', 'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test'}
+2019-10-10 07:56:13,745 NamedEntity INFO locale=fi&text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.
+2019-10-10 07:59:28,939 NamedEntity INFO {'Content-Length': '84', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 07:59:28,939 NamedEntity INFO locale=fi&text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985
+2019-10-10 07:59:29,136 NamedEntity INFO {'Content-Length': '100', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 07:59:29,136 NamedEntity INFO locale=fi&text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut
+2019-10-10 07:59:29,190 NamedEntity INFO {'Content-Length': '322', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 07:59:29,190 NamedEntity INFO locale=fi&text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.
+2019-10-10 08:04:32,739 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '84', 'X-Custom': 'Test'}
+2019-10-10 08:04:32,739 NamedEntity INFO locale=fi&text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985
+2019-10-10 08:04:32,799 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '100', 'X-Custom': 'Test'}
+2019-10-10 08:04:32,799 NamedEntity INFO locale=fi&text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut
+2019-10-10 08:04:32,855 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '322', 'X-Custom': 'Test'}
+2019-10-10 08:04:32,856 NamedEntity INFO locale=fi&text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.
+2019-10-10 08:06:13,898 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '84'}
+2019-10-10 08:06:13,898 NamedEntity INFO text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985&locale=fi
+2019-10-10 08:06:15,612 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '100'}
+2019-10-10 08:06:15,613 NamedEntity INFO text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut&locale=fi
+2019-10-10 08:06:15,667 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '322'}
+2019-10-10 08:06:15,668 NamedEntity INFO text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.&locale=fi
+2019-10-10 08:07:32,008 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '84', 'X-Custom': 'Test'}
+2019-10-10 08:07:32,008 NamedEntity INFO locale=fi&text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985
+2019-10-10 08:07:32,121 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '100', 'X-Custom': 'Test'}
+2019-10-10 08:07:32,121 NamedEntity INFO locale=fi&text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut
+2019-10-10 08:07:32,204 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '322', 'X-Custom': 'Test'}
+2019-10-10 08:07:32,204 NamedEntity INFO locale=fi&text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.
+2019-10-10 08:08:53,851 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '84'}
+2019-10-10 08:08:53,851 NamedEntity INFO locale=fi&text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985
+2019-10-10 08:08:53,951 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '100'}
+2019-10-10 08:08:53,951 NamedEntity INFO locale=fi&text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut
+2019-10-10 08:08:54,172 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '322'}
+2019-10-10 08:08:54,172 NamedEntity INFO locale=fi&text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.
+2019-10-10 08:10:29,678 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '84'}
+2019-10-10 08:10:29,679 NamedEntity INFO text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985&locale=fi
+2019-10-10 08:10:29,766 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '100'}
+2019-10-10 08:10:29,766 NamedEntity INFO text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut&locale=fi
+2019-10-10 08:10:29,881 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '322'}
+2019-10-10 08:10:29,881 NamedEntity INFO text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.&locale=fi
+2019-10-10 08:21:05,537 NamedEntity INFO {'Content-Length': '84', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 08:21:05,537 NamedEntity INFO locale=fi&text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985
+2019-10-10 08:21:05,730 NamedEntity INFO {'Content-Length': '100', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 08:21:05,731 NamedEntity INFO locale=fi&text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut
+2019-10-10 08:21:05,836 NamedEntity INFO {'Content-Length': '322', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 08:21:05,837 NamedEntity INFO locale=fi&text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.
+2019-10-10 08:22:03,538 NamedEntity INFO {'Content-Length': '84', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 08:22:03,538 NamedEntity INFO text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985&locale=fi
+2019-10-10 08:22:03,602 NamedEntity INFO {'Content-Length': '100', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 08:22:03,602 NamedEntity INFO text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut&locale=fi
+2019-10-10 08:22:03,654 NamedEntity INFO {'Content-Length': '322', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 08:22:03,654 NamedEntity INFO text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.&locale=fi
+2019-10-10 08:22:31,074 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '84'}
+2019-10-10 08:22:31,074 NamedEntity INFO locale=fi&text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985
+2019-10-10 08:22:31,119 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '100'}
+2019-10-10 08:22:31,119 NamedEntity INFO locale=fi&text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut
+2019-10-10 08:22:31,274 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '322'}
+2019-10-10 08:22:31,275 NamedEntity INFO locale=fi&text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.
+2019-10-10 08:23:26,847 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '84', 'X-Custom': 'Test'}
+2019-10-10 08:23:26,847 NamedEntity INFO locale=fi&text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985
+2019-10-10 08:23:27,035 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '100', 'X-Custom': 'Test'}
+2019-10-10 08:23:27,035 NamedEntity INFO locale=fi&text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut
+2019-10-10 08:23:27,090 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '322', 'X-Custom': 'Test'}
+2019-10-10 08:23:27,090 NamedEntity INFO locale=fi&text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.
+2019-10-10 08:25:16,594 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '84', 'X-Custom': 'Test'}
+2019-10-10 08:25:16,594 NamedEntity INFO text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985&locale=fi
+2019-10-10 08:25:16,814 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '100', 'X-Custom': 'Test'}
+2019-10-10 08:25:16,814 NamedEntity INFO text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut&locale=fi
+2019-10-10 08:25:16,949 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '322', 'X-Custom': 'Test'}
+2019-10-10 08:25:16,949 NamedEntity INFO text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.&locale=fi
+2019-10-10 08:26:18,719 NamedEntity INFO {'Content-Length': '84', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 08:26:18,719 NamedEntity INFO text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985&locale=fi
+2019-10-10 08:26:18,929 NamedEntity INFO {'Content-Length': '100', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 08:26:18,929 NamedEntity INFO text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut&locale=fi
+2019-10-10 08:26:19,300 NamedEntity INFO {'Content-Length': '322', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 08:26:19,300 NamedEntity INFO text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.&locale=fi
+2019-10-10 08:26:57,378 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '84', 'X-Custom': 'Test'}
+2019-10-10 08:26:57,378 NamedEntity INFO text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985&locale=fi
+2019-10-10 08:26:57,457 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '100', 'X-Custom': 'Test'}
+2019-10-10 08:26:57,458 NamedEntity INFO text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut&locale=fi
+2019-10-10 08:26:57,551 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '322', 'X-Custom': 'Test'}
+2019-10-10 08:26:57,552 NamedEntity INFO text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.&locale=fi
+2019-10-10 08:28:51,553 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 08:28:51,553 NamedEntity INFO text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985&locale=fi
+2019-10-10 08:28:51,636 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '100', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 08:28:51,636 NamedEntity INFO text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut&locale=fi
+2019-10-10 08:28:51,696 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '322', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 08:28:51,697 NamedEntity INFO text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.&locale=fi
+2019-10-10 08:29:46,462 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '84', 'X-Custom': 'Test'}
+2019-10-10 08:29:46,462 NamedEntity INFO text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985&locale=fi
+2019-10-10 08:29:46,565 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '100', 'X-Custom': 'Test'}
+2019-10-10 08:29:46,565 NamedEntity INFO text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut&locale=fi
+2019-10-10 08:29:46,637 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '322', 'X-Custom': 'Test'}
+2019-10-10 08:29:46,637 NamedEntity INFO text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.&locale=fi
+2019-10-10 08:30:51,443 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '84', 'X-Custom': 'Test'}
+2019-10-10 08:30:51,443 NamedEntity INFO text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985&locale=fi
+2019-10-10 08:30:51,567 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '100', 'X-Custom': 'Test'}
+2019-10-10 08:30:51,568 NamedEntity INFO text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut&locale=fi
+2019-10-10 08:30:51,711 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '322', 'X-Custom': 'Test'}
+2019-10-10 08:30:51,711 NamedEntity INFO text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.&locale=fi
+2019-10-10 08:39:21,740 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 08:39:21,740 NamedEntity INFO locale=fi&text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985
+2019-10-10 08:39:21,828 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '100', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 08:39:21,828 NamedEntity INFO locale=fi&text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut
+2019-10-10 08:39:21,909 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '322', 'Content-Type': 'application/x-www-form-urlencoded'}
+2019-10-10 08:39:21,909 NamedEntity INFO locale=fi&text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.
+2019-10-10 08:41:17,613 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '84'}
+2019-10-10 08:41:17,613 NamedEntity INFO text=Aarno+Antero+Tarkkio+on+Lankosken+S%C3%A4hk%C3%B6+Oy%3Alle+25.11.1985&locale=fi
+2019-10-10 08:41:17,708 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '100'}
+2019-10-10 08:41:17,708 NamedEntity INFO text=14.7.1986+tiedoksi+toimituttamiensa+haasteiden+nojalla+kihlakunnanoikeudessa+lausunut&locale=fi
+2019-10-10 08:41:17,798 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '322'}
+2019-10-10 08:41:17,798 NamedEntity INFO text=ett%C3%A4+Lankosken+S%C3%A4hk%C3%B6+Oy+oli+28.5.1963+allekirjoitetulla+kauppakirjalla+ostanut+Aarno+Antero+Tarkkion+is%C3%A4lt%C3%A4+Arvo+Antero+Tarkkiolta+Merikarvian+kunnan+Lankosken+kyl%C3%A4ss%C3%A4+sijaitsevaan+Heikintalon+tilaan+RN%3Ao+1%3A29+kuuluneet+osuudet+Karvianjoessa+olevaan+Lankosken+koskeen.&locale=fi

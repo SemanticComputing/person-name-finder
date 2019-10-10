@@ -187,10 +187,10 @@ class NameRidler:
             entity = dict()
             items = list()
             #print("For name: ", name, arr)
-            str_name = name.strip()
+            str_name = name.split('_')[0].strip()
             if len(str_name) > 0:
                 entity['full_name'] = str_name
-                entity['full_name_lemma'] = self.full_name_lemmas[name]
+                entity['full_name_lemma'] = self.full_name_lemmas[str_name]
                 check_name_i = max(list(self.ord_full_names.keys()))
                 check_name = self.ord_full_names[check_name_i].strip()
                 #print("Full name:", check_name_i, check_name, str_name)
@@ -217,6 +217,7 @@ class NameRidler:
                     if item.get_json() not in items:
                         #print("Item:", item)
                         items.append(item.get_json())
+
                 entity['names'] = items
                 entities.append(entity)
                 prev_entity = entity
@@ -245,8 +246,14 @@ class NameRidler:
         if splitted[0].isdigit():
             return 3
 
-
         return 0
+
+    def combine_entity_lists(self, newlist, oldlist):
+        for entity in newlist:
+            if entity not in oldlist:
+                oldlist.append(entity)
+
+        return oldlist
 
     def parse(self, queried_names, sentence_obj):
         arr = dict()
@@ -265,14 +272,14 @@ class NameRidler:
         for ind, rs in queried_names.items():
             #print("what we've got:", rs)
             rs_queried_name = rs.get_resultset()
+            counter = 1
             for i, queried_name in rs_queried_name.items():
-                #last_item = len(queried_name["results"]["bindings"])
-                print(i, queried_name)
-                counter = 1
+                print("Queried name:",i, queried_name, counter)
+
                 prev_string_start = string_start
 
                 for result in queried_name:
-                    print(result)
+                    print(result, counter)
                     prev = name
                     prev_names.append(label)
                     uri = str(result.get_uri())
@@ -285,8 +292,11 @@ class NameRidler:
                         counter += 1
                     elif prev != None:
                         if prev.get_name() != label:
+                            print("Raising counter:", prev.get_name(), label, counter)
                             counter += 1
                             prev_string_start = string_start
+                        else:
+                            print("Not raising counter:", prev.get_name(), label)
                     #else:
                     #    print("Name occured twice:", name, prev)
                     #print("[RESULT]",ind,uri, label, count, type, linkage)
@@ -314,9 +324,9 @@ class NameRidler:
                             if label != prev.get_name():
                                 full_name += label + " "
 
-                    name = Name(label, original_form, count, type, counter, uri, linkage, string_start)
+                    name = Name(label, original_form, count, type, int(i)+1, uri, linkage, string_start)
 
-                    #print("Adding name:", name, full_name, " to ", counter)
+                    print("Adding name:", name, full_name, " to ", counter)
 
                     if counter not in helper_arr.keys():
                         helper_arr[counter] = list()
@@ -328,11 +338,13 @@ class NameRidler:
 
             argh, full_name, full_name_lemma = self.determine_name(arr, helper_arr)
 
-            #print("Full name:", full_name, argh)
+            print("Full name:", full_name, argh, full_name_counter)
+            fullname_ind = full_name + "_" + str(full_name_counter)
 
-            #if full_name in self.full_names:
-            #    print("Already in the arr", full_name)
-            self.full_names[full_name] = argh
+            if full_name in self.full_names:
+                print("Already in the arr", full_name)
+
+            self.full_names[fullname_ind] = argh
             self.full_name_lemmas[full_name] = full_name_lemma
             self.ord_full_names[full_name_counter] = full_name
             full_name_counter += 1
@@ -348,10 +360,12 @@ class NameRidler:
     def determine_name(self, names, helper):
         family_names = list()
         first_names = list()
-        last = len(helper) + 1
+        last = len(helper)
         full_name = ""
         prev = None
         name_unidentified = False
+        #print("Process:", names)
+        #print("Last:", helper, last)
 
         for loc, names in helper.items():
             for name in names:
@@ -384,7 +398,7 @@ class NameRidler:
                         prev = name
                         name_unidentified = False
                     else:
-                        print("Unable to identify name --> ", name)
+                        print("Unable to identify name --> ", name, last, helper)
                         name_unidentified = True
                         prev = name
 
@@ -406,9 +420,9 @@ class NameRidler:
         overlap = set(fnames).intersection(set(lnames))
 
         if len(overlap) > 0:
-            #print("Overlapping names:", overlap)
+            print("Overlapping names:", overlap)
             for o in overlap:
-                #print("Before, check last", last, helper, names)
+                print("Before, check last", last, helper, names)
                 first_names, family_names = self.reduce_overlapping(o, first_names, family_names, last)
 
         #print("Return names:", first_names + family_names)
@@ -474,7 +488,7 @@ class NameRidler:
         return None
 
     def is_family_name(self, name, last):
-        #print("Location of last:", last, name.get_location(), name.get_type())
+        print("Location of last:", last, name.get_location(), name.get_type())
         if name.get_type() == "Sukunimi" and name.get_location() == last:
             return True
         return False
