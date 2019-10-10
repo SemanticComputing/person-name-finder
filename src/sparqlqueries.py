@@ -56,7 +56,7 @@ class SparqlQuries:
                           FILTER (lang(?typeLabel) = 'fi')
                           BIND(STR(?typeLabel) AS ?nameLabel) .
                           #FILTER(STRSTARTS(STR(?type), 'http://ldf.fi/schema/henkilonimisto/'))
-                        } GROUP BY ?names ?name ?label ?nameLabel ?nameType ?gender """
+                        } GROUP BY ?names ?name ?label ?nameLabel ?nameType ?gender ORDER BY DESC(?name) DESC(?nameType)"""
 
             query = query.replace('$names', " ".join(['"{0}"'.format(x) for x in name]))
 
