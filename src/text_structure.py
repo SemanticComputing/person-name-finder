@@ -307,16 +307,16 @@ class SentenceChunk:
         word_list = [w.get_string() for w in self.words.values()] #list(self.words.keys())
         lemma_list = [w.get_string() for w in self.lemma_words.values()]
         name_list = word_tokenize(name)
-        #print("Words:", self.words)
-        #print("Word listing:",word_list)
-        #print("Lemma listing:", lemma_list)
-        #print("Name listing:", name_list)
+        print("Words:", self.words)
+        print("Word listing:",word_list)
+        print("Lemma listing:", lemma_list)
+        print("Name listing:", name_list)
         ind = -1
 
         #subarray_ind = self.find_subarray(np.array(word_list), np.array(lemma_list), np.array(name_list), prev_start, prev_end)
         indeces = self.find_original_string_location(list(name_list), list(lemma_list), prev_start, prev_end)
         #print("Found subarray:", subarray_ind)
-        #print("list index:", indeces)
+        print("list index:", indeces)
         for name,inds in indeces.items():
             #print("LOOP:",name, inds)
             for ind in inds:
@@ -334,31 +334,33 @@ class SentenceChunk:
                 end_ind = ind + len(name_list) -1
                 #end_ind = ind+len(word_list[subarray_ind])
 
-                #print("INDEX:",ind, end_ind,word_list[ind]+"_"+str(ind+1), indeces)
-                #print("comp",ind,  prev_start,self.words[word_list[ind]+"_"+str(ind+1)].get_start_location(), lemma_list[ind], name)
+                print("INDEX:",ind, end_ind,word_list[ind]+"_"+str(ind+1), indeces)
+                print("comp",ind,  prev_start,self.words[word_list[ind]+"_"+str(ind+1)].get_start_location(), lemma_list[ind], name)
                 #if self.words[word_list[ind]+"_"+str(ind+1)].get_start_location() > prev_start:
                 #    print("ind checks")
                 #if name == lemma_list[ind]:
                 #    print("name checks")
-                #print("start, end:", word_list[subarray_ind], "/", word_list[subarray_ind])
-                #print("Start:", word_list[subarray_ind]+"_"+str(ind)+"_"+str(ind+len(word_list[subarray_ind])))
-                #print("End:",word_list[subarray_ind]+"_"+str(ind)+"_"+str(ind+len(word_list[subarray_ind])))
+                ##print("start, end:", word_list[subarray_ind], "/", word_list[subarray_ind])
+                ##print("Start:", word_list[subarray_ind]+"_"+str(ind)+"_"+str(ind+len(word_list[subarray_ind])))
+                ##print("End:",word_list[subarray_ind]+"_"+str(ind)+"_"+str(ind+len(word_list[subarray_ind])))
+                print(self.words[word_list[ind]+"_"+str(ind+1)].get_start_location(), prev_start)
+                print(name,lemma_list[ind])
                 if self.words[word_list[ind]+"_"+str(ind+1)].get_start_location() > prev_start and name == lemma_list[ind]:
-                    #print("--->", word_list[ind]+"_"+str(ind+1))
-                    #print("start:", self.words[word_list[ind]+"_"+str(ind+1)])
-                    #print("stop:", self.words[word_list[ind] + "_" + str(ind+1)])
+                    print("--->", word_list[ind]+"_"+str(ind+1))
+                    print("start:", self.words[word_list[ind]+"_"+str(ind+1)])
+                    print("stop:", self.words[word_list[ind] + "_" + str(ind+1)])
                     start = self.words[word_list[ind]+"_"+str(ind+1)]
                     stop = self.words[word_list[ind]+"_"+str(ind+1)]
 
-                    #print("INDEX:",start, stop)
-                    #print("--->",start.get_start_location(), stop.get_end_location())
+                    print("INDEX:",start, stop)
+                    print("--->",start.get_start_location(), stop.get_end_location())
 
                     if start != None and stop != None:
                         #text = "The cat sat on the mat"
                         #text = text[:8] + "slept" + text[11:]
-                        #print("Test:", name, start.get_start_location(), "-", stop.get_end_location())
-                        #print("START: ", self.string[:start.get_start_location()] )
-                        #print("END: ", self.string[stop.get_end_location():])
+                        print("Test:", name, start.get_start_location(), "-", stop.get_end_location())
+                        print("START: ", self.string[:start.get_start_location()] )
+                        print("END: ", self.string[stop.get_end_location():])
                         #test = self.string[:start.get_start_location()] + "###" + self.string[stop.get_end_location():]
 
                         #print("Name LOC check:", test, "(",name,")", "/",  self.string)

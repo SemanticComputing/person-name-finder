@@ -1,0 +1,2 @@
+class AmbiguityResolver():
+    pass

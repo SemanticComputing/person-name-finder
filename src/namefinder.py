@@ -294,29 +294,32 @@ class NameRidler:
                     string_start, string_end = sentence_obj.find_name_location(label, prev_string_start, string_end)
                     original_form = sentence_obj.find_from_text(string_start, string_end)
 
-                    if prev != None:
-                        if (prev.get_type() == "Sukunimi" and type == "Etunimi") and (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1) and (prev.get_string_end()<=string_start-2):
-                            counter = 1
-
-                            arr, full_name, full_name_counter, full_name_lemma, helper_arr, name = self.extract_name(
-                                arr,
-                                full_name_counter,
-                                helper_arr, name,queried_name)
-
+                    if string_end != None and string_start != None and original_form != None:
 
                         if prev != None:
-                            if label != prev.get_name():
-                                full_name += label + " "
+                            if (prev.get_type() == "Sukunimi" and type == "Etunimi") and (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1) and (prev.get_string_end()<=string_start-2):
+                                counter = 1
 
-                    name = Name(label, original_form, count, type, counter, uri, linkage, string_start)
+                                arr, full_name, full_name_counter, full_name_lemma, helper_arr, name = self.extract_name(
+                                    arr,
+                                    full_name_counter,
+                                    helper_arr, name,queried_name)
 
-                    if counter not in helper_arr.keys():
-                        helper_arr[counter] = list()
-                    helper_arr[counter].append(name)
 
-                    if label not in arr.keys():
-                        arr[label] = list()
-                    arr[label].append(name)
+                            if prev != None:
+                                if label != prev.get_name():
+                                    full_name += label + " "
+
+                        print("Add name:", label, original_form, count, type, counter, uri, linkage, string_start)
+                        name = Name(label, original_form, count, type, counter, uri, linkage, string_start)
+
+                        if counter not in helper_arr.keys():
+                            helper_arr[counter] = list()
+                        helper_arr[counter].append(name)
+
+                        if label not in arr.keys():
+                            arr[label] = list()
+                        arr[label].append(name)
 
             print(arr, full_name_counter, helper_arr, name, queried_name)
             arr, full_name, full_name_counter, full_name_lemma, helper_arr, name = self.extract_name(arr,
