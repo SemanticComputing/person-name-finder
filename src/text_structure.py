@@ -24,7 +24,8 @@ class TextParser:
         self.chunks = list()
         self.words = dict()
         self.lemma_words = dict()
-        self.sentence_list = list()
+        self.sentence_list = dict()
+        self.sentence_chunks = dict()
 
         # settings
 
@@ -43,7 +44,7 @@ class TextParser:
             chunk_counter, sentence_counter, sentence_len = self.parse_string(sentence, sentence_counter, chunk_counter, sentence_len)
             sentence_counter += 1
 
-        return self.chunks, self.structure, self.regex_check
+        return self.chunks, self.structure, self.regex_check, self.sentence_list
 
     def parse_string(self, string, sentence_counter, chunk_counter, sentence_len):
         sentence_counter, chunk_counter, sentence_len = self.split_to_chunks(string, sentence_counter, chunk_counter, sentence_len)
@@ -84,6 +85,8 @@ class TextParser:
         print("Split:", splitted)
         sen = Sentence()
         sen.set_sentence(ord=ord, string=string, chunks=splitted)
+        self.sentence_list[ord]=sen
+        self.sentence_chunks[sen] = list()
 
         if len(splitted) > 1:
             for chunk in splitted:
@@ -94,6 +97,7 @@ class TextParser:
 
                     sentence_len += len(chunk) + 1
                     self.chunks.append(s)
+                    self.sentence_chunks[sen].append(s)
                     if chunk_counter not in self.structure:
                         #print("Add structure", chunk_counter, ord, chunk)
                         self.structure[chunk_counter] = ord
@@ -122,11 +126,18 @@ class TextParser:
             s.set_sentence_chunk(string, "", chunk_counter, sentence_len)
             sentence_len += len(string) + 1
             self.chunks.append(s)
+            self.sentence_chunks[sen].append(s)
             if chunk_counter not in self.structure:
                 self.structure[chunk_counter] = ord
                 chunk_counter += 1
 
         return ord, chunk_counter, sentence_len
+
+    def find_sentence_for_chunk(self, chunk):
+        for sentence, chunks in self.sentence_chunks.items():
+            if chunk in chunks:
+                return sentence
+
 
 class Sentence:
     def __init__(self):
@@ -149,6 +160,9 @@ class Sentence:
     def add_chunk_obj(self, chunk, string):
         self.chunk_obj[string] = chunk
         chunk.set_str_starts(self.chunk_sizes[string])
+
+    def get_sentence_string(self):
+        return self.string
 
 class SentenceChunk:
     def __init__(self):
@@ -257,9 +271,12 @@ class SentenceChunk:
         prev = 0
         strlen = 0
         string_len = len(string)
-        words = word_tokenize(string)
+        words = word_tokenize(re.sub(r'([A-ZÄÖÅa-zäöå0-9]+):([A-ZÄÖÅa-zäöå0-9]+)', r'\1__\2', string))
+        #words = word_tokenize(string)
         #print("WORDS:", words)
         for word in words:
+            if '__' in word:
+                word = word.replace('__', ':')
 
             if strlen!= 0 and word not in punct:
                 strlen+=1
@@ -307,16 +324,16 @@ class SentenceChunk:
         word_list = [w.get_string() for w in self.words.values()] #list(self.words.keys())
         lemma_list = [w.get_string() for w in self.lemma_words.values()]
         name_list = word_tokenize(name)
-        print("Words:", self.words)
-        print("Word listing:",word_list)
-        print("Lemma listing:", lemma_list)
-        print("Name listing:", name_list)
+        #print("Words:", self.words)
+        #print("Word listing:",word_list)
+        #print("Lemma listing:", lemma_list)
+        #print("Name listing:", name_list)
         ind = -1
 
         #subarray_ind = self.find_subarray(np.array(word_list), np.array(lemma_list), np.array(name_list), prev_start, prev_end)
         indeces = self.find_original_string_location(list(name_list), list(lemma_list), prev_start, prev_end)
         #print("Found subarray:", subarray_ind)
-        print("list index:", indeces)
+        print("list index:", indeces, lemma_list, name_list)
         for name,inds in indeces.items():
             #print("LOOP:",name, inds)
             for ind in inds:
@@ -334,8 +351,8 @@ class SentenceChunk:
                 end_ind = ind + len(name_list) -1
                 #end_ind = ind+len(word_list[subarray_ind])
 
-                print("INDEX:",ind, end_ind,word_list[ind]+"_"+str(ind+1), indeces)
-                print("comp",ind,  prev_start,self.words[word_list[ind]+"_"+str(ind+1)].get_start_location(), lemma_list[ind], name)
+                #print("INDEX:",ind, end_ind,word_list[ind]+"_"+str(ind+1), indeces)
+                #print("comp",ind,  prev_start,self.words[word_list[ind]+"_"+str(ind+1)].get_start_location(), lemma_list[ind], name)
                 #if self.words[word_list[ind]+"_"+str(ind+1)].get_start_location() > prev_start:
                 #    print("ind checks")
                 #if name == lemma_list[ind]:
@@ -343,24 +360,33 @@ class SentenceChunk:
                 ##print("start, end:", word_list[subarray_ind], "/", word_list[subarray_ind])
                 ##print("Start:", word_list[subarray_ind]+"_"+str(ind)+"_"+str(ind+len(word_list[subarray_ind])))
                 ##print("End:",word_list[subarray_ind]+"_"+str(ind)+"_"+str(ind+len(word_list[subarray_ind])))
-                print(self.words[word_list[ind]+"_"+str(ind+1)].get_start_location(), prev_start)
-                print(name,lemma_list[ind])
+                #print(self.words[word_list[ind]+"_"+str(ind+1)].get_start_location(), prev_start)
+                #print(name,lemma_list[ind])
+
+                print("ind, wordlist[ind]",ind, word_list[ind])
+                print("word_list[ind]+_+str(ind+1)",word_list[ind]+"_"+str(ind+1))
+                print("prev_start",prev_start)
+                print(self.words[word_list[ind]+"_"+str(ind+1)].get_start_location())
+                print("name == lemma_list[ind]",name,lemma_list[ind])
                 if self.words[word_list[ind]+"_"+str(ind+1)].get_start_location() > prev_start and name == lemma_list[ind]:
                     print("--->", word_list[ind]+"_"+str(ind+1))
-                    print("start:", self.words[word_list[ind]+"_"+str(ind+1)])
-                    print("stop:", self.words[word_list[ind] + "_" + str(ind+1)])
+                    #print("start:", self.words[word_list[ind]+"_"+str(ind+1)])
+                    #print("stop:", self.words[word_list[ind] + "_" + str(ind+1)])
                     start = self.words[word_list[ind]+"_"+str(ind+1)]
                     stop = self.words[word_list[ind]+"_"+str(ind+1)]
 
-                    print("INDEX:",start, stop)
-                    print("--->",start.get_start_location(), stop.get_end_location())
+                    print(start, stop)
+
+                    #print("INDEX:",start, stop)
+                    #print("--->",start.get_start_location(), stop.get_end_location())
 
                     if start != None and stop != None:
+                        print("All good")
                         #text = "The cat sat on the mat"
                         #text = text[:8] + "slept" + text[11:]
-                        print("Test:", name, start.get_start_location(), "-", stop.get_end_location())
-                        print("START: ", self.string[:start.get_start_location()] )
-                        print("END: ", self.string[stop.get_end_location():])
+                        #print("Test:", name, start.get_start_location(), "-", stop.get_end_location())
+                        #print("START: ", self.string[:start.get_start_location()] )
+                        #print("END: ", self.string[stop.get_end_location():])
                         #test = self.string[:start.get_start_location()] + "###" + self.string[stop.get_end_location():]
 
                         #print("Name LOC check:", test, "(",name,")", "/",  self.string)
@@ -428,6 +454,22 @@ class SentenceChunk:
     def detokenize(self, word_list):
         from nltk.tokenize.treebank import TreebankWordDetokenizer
         return TreebankWordDetokenizer().detokenize(word_list)
+
+    def get_string(self):
+        return self.string
+
+    def get_location(self):
+        return self.location
+
+    def get_order(self):
+        return self.ord
+
+    def __eq__(self, other):
+        if self.string == other.get_string():
+            if self.ord == other.get_order():
+                if self.location == other.get_location():
+                    return True
+        return False
 
     def __str__(self):
         return self.detokenize([word.get_string() for word in self.words.values()])

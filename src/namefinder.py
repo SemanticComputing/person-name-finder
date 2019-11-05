@@ -14,7 +14,7 @@ class NameFinder:
         self.first_names = dict()
         self.first_name_ind = dict()
 
-    def identify_name(self, sentence_chunk_strings, index_list, check_date=None, gender=False, title=False, date=False, word=False):
+    def identify_name(self, sentence_chunk_strings, index_list, original_sentence_data, check_date=None, gender=False, title=False, date=False, word=False):
         names = dict()
         resp = None
         for i,name_string in sentence_chunk_strings.items():
@@ -35,8 +35,10 @@ class NameFinder:
                 name_list, resp = nr.get_names(check_for_dates=checking_date, gender=gender, titles=title, dates=date, word=word)
                 print("Using index:", index_list[i])
                 if index_list[i] not in names.keys():
-                    names[index_list[i]] = list()
-                names[index_list[i]].extend(name_list)
+                    names[index_list[i]] = dict()
+                    names[index_list[i]]["entities"] = list()
+                names[index_list[i]]["entities"].extend(name_list)
+                names[index_list[i]]["sentence"]=str(original_sentence_data[index_list[i]].get_sentence_string())
 
         return names, 1, resp
 
@@ -262,13 +264,13 @@ class NameRidler:
         prev_names =list()
         string_start = -1
         string_end = -1
-
+        prev_string_start = -1
         for ind, rs in queried_names.items():
             rs_queried_name = rs.get_resultset()
             counter = 1
             for i, queried_name in rs_queried_name.items():
-
-                prev_string_start = string_start
+                if string_start != None:
+                    prev_string_start = string_start
 
                 for result in queried_name:
 
@@ -285,20 +287,31 @@ class NameRidler:
                         counter += 1
                     elif prev != None:
                         if prev.get_name() != label:
-                            print("Raising counter:", prev.get_name(), label, counter)
+                            print("Raising counter:", prev.get_name(), label, counter, string_start,prev_string_start)
                             counter += 1
-                            prev_string_start = string_start
+                            if string_start != None:
+                                prev_string_start = string_start
+                            else:
+                                print("string start none x.x", prev_string_start)
                         else:
                             print("Not raising counter:", prev.get_name(), label)
 
                     string_start, string_end = sentence_obj.find_name_location(label, prev_string_start, string_end)
+                    if string_start == None:
+                        print("String start none:", label, uri, type, linkage, prev_string_start, string_end)
                     original_form = sentence_obj.find_from_text(string_start, string_end)
 
                     if string_end != None and string_start != None and original_form != None:
 
                         if prev != None:
-                            if (prev.get_type() == "Sukunimi" and type == "Etunimi") and (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1) and (prev.get_string_end()<=string_start-2):
+                            if (prev.get_type() == "Sukunimi" and type == "Etunimi") and \
+                                    (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1) and (prev.get_string_end()<=string_start-2) and \
+                                    (prev.get_name_lemma() != prev.get_name() or original_form != label.strip()):
                                 counter = 1
+                                print("Adding a last name:", prev.get_type(), type)
+                                print("Adding a last name:", prev.get_name().strip(), label.strip())
+                                print("Adding a last name:",len(list(arr.keys()))>1)
+                                print("Adding a last name:", prev.get_string_end(),string_start-2)
 
                                 arr, full_name, full_name_counter, full_name_lemma, helper_arr, name = self.extract_name(
                                     arr,
@@ -315,11 +328,13 @@ class NameRidler:
 
                         if counter not in helper_arr.keys():
                             helper_arr[counter] = list()
-                        helper_arr[counter].append(name)
+                        if name not in helper_arr[counter]:
+                            helper_arr[counter].append(name)
 
                         if label not in arr.keys():
                             arr[label] = list()
-                        arr[label].append(name)
+                        if name not in arr[label]:
+                            arr[label].append(name)
 
             print(arr, full_name_counter, helper_arr, name, queried_name)
             arr, full_name, full_name_counter, full_name_lemma, helper_arr, name = self.extract_name(arr,

@@ -46,7 +46,7 @@ def parse_input(request):
         if text != None:
             input = {0:text}
             print(gender, text)
-            sentence_data, indeces, regex_checks = tokenization(text)
+            sentence_data, indeces, regex_checks, full_sentences = tokenization(text)
             #print("tokenization results",sentences)
             sentences, index_list = do_lemmatization(sentence_data, indeces)
             #print("data", input)
@@ -83,7 +83,7 @@ def parse_input(request):
             return input, sentences, index_list, gender, title, date
         if len(text) > 0:
             print(gender, text)
-            sentence_data, indeces, regex_checks = tokenization(text)
+            sentence_data, indeces, regex_checks, full_sentences = tokenization(text)
             print("sentences dataset:", sentence_data)
             sentences, index_list = do_lemmatization(sentence_data, indeces)
             input = {0: str(request.data.decode('utf-8'))}
@@ -91,7 +91,7 @@ def parse_input(request):
             print("sentences:", sentences)
     else:
         print("This method is not yet supported:", request.method)
-    return input, sentences, index_list, gender, title, date, word, regex_checks
+    return input, sentences, index_list, gender, title, date, word, regex_checks, full_sentences
 
 
 def extract_value(value):
@@ -136,59 +136,9 @@ def tokenization(text):
 
     tokenizer = setup_tokenizer()
     tp = TextParser(text)
-    sentence_list, structure, regex_check = tp.parse_input(tokenizer)
+    sentence_list, structure, regex_check, full_sentences = tp.parse_input(tokenizer)
 
-    return sentence_list, structure, regex_check
-
-def old_tokenization(text):
-
-    separators = [', ','; ', ' (', ') ', ')', ' ja ', ' tai ']
-    exceptional_separators = [' (', ') ']
-    regex_check = dict()
-    chunk_regex_check = 0
-    result = list()
-    structure = dict()
-    counter = 0
-    chunk_counter = 0
-    print('Tokenize this:', text)
-    tokenizer = setup_tokenizer()
-    sentences = tokenizer.tokenize(text)
-    for sentence in sentences:
-        splitted = re.split(r'(, |; | \(|\)| ja | tai )', sentence) #sentence.split('[,;]')
-
-        if len(splitted) > 1:
-            for chunk in splitted:
-                if chunk not in separators:
-                    result.append(chunk)
-                    if chunk_counter not in structure:
-                        structure[chunk_counter] = counter
-                        if chunk_regex_check > 0:
-                            print("Check chunk? ", chunk)
-                            if has_numbers(chunk):
-                                print("This chunk has to be checked!")
-                                if regex_chunk_counter not in regex_check:
-                                    regex_check[regex_chunk_counter] = chunk
-                                else:
-                                    regex_check[regex_chunk_counter] += chunk
-                        chunk_counter += 1
-                elif chunk == ' (':
-                    print('Start bracket checking')
-                    chunk_regex_check = 1
-                    regex_chunk_counter = chunk_counter-1
-                elif chunk == ')' or chunk == ') ':
-                    chunk_regex_check = 0
-                    print('End bracket checking')
-
-
-        else:
-            result.append(sentence)
-            if chunk_counter not in structure:
-                structure[chunk_counter] = counter
-                chunk_counter += 1
-        counter += 1
-
-    #print("Splitted:", result)
-    return result, structure, regex_check
+    return sentence_list, structure, regex_check, full_sentences
 
 
 def has_numbers(inputString):
@@ -217,11 +167,11 @@ def lemmatize(text):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     print("APP name",__name__)
-    input_data, sentences, index_list, gender, title, date, word, regex_check = parse_input(request)
+    input_data, sentences, index_list, gender, title, date, word, regex_check, original_sentences = parse_input(request)
     print("DATA", sentences)
     if input_data != None:
         name_finder = NameFinder()
-        results, code, responses = name_finder.identify_name(sentences, index_list, check_date=regex_check, gender=gender, title=title, date=date, word=word)
+        results, code, responses = name_finder.identify_name(sentences, index_list, original_sentences, check_date=regex_check, gender=gender, title=title, date=date, word=word)
 
         if code == 1:
             print('results',results)
