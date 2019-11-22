@@ -40,6 +40,7 @@ class TextParser:
         chunk_counter = 0
         sentence_len = 0
         sentences = tokenizer.tokenize(self.string)
+        print("[TOKENIZED] ", sentences)
         for sentence in sentences:
             chunk_counter, sentence_counter, sentence_len = self.parse_string(sentence, sentence_counter, chunk_counter, sentence_len)
             sentence_counter += 1
