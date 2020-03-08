@@ -43,20 +43,21 @@ class SparqlQuries:
             query = """ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
                         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
                         PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-                        SELECT DISTINCT ?names ?name ?label ?nameLabel ?nameType (sum(?lkm)as ?count)   WHERE {
+                        SELECT DISTINCT ?names ?name ?label ?nameLabel ?nameType ?referencesPlace ?referencesVocation (sum(?lkm)as ?count)   WHERE {
                           VALUES ?names { $names }
                           BIND(STRLANG(?names,'fi') AS ?label)
                           ?name skos:prefLabel ?label .
                           ?nameUsage <http://ldf.fi/schema/henkilonimisto/hasName> ?name .
                           ?nameUsage <http://ldf.fi/schema/henkilonimisto/count> ?lkm .
                           ?nameType <http://ldf.fi/schema/henkilonimisto/isUsed> ?nameUsage .
-                          OPTIONAL { ?nameType <http://ldf.fi/schema/henkilonimisto/gender> ?gender . }
+                          OPTIONAL { ?nameUsage <http://ldf.fi/schema/henkilonimisto/gender> ?gender . }
+                          OPTIONAL { ?nameUsage <http://ldf.fi/schema/henkilonimisto/refersPlace> ?referencesPlace . }
+                          OPTIONAL { ?nameUsage <http://ldf.fi/schema/henkilonimisto/refersVocation> ?referencesVocation . }
                           ?nameType a ?type .
                           ?type skos:prefLabel ?typeLabel .                      
                           FILTER (lang(?typeLabel) = 'fi')
                           BIND(STR(?typeLabel) AS ?nameLabel) .
-                          #FILTER(STRSTARTS(STR(?type), 'http://ldf.fi/schema/henkilonimisto/'))
-                        } GROUP BY ?names ?name ?label ?nameLabel ?nameType ?gender ORDER BY DESC(?name) DESC(?nameType)"""
+                        } GROUP BY ?names ?name ?label ?nameLabel ?nameType ?gender ?referencesPlace ?referencesVocation ORDER BY DESC(?name) DESC(?nameType)"""
 
             query = query.replace('$names', " ".join(['"{0}"'.format(x) for x in name]))
 
@@ -129,6 +130,8 @@ class SparqlResultSetItem():
         self.linkage = None
         self.type = ""
         self.count = 0
+        self.refersPlace = None
+        self.refersVocation = None
 
     def parse(self, result, ord):
         self.ord = ord
@@ -138,8 +141,10 @@ class SparqlResultSetItem():
         self.count = int(result["count"]["value"])
         self.type = str(result["nameLabel"]["value"])
         self.linkage = str(result["nameType"]["value"])
+        self.refersPlace = str(result["referencesPlace"]["value"])
+        self.refersVocation = str(result["referencesVocation"]["value"])
 
-    def set(self, ord, uri, name, label, count, type, linkage):
+    def set(self, ord, uri, name, label, count, type, linkage, place, vocation):
         self.name = name
         self.uri = uri
         self.ord = ord
@@ -147,6 +152,8 @@ class SparqlResultSetItem():
         self.linkage = linkage
         self.type = type
         self.count = count
+        self.refersPlace = place
+        self.refersVocation = vocation
 
     # getters and setters
 
@@ -191,6 +198,18 @@ class SparqlResultSetItem():
 
     def set_uri(self, value):
         self.uri = value
+
+    def get_ref_place(self):
+        return self.refersPlace
+
+    def set_ref_place(self, value):
+        self.refersPlace = value
+
+    def get_ref_vocation(self):
+        return self.refersVocation
+
+    def set_ref_vocation(self, value):
+        self.refersVocation = value
 
     def __str__(self):
         return str(self.ord) + ". " + str(self.name) + " (" + str(self.label) + ", " + str(self.count) + ")"

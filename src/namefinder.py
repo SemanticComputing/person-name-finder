@@ -5,6 +5,7 @@ from requests import Request, Session
 import requests
 import configparser
 from collections import OrderedDict
+from src.ambiguation_resolver import AmbiguityResolver
 
 class NameFinder:
     def __init__(self):
@@ -34,6 +35,8 @@ class NameFinder:
                 nr = NameRidler(queried_names, arr_names, name_string)
                 name_list, resp = nr.get_names(check_for_dates=checking_date, gender=gender, titles=title, dates=date, word=word)
                 print("Using index:", index_list[i])
+
+                # parsing result
                 if index_list[i] not in names.keys():
                     names[index_list[i]] = dict()
                     names[index_list[i]]["entities"] = list()
@@ -77,7 +80,6 @@ class NameFinder:
 
                 if name.lower() not in binders and len(builder) == 0 and name[0].isupper():
                     first_names.append(name)
-                    #loc = name_string_obj.find_name_location(name, 0, 0)
                 elif name.lower() in binders and len(builder) == 0:
                     builder = name
                 elif len(builder) > 0 and (name.lower() in binders or name[0].isupper()):
@@ -85,7 +87,6 @@ class NameFinder:
                 else:
                     print("Unable to identify name:", name)
 
-                    #print('Add name,', name)
                     if len(builder) > 0 and (name.lower() in binders or name[0].isupper()):
                         last_names.append(builder)
                     else:
@@ -105,17 +106,6 @@ class NameFinder:
 
                     first_names = list()
                     last_names = list()
-            #else:
-            #    print("Name:", name, " len:", len(name))
-
-        #if i == last:
-        #    if len(name) > 0:
-        #        print('Add name,', name)
-        #        if len(builder) > 0:
-        #            last_names.append(builder)
-        #        else:
-        #            if name[0].isupper():
-        #                last_names.append(name)
 
         if len(first_names) > 0 or len(last_names) > 0:
             dict_names[namecounter] = first_names + last_names
@@ -131,6 +121,7 @@ class NameFinder:
 
 class NameRidler:
     def __init__(self, names, ordered_names, sentence_obj):
+        self.full_name_entities = list()
         self.ord_names = ordered_names
         self.full_names = dict()
         self.full_name_lemmas = dict()
@@ -150,6 +141,9 @@ class NameRidler:
 
         # parse
         self.parse(names, sentence_obj)
+
+        # disambiguate
+        self.ambiguity_identifier = AmbiguityResolver()
 
     def read_configs(self):
 
@@ -179,10 +173,16 @@ class NameRidler:
             else:
                 self.string_chunking_pattern = r'(, |; | \(|\)| ja | tai )'
 
-
+    # render data into result format
     def get_names(self, check_for_dates=None, gender=False, titles=False, dates=False, word=False):
         responses = dict()
         entities = list()
+
+        # disambiguate
+        self.ambiguity_identifier.set_full_name(self.full_name_entities)
+        self.ambiguity_identifier.ambiguity_solver()
+        ambiguous = self.ambiguity_identifier.get_ambiguous_names()
+
         prev_entity = None
         for name, arr in self.full_names.items():
             entity = dict()
@@ -191,6 +191,14 @@ class NameRidler:
             if len(str_name) > 0:
                 entity['full_name'] = str_name
                 entity['full_name_lemma'] = self.full_name_lemmas[str_name]
+
+                # add ambiguity information
+                if name in ambiguous.keys():
+                    if ambiguous[name].get_place_ambiguity():
+                        entity['ambigous_place'] = ambiguous[name].get_place_ambiguity()
+                    if ambiguous[name].get_vocation_ambiguity():
+                        entity['ambigous_vocation'] = ambiguous[name].get_vocation_ambiguity()
+
                 check_name_i = max(list(self.ord_full_names.keys()))
                 check_name = self.ord_full_names[check_name_i].strip()
                 if gender:
@@ -281,6 +289,8 @@ class NameRidler:
                     count = int(result.get_count())
                     type = str(result.get_type())
                     linkage = str(result.get_linkage())
+                    place = str(result.get_ref_place())
+                    vocation = str(result.get_ref_vocation())
                     print(result, counter, prev, name)
 
                     if counter == 0:
@@ -324,7 +334,7 @@ class NameRidler:
                                     full_name += label + " "
 
                         print("Add name:", label, original_form, count, type, counter, uri, linkage, string_start)
-                        name = Name(label, original_form, count, type, counter, uri, linkage, string_start)
+                        name = Name(label, original_form, count, type, counter, uri, linkage, string_start, place, vocation)
 
                         if counter not in helper_arr.keys():
                             helper_arr[counter] = list()
@@ -341,11 +351,23 @@ class NameRidler:
                                                                                                      full_name_counter,
                                                                                                      helper_arr, name,queried_name)
             print(arr, full_name, full_name_counter, full_name_lemma, helper_arr, name)
+
+    def ambiguity_solver(self, names, str_full_name_lemma):
+        last_name = None
+        for name_id, arr_names in self.full_names:
+            str_name = name_id.split('_')[0].strip()
+            if str_full_name_lemma != self.full_name_lemmas[str_name]:
+                pass
+
+
     def extract_name(self, arr, full_name_counter, helper_arr, name, alternatives):
         argh, full_name, full_name_lemma = self.determine_name(arr, helper_arr, alternatives)
 
         print("Full name:", full_name, argh, full_name_counter)
         fullname_ind = full_name + "_" + str(full_name_counter)
+
+        full_name_entity = FullName(full_name_counter, full_name, full_name_lemma, argh)
+        self.full_name_entities.append(full_name_entity)
 
         self.full_names[fullname_ind] = argh
         self.full_name_lemmas[full_name] = full_name_lemma
@@ -672,8 +694,60 @@ class NameRidler:
         return results, resp
 
 
+class FullName:
+    def __init__(self, ind, full_name, full_name_lemma, full_name_entities):
+        self.id = ind
+        self.full_name = full_name
+        self.full_name_lemma = full_name_lemma
+        self.full_name_entities = full_name_entities
+        self.place_ambiguity = None
+        self.vocation_ambiguity = None
+
+    def get_full_name(self):
+        return self.full_name
+
+    def get_full_name_lemma(self):
+        return self.full_name_lemma
+
+    def get_full_name_entities(self):
+        return self.full_name_entities
+
+    def get_full_name_index(self):
+        return self.full_name + "_" + str(self.id)
+
+    def get_place_ambiguity(self):
+        return self.place_ambiguity
+
+    def set_place_ambiguity(self, value):
+        if value != None:
+            self.place_ambiguity = value
+
+    def get_vocation_ambiguity(self):
+        return self.vocation_ambiguity
+
+    def set_vocation_ambiguity(self, value):
+        if value != None:
+            self.vocation_ambiguity = value
+
+    def get_json(self):
+        return {'name':str(self.original_form), 'lemma':str(self.label), 'type':str(self.clarify_type()), 'location':str(self.location), 'uri':self.name_uri, 'start_ind':self.string_start, 'end_ind':self.string_end}
+
+    def __str__(self):
+        return self.label + " (" + str(self.count) + "): " + self.type + " @ " + str(self.location)
+
+    def __repr__(self):
+        return self.label + " (" + str(self.count) + "): " + self.type + " @ " + str(self.location)
+
+    def __eq__(self, other):
+        if other != None:
+            if self.get_name() == other.get_name():
+                if self.get_type() == other.get_type():
+                    if self.get_location() == other.get_location():
+                        return True
+        return False
+
 class Name:
-    def __init__(self, label, original_form, count, type, location, name_uri, linkage, string_start):
+    def __init__(self, label, original_form, count, type, location, name_uri, linkage, string_start, place=None, vocation=None):
         self.label = label
         self.original_form = original_form
         self.count = count
@@ -684,6 +758,8 @@ class Name:
         self.linkage.append(linkage)
         self.string_start = string_start
         self.string_end = self.string_start + len(self.label)
+        self.ref_place = place
+        self.ref_vocation = vocation
 
     def get_link(self):
         return self.linkage
@@ -709,6 +785,12 @@ class Name:
     def get_string_end(self):
         return self.string_end
 
+    def get_ref_vocation(self):
+        return self.ref_vocation
+
+    def get_ref_place(self):
+        return self.ref_place
+
     def add_link(self, link):
         if link not in self.linkage:
             self.linkage.append(link)
@@ -725,6 +807,13 @@ class Name:
             else:
                 return "First name"
         return self.type
+
+    def if_names_related(self, other):
+        if other != None:
+            if self.get_name() == other.get_name():
+                if self.get_type() == other.get_type():
+                    return True
+        return False
 
 
     def get_json(self):
