@@ -1,3 +1,3 @@
 [submodule "language-resources"]
 	path = language-resources
-	url = git@github.com:SemanticComputing/language-resources.git
+	url = https://github.com/SemanticComputing/language-resources.git
