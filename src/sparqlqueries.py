@@ -51,8 +51,8 @@ class SparqlQuries:
                           ?nameUsage <http://ldf.fi/schema/henkilonimisto/count> ?lkm .
                           ?nameType <http://ldf.fi/schema/henkilonimisto/isUsed> ?nameUsage .
                           OPTIONAL { ?nameUsage <http://ldf.fi/schema/henkilonimisto/gender> ?gender . }
-                          OPTIONAL { ?nameUsage <http://ldf.fi/schema/henkilonimisto/refersPlace> ?referencesPlace . }
-                          OPTIONAL { ?nameUsage <http://ldf.fi/schema/henkilonimisto/refersVocation> ?referencesVocation . }
+                          OPTIONAL { ?nameType <http://ldf.fi/schema/henkilonimisto/refersPlace> ?referencesPlace . }
+                          OPTIONAL { ?nameType <http://ldf.fi/schema/henkilonimisto/refersVocation> ?referencesVocation . }
                           ?nameType a ?type .
                           ?type skos:prefLabel ?typeLabel .                      
                           FILTER (lang(?typeLabel) = 'fi')
@@ -62,7 +62,7 @@ class SparqlQuries:
             query = query.replace('$names', " ".join(['"{0}"'.format(x) for x in name]))
 
             #print("endpoint:", endpoint)
-            #print("query:", query)
+            print("query:", query)
 
             sparql = SPARQLWrapper(endpoint)
             sparql.setQuery(query)
@@ -134,6 +134,7 @@ class SparqlResultSetItem():
         self.refersVocation = None
 
     def parse(self, result, ord):
+        print("Result:", result)
         self.ord = ord
         self.uri = str(result["name"]["value"])
         self.name = str(result["names"]["value"])
@@ -141,8 +142,13 @@ class SparqlResultSetItem():
         self.count = int(result["count"]["value"])
         self.type = str(result["nameLabel"]["value"])
         self.linkage = str(result["nameType"]["value"])
-        self.refersPlace = str(result["referencesPlace"]["value"])
-        self.refersVocation = str(result["referencesVocation"]["value"])
+        if 'referencesPlace' in result:
+            self.refersPlace = str(result["referencesPlace"]["value"])
+            #print("referencesPlace in results:"+self.refersPlace)
+        #else:
+        #    print("referencesPlace not in results")
+        if 'referencesVocation' in result:
+            self.refersVocation = str(result["referencesVocation"]["value"])
 
     def set(self, ord, uri, name, label, count, type, linkage, place, vocation):
         self.name = name
@@ -212,10 +218,10 @@ class SparqlResultSetItem():
         self.refersVocation = value
 
     def __str__(self):
-        return str(self.ord) + ". " + str(self.name) + " (" + str(self.label) + ", " + str(self.count) + ")"
+        return "SparqlResultSetItem: "+str(self.ord) + ". " + str(self.name) + " (" + str(self.label) + ", " + str(self.count) + ")"
 
     def __repr__(self):
-        return str(self.ord) + ". " + str(self.name) + " (" + str(self.label) + ", " + str(self.count) + ")"
+        return "SparqlResultSetItem: "+str(self.ord) + ". " + str(self.name) + " (" + str(self.label) + ", " + str(self.count) + ")"
 
     def __eq__(self, other):
         if self.label == other.get_label():

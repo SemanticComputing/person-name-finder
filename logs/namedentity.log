@@ -10526,3 +10526,91 @@
 2019-11-05 12:08:39,121 NamedEntity INFO locale=fi&text=Visa+Forsten
 2019-11-05 12:08:39,208 NamedEntity INFO {'Content-Length': '104', 'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test'}
 2019-11-05 12:08:39,208 NamedEntity INFO locale=fi&text=John+Nicholas+Derome+maksoivat+esimerkiksi+viiteen+pekkaan+veroja+yli+78+miljoonaa+euroa.
+2020-03-09 00:09:46,936 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '36'}
+2020-03-09 00:09:46,937 NamedEntity INFO locale=fi&text=Korkein+oikeus+toteaa
+2020-03-09 00:09:47,072 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '57'}
+2020-03-09 00:09:47,072 NamedEntity INFO locale=fi&text=ett%C3%A4+kun+luovutukset+Leila+Virtaselle
+2020-03-09 00:09:47,202 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '68'}
+2020-03-09 00:09:47,202 NamedEntity INFO locale=fi&text=h%C3%A4nen+my%C3%B6t%C3%A4puolilleen+ovat+tapahtuneet
+2020-03-09 00:09:47,344 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '63'}
+2020-03-09 00:09:47,345 NamedEntity INFO locale=fi&text=on+rakennusliikkeen+konkurssi+ollut+jo+ilmeinen.
+2020-03-09 00:09:47,556 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '83'}
+2020-03-09 00:09:47,556 NamedEntity INFO locale=fi&text=Edelt%C3%A4+ilmenevien+sidonnaisuuksien+perusteella+Leila+Virtasella
+2020-03-09 00:09:47,741 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '246'}
+2020-03-09 00:09:47,741 NamedEntity INFO locale=fi&text=h%C3%A4nen+my%C3%B6t%C3%A4puolillaan+on+ollut+mahdollisuus+tehd%C3%A4+havaintoja+rakennusliikkeen+toiminnasta+ja+saada+ainakin+p%C3%A4%C3%A4piirteinen+tieto+sen+taloudellisesta+tilanteesta%2C+my%C3%B6s+taloudellisista+vaikeuksista.
+2020-03-09 00:09:48,187 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '96'}
+2020-03-09 00:09:48,187 NamedEntity INFO locale=fi&text=Kun+he+ovat+edell%C3%A4+selostetulla+tavalla+ottaneet+Liisa+Lahtiselta+omaisuutta
+2020-03-09 00:09:48,318 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '74'}
+2020-03-09 00:09:48,318 NamedEntity INFO locale=fi&text=jonka+he+ovat+tienneet+olleen+rakennusliikkeen+omistuksessa
+2020-03-09 00:09:48,434 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '157'}
+2020-03-09 00:09:48,435 NamedEntity INFO locale=fi&text=heid%C3%A4n+olisi+tullut+kerrotuissa+oloissa+ottaa+selkoa+siit%C3%A4%2C+miten+omaisuus+oli+siirtynyt+rakennusliikkeelt%C3%A4+Liisa+Lahtiselle.
+2020-03-09 00:09:48,686 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '48'}
+2020-03-09 00:09:48,686 NamedEntity INFO locale=fi&text=Jos+he+olisivat+n%C3%A4in+tehneet
+2020-03-09 00:09:48,798 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '64'}
+2020-03-09 00:09:48,799 NamedEntity INFO locale=fi&text=heid%C3%A4n+havaittavissaan+olisi+ollut+my%C3%B6s
+2020-03-09 00:09:48,865 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '115'}
+2020-03-09 00:09:48,866 NamedEntity INFO locale=fi&text=ett%C3%A4+oikeustoimilla+oli+Liisa+Lahtista+suosien+loukattu+rakennusliikkeen+muiden+velkojien+etua.
+2020-03-09 00:09:49,099 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '65'}
+2020-03-09 00:09:49,099 NamedEntity INFO locale=fi&text=N%C3%A4ill%C3%A4+perusteilla+Korkein+oikeus+katsoo
+2020-03-09 00:09:49,251 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '39'}
+2020-03-09 00:09:49,251 NamedEntity INFO locale=fi&text=ett%C3%A4+Leila+Virtasen
+2020-03-09 00:09:49,361 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '34'}
+2020-03-09 00:09:49,361 NamedEntity INFO locale=fi&text=Ester+J%C3%A4rvisen
+2020-03-09 00:09:49,439 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '83'}
+2020-03-09 00:09:49,439 NamedEntity INFO locale=fi&text=Renqvistin+olisi+pit%C3%A4nyt+tiet%C3%A4%C3%A4+niist%C3%A4+seikoista
+2020-03-09 00:09:49,543 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '86'}
+2020-03-09 00:09:49,543 NamedEntity INFO locale=fi&text=jotka+oikeuttavat+luovutusten+per%C3%A4ytt%C3%A4miseen+Liisa+Lahtiselta
+2020-03-09 00:10:51,356 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '56'}
+2020-03-09 00:10:51,356 NamedEntity INFO locale=fi&text=Helsinki+on+suomen+p%C3%A4%C3%A4kaupunki.
+2020-03-09 00:10:58,437 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '56'}
+2020-03-09 00:10:58,437 NamedEntity INFO locale=fi&text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.
+2020-03-09 00:13:08,899 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '56'}
+2020-03-09 00:13:08,900 NamedEntity INFO locale=fi&text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.
+2020-03-09 00:13:21,730 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '56'}
+2020-03-09 00:13:21,730 NamedEntity INFO locale=fi&text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.
+2020-03-09 00:16:29,023 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '56'}
+2020-03-09 00:16:29,024 NamedEntity INFO locale=fi&text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.
+2020-03-09 00:17:43,301 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '56', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-03-09 00:17:43,301 NamedEntity INFO text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.&locale=fi
+2020-03-09 00:19:07,146 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '56', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-03-09 00:19:07,146 NamedEntity INFO text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.&locale=fi
+2020-03-09 00:20:14,404 NamedEntity INFO {'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '56'}
+2020-03-09 00:20:14,405 NamedEntity INFO locale=fi&text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.
+2020-03-09 00:20:49,323 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '56'}
+2020-03-09 00:20:49,323 NamedEntity INFO text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.&locale=fi
+2020-03-09 00:21:46,877 NamedEntity INFO {'Content-Length': '56', 'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test'}
+2020-03-09 00:21:46,877 NamedEntity INFO text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.&locale=fi
+2020-03-09 00:24:51,565 NamedEntity INFO {'Content-Length': '56', 'X-Custom': 'Test', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-03-09 00:24:51,566 NamedEntity INFO text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.&locale=fi
+2020-03-09 00:26:04,819 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '56', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-03-09 00:26:04,819 NamedEntity INFO text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.&locale=fi
+2020-03-09 00:29:22,473 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '56'}
+2020-03-09 00:29:22,473 NamedEntity INFO locale=fi&text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.
+2020-03-09 00:32:30,901 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '56'}
+2020-03-09 00:32:30,901 NamedEntity INFO text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.&locale=fi
+2020-03-09 00:33:11,781 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '56', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-03-09 00:33:11,781 NamedEntity INFO locale=fi&text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.
+2020-03-09 00:34:46,913 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '56'}
+2020-03-09 00:34:46,913 NamedEntity INFO locale=fi&text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.
+2020-03-09 00:36:05,526 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '56', 'X-Custom': 'Test'}
+2020-03-09 00:36:05,526 NamedEntity INFO text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.&locale=fi
+2020-03-09 00:39:15,949 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '56', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-03-09 00:39:15,949 NamedEntity INFO locale=fi&text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.
+2020-03-09 00:41:12,771 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'Content-Length': '56', 'X-Custom': 'Test'}
+2020-03-09 00:41:12,771 NamedEntity INFO text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.&locale=fi
+2020-03-09 00:44:33,713 NamedEntity INFO {'Content-Type': 'application/x-www-form-urlencoded', 'X-Custom': 'Test', 'Content-Length': '56'}
+2020-03-09 00:44:33,713 NamedEntity INFO locale=fi&text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.
+2020-03-09 00:45:47,820 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '56', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-03-09 00:45:47,820 NamedEntity INFO text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.&locale=fi
+2020-03-09 00:46:50,293 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '56', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-03-09 00:46:50,293 NamedEntity INFO text=Helsinki+on+Suomen+p%C3%A4%C3%A4kaupunki.&locale=fi
+2020-03-09 00:46:50,418 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '34', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-03-09 00:46:50,418 NamedEntity INFO text=Kannus+on+Suomessa.&locale=fi
+2020-03-09 00:47:33,842 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '34', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-03-09 00:47:33,842 NamedEntity INFO text=Kannus+on+Suomessa.&locale=fi
+2020-03-09 00:47:39,152 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '47', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-03-09 00:47:39,152 NamedEntity INFO text=Kannus+on+t%C3%A4%C3%A4ll%C3%A4.&locale=fi
+2020-03-09 00:48:10,213 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '32', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-03-09 00:48:10,213 NamedEntity INFO text=Kannus+on+kaunis.&locale=fi
+2020-03-09 00:50:00,215 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '40', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-03-09 00:50:00,215 NamedEntity INFO text=Halinen+palasi+matkoilta.&locale=fi

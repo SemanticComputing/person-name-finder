@@ -289,9 +289,10 @@ class NameRidler:
                     count = int(result.get_count())
                     type = str(result.get_type())
                     linkage = str(result.get_linkage())
-                    place = str(result.get_ref_place())
-                    vocation = str(result.get_ref_vocation())
-                    print(result, counter, prev, name)
+                    place = result.get_ref_place()
+                    vocation = result.get_ref_vocation()
+                    print(result, counter, prev, name, result.get_ref_place())
+                    print("P/V:",str(place), vocation)
 
                     if counter == 0:
                         counter += 1
@@ -760,6 +761,7 @@ class Name:
         self.string_end = self.string_start + len(self.label)
         self.ref_place = place
         self.ref_vocation = vocation
+        print("place:"+str(place))
 
     def get_link(self):
         return self.linkage
