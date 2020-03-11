@@ -38,7 +38,7 @@ class SparqlQuries:
         for i, name in names.items():
             print("Query names:",name)
             # http://yasgui.org/short/ATCBjNyFz
-            endpoint = "http://ldf.fi/henkilonimisto/sparql"
+            endpoint = "http://ldf.fi/henko/sparql"
 
             query = """ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
                         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
@@ -47,12 +47,12 @@ class SparqlQuries:
                           VALUES ?names { $names }
                           BIND(STRLANG(?names,'fi') AS ?label)
                           ?name skos:prefLabel ?label .
-                          ?nameUsage <http://ldf.fi/schema/henkilonimisto/hasName> ?name .
-                          ?nameUsage <http://ldf.fi/schema/henkilonimisto/count> ?lkm .
-                          ?nameType <http://ldf.fi/schema/henkilonimisto/isUsed> ?nameUsage .
-                          OPTIONAL { ?nameUsage <http://ldf.fi/schema/henkilonimisto/gender> ?gender . }
-                          OPTIONAL { ?nameType <http://ldf.fi/schema/henkilonimisto/refersPlace> ?referencesPlace . }
-                          OPTIONAL { ?nameType <http://ldf.fi/schema/henkilonimisto/refersVocation> ?referencesVocation . }
+                          ?nameUsage <http://ldf.fi/schema/henko/hasName> ?name .
+                          ?nameUsage <http://ldf.fi/schema/henko/count> ?lkm .
+                          ?nameType <http://ldf.fi/schema/henko/isUsed> ?nameUsage .
+                          OPTIONAL { ?nameUsage <http://ldf.fi/schema/henko/gender> ?gender . }
+                          OPTIONAL { ?nameType <http://ldf.fi/schema/henko/refersPlace> ?referencesPlace . }
+                          OPTIONAL { ?nameType <http://ldf.fi/schema/henko/refersVocation> ?referencesVocation . }
                           ?nameType a ?type .
                           ?type skos:prefLabel ?typeLabel .                      
                           FILTER (lang(?typeLabel) = 'fi')
