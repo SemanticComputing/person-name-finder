@@ -21,6 +21,7 @@ The configurations for the service can be found from the config/config.ini file 
 
 List of configurations available:
 
+* henko_endpoint (default: http://ldf.fi/henko/sparql): sparql endpoint for quering person names
 * gender_guess_url (default: http://nlp.ldf.fi/gender-guess): service used to identify gender from a name
 * gender_guess_threshold (default: 0.8): gender identification accuracy threshold that is given to the gender guessing service
 * regex_url (default: http://nlp.ldf.fi/regex): service used to identify dates from texts
@@ -30,13 +31,16 @@ List of configurations available:
 * context_death_identifiers (default: 'k.', 'kuollut'): words used in identifying date of death in text
 * context_lifespan_separators (default: '-', '–'): separators between years
 
+In order to use these configurations, set the environment variable NAME_FINDER_CONFIG_ENV to 'DEFAULT' or to you personal setting. The value is the section name in the config.ini file where the personal settings can be set for the attributes (configurations) defined above. 
+
 ## Usage
 
 To run use flask as follows:
 
-1. export FLASK_APP=httpInterface.py
-2. flask run
-3. open browser and go to http://localhost:5000/.
+1. export NAME_FINDER_CONFIG_ENV='DEFAULT'
+2. export FLASK_APP=httpInterface.py
+3. flask run
+4. open browser and go to http://localhost:5000/.
 
 #### Parameters
 
