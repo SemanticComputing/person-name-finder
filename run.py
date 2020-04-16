@@ -68,6 +68,8 @@ def parse_input(request):
             #print("tokenization results",sentences)
             sentences, index_list = do_lemmatization(sentence_data, indeces)
             #print("data", input)
+        else:
+            return input, sentences, index_list, gender, title, date
     elif request.method == "POST":
         if request.headers['Content-Type'] == 'text/plain' and len(request.data)>0:
             text = str(request.data.decode('utf-8'))
