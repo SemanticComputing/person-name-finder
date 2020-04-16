@@ -19,6 +19,7 @@ COPY src ./src
 COPY language-resources ./language-resources
 COPY run.py ./
 
+ENV NAME_FINDER_CONFIG_ENV DEFAULT
 ENV CONF_FILE=/app/conf/config.ini 
 COPY conf/config.ini $CONF_FILE
 
