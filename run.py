@@ -17,6 +17,7 @@ from src.las_query import lasQuery
 from distutils.util import strtobool
 from datetime import datetime as dt
 import traceback
+from flask import abort
 
 app = Flask(__name__)
 
@@ -47,10 +48,12 @@ def parse_input(request):
         print("Environment variable NAME_FINDER_CONFIG_ENV not set:", sys.exc_info()[0])
         traceback.print_exc()
         env = None
+        abort(500, 'Problem with setup: internal server error')
     except Exception as err:
         print("Unexpected error:", sys.exc_info()[0])
         traceback.print_exc()
         env = None
+        abort(500, 'Unexpected Internal Server Error')
 
     if request.method == 'GET':
         text = request.args.get('text')

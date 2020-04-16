@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d31704e3-0677-4e93-9a3a-6fd23a93f8fc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/logs/namedentity.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/namedentity.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/namefinder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/namefinder.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,11 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="44" column="48" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
+            <state relative-caret-position="319">
+              <caret line="47" column="58" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="58" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -53,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/namefinder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2832">
-              <caret line="159" column="57" selection-start-line="159" selection-start-column="57" selection-end-line="159" selection-end-column="57" />
+            <state relative-caret-position="609">
+              <caret line="171" column="22" selection-start-line="171" selection-start-column="22" selection-end-line="171" selection-end-column="22" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -165,8 +167,8 @@
         <option value="$PROJECT_DIR$/src/ambiguation_resolver.py" />
         <option value="$PROJECT_DIR$/conf/config.ini" />
         <option value="$PROJECT_DIR$/src/sparqlqueries.py" />
-        <option value="$PROJECT_DIR$/src/namefinder.py" />
         <option value="$PROJECT_DIR$/run.py" />
+        <option value="$PROJECT_DIR$/src/namefinder.py" />
       </list>
     </option>
   </component>
@@ -361,22 +363,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/namefinder.py">
+    <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2832">
-          <caret line="159" column="57" selection-start-line="159" selection-start-column="57" selection-end-line="159" selection-end-column="57" />
+        <state relative-caret-position="319">
+          <caret line="47" column="58" selection-start-line="47" selection-start-column="36" selection-end-line="47" selection-end-column="58" />
           <folding>
-            <element signature="e#0#42#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
+    <entry file="file://$PROJECT_DIR$/src/namefinder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="44" column="48" selection-start-line="44" selection-start-column="48" selection-end-line="44" selection-end-column="48" />
+        <state relative-caret-position="609">
+          <caret line="171" column="22" selection-start-line="171" selection-start-column="22" selection-end-line="171" selection-end-column="22" />
           <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#42#0" expanded="true" />
           </folding>
         </state>
       </provider>

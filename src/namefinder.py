@@ -8,6 +8,7 @@ from configparser import Error, ParsingError, MissingSectionHeaderError, NoOptio
 from collections import OrderedDict
 from src.ambiguation_resolver import AmbiguityResolver
 import sys, traceback
+from flask import abort
 
 class NameFinder:
     def __init__(self):
@@ -156,7 +157,7 @@ class NameRidler:
             config.read('conf/config.ini')
             if env in config:
                 self.read_env_config(config, env)
-            elif env == None:
+            elif env == None or len(env) == 0:
                 err_msg = 'The environment is not set: %s' % (env)
                 raise Exception(err_msg)
             else:
@@ -166,11 +167,13 @@ class NameRidler:
                     err_msg = 'Cannot find section headers: %s, %s' % (env, 'DEFAULT')
                     raise MissingSectionHeaderError(err_msg)
         except Error as e:
-            print("ConfigParser error:", sys.exc_info()[0])
+            print("[ERROR] ConfigParser error:", sys.exc_info()[0])
             traceback.print_exc()
+            abort(500)
         except Exception as err:
-            print("Unexpected error:", sys.exc_info()[0])
+            print("[ERROR] Unexpected error:", sys.exc_info()[0])
             traceback.print_exc()
+            abort(500)
 
     def read_env_config(self, config, env='DEFAULT'):
         if 'henko_endpoint' in config[env]:
