@@ -16,6 +16,7 @@ import xml.etree.ElementTree as ET
 from src.las_query import lasQuery
 from distutils.util import strtobool
 from datetime import datetime as dt
+import traceback
 
 app = Flask(__name__)
 
@@ -37,6 +38,20 @@ def parse_input(request):
     date = None
     word = None
     index_list = None
+    env = 'DEFAULT'
+
+    # read environment from environment variable
+    try:
+        env = os.environ['NAME-FINDER-CONFIG-ENV']
+    except KeyError as kerr:
+        print("Environment variable NAME-FINDER-CONFIG-ENV not set:", sys.exc_info()[0])
+        traceback.print_exc()
+        env = None
+    except Exception as err:
+        print("Unexpected error:", sys.exc_info()[0])
+        traceback.print_exc()
+        env = None
+
     if request.method == 'GET':
         text = request.args.get('text')
         gender = extract_value(get_args_data('gender'))
@@ -91,7 +106,7 @@ def parse_input(request):
             print("sentences:", sentences)
     else:
         print("This method is not yet supported:", request.method)
-    return input, sentences, index_list, gender, title, date, word, regex_checks, full_sentences
+    return env, input, sentences, index_list, gender, title, date, word, regex_checks, full_sentences
 
 
 def extract_value(value):
@@ -169,11 +184,11 @@ def lemmatize(text):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     print("APP name",__name__)
-    input_data, sentences, index_list, gender, title, date, word, regex_check, original_sentences = parse_input(request)
+    env, input_data, sentences, index_list, gender, title, date, word, regex_check, original_sentences = parse_input(request)
     print("DATA", sentences)
     if input_data != None:
         name_finder = NameFinder()
-        results, code, responses = name_finder.identify_name(sentences, index_list, original_sentences, check_date=regex_check, gender=gender, title=title, date=date, word=word)
+        results, code, responses = name_finder.identify_name(env, sentences, index_list, original_sentences, check_date=regex_check, gender=gender, title=title, date=date, word=word)
 
         if code == 1:
             print('results',results)

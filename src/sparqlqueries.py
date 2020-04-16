@@ -2,6 +2,8 @@ from SPARQLWrapper import SPARQLWrapper, JSON, BASIC
 import logging
 from collections import OrderedDict
 import requests, json
+import validators
+import sys, traceback
 
 logger = logging.getLogger('SparqlQuries')
 hdlr = logging.FileHandler('logs/sparql.log')
@@ -29,54 +31,64 @@ class SparqlQuries:
 
         return results
 
-    def query_names(self, names):
+    def query_names(self, names, endpoint):
         result_set = OrderedDict()
-        print(names)
-        if len(names) < 1:
-            return {}
+        try:
+            if validators.url(endpoint):
+                if len(names) < 1:
+                    return {}
 
-        for i, name in names.items():
-            print("Query names:",name)
-            # http://yasgui.org/short/ATCBjNyFz
-            endpoint = "http://ldf.fi/henko/sparql"
+                for i, name in names.items():
+                    print("Query names:",name)
+                    # http://yasgui.org/short/ATCBjNyFz
+                    #endpoint = "http://ldf.fi/henko/sparql"
 
-            query = """ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-                        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-                        PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
-                        SELECT DISTINCT ?names ?name ?label ?nameLabel ?nameType ?referencesPlace ?referencesVocation (sum(?lkm)as ?count)   WHERE {
-                          VALUES ?names { $names }
-                          BIND(STRLANG(?names,'fi') AS ?label)
-                          ?name skos:prefLabel ?label .
-                          ?nameUsage <http://ldf.fi/schema/henko/hasName> ?name .
-                          ?nameUsage <http://ldf.fi/schema/henko/count> ?lkm .
-                          ?nameType <http://ldf.fi/schema/henko/isUsed> ?nameUsage .
-                          OPTIONAL { ?nameUsage <http://ldf.fi/schema/henko/gender> ?gender . }
-                          OPTIONAL { ?nameType <http://ldf.fi/schema/henko/refersPlace> ?referencesPlace . }
-                          OPTIONAL { ?nameType <http://ldf.fi/schema/henko/refersVocation> ?referencesVocation . }
-                          ?nameType a ?type .
-                          ?type skos:prefLabel ?typeLabel .                      
-                          FILTER (lang(?typeLabel) = 'fi')
-                          BIND(STR(?typeLabel) AS ?nameLabel) .
-                        } GROUP BY ?names ?name ?label ?nameLabel ?nameType ?gender ?referencesPlace ?referencesVocation ORDER BY DESC(?name) DESC(?nameType)"""
+                    query = """ PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+                                PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+                                PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+                                SELECT DISTINCT ?names ?name ?label ?nameLabel ?nameType ?referencesPlace ?referencesVocation (sum(?lkm)as ?count)   WHERE {
+                                  VALUES ?names { $names }
+                                  BIND(STRLANG(?names,'fi') AS ?label)
+                                  ?name skos:prefLabel ?label .
+                                  ?nameUsage <http://ldf.fi/schema/henko/hasName> ?name .
+                                  ?nameUsage <http://ldf.fi/schema/henko/count> ?lkm .
+                                  ?nameType <http://ldf.fi/schema/henko/isUsed> ?nameUsage .
+                                  OPTIONAL { ?nameUsage <http://ldf.fi/schema/henko/gender> ?gender . }
+                                  OPTIONAL { ?nameType <http://ldf.fi/schema/henko/refersPlace> ?referencesPlace . }
+                                  OPTIONAL { ?nameType <http://ldf.fi/schema/henko/refersVocation> ?referencesVocation . }
+                                  ?nameType a ?type .
+                                  ?type rdfs:label ?typeLabel .                      
+                                  FILTER (lang(?typeLabel) = 'fi')
+                                  BIND(STR(?typeLabel) AS ?nameLabel) .
+                                } GROUP BY ?names ?name ?label ?nameLabel ?nameType ?gender ?referencesPlace ?referencesVocation ORDER BY DESC(?name) DESC(?nameType)"""
 
-            query = query.replace('$names', " ".join(['"{0}"'.format(x) for x in name]))
+                    query = query.replace('$names', " ".join(['"{0}"'.format(x) for x in name]))
 
-            #print("endpoint:", endpoint)
-            print("query:", query)
+                    print("endpoint:", endpoint)
+                    print("query:", query)
 
-            sparql = SPARQLWrapper(endpoint)
-            sparql.setQuery(query)
+                    sparql = SPARQLWrapper(endpoint)
+                    sparql.setQuery(query)
 
-            sparql.setReturnFormat(JSON)
-            results = sparql.query().convert()
+                    sparql.setReturnFormat(JSON)
+                    results = sparql.query().convert()
 
-            #print("results:", results)
-            n = str(i) + "_" + " ".join(name)
-            if n not in result_set.keys():
-                result_set[n] = list()
-            result_set[n]=self.parse_sparql_result(name, results)
+                    #print("results:", results)
+                    n = str(i) + "_" + " ".join(name)
+                    if n not in result_set.keys():
+                        result_set[n] = list()
+                    result_set[n]=self.parse_sparql_result(name, results)
 
-        return result_set
+
+            return result_set
+        except ValueError as verr:
+            print("Unable to query, url is not valid:", sys.exc_info()[0])
+            traceback.print_exc()
+        except Exception as err:
+            print("Unexpected error:", sys.exc_info()[0])
+            traceback.print_exc()
+        finally:
+            return result_set
 
     def parse_sparql_result(self, values, results):
         resultset = SparqlResultSet()

@@ -4,18 +4,19 @@ import string
 from requests import Request, Session
 import requests
 import configparser
+from configparser import Error, ParsingError, MissingSectionHeaderError, NoOptionError, DuplicateOptionError, DuplicateSectionError, NoSectionError
 from collections import OrderedDict
 from src.ambiguation_resolver import AmbiguityResolver
+import sys, traceback
 
 class NameFinder:
     def __init__(self):
-        self.sparql = SparqlQuries()
         self.last_names = dict()
         self.last_name_ind = dict()
         self.first_names = dict()
         self.first_name_ind = dict()
 
-    def identify_name(self, sentence_chunk_strings, index_list, original_sentence_data, check_date=None, gender=False, title=False, date=False, word=False):
+    def identify_name(self, env, sentence_chunk_strings, index_list, original_sentence_data, check_date=None, gender=False, title=False, date=False, word=False):
         names = dict()
         resp = None
         for i,name_string in sentence_chunk_strings.items():
@@ -31,8 +32,7 @@ class NameFinder:
                 if date is True and i in check_date:
                     checking_date = check_date[i]
 
-                queried_names = self.sparql.query_names(dict_names)
-                nr = NameRidler(queried_names, arr_names, name_string)
+                nr = NameRidler(dict_names, arr_names, name_string, env)
                 name_list, resp = nr.get_names(check_for_dates=checking_date, gender=gender, titles=title, dates=date, word=word)
                 print("Using index:", index_list[i])
 
@@ -120,14 +120,16 @@ class NameFinder:
 
 
 class NameRidler:
-    def __init__(self, names, ordered_names, sentence_obj):
+    def __init__(self, dict_names, ordered_names, sentence_obj, env):
+        self.sparql = SparqlQuries()
         self.full_name_entities = list()
         self.ord_names = ordered_names
         self.full_names = dict()
         self.full_name_lemmas = dict()
-        self.gender_guess_url = "http://nlp.ldf.fi/gender-guess"
+        self.gender_guess_url = ""
         self.gender_guess_threshold = 0.8
-        self.regex_url = "http://nlp.ldf.fi/regex"
+        self.regex_url = ""
+        self.henko_endpoint = ""
         self.ord_full_names = dict()
 
         self.string_chunking_pattern = r'(, |; | \(|\)| ja | tai )'
@@ -137,41 +139,69 @@ class NameRidler:
         self.context_lifespan_separators = ['-', '–']
 
         # configure
-        self.read_configs()
+        self.read_configs(env)
 
-        # parse
+        # query and parse
+        names = self.sparql.query_names(dict_names, endpoint=self.henko_endpoint)
+        print(names)
         self.parse(names, sentence_obj)
 
         # disambiguate
         self.ambiguity_identifier = AmbiguityResolver()
 
-    def read_configs(self):
+    def read_configs(self, env):
 
-        config = configparser.ConfigParser()
-        config.read('conf/config.ini')
-        if 'DEFAULT' in config:
-            if 'gender_guess_url' in config['DEFAULT']:
-                self.gender_guess_url = config['DEFAULT']['gender_guess_url']
+        try:
+            config = configparser.ConfigParser()
+            config.read('conf/config.ini')
+            if env in config:
+                self.read_env_config(config, env)
+            elif env == None:
+                err_msg = 'The environment is not set: %s' % (env)
+                raise Exception(err_msg)
             else:
-                print("Unable to find: gender_guess_url in ", config['DEFAULT'])
-                self.gender_guess_url = "http://nlp.ldf.fi/gender-guess"
+                if 'DEFAULT' in config:
+                    self.read_env_config(config)
+                else:
+                    err_msg = 'Cannot find section headers: %s, %s' % (env, 'DEFAULT')
+                    raise MissingSectionHeaderError(err_msg)
+        except Error as e:
+            print("ConfigParser error:", sys.exc_info()[0])
+            traceback.print_exc()
+        except Exception as err:
+            print("Unexpected error:", sys.exc_info()[0])
+            traceback.print_exc()
 
-            if 'gender_guess_threshold' in config['DEFAULT']:
-                self.gender_guess_threshold = float(config['DEFAULT']['gender_guess_threshold'])
-            else:
-                print("Unable to find: gender_guess_threshold in ", config['DEFAULT'])
-                self.gender_guess_threshold = 0.8
+    def read_env_config(self, config, env='DEFAULT'):
+        if 'henko_endpoint' in config[env]:
+            self.henko_endpoint = config[env]['henko_endpoint']
+        else:
+            print("Unable to find: henko_endpoint in ", config[env])
+            #self.henko_endpoint = "http://ldf.fi/henko/sparql"
 
-            if 'regex_url' in config['DEFAULT']:
-                self.regex_url = config['DEFAULT']['regex_url']
-            else:
-                print("Unable to find: regex_url in ", config['DEFAULT'])
-                self.regex_url = "http://nlp.ldf.fi/regex"
+        if 'gender_guess_url' in config[env]:
+            self.gender_guess_url = config[env]['gender_guess_url']
+        else:
+            print("Unable to find: gender_guess_url in ", config[env])
+            #self.gender_guess_url = "http://nlp.ldf.fi/gender-guess"
 
-            if 'string_chunking_pattern' in config['DEFAULT']:
-                self.string_chunking_pattern = config['DEFAULT']['string_chunking_pattern'].split(',')
-            else:
-                self.string_chunking_pattern = r'(, |; | \(|\)| ja | tai )'
+        if 'gender_guess_threshold' in config[env]:
+            self.gender_guess_threshold = float(config[env]['gender_guess_threshold'])
+        else:
+            print("Unable to find: gender_guess_threshold in ", config['DEFAULT'])
+            #self.gender_guess_threshold = 0.8
+
+        if 'regex_url' in config[env]:
+            self.regex_url = config[env]['regex_url']
+        else:
+            print("Unable to find: regex_url in ", config[env])
+            #self.regex_url = "http://nlp.ldf.fi/regex"
+
+        if 'string_chunking_pattern' in config[env]:
+            self.string_chunking_pattern = config[env]['string_chunking_pattern'].split(',')
+        else:
+            print("Unable to find: string_chunking_pattern in ", config[env])
+            self.string_chunking_pattern = r'(, |; | \(|\)| ja | tai )'
 
     # render data into result format
     def get_names(self, check_for_dates=None, gender=False, titles=False, dates=False, word=False):
