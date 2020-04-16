@@ -42,9 +42,9 @@ def parse_input(request):
 
     # read environment from environment variable
     try:
-        env = os.environ['NAME-FINDER-CONFIG-ENV']
+        env = os.environ['NAME_FINDER_CONFIG_ENV']
     except KeyError as kerr:
-        print("Environment variable NAME-FINDER-CONFIG-ENV not set:", sys.exc_info()[0])
+        print("Environment variable NAME_FINDER_CONFIG_ENV not set:", sys.exc_info()[0])
         traceback.print_exc()
         env = None
     except Exception as err:
