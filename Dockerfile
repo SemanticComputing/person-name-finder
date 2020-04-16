@@ -19,6 +19,9 @@ COPY src ./src
 COPY language-resources ./language-resources
 COPY run.py ./
 
+ENV CONF_FILE=/app/conf/config.ini 
+COPY conf/config.ini $CONF_FILE
+
 RUN mkdir logs
 
 RUN chgrp -R 0 /app \
