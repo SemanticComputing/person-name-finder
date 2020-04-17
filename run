@@ -1,15 +1,9 @@
 #!/bin/sh
 
-if [ $HENKO_ENDPOINT_URL ]; then
-  sed -i "s|^henko_endpoint\ *=\ *.*|henko_endpoint\ =\ $HENKO_ENDPOINT_URL|" "$CONF_FILE"
-fi
+sed -i "s|^henko_endpoint\ *=\ *.*|henko_endpoint\ =\ $HENKO_ENDPOINT_URL|" "$CONF_FILE"
 
-if [ $IP_BACKEND_GENDER_GUESS ] && [ $PORT_BACKEND_GENDER_GUESS ]; then
-  sed -i s/^gender_guess_url\ *=\ *.*$/gender_guess_url\ =\ http:\\/\\/$IP_BACKEND_GENDER_GUESS:$PORT_BACKEND_GENDER_GUESS/ "$CONF_FILE"
-fi
+sed -i s/^gender_guess_url\ *=\ *.*$/gender_guess_url\ =\ http:\\/\\/$IP_BACKEND_GENDER_GUESS:$PORT_BACKEND_GENDER_GUESS/ "$CONF_FILE"
 
-if [ $IP_BACKEND_REGEX ] && [ $PORT_BACKEND_REGEX ]; then
-  sed -i s/^regex_url\ *=\ *.*$/regex_url\ =\ http:\\/\\/$IP_BACKEND_REGEX:$PORT_BACKEND_REGEX/ "$CONF_FILE"
-fi
+sed -i s/^regex_url\ *=\ *.*$/regex_url\ =\ http:\\/\\/$IP_BACKEND_REGEX:$PORT_BACKEND_REGEX/ "$CONF_FILE"
 
 /usr/bin/gunicorn $GUNICORN_RELOAD -w $GUNICORN_WORKER_AMOUNT -t $GUNICORN_TIMEOUT -b 0.0.0.0:5000 run:app

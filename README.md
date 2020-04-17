@@ -86,11 +86,9 @@ Results are retuned in json format:
 
 ## Running in Docker
 
-`./docker-build.sh`: builds the service
+`docker-compose up`: builds and runs Name Finder and the needed backend services
 
-`./docker-run.sh`: runs the service
-
-The following configuration parameters can be passed as environment variables to the container:
+The following configuration parameters must be passed as environment variables to the container:
 
 * HENKO_ENDPOINT_URL
 * IP_BACKEND_GENDER_GUESS
