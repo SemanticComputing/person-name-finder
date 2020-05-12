@@ -18,7 +18,7 @@ For more information, check requirements.txt
 
 ## Configurations
 
-The configurations for the service can be found from the config/config.ini file and configured based on service usage. 
+The configurations for the service can be found from the config/config.ini file and configured based on service usage.
 
 List of configurations available:
 
@@ -32,7 +32,7 @@ List of configurations available:
 * context_death_identifiers (default: 'k.', 'kuollut'): words used in identifying date of death in text
 * context_lifespan_separators (default: '-', '–'): separators between years
 
-In order to use these configurations, set the environment variable NAME_FINDER_CONFIG_ENV to 'DEFAULT' or to you personal setting. The value is the section name in the config.ini file where the personal settings can be set for the attributes (configurations) defined above. 
+In order to use these configurations, set the environment variable NAME_FINDER_CONFIG_ENV to 'DEFAULT' or to you personal setting. The value is the section name in the config.ini file where the personal settings can be set for the attributes (configurations) defined above.
 
 ## Usage
 
@@ -86,6 +86,14 @@ Results are retuned in json format:
 
 ## Running in Docker
 
-`./docker-build.sh`: builds the service
+`docker-compose up`: builds and runs Name Finder and the needed backend services
 
-`./docker-run.sh`: runs the service
+The following configuration parameters must be passed as environment variables to the container:
+
+* HENKO_ENDPOINT_URL
+* IP_BACKEND_GENDER_GUESS
+* PORT_BACKEND_GENDER_GUESS
+* IP_BACKEND_REGEX
+* PORT_BACKEND_REGEX
+
+Other configuration parameters should be set by using a config.ini (see section Configurations above) which can be e.g. bind mounted to container's path `/app/conf/config.ini`.
