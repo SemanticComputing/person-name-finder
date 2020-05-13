@@ -21,6 +21,7 @@ class NameFinder:
     def identify_name(self, env, sentence_chunk_strings, index_list, original_sentence_data, check_date=None, gender=False, title=False, date=False, word=False):
         print("Check titles? ",title)
         names = dict()
+        all_names = list()
         resp = None
         for i,name_string in sentence_chunk_strings.items():
             self.last_names[i] = list()
@@ -36,7 +37,8 @@ class NameFinder:
                     checking_date = check_date[i]
 
                 nr = NameRidler(dict_names, arr_names, name_string, env)
-                name_list, resp = nr.get_names(check_for_dates=checking_date, gender=gender, titles=title, dates=date, word=word, fulltext=str(original_sentence_data[index_list[i]].get_sentence_string()))
+
+                name_list, resp = nr.get_names(check_for_dates=checking_date, gender=gender, titles=title, dates=date, word=word, fulltext=str(original_sentence_data[index_list[i]].get_sentence_string()), complete_list_of_name=all_names)
                 print("Using index:", index_list[i])
 
                 # parsing result
@@ -45,6 +47,7 @@ class NameFinder:
                     names[index_list[i]]["entities"] = list()
                 names[index_list[i]]["entities"].extend(name_list)
                 names[index_list[i]]["sentence"]=str(original_sentence_data[index_list[i]].get_sentence_string())
+                all_names.extend(nr.get_full_name_entities())
 
         return names, 1, resp
 
@@ -152,6 +155,12 @@ class NameRidler:
         # disambiguate
         self.ambiguity_identifier = AmbiguityResolver()
 
+    def get_full_name_entities(self):
+        return self.full_name_entities
+
+    def get_full_names(self):
+        return self.full_names
+
     def read_configs(self, env):
 
         try:
@@ -209,12 +218,13 @@ class NameRidler:
             self.string_chunking_pattern = r'(, |; | \(|\)| ja | tai )'
 
     # render data into result format
-    def get_names(self, check_for_dates=None, gender=False, titles=False, dates=False, word=False, fulltext=None):
+    def get_names(self, check_for_dates=None, gender=False, titles=False, dates=False, word=False, fulltext=None, complete_list_of_name=None):
         responses = dict()
         entities = list()
+        fullnames = list()
 
         # disambiguate
-        self.ambiguity_identifier.set_full_name(self.full_name_entities)
+        self.ambiguity_identifier.set_full_name(complete_list_of_name)
         self.ambiguity_identifier.ambiguity_solver()
         ambiguous = self.ambiguity_identifier.get_ambiguous_names()
 
@@ -404,7 +414,7 @@ class NameRidler:
     def extract_name(self, arr, full_name_counter, helper_arr, name, alternatives):
         argh, full_name, full_name_lemma = self.determine_name(arr, helper_arr, alternatives)
 
-        print("Full name:", full_name, argh, full_name_counter)
+        print("[extract_name] Full name:", full_name, argh, full_name_counter)
         fullname_ind = full_name + "_" + str(full_name_counter)
 
         full_name_entity = FullName(full_name_counter, full_name, full_name_lemma, argh)
@@ -619,7 +629,7 @@ class NameRidler:
                 print("Raw response")
             data = resp.json()
         except requests.ConnectionError as ce:
-            print("Unable to open with native function. Error: "  + str(ce))
+            print("Unable to open with native function. Error: " + str(ce))
         except Exception as e:
             if resp != None:
                 print("Unable to process a request:", resp, resp.text)
@@ -775,10 +785,10 @@ class FullName:
         return {'name':str(self.original_form), 'lemma':str(self.label), 'type':str(self.clarify_type()), 'location':str(self.location), 'uri':self.name_uri, 'start_ind':self.string_start, 'end_ind':self.string_end}
 
     def __str__(self):
-        return self.label + " (" + str(self.count) + "): " + self.type + " @ " + str(self.location)
+        return self.full_name
 
     def __repr__(self):
-        return self.label + " (" + str(self.count) + "): " + self.type + " @ " + str(self.location)
+        return self.full_name
 
     def __eq__(self, other):
         if other != None:

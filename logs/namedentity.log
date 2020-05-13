@@ -10784,3 +10784,319 @@
 2020-05-13 12:04:35,480 NamedEntity INFO text=EU&locale=fi&forms=V%2BN%2BNom%2BSg
 2020-05-13 12:04:36,008 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '50', 'Content-Type': 'application/x-www-form-urlencoded'}
 2020-05-13 12:04:36,008 NamedEntity INFO text=kierrokselle&locale=fi&forms=V%2BN%2BNom%2BSg
+2020-05-13 13:54:04,253 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '79', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:04,253 NamedEntity INFO text=Pekka+Haavisto+on+ottanut+politiikassa+ymm%C3%A4rt%C3%A4j%C3%A4n&locale=fi
+2020-05-13 13:54:04,374 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '27', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:04,374 NamedEntity INFO text=sovittelijan&locale=fi
+2020-05-13 13:54:04,419 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '37', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:04,420 NamedEntity INFO text=mahdollistajan+roolit.&locale=fi
+2020-05-13 13:54:04,479 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '92', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:04,479 NamedEntity INFO text=L%C3%A4hes+tuntematon+kolmekymppinen+hurmasi+1987+eduskuntavaalikeskustelussa&locale=fi
+2020-05-13 13:54:04,558 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '75', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:04,559 NamedEntity INFO text=tuli+valituksi+vihreiden+toiseen+eduskuntaryhm%C3%A4%C3%A4n.&locale=fi
+2020-05-13 13:54:04,619 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '63', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:04,620 NamedEntity INFO text=H%C3%A4n+on+toiminut+my%C3%B6s+ministerin%C3%A4.&locale=fi
+2020-05-13 13:54:04,685 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '71', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:04,686 NamedEntity INFO text=Haavisto+on+tehnyt+lis%C3%A4ksi+kansainv%C3%A4lisen+uran&locale=fi
+2020-05-13 13:54:04,756 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '125', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:04,756 NamedEntity INFO text=sill%C3%A4+h%C3%A4nen+sovittelijan+kykyj%C3%A4%C3%A4n+ovat+k%C3%A4ytt%C3%A4neet+ulkoministeri%C3%B6n+ohella+YK&locale=fi
+2020-05-13 13:54:04,857 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '26', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:04,857 NamedEntity INFO text=EU+Aasiassa&locale=fi
+2020-05-13 13:54:04,901 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:04,901 NamedEntity INFO text=+Afrikassa+ja++Euroopassa.&locale=fi
+2020-05-13 13:54:04,956 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:04,956 NamedEntity INFO text=Haaviston+suosio+on+ulottunut+laajemmalle+kuin+h%C3%A4nen+puolueensa.&locale=fi
+2020-05-13 13:54:05,055 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:05,055 NamedEntity INFO text=Sen+osoitti+2012+presidentinvaalit&locale=fi
+2020-05-13 13:54:05,105 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '69', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:05,106 NamedEntity INFO text=joiden+toiselle+kierrokselle+Haavisto+p%C3%A4%C3%A4si.&locale=fi
+2020-05-13 13:54:05,866 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '40', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:05,866 NamedEntity INFO text=EU&locale=fi&forms=V%2BN%2BNom%2BSg
+2020-05-13 13:54:06,277 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '50', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:06,277 NamedEntity INFO text=kierrokselle&locale=fi&forms=V%2BN%2BNom%2BSg
+2020-05-13 13:54:28,653 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '79', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:28,653 NamedEntity INFO text=Pekka+Haavisto+on+ottanut+politiikassa+ymm%C3%A4rt%C3%A4j%C3%A4n&locale=fi
+2020-05-13 13:54:28,732 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '27', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:28,732 NamedEntity INFO text=sovittelijan&locale=fi
+2020-05-13 13:54:28,776 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '37', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:28,776 NamedEntity INFO text=mahdollistajan+roolit.&locale=fi
+2020-05-13 13:54:28,835 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '92', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:28,835 NamedEntity INFO text=L%C3%A4hes+tuntematon+kolmekymppinen+hurmasi+1987+eduskuntavaalikeskustelussa&locale=fi
+2020-05-13 13:54:28,914 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '75', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:28,914 NamedEntity INFO text=tuli+valituksi+vihreiden+toiseen+eduskuntaryhm%C3%A4%C3%A4n.&locale=fi
+2020-05-13 13:54:28,989 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '63', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:28,989 NamedEntity INFO text=H%C3%A4n+on+toiminut+my%C3%B6s+ministerin%C3%A4.&locale=fi
+2020-05-13 13:54:29,069 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '71', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:29,069 NamedEntity INFO text=Haavisto+on+tehnyt+lis%C3%A4ksi+kansainv%C3%A4lisen+uran&locale=fi
+2020-05-13 13:54:29,117 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '125', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:29,118 NamedEntity INFO text=sill%C3%A4+h%C3%A4nen+sovittelijan+kykyj%C3%A4%C3%A4n+ovat+k%C3%A4ytt%C3%A4neet+ulkoministeri%C3%B6n+ohella+YK&locale=fi
+2020-05-13 13:54:29,191 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '26', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:29,191 NamedEntity INFO text=EU+Aasiassa&locale=fi
+2020-05-13 13:54:29,244 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:29,245 NamedEntity INFO text=+Afrikassa+ja++Euroopassa.&locale=fi
+2020-05-13 13:54:29,289 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:29,289 NamedEntity INFO text=Haaviston+suosio+on+ulottunut+laajemmalle+kuin+h%C3%A4nen+puolueensa.&locale=fi
+2020-05-13 13:54:29,351 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:29,351 NamedEntity INFO text=Sen+osoitti+2012+presidentinvaalit&locale=fi
+2020-05-13 13:54:29,399 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '69', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:54:29,399 NamedEntity INFO text=joiden+toiselle+kierrokselle+Haavisto+p%C3%A4%C3%A4si.&locale=fi
+2020-05-13 13:55:34,362 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '79', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:55:34,363 NamedEntity INFO text=Pekka+Haavisto+on+ottanut+politiikassa+ymm%C3%A4rt%C3%A4j%C3%A4n&locale=fi
+2020-05-13 13:55:34,461 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '27', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:55:34,461 NamedEntity INFO text=sovittelijan&locale=fi
+2020-05-13 13:55:34,517 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '37', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:55:34,517 NamedEntity INFO text=mahdollistajan+roolit.&locale=fi
+2020-05-13 13:55:34,579 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '92', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:55:34,579 NamedEntity INFO text=L%C3%A4hes+tuntematon+kolmekymppinen+hurmasi+1987+eduskuntavaalikeskustelussa&locale=fi
+2020-05-13 13:55:34,661 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '75', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:55:34,661 NamedEntity INFO text=tuli+valituksi+vihreiden+toiseen+eduskuntaryhm%C3%A4%C3%A4n.&locale=fi
+2020-05-13 13:55:34,723 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '63', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:55:34,723 NamedEntity INFO text=H%C3%A4n+on+toiminut+my%C3%B6s+ministerin%C3%A4.&locale=fi
+2020-05-13 13:55:34,808 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '71', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:55:34,809 NamedEntity INFO text=Haavisto+on+tehnyt+lis%C3%A4ksi+kansainv%C3%A4lisen+uran&locale=fi
+2020-05-13 13:55:34,885 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '125', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:55:34,886 NamedEntity INFO text=sill%C3%A4+h%C3%A4nen+sovittelijan+kykyj%C3%A4%C3%A4n+ovat+k%C3%A4ytt%C3%A4neet+ulkoministeri%C3%B6n+ohella+YK&locale=fi
+2020-05-13 13:55:34,962 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '26', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:55:34,963 NamedEntity INFO text=EU+Aasiassa&locale=fi
+2020-05-13 13:55:35,029 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:55:35,029 NamedEntity INFO text=+Afrikassa+ja++Euroopassa.&locale=fi
+2020-05-13 13:55:35,087 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:55:35,087 NamedEntity INFO text=Haaviston+suosio+on+ulottunut+laajemmalle+kuin+h%C3%A4nen+puolueensa.&locale=fi
+2020-05-13 13:55:35,161 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:55:35,161 NamedEntity INFO text=Sen+osoitti+2012+presidentinvaalit&locale=fi
+2020-05-13 13:55:35,210 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '69', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 13:55:35,210 NamedEntity INFO text=joiden+toiselle+kierrokselle+Haavisto+p%C3%A4%C3%A4si.&locale=fi
+2020-05-13 14:02:12,508 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '79', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:02:12,508 NamedEntity INFO text=Pekka+Haavisto+on+ottanut+politiikassa+ymm%C3%A4rt%C3%A4j%C3%A4n&locale=fi
+2020-05-13 14:02:12,686 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '27', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:02:12,686 NamedEntity INFO text=sovittelijan&locale=fi
+2020-05-13 14:02:12,751 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '37', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:02:12,751 NamedEntity INFO text=mahdollistajan+roolit.&locale=fi
+2020-05-13 14:02:12,827 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '92', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:02:12,827 NamedEntity INFO text=L%C3%A4hes+tuntematon+kolmekymppinen+hurmasi+1987+eduskuntavaalikeskustelussa&locale=fi
+2020-05-13 14:02:12,912 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '75', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:02:12,912 NamedEntity INFO text=tuli+valituksi+vihreiden+toiseen+eduskuntaryhm%C3%A4%C3%A4n.&locale=fi
+2020-05-13 14:02:13,004 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '63', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:02:13,004 NamedEntity INFO text=H%C3%A4n+on+toiminut+my%C3%B6s+ministerin%C3%A4.&locale=fi
+2020-05-13 14:02:13,076 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '71', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:02:13,076 NamedEntity INFO text=Haavisto+on+tehnyt+lis%C3%A4ksi+kansainv%C3%A4lisen+uran&locale=fi
+2020-05-13 14:02:13,148 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '125', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:02:13,148 NamedEntity INFO text=sill%C3%A4+h%C3%A4nen+sovittelijan+kykyj%C3%A4%C3%A4n+ovat+k%C3%A4ytt%C3%A4neet+ulkoministeri%C3%B6n+ohella+YK&locale=fi
+2020-05-13 14:02:13,223 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '26', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:02:13,224 NamedEntity INFO text=EU+Aasiassa&locale=fi
+2020-05-13 14:02:13,298 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:02:13,299 NamedEntity INFO text=+Afrikassa+ja++Euroopassa.&locale=fi
+2020-05-13 14:02:13,356 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:02:13,357 NamedEntity INFO text=Haaviston+suosio+on+ulottunut+laajemmalle+kuin+h%C3%A4nen+puolueensa.&locale=fi
+2020-05-13 14:02:13,446 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:02:13,446 NamedEntity INFO text=Sen+osoitti+2012+presidentinvaalit&locale=fi
+2020-05-13 14:02:13,495 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '69', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:02:13,496 NamedEntity INFO text=joiden+toiselle+kierrokselle+Haavisto+p%C3%A4%C3%A4si.&locale=fi
+2020-05-13 14:04:40,660 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '79', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:04:40,660 NamedEntity INFO text=Pekka+Haavisto+on+ottanut+politiikassa+ymm%C3%A4rt%C3%A4j%C3%A4n&locale=fi
+2020-05-13 14:04:40,794 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '27', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:04:40,794 NamedEntity INFO text=sovittelijan&locale=fi
+2020-05-13 14:04:40,846 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '37', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:04:40,847 NamedEntity INFO text=mahdollistajan+roolit.&locale=fi
+2020-05-13 14:04:40,902 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '92', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:04:40,902 NamedEntity INFO text=L%C3%A4hes+tuntematon+kolmekymppinen+hurmasi+1987+eduskuntavaalikeskustelussa&locale=fi
+2020-05-13 14:04:40,992 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '75', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:04:40,992 NamedEntity INFO text=tuli+valituksi+vihreiden+toiseen+eduskuntaryhm%C3%A4%C3%A4n.&locale=fi
+2020-05-13 14:04:41,056 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '63', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:04:41,056 NamedEntity INFO text=H%C3%A4n+on+toiminut+my%C3%B6s+ministerin%C3%A4.&locale=fi
+2020-05-13 14:04:41,125 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '71', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:04:41,125 NamedEntity INFO text=Haavisto+on+tehnyt+lis%C3%A4ksi+kansainv%C3%A4lisen+uran&locale=fi
+2020-05-13 14:04:41,193 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '125', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:04:41,193 NamedEntity INFO text=sill%C3%A4+h%C3%A4nen+sovittelijan+kykyj%C3%A4%C3%A4n+ovat+k%C3%A4ytt%C3%A4neet+ulkoministeri%C3%B6n+ohella+YK&locale=fi
+2020-05-13 14:04:41,269 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '26', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:04:41,269 NamedEntity INFO text=EU+Aasiassa&locale=fi
+2020-05-13 14:04:41,333 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:04:41,334 NamedEntity INFO text=+Afrikassa+ja++Euroopassa.&locale=fi
+2020-05-13 14:04:41,405 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:04:41,405 NamedEntity INFO text=Haaviston+suosio+on+ulottunut+laajemmalle+kuin+h%C3%A4nen+puolueensa.&locale=fi
+2020-05-13 14:04:41,491 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:04:41,492 NamedEntity INFO text=Sen+osoitti+2012+presidentinvaalit&locale=fi
+2020-05-13 14:04:41,544 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '69', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:04:41,544 NamedEntity INFO text=joiden+toiselle+kierrokselle+Haavisto+p%C3%A4%C3%A4si.&locale=fi
+2020-05-13 14:06:32,572 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '79', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:32,572 NamedEntity INFO text=Pekka+Haavisto+on+ottanut+politiikassa+ymm%C3%A4rt%C3%A4j%C3%A4n&locale=fi
+2020-05-13 14:06:32,723 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '27', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:32,724 NamedEntity INFO text=sovittelijan&locale=fi
+2020-05-13 14:06:32,774 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '37', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:32,775 NamedEntity INFO text=mahdollistajan+roolit.&locale=fi
+2020-05-13 14:06:32,837 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '92', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:32,838 NamedEntity INFO text=L%C3%A4hes+tuntematon+kolmekymppinen+hurmasi+1987+eduskuntavaalikeskustelussa&locale=fi
+2020-05-13 14:06:32,923 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '75', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:32,923 NamedEntity INFO text=tuli+valituksi+vihreiden+toiseen+eduskuntaryhm%C3%A4%C3%A4n.&locale=fi
+2020-05-13 14:06:32,998 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '63', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:32,998 NamedEntity INFO text=H%C3%A4n+on+toiminut+my%C3%B6s+ministerin%C3%A4.&locale=fi
+2020-05-13 14:06:33,062 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '71', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:33,063 NamedEntity INFO text=Haavisto+on+tehnyt+lis%C3%A4ksi+kansainv%C3%A4lisen+uran&locale=fi
+2020-05-13 14:06:33,137 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '125', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:33,137 NamedEntity INFO text=sill%C3%A4+h%C3%A4nen+sovittelijan+kykyj%C3%A4%C3%A4n+ovat+k%C3%A4ytt%C3%A4neet+ulkoministeri%C3%B6n+ohella+YK&locale=fi
+2020-05-13 14:06:33,219 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '26', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:33,220 NamedEntity INFO text=EU+Aasiassa&locale=fi
+2020-05-13 14:06:33,279 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:33,279 NamedEntity INFO text=+Afrikassa+ja++Euroopassa.&locale=fi
+2020-05-13 14:06:33,330 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:33,330 NamedEntity INFO text=Haaviston+suosio+on+ulottunut+laajemmalle+kuin+h%C3%A4nen+puolueensa.&locale=fi
+2020-05-13 14:06:33,410 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:33,410 NamedEntity INFO text=Sen+osoitti+2012+presidentinvaalit&locale=fi
+2020-05-13 14:06:33,465 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '69', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:33,466 NamedEntity INFO text=joiden+toiselle+kierrokselle+Haavisto+p%C3%A4%C3%A4si.&locale=fi
+2020-05-13 14:06:59,465 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '79', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:59,465 NamedEntity INFO text=Pekka+Haavisto+on+ottanut+politiikassa+ymm%C3%A4rt%C3%A4j%C3%A4n&locale=fi
+2020-05-13 14:06:59,550 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '27', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:59,550 NamedEntity INFO text=sovittelijan&locale=fi
+2020-05-13 14:06:59,599 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '37', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:59,599 NamedEntity INFO text=mahdollistajan+roolit.&locale=fi
+2020-05-13 14:06:59,665 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '92', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:59,665 NamedEntity INFO text=L%C3%A4hes+tuntematon+kolmekymppinen+hurmasi+1987+eduskuntavaalikeskustelussa&locale=fi
+2020-05-13 14:06:59,748 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '75', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:59,748 NamedEntity INFO text=tuli+valituksi+vihreiden+toiseen+eduskuntaryhm%C3%A4%C3%A4n.&locale=fi
+2020-05-13 14:06:59,803 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '63', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:59,803 NamedEntity INFO text=H%C3%A4n+on+toiminut+my%C3%B6s+ministerin%C3%A4.&locale=fi
+2020-05-13 14:06:59,873 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '71', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:59,874 NamedEntity INFO text=Haavisto+on+tehnyt+lis%C3%A4ksi+kansainv%C3%A4lisen+uran&locale=fi
+2020-05-13 14:06:59,942 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '125', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:06:59,942 NamedEntity INFO text=sill%C3%A4+h%C3%A4nen+sovittelijan+kykyj%C3%A4%C3%A4n+ovat+k%C3%A4ytt%C3%A4neet+ulkoministeri%C3%B6n+ohella+YK&locale=fi
+2020-05-13 14:07:00,012 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '26', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:07:00,012 NamedEntity INFO text=EU+Aasiassa&locale=fi
+2020-05-13 14:07:00,071 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:07:00,071 NamedEntity INFO text=+Afrikassa+ja++Euroopassa.&locale=fi
+2020-05-13 14:07:00,119 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:07:00,119 NamedEntity INFO text=Haaviston+suosio+on+ulottunut+laajemmalle+kuin+h%C3%A4nen+puolueensa.&locale=fi
+2020-05-13 14:07:00,189 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:07:00,189 NamedEntity INFO text=Sen+osoitti+2012+presidentinvaalit&locale=fi
+2020-05-13 14:07:00,254 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '69', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:07:00,255 NamedEntity INFO text=joiden+toiselle+kierrokselle+Haavisto+p%C3%A4%C3%A4si.&locale=fi
+2020-05-13 14:11:50,992 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '79', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:11:50,993 NamedEntity INFO text=Pekka+Haavisto+on+ottanut+politiikassa+ymm%C3%A4rt%C3%A4j%C3%A4n&locale=fi
+2020-05-13 14:11:51,233 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '27', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:11:51,233 NamedEntity INFO text=sovittelijan&locale=fi
+2020-05-13 14:11:51,300 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '37', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:11:51,300 NamedEntity INFO text=mahdollistajan+roolit.&locale=fi
+2020-05-13 14:11:51,367 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '92', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:11:51,367 NamedEntity INFO text=L%C3%A4hes+tuntematon+kolmekymppinen+hurmasi+1987+eduskuntavaalikeskustelussa&locale=fi
+2020-05-13 14:11:51,471 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '75', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:11:51,471 NamedEntity INFO text=tuli+valituksi+vihreiden+toiseen+eduskuntaryhm%C3%A4%C3%A4n.&locale=fi
+2020-05-13 14:11:51,554 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '63', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:11:51,555 NamedEntity INFO text=H%C3%A4n+on+toiminut+my%C3%B6s+ministerin%C3%A4.&locale=fi
+2020-05-13 14:11:51,626 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '71', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:11:51,627 NamedEntity INFO text=Haavisto+on+tehnyt+lis%C3%A4ksi+kansainv%C3%A4lisen+uran&locale=fi
+2020-05-13 14:11:51,694 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '125', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:11:51,694 NamedEntity INFO text=sill%C3%A4+h%C3%A4nen+sovittelijan+kykyj%C3%A4%C3%A4n+ovat+k%C3%A4ytt%C3%A4neet+ulkoministeri%C3%B6n+ohella+YK&locale=fi
+2020-05-13 14:11:51,782 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '26', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:11:51,782 NamedEntity INFO text=EU+Aasiassa&locale=fi
+2020-05-13 14:11:51,830 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:11:51,831 NamedEntity INFO text=+Afrikassa+ja++Euroopassa.&locale=fi
+2020-05-13 14:11:51,878 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:11:51,879 NamedEntity INFO text=Haaviston+suosio+on+ulottunut+laajemmalle+kuin+h%C3%A4nen+puolueensa.&locale=fi
+2020-05-13 14:11:51,946 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:11:51,946 NamedEntity INFO text=Sen+osoitti+2012+presidentinvaalit&locale=fi
+2020-05-13 14:11:52,001 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '69', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:11:52,001 NamedEntity INFO text=joiden+toiselle+kierrokselle+Haavisto+p%C3%A4%C3%A4si.&locale=fi
+2020-05-13 14:21:25,791 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '79', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:21:25,791 NamedEntity INFO text=Pekka+Haavisto+on+ottanut+politiikassa+ymm%C3%A4rt%C3%A4j%C3%A4n&locale=fi
+2020-05-13 14:21:26,064 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '27', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:21:26,064 NamedEntity INFO text=sovittelijan&locale=fi
+2020-05-13 14:21:26,131 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '37', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:21:26,132 NamedEntity INFO text=mahdollistajan+roolit.&locale=fi
+2020-05-13 14:21:26,186 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '92', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:21:26,187 NamedEntity INFO text=L%C3%A4hes+tuntematon+kolmekymppinen+hurmasi+1987+eduskuntavaalikeskustelussa&locale=fi
+2020-05-13 14:21:26,270 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '75', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:21:26,270 NamedEntity INFO text=tuli+valituksi+vihreiden+toiseen+eduskuntaryhm%C3%A4%C3%A4n.&locale=fi
+2020-05-13 14:21:26,346 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '63', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:21:26,347 NamedEntity INFO text=H%C3%A4n+on+toiminut+my%C3%B6s+ministerin%C3%A4.&locale=fi
+2020-05-13 14:21:26,406 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '71', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:21:26,406 NamedEntity INFO text=Haavisto+on+tehnyt+lis%C3%A4ksi+kansainv%C3%A4lisen+uran&locale=fi
+2020-05-13 14:21:26,471 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '125', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:21:26,471 NamedEntity INFO text=sill%C3%A4+h%C3%A4nen+sovittelijan+kykyj%C3%A4%C3%A4n+ovat+k%C3%A4ytt%C3%A4neet+ulkoministeri%C3%B6n+ohella+YK&locale=fi
+2020-05-13 14:21:26,547 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '26', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:21:26,547 NamedEntity INFO text=EU+Aasiassa&locale=fi
+2020-05-13 14:21:26,594 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:21:26,594 NamedEntity INFO text=+Afrikassa+ja++Euroopassa.&locale=fi
+2020-05-13 14:21:26,640 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:21:26,640 NamedEntity INFO text=Haaviston+suosio+on+ulottunut+laajemmalle+kuin+h%C3%A4nen+puolueensa.&locale=fi
+2020-05-13 14:21:26,721 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:21:26,721 NamedEntity INFO text=Sen+osoitti+2012+presidentinvaalit&locale=fi
+2020-05-13 14:21:26,787 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '69', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:21:26,787 NamedEntity INFO text=joiden+toiselle+kierrokselle+Haavisto+p%C3%A4%C3%A4si.&locale=fi
+2020-05-13 14:23:25,106 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '79', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:23:25,106 NamedEntity INFO text=Pekka+Haavisto+on+ottanut+politiikassa+ymm%C3%A4rt%C3%A4j%C3%A4n&locale=fi
+2020-05-13 14:23:25,213 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '27', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:23:25,213 NamedEntity INFO text=sovittelijan&locale=fi
+2020-05-13 14:23:25,255 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '37', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:23:25,255 NamedEntity INFO text=mahdollistajan+roolit.&locale=fi
+2020-05-13 14:23:25,313 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '92', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:23:25,313 NamedEntity INFO text=L%C3%A4hes+tuntematon+kolmekymppinen+hurmasi+1987+eduskuntavaalikeskustelussa&locale=fi
+2020-05-13 14:23:25,381 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '75', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:23:25,381 NamedEntity INFO text=tuli+valituksi+vihreiden+toiseen+eduskuntaryhm%C3%A4%C3%A4n.&locale=fi
+2020-05-13 14:23:25,451 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '63', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:23:25,451 NamedEntity INFO text=H%C3%A4n+on+toiminut+my%C3%B6s+ministerin%C3%A4.&locale=fi
+2020-05-13 14:23:25,514 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '71', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:23:25,514 NamedEntity INFO text=Haavisto+on+tehnyt+lis%C3%A4ksi+kansainv%C3%A4lisen+uran&locale=fi
+2020-05-13 14:23:25,571 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '125', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:23:25,572 NamedEntity INFO text=sill%C3%A4+h%C3%A4nen+sovittelijan+kykyj%C3%A4%C3%A4n+ovat+k%C3%A4ytt%C3%A4neet+ulkoministeri%C3%B6n+ohella+YK&locale=fi
+2020-05-13 14:23:25,657 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '26', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:23:25,657 NamedEntity INFO text=EU+Aasiassa&locale=fi
+2020-05-13 14:23:25,701 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:23:25,701 NamedEntity INFO text=+Afrikassa+ja++Euroopassa.&locale=fi
+2020-05-13 14:23:25,765 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:23:25,766 NamedEntity INFO text=Haaviston+suosio+on+ulottunut+laajemmalle+kuin+h%C3%A4nen+puolueensa.&locale=fi
+2020-05-13 14:23:25,835 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:23:25,835 NamedEntity INFO text=Sen+osoitti+2012+presidentinvaalit&locale=fi
+2020-05-13 14:23:25,885 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '69', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:23:25,886 NamedEntity INFO text=joiden+toiselle+kierrokselle+Haavisto+p%C3%A4%C3%A4si.&locale=fi
+2020-05-13 14:24:08,531 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '79', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:08,531 NamedEntity INFO text=Pekka+Haavisto+on+ottanut+politiikassa+ymm%C3%A4rt%C3%A4j%C3%A4n&locale=fi
+2020-05-13 14:24:08,799 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '27', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:08,799 NamedEntity INFO text=sovittelijan&locale=fi
+2020-05-13 14:24:08,945 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '37', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:08,945 NamedEntity INFO text=mahdollistajan+roolit.&locale=fi
+2020-05-13 14:24:09,106 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '92', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:09,106 NamedEntity INFO text=L%C3%A4hes+tuntematon+kolmekymppinen+hurmasi+1987+eduskuntavaalikeskustelussa&locale=fi
+2020-05-13 14:24:09,250 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '75', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:09,250 NamedEntity INFO text=tuli+valituksi+vihreiden+toiseen+eduskuntaryhm%C3%A4%C3%A4n.&locale=fi
+2020-05-13 14:24:09,338 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '63', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:09,339 NamedEntity INFO text=H%C3%A4n+on+toiminut+my%C3%B6s+ministerin%C3%A4.&locale=fi
+2020-05-13 14:24:09,393 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '71', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:09,393 NamedEntity INFO text=Haavisto+on+tehnyt+lis%C3%A4ksi+kansainv%C3%A4lisen+uran&locale=fi
+2020-05-13 14:24:09,471 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '125', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:09,472 NamedEntity INFO text=sill%C3%A4+h%C3%A4nen+sovittelijan+kykyj%C3%A4%C3%A4n+ovat+k%C3%A4ytt%C3%A4neet+ulkoministeri%C3%B6n+ohella+YK&locale=fi
+2020-05-13 14:24:09,543 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '26', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:09,543 NamedEntity INFO text=EU+Aasiassa&locale=fi
+2020-05-13 14:24:09,587 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:09,587 NamedEntity INFO text=+Afrikassa+ja++Euroopassa.&locale=fi
+2020-05-13 14:24:09,644 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:09,644 NamedEntity INFO text=Haaviston+suosio+on+ulottunut+laajemmalle+kuin+h%C3%A4nen+puolueensa.&locale=fi
+2020-05-13 14:24:09,731 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:09,731 NamedEntity INFO text=Sen+osoitti+2012+presidentinvaalit&locale=fi
+2020-05-13 14:24:09,795 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '69', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:09,795 NamedEntity INFO text=joiden+toiselle+kierrokselle+Haavisto+p%C3%A4%C3%A4si.&locale=fi
+2020-05-13 14:24:23,295 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '79', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:23,295 NamedEntity INFO text=Pekka+Haavisto+on+ottanut+politiikassa+ymm%C3%A4rt%C3%A4j%C3%A4n&locale=fi
+2020-05-13 14:24:23,386 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '27', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:23,386 NamedEntity INFO text=sovittelijan&locale=fi
+2020-05-13 14:24:23,453 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '37', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:23,453 NamedEntity INFO text=mahdollistajan+roolit.&locale=fi
+2020-05-13 14:24:23,502 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '92', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:23,502 NamedEntity INFO text=L%C3%A4hes+tuntematon+kolmekymppinen+hurmasi+1987+eduskuntavaalikeskustelussa&locale=fi
+2020-05-13 14:24:23,575 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '75', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:23,575 NamedEntity INFO text=tuli+valituksi+vihreiden+toiseen+eduskuntaryhm%C3%A4%C3%A4n.&locale=fi
+2020-05-13 14:24:23,629 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '63', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:23,629 NamedEntity INFO text=H%C3%A4n+on+toiminut+my%C3%B6s+ministerin%C3%A4.&locale=fi
+2020-05-13 14:24:23,684 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '71', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:23,684 NamedEntity INFO text=Haavisto+on+tehnyt+lis%C3%A4ksi+kansainv%C3%A4lisen+uran&locale=fi
+2020-05-13 14:24:23,756 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '125', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:23,757 NamedEntity INFO text=sill%C3%A4+h%C3%A4nen+sovittelijan+kykyj%C3%A4%C3%A4n+ovat+k%C3%A4ytt%C3%A4neet+ulkoministeri%C3%B6n+ohella+YK&locale=fi
+2020-05-13 14:24:23,826 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '26', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:23,827 NamedEntity INFO text=EU+Aasiassa&locale=fi
+2020-05-13 14:24:23,880 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '41', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:23,880 NamedEntity INFO text=+Afrikassa+ja++Euroopassa.&locale=fi
+2020-05-13 14:24:23,929 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '84', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:23,929 NamedEntity INFO text=Haaviston+suosio+on+ulottunut+laajemmalle+kuin+h%C3%A4nen+puolueensa.&locale=fi
+2020-05-13 14:24:24,007 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:24,007 NamedEntity INFO text=Sen+osoitti+2012+presidentinvaalit&locale=fi
+2020-05-13 14:24:24,066 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '69', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:24:24,066 NamedEntity INFO text=joiden+toiselle+kierrokselle+Haavisto+p%C3%A4%C3%A4si.&locale=fi
