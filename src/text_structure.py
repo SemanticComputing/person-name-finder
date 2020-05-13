@@ -466,6 +466,9 @@ class SentenceChunk:
         return self.ord
 
     def __eq__(self, other):
+        if other == None:
+            return False
+
         if self.string == other.get_string():
             if self.ord == other.get_order():
                 if self.location == other.get_location():

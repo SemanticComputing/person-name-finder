@@ -188,7 +188,6 @@ def lemmatize(text):
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    print("APP name",__name__)
     env, input_data, sentences, index_list, gender, title, date, word, regex_check, original_sentences = parse_input(request)
     print("DATA", sentences)
     if input_data != None:

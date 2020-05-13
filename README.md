@@ -2,7 +2,7 @@
 
 ## About
 
-Using [person name ontology, HENKO](http://light.onki.fi/henkilonimisto/en/) and [LAS](http://demo.seco.tkk.fi/las/) the application extractes probable names from given input text.
+Using [person name ontology, HENKO](http://light.onki.fi/henko/en/) and [LAS](http://demo.seco.tkk.fi/las/) the application extractes probable names from given input text.
 
 ## Dependencies
 
@@ -39,7 +39,7 @@ In order to use these configurations, set the environment variable NAME_FINDER_C
 To run use flask as follows:
 
 1. export NAME_FINDER_CONFIG_ENV='DEFAULT'
-2. export FLASK_APP=httpInterface.py
+2. export FLASK_APP=run.py
 3. flask run
 4. open browser and go to http://localhost:5000/.
 

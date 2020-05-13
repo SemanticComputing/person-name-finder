@@ -9,6 +9,7 @@ from collections import OrderedDict
 from src.ambiguation_resolver import AmbiguityResolver
 import sys, traceback
 from flask import abort
+from src.las_query import lasQuery
 
 class NameFinder:
     def __init__(self):
@@ -18,6 +19,7 @@ class NameFinder:
         self.first_name_ind = dict()
 
     def identify_name(self, env, sentence_chunk_strings, index_list, original_sentence_data, check_date=None, gender=False, title=False, date=False, word=False):
+        print("Check titles? ",title)
         names = dict()
         resp = None
         for i,name_string in sentence_chunk_strings.items():
@@ -34,7 +36,7 @@ class NameFinder:
                     checking_date = check_date[i]
 
                 nr = NameRidler(dict_names, arr_names, name_string, env)
-                name_list, resp = nr.get_names(check_for_dates=checking_date, gender=gender, titles=title, dates=date, word=word)
+                name_list, resp = nr.get_names(check_for_dates=checking_date, gender=gender, titles=title, dates=date, word=word, fulltext=str(original_sentence_data[index_list[i]].get_sentence_string()))
                 print("Using index:", index_list[i])
 
                 # parsing result
@@ -207,7 +209,7 @@ class NameRidler:
             self.string_chunking_pattern = r'(, |; | \(|\)| ja | tai )'
 
     # render data into result format
-    def get_names(self, check_for_dates=None, gender=False, titles=False, dates=False, word=False):
+    def get_names(self, check_for_dates=None, gender=False, titles=False, dates=False, word=False, fulltext=None):
         responses = dict()
         entities = list()
 
@@ -250,6 +252,11 @@ class NameRidler:
                                     entity['birth_date'] = item[0]
                                 else:
                                     entity['death_date'] = item[0]
+                if titles and fulltext != None:
+                    print("TITLE CHECK")
+                    title = self.find_title(fulltext, str_name)
+                    entity['titles'] = list()
+                    entity['titles'].append(title)
                 for item in arr:
                     if item.get_json() not in items:
                         #print("Item:", item)
@@ -598,17 +605,9 @@ class NameRidler:
         # header
         headers = {'content-type': 'application/json'}
 
-        #req = Request('GET', URL, params=params)
         resp = requests.get(URL, params=params, headers=headers, stream=True)
 
-        #prepared = s.prepare_request(req)
-        #print("Url:",prepared.url)
-
-        #print("Header:", prepared.headers)
-        #print("Body:", prepared.body)
-        #resp = None
         try:
-            #resp = s.send(prepared)
             if resp != None:
                 print("Request parameters:", params)
                 print("Response status:", resp.status_code)
@@ -672,17 +671,9 @@ class NameRidler:
         # header
         headers = {'content-type': 'application/json'}
 
-        #req = Request('GET', URL, params=params)
         resp = requests.get(URL, params=params, headers=headers, stream=True)
 
-        #prepared = s.prepare_request(req)
-        #print("Url:",prepared.url)
-
-        #print("Header:", prepared.headers)
-        #print("Body:", prepared.body)
-        #resp = None
         try:
-            #resp = s.send(prepared)
             if resp != None:
                 print("Request parameters:", params)
                 print("Response status:", resp.status_code)
@@ -726,6 +717,23 @@ class NameRidler:
                     print("Unable to find entity in results:", item['entities'])
 
         return results, resp
+
+    def find_title(self, string, name):
+        las = lasQuery()
+        lookup = string.split(name)[0].strip()
+        if len(lookup) > 0:
+            word_before_name = ""
+            if ' ' in lookup:
+                word_before_name = lookup.split(' ')[-1]
+            else:
+                word_before_name = lookup
+            print("From string: [%s], %s" % (lookup, lookup.split(' ')))
+            print("Check string:", word_before_name)
+            result = las.analysis(input=word_before_name, lookup_upos='NOUN')
+            print("ANALYSIS RESULT:",result)
+            return result.strip()
+        else:
+            print("Cannot fin title")
 
 
 class FullName:

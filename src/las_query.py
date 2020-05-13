@@ -23,7 +23,7 @@ class lasQuery:
         self.__path = path
         self.query_string_cache = dict()
         
-    def analysis(self, input):
+    def analysis(self, input, lookup_upos=None):
         res = " "
         j = self.morphological_analysis(input)
         reader = codecs.getreader("utf-8")
@@ -37,11 +37,15 @@ class lasQuery:
                     upos=""
                     if 'tags' in part:
                         p = part['tags']
+
                         if 'UPOS' in p:
                             p1 = p['UPOS']
                             if len(p1)>0:
                                 upos = part['tags']['UPOS'][0]
-                    if upos == 'NOUN' or upos == 'PROPN':
+                    if lookup_upos != None:
+                        if upos.lower() == lookup_upos.lower():
+                            res = res + lemma + " "
+                    elif upos == 'NOUN' or upos == 'PROPN':
                         res = res + lemma + " "
                 
         return res
@@ -54,7 +58,7 @@ class lasQuery:
         params = {'text': input, 'locale':'fi', "forms":"V+N+Nom+Sg"}
         data = urllib.parse.urlencode(params).encode()
         
-        content =  None
+        content = None
         content = self.prepared_request_morphological(input)
         if content == None:
             return ""
