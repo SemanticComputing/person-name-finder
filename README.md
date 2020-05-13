@@ -23,7 +23,7 @@ The configurations for the service can be found from the config/config.ini file 
 List of configurations available:
 
 * henko_endpoint (default: http://ldf.fi/henko/sparql): sparql endpoint for quering person names
-* gender_guess_url (default: http://nlp.ldf.fi/gender-guess): service used to identify gender from a name
+* gender_guess_url (default: http://nlp.ldf.fi/gender-identification): service used to identify gender from a name
 * gender_guess_threshold (default: 0.8): gender identification accuracy threshold that is given to the gender guessing service
 * regex_url (default: http://nlp.ldf.fi/regex): service used to identify dates from texts
 * string_chunking_pattern (default: r'(, |; | \(|\)| ja | tai )'): regular expression pattern to cut sentences into smaller chunks for more accurate name identification
@@ -92,7 +92,7 @@ By default, the attribute title is False.
 Results are retuned in json format:
 
 ```
-
+{"data":{"0":{"entities":[{"full_name":"Sauli Niinist\u00f6","full_name_lemma":"Sauli Niinist\u00f6","names":[{"end_ind":18,"lemma":"Sauli","location":"1","name":"Sauli","start_ind":13,"type":"Etunimi","uri":"http://ldf.fi/henko/n233"},{"end_ind":28,"lemma":"Niinist\u00f6","location":"2","name":"Niinist\u00f6","start_ind":20,"type":"Sukunimi","uri":"http://ldf.fi/henko/n22872"}],"titles":["presidentti"]}],"sentence":"Presidentti Sauli Niinist\u00f6"}},"date":"2020-05-13","service":"name-finder","status":200}
 ```
 
 ## Running in Docker
