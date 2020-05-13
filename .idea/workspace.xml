@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d31704e3-0677-4e93-9a3a-6fd23a93f8fc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/logs/namedentity.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/namedentity.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ambiguation_resolver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ambiguation_resolver.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/namefinder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/namefinder.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sparqlqueries.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/sparqlqueries.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/text_structure.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/text_structure.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +20,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="839">
-              <caret line="160" column="66" selection-start-line="160" selection-start-column="66" selection-end-line="160" selection-end-column="66" />
+            <state relative-caret-position="759">
+              <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -38,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/text_structure.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
-              <caret line="318" column="8" selection-start-line="318" selection-start-column="8" selection-end-line="318" selection-end-column="24" />
+            <state relative-caret-position="1049">
+              <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
               </folding>
@@ -53,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/sparqlqueries.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2262">
-              <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="90" selection-end-column="29" />
+            <state relative-caret-position="585">
+              <caret line="41" column="26" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="26" />
               <folding>
                 <element signature="e#0#52#0" expanded="true" />
               </folding>
@@ -62,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/namefinder.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1350">
-              <caret line="787" column="29" selection-start-line="787" selection-start-column="29" selection-end-line="787" selection-end-column="29" />
+            <state relative-caret-position="1020">
+              <caret line="386" column="24" lean-forward="true" selection-start-line="386" selection-start-column="24" selection-end-line="386" selection-end-column="24" />
               <folding>
                 <element signature="e#0#42#0" expanded="true" />
               </folding>
@@ -77,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ambiguation_resolver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1011">
-              <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+            <state relative-caret-position="493">
+              <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -120,8 +123,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>string</find>
-      <find>tokeni</find>
       <find>spar</find>
       <find>self.full_names</find>
       <find>ord_full_names</find>
@@ -150,6 +151,8 @@
       <find>extract_name</find>
       <find>FullName</find>
       <find>get_names</find>
+      <find>print</find>
+      <find>Add</find>
     </findStrings>
     <replaceStrings>
       <replace>henko</replace>
@@ -165,14 +168,14 @@
         <option value="$PROJECT_DIR$/src/namedentity.py" />
         <option value="$PROJECT_DIR$/data/abbreviations.csv" />
         <option value="$PROJECT_DIR$/src/disambiguation_resolver.py" />
-        <option value="$PROJECT_DIR$/src/sparqlqueries.py" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/conf/config.ini" />
-        <option value="$PROJECT_DIR$/src/text_structure.py" />
         <option value="$PROJECT_DIR$/src/las_query.py" />
         <option value="$PROJECT_DIR$/src/ambiguation_resolver.py" />
+        <option value="$PROJECT_DIR$/src/sparqlqueries.py" />
+        <option value="$PROJECT_DIR$/run.py" />
         <option value="$PROJECT_DIR$/src/namefinder.py" />
+        <option value="$PROJECT_DIR$/src/text_structure.py" />
       </list>
     </option>
   </component>
@@ -316,16 +319,6 @@
     <entry file="file://$PROJECT_DIR$/language-resources/abbreviations.csv">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sparqlqueries.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2262">
-          <caret line="83" column="8" selection-start-line="83" selection-start-column="8" selection-end-line="90" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Dockerfile">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -346,32 +339,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/text_structure.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="318" column="8" selection-start-line="318" selection-start-column="8" selection-end-line="318" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/las_query.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="607">
           <caret line="25" column="41" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="41" />
           <folding>
             <element signature="e#46#67#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="839">
-          <caret line="160" column="66" selection-start-line="160" selection-start-column="66" selection-end-line="160" selection-end-column="66" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -385,17 +358,47 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ambiguation_resolver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1011">
-          <caret line="39" column="48" selection-start-line="39" selection-start-column="48" selection-end-line="39" selection-end-column="48" />
+        <state relative-caret-position="493">
+          <caret line="17" column="17" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sparqlqueries.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="41" column="26" selection-start-line="41" selection-start-column="21" selection-end-line="41" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="110" column="13" selection-start-line="110" selection-start-column="13" selection-end-line="110" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/namefinder.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="787" column="29" selection-start-line="787" selection-start-column="29" selection-end-line="787" selection-end-column="29" />
+        <state relative-caret-position="1020">
+          <caret line="386" column="24" lean-forward="true" selection-start-line="386" selection-start-column="24" selection-end-line="386" selection-end-column="24" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/text_structure.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1049">
+          <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>

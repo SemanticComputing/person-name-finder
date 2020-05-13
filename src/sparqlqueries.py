@@ -39,7 +39,7 @@ class SparqlQuries:
                     return {}
 
                 for i, name in names.items():
-                    print("Query names:",name)
+                    #print("Query names:",name)
                     # http://yasgui.org/short/ATCBjNyFz
                     #endpoint = "http://ldf.fi/henko/sparql"
 
@@ -64,8 +64,8 @@ class SparqlQuries:
 
                     query = query.replace('$names', " ".join(['"{0}"'.format(x) for x in name]))
 
-                    print("endpoint:", endpoint)
-                    print("query:", query)
+                    #print("endpoint:", endpoint)
+                    #print("query:", query)
 
                     sparql = SPARQLWrapper(endpoint)
                     sparql.setQuery(query)
@@ -146,7 +146,7 @@ class SparqlResultSetItem():
         self.refersVocation = None
 
     def parse(self, result, ord):
-        print("Result:", result)
+        #print("Result:", result)
         self.ord = ord
         self.uri = str(result["name"]["value"])
         self.name = str(result["names"]["value"])

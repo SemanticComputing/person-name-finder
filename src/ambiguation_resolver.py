@@ -15,7 +15,7 @@ class AmbiguityResolver():
         for single in single_names:
             entity = single.get_full_name_entities()[0]
             if entity.get_ref_place():
-                print("Check place:", type(entity.get_ref_place()),entity.get_ref_place())
+                #print("Check place:", type(entity.get_ref_place()),entity.get_ref_place())
                 # in case a name can also be a reference to a place: check if there are longer names containing the name
                 related = self.find_name_in_names(entity, longer_names)
 
@@ -37,7 +37,7 @@ class AmbiguityResolver():
 
     # given a list of names and a name that is being searched, look up if similar name is a part of name in list
     def find_name_in_names(self, search_name, names):
-        print("Find name %s from names %s" % (search_name, names))
+        #print("Find name %s from names %s" % (search_name, names))
         for name in names:
             for entity in name.get_full_name_entities():
                 if entity.if_names_related(search_name):

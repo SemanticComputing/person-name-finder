@@ -63,7 +63,7 @@ def parse_input(request):
         word = extract_value(get_args_data('word'))
         if text != None:
             input = {0:text}
-            print(gender, text)
+            #print(gender, text)
             sentence_data, indeces, regex_checks, full_sentences = tokenization(text)
             #print("tokenization results",sentences)
             sentences, index_list = do_lemmatization(sentence_data, indeces)
@@ -102,13 +102,13 @@ def parse_input(request):
         if text == None:
             return input, sentences, index_list, gender, title, date
         if len(text) > 0:
-            print(gender, text)
+            #print(gender, text)
             sentence_data, indeces, regex_checks, full_sentences = tokenization(text)
-            print("sentences dataset:", sentence_data)
+            #print("sentences dataset:", sentence_data)
             sentences, index_list = do_lemmatization(sentence_data, indeces)
             input = {0: str(request.data.decode('utf-8'))}
-            print("data:", input)
-            print("sentences:", sentences)
+            #print("data:", input)
+            #print("sentences:", sentences)
     else:
         print("This method is not yet supported:", request.method)
     return env, input, sentences, index_list, gender, title, date, word, regex_checks, full_sentences
@@ -144,14 +144,14 @@ def setup_tokenizer():
     with open('language-resources/abbreviations.csv') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=';')
         for row in csv_reader:
-            print("Add abbreviation", row[0])
+            #print("Add abbreviation", row[0])
             tokenizer._params.abbrev_types.add(row[0])
     for i in range(0, 301):
         tokenizer._params.abbrev_types.add(i)
     return tokenizer
 
 def tokenization(text):
-    print('Tokenize this:', text)
+    #print('Tokenize this:', text)
     sentence_list = list()
     regex_check = dict()
     structure = dict()
@@ -189,7 +189,7 @@ def lemmatize(text):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     env, input_data, sentences, index_list, gender, title, date, word, regex_check, original_sentences = parse_input(request)
-    print("DATA", sentences)
+    #print("DATA", sentences)
     if input_data != None:
         name_finder = NameFinder()
         results, code, responses = name_finder.identify_name(env, sentences, index_list, original_sentences, check_date=regex_check, gender=gender, title=title, date=date, word=word)

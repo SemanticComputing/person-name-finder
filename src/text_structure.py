@@ -82,8 +82,8 @@ class TextParser:
         exceptional_separators = [' (', ') ']
         chunk_regex_check = 0
         splitted = re.split(self.string_chunking_pattern, string, ord)  # sentence.split('[,;]')
-        print("Sentence:", string)
-        print("Split:", splitted)
+        #print("Sentence:", string)
+        #print("Split:", splitted)
         sen = Sentence()
         sen.set_sentence(ord=ord, string=string, chunks=splitted)
         self.sentence_list[ord]=sen
@@ -334,7 +334,7 @@ class SentenceChunk:
         #subarray_ind = self.find_subarray(np.array(word_list), np.array(lemma_list), np.array(name_list), prev_start, prev_end)
         indeces = self.find_original_string_location(list(name_list), list(lemma_list), prev_start, prev_end)
         #print("Found subarray:", subarray_ind)
-        print("list index:", indeces, lemma_list, name_list)
+        #print("list index:", indeces, lemma_list, name_list)
         for name,inds in indeces.items():
             #print("LOOP:",name, inds)
             for ind in inds:
@@ -364,25 +364,25 @@ class SentenceChunk:
                 #print(self.words[word_list[ind]+"_"+str(ind+1)].get_start_location(), prev_start)
                 #print(name,lemma_list[ind])
 
-                print("ind, wordlist[ind]",ind, word_list[ind])
-                print("word_list[ind]+_+str(ind+1)",word_list[ind]+"_"+str(ind+1))
-                print("prev_start",prev_start)
-                print(self.words[word_list[ind]+"_"+str(ind+1)].get_start_location())
-                print("name == lemma_list[ind]",name,lemma_list[ind])
+                #print("ind, wordlist[ind]",ind, word_list[ind])
+                #print("word_list[ind]+_+str(ind+1)",word_list[ind]+"_"+str(ind+1))
+                #print("prev_start",prev_start)
+                #print(self.words[word_list[ind]+"_"+str(ind+1)].get_start_location())
+                #print("name == lemma_list[ind]",name,lemma_list[ind])
                 if self.words[word_list[ind]+"_"+str(ind+1)].get_start_location() > prev_start and name == lemma_list[ind]:
-                    print("--->", word_list[ind]+"_"+str(ind+1))
+                    #print("--->", word_list[ind]+"_"+str(ind+1))
                     #print("start:", self.words[word_list[ind]+"_"+str(ind+1)])
                     #print("stop:", self.words[word_list[ind] + "_" + str(ind+1)])
                     start = self.words[word_list[ind]+"_"+str(ind+1)]
                     stop = self.words[word_list[ind]+"_"+str(ind+1)]
 
-                    print(start, stop)
+                    #print(start, stop)
 
                     #print("INDEX:",start, stop)
                     #print("--->",start.get_start_location(), stop.get_end_location())
 
                     if start != None and stop != None:
-                        print("All good")
+                        #print("All good")
                         #text = "The cat sat on the mat"
                         #text = text[:8] + "slept" + text[11:]
                         #print("Test:", name, start.get_start_location(), "-", stop.get_end_location())
@@ -421,24 +421,24 @@ class SentenceChunk:
         return None
 
     def find_subarray(self,c,a,b,prevstart,prevend):
-        print("[find_subarray]:",a, b)
+        #print("[find_subarray]:",a, b)
         word = self.detokenize(b)
         sentence = self.detokenize(a)
         results = list()
 
-        print("[find_subarray]: sentence = ", sentence)
-        print("[find_subarray]: word = ", word)
+        #print("[find_subarray]: sentence = ", sentence)
+        #print("[find_subarray]: word = ", word)
         #print("[find_subarray]:", p)
         #if b.tostring() in a.tostring():
         #    print(a.tostring().index(b.tostring()))  # a.itemsize
         for match in re.finditer(word, sentence):
-            print("[find_subarray]:",match.start(), match.end(),">",prevstart,prevend)
+            #print("[find_subarray]:",match.start(), match.end(),">",prevstart,prevend)
             if prevstart < match.start():
                 results.append(match.start())
         if len(results)==0:
             return -1
         else:
-            print("[find_subarray]:",results)
+            #print("[find_subarray]:",results)
             return results[0]
 
     def find_original_string_location(self, needles, haystack, prevstart, prevend):

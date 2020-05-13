@@ -19,14 +19,14 @@ class NameFinder:
         self.first_name_ind = dict()
 
     def identify_name(self, env, sentence_chunk_strings, index_list, original_sentence_data, check_date=None, gender=False, title=False, date=False, word=False):
-        print("Check titles? ",title)
+        #print("Check titles? ",title)
         names = dict()
         all_names = list()
         resp = None
         for i,name_string in sentence_chunk_strings.items():
             self.last_names[i] = list()
             self.first_names[i] = list()
-            print("Name:",name_string)
+            #print("Name:",name_string)
 
             dict_names, arr_names = self.split_names_to_arr(name_string, i)
             if len(arr_names) > 0:
@@ -39,7 +39,7 @@ class NameFinder:
                 nr = NameRidler(dict_names, arr_names, name_string, env)
 
                 name_list, resp = nr.get_names(check_for_dates=checking_date, gender=gender, titles=title, dates=date, word=word, fulltext=str(original_sentence_data[index_list[i]].get_sentence_string()), complete_list_of_name=all_names)
-                print("Using index:", index_list[i])
+                #print("Using index:", index_list[i])
 
                 # parsing result
                 if index_list[i] not in names.keys():
@@ -119,8 +119,8 @@ class NameFinder:
         self.last_names[j].extend(last_names)
         self.first_names[j].extend(first_names)
 
-        print("Names:",self.first_names[j], self.last_names[j])
-        print("Names in dict:", dict_names)
+        #print("Names:",self.first_names[j], self.last_names[j])
+        #print("Names in dict:", dict_names)
 
         return dict_names, self.first_names[j] + self.last_names[j]
 
@@ -149,7 +149,7 @@ class NameRidler:
 
         # query and parse
         names = self.sparql.query_names(dict_names, endpoint=self.henko_endpoint)
-        print(names)
+        #print(names)
         self.parse(names, sentence_obj)
 
         # disambiguate
@@ -263,7 +263,7 @@ class NameRidler:
                                 else:
                                     entity['death_date'] = item[0]
                 if titles and fulltext != None:
-                    print("TITLE CHECK")
+                    #print("TITLE CHECK")
                     title = self.find_title(fulltext, str_name)
                     entity['titles'] = list()
                     entity['titles'].append(title)
@@ -276,7 +276,7 @@ class NameRidler:
                 entities.append(entity)
                 prev_entity = entity
 
-        print("entities", entities)
+        #print("entities", entities)
         return entities, responses
 
     def check_string_start(self, string):
@@ -341,14 +341,14 @@ class NameRidler:
                     linkage = str(result.get_linkage())
                     place = result.get_ref_place()
                     vocation = result.get_ref_vocation()
-                    print(result, counter, prev, name, result.get_ref_place())
-                    print("P/V:",str(place), vocation)
+                    #print(result, counter, prev, name, result.get_ref_place())
+                    #print("P/V:",str(place), vocation)
 
                     if counter == 0:
                         counter += 1
                     elif prev != None:
                         if prev.get_name() != label:
-                            print("Raising counter:", prev.get_name(), label, counter, string_start,prev_string_start)
+                            #print("Raising counter:", prev.get_name(), label, counter, string_start,prev_string_start)
                             counter += 1
                             if string_start != None:
                                 prev_string_start = string_start
@@ -369,10 +369,10 @@ class NameRidler:
                                     (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1) and (prev.get_string_end()<=string_start-2) and \
                                     (prev.get_name_lemma() != prev.get_name() or original_form != label.strip()):
                                 counter = 1
-                                print("Adding a last name:", prev.get_type(), type)
-                                print("Adding a last name:", prev.get_name().strip(), label.strip())
-                                print("Adding a last name:",len(list(arr.keys()))>1)
-                                print("Adding a last name:", prev.get_string_end(),string_start-2)
+                                #print("Adding a last name:", prev.get_type(), type)
+                                #print("Adding a last name:", prev.get_name().strip(), label.strip())
+                                #print("Adding a last name:",len(list(arr.keys()))>1)
+                                #print("Adding a last name:", prev.get_string_end(),string_start-2)
 
                                 arr, full_name, full_name_counter, full_name_lemma, helper_arr, name = self.extract_name(
                                     arr,
@@ -397,11 +397,11 @@ class NameRidler:
                         if name not in arr[label]:
                             arr[label].append(name)
 
-            print(arr, full_name_counter, helper_arr, name, queried_name)
+            #print(arr, full_name_counter, helper_arr, name, queried_name)
             arr, full_name, full_name_counter, full_name_lemma, helper_arr, name = self.extract_name(arr,
                                                                                                      full_name_counter,
                                                                                                      helper_arr, name,queried_name)
-            print(arr, full_name, full_name_counter, full_name_lemma, helper_arr, name)
+            #print(arr, full_name, full_name_counter, full_name_lemma, helper_arr, name)
 
     def ambiguity_solver(self, names, str_full_name_lemma):
         last_name = None
@@ -414,7 +414,7 @@ class NameRidler:
     def extract_name(self, arr, full_name_counter, helper_arr, name, alternatives):
         argh, full_name, full_name_lemma = self.determine_name(arr, helper_arr, alternatives)
 
-        print("[extract_name] Full name:", full_name, argh, full_name_counter)
+        #print("[extract_name] Full name:", full_name, argh, full_name_counter)
         fullname_ind = full_name + "_" + str(full_name_counter)
 
         full_name_entity = FullName(full_name_counter, full_name, full_name_lemma, argh)
@@ -573,11 +573,11 @@ class NameRidler:
             return True
         else:
             if name.get_type() != "Etunimi":
-                print("Type FAIL")
+                print("Not a first name: Type FAIL")
             if (last != 1 or name.get_location() > last):
-                print("location and last FAIL")
+                print("Not a first name: location and last FAIL")
             if name.get_location() >= 5:
-                print("Too long, FAIL")
+                print("Not a first name: Too long, FAIL")
         return False
 
     def guess_gender(self, name):
@@ -647,7 +647,7 @@ class NameRidler:
 
     def query_dates(self, string):
 
-        print("CHECK DATE")
+        #print("CHECK DATE")
 
         import requests
         import logging
@@ -707,12 +707,12 @@ class NameRidler:
 
             return "Unknown 2", resp
 
-        print("DATA:",data)
+        #print("DATA:",data)
         results = dict()
 
         if data != None:
             for key,item in data.items():
-                print('Item:',item)
+                #print('Item:',item)
                 for i in item['entities']:
                     if 'category' in i and 'entity' in i:
                         if i['category'] == 'DATETIME':
@@ -737,10 +737,10 @@ class NameRidler:
                 word_before_name = lookup.split(' ')[-1]
             else:
                 word_before_name = lookup
-            print("From string: [%s], %s" % (lookup, lookup.split(' ')))
-            print("Check string:", word_before_name)
+            #print("From string: [%s], %s" % (lookup, lookup.split(' ')))
+            #print("Check string:", word_before_name)
             result = las.analysis(input=word_before_name, lookup_upos='NOUN')
-            print("ANALYSIS RESULT:",result)
+            #print("ANALYSIS RESULT:",result)
             return result.strip()
         else:
             print("Cannot fin title")
@@ -812,7 +812,7 @@ class Name:
         self.string_end = self.string_start + len(self.label)
         self.ref_place = place
         self.ref_vocation = vocation
-        print("place:"+str(place))
+        #print("place:"+str(place))
 
     def get_link(self):
         return self.linkage
