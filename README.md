@@ -14,7 +14,7 @@ Using [person name ontology, HENKO](http://light.onki.fi/henko/en/) and [LAS](ht
 * validators
 * requests
 
-For more information, check requirements.txt
+For more information, check [requirements.txt](requirements.txt)
 
 ## Configurations
 
