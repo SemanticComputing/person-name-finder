@@ -2,7 +2,7 @@
 
 ## About
 
-Using [person name ontology, HENKO](http://light.onki.fi/henko/en/) and [LAS](http://demo.seco.tkk.fi/las/) the application extractes probable names from given input text.
+Using [person name ontology (HENKO)](http://light.onki.fi/henko/en/) and [LAS](http://demo.seco.tkk.fi/las/) the application extractes probable names from given input text.
 
 ## Dependencies
 
