@@ -53,12 +53,13 @@ http://nlp.ldf.fi/name-finder?text=Minna Susanna Claire Tamper
 Post requests support parameters in the url, header, and from a form.
 
 The application supports text mining for following parameters:
-* gender (using gender guessing service to statistically determine gender)
-* date (extract dates that are related to a name, which are often lifespans or birth dates of a person)
+* gender: using gender guessing service to statistically determine gender
+* date: extract dates that are related to a name, which are often lifespans or birth dates of a person
+* title: extracts possible titles situated in front of the full name, e.g., Presidentti Sauli Niinistö
 
 ### Enabling gender guessing
 
-Guess the gender of the name by adding url-parameter gender with a boolean value (true, 1, false, 0, etc.):
+Guess the gender of the name by adding url-parameter ```gender``` with a boolean value (true, 1, false, 0, etc.):
 
 ```
 http://nlp.ldf.fi/name-finder?text=Minna Susanna Claire Tamper&gender=True
@@ -68,13 +69,23 @@ By default, the attribute gender is False.
 
 ### Enabling related date mining
 
-The dates relating to a name can be guessed using ulr-parameter date with a boolean value (true, 1, false, 0, etc.):
+The dates relating to a name can be extracted using ulr-parameter ```date``` with a boolean value (true, 1, false, 0, etc.):
 
 ```
 http://nlp.ldf.fi/name-finder?text=Sauli Niinistö (s. 24. elokuuta 1948 Salo)&date=True
 ```
 
 By default, the attribute date is False.
+
+### Enabling related title mining
+
+The title relating to a name can be extracted using ulr-parameter ```title``` with a boolean value (true, 1, false, 0, etc.):
+
+```
+http://nlp.ldf.fi/name-finder?text=Presidentti Sauli Niinistö&title=True
+```
+
+By default, the attribute title is False.
 
 #### Results
 
