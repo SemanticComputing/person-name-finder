@@ -870,7 +870,7 @@ class Name:
 
 
     def get_json(self):
-        return {'name':str(self.original_form), 'lemma':str(self.label), 'type':str(self.clarify_type()), 'location':str(self.location), 'uri':self.name_uri, 'start_ind':self.string_start, 'end_ind':self.string_end}
+        return {'name':str(self.original_form), 'lemma':str(self.label), 'type':str(self.clarify_type()), 'location':str(self.location), 'uri':self.linkage[0], 'start_ind':self.string_start, 'end_ind':self.string_end}
 
     def __str__(self):
         return self.label + " (" + str(self.count) + "): " + self.type + " @ " + str(self.location)

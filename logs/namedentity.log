@@ -11298,3 +11298,21 @@
 2020-05-13 14:40:33,728 NamedEntity INFO text=Presidentti+Sauli+Niinist%C3%B6&locale=fi
 2020-05-13 14:40:34,345 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
 2020-05-13 14:40:34,346 NamedEntity INFO text=Presidentti&locale=fi&forms=V%2BN%2BNom%2BSg
+2020-05-13 14:59:27,352 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '46', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:59:27,353 NamedEntity INFO text=Presidentti+Sauli+Niinist%C3%B6&locale=fi
+2020-05-13 14:59:27,442 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '35', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:59:27,442 NamedEntity INFO text=s.+24.+elokuuta+1948&locale=fi
+2020-05-13 14:59:27,819 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 14:59:27,820 NamedEntity INFO text=Presidentti&locale=fi&forms=V%2BN%2BNom%2BSg
+2020-05-13 15:05:23,010 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '46', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 15:05:23,010 NamedEntity INFO text=Presidentti+Sauli+Niinist%C3%B6&locale=fi
+2020-05-13 15:05:23,109 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '35', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 15:05:23,109 NamedEntity INFO text=s.+24.+elokuuta+1948&locale=fi
+2020-05-13 15:05:23,769 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 15:05:23,769 NamedEntity INFO text=Presidentti&locale=fi&forms=V%2BN%2BNom%2BSg
+2020-05-13 15:06:01,874 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '46', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 15:06:01,874 NamedEntity INFO text=Presidentti+Sauli+Niinist%C3%B6&locale=fi
+2020-05-13 15:06:01,934 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '35', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 15:06:01,934 NamedEntity INFO text=s.+24.+elokuuta+1948&locale=fi
+2020-05-13 15:06:02,440 NamedEntity INFO {'X-Custom': 'Test', 'Content-Length': '49', 'Content-Type': 'application/x-www-form-urlencoded'}
+2020-05-13 15:06:02,441 NamedEntity INFO text=Presidentti&locale=fi&forms=V%2BN%2BNom%2BSg
