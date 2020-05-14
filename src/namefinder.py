@@ -527,19 +527,15 @@ class NameRidler:
 
             if fname != None and lname != None:
                 if fname == lname:
-                    print("first")
                     if fname.get_link() != lname.get_link():
                         lname.add_link(fname.get_link())
                     elif fname.get_link() != lname.get_link():
                         fname.add_link(lname.get_link())
                 if fname.get_location() == lname.get_location() and self.is_family_name(lname, last, alternatives[lname.get_name_lemma()]) and not(self.is_first_name(fname, last)):
-                    print("second")
                     fnames.remove(fname)
                 elif fname.get_location() == lname.get_location() and not(self.is_family_name(lname, last, alternatives[lname.get_name_lemma()])) and self.is_first_name(fname, last):
-                    print("third")
                     lnames.remove(lname)
                 elif fname.get_location() == lname.get_location() and self.is_family_name(lname, last, alternatives[lname.get_name_lemma()]) and self.is_first_name(fname, last):
-                    print("fourth")
                     if fname.get_count() > lname.get_count():
                         lnames.remove(lname)
                     elif fname.get_count() < lname.get_count():
