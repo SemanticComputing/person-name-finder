@@ -1,0 +1,120 @@
+'2020-05-14 12:37:07,172 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:37:07,172 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto]
+'2020-05-14 12:37:07,211 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:37:07,211 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, ]
+'2020-05-14 12:37:07,280 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:37:07,280 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, ]
+'2020-05-14 12:37:07,280 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:37:07,352 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:37:07,352 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:37:07,352 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:37:07,394 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:37:07,394 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:37:07,394 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:37:07,394 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:37:07,394 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:37:44,265 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:37:44,266 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto]
+'2020-05-14 12:37:44,316 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:37:44,316 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, ]
+'2020-05-14 12:37:44,379 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:37:44,379 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, ]
+'2020-05-14 12:37:44,379 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:37:44,483 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:37:44,483 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:37:44,483 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:37:44,560 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:37:44,560 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:37:44,560 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:37:44,560 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:37:44,560 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:38:07,671 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:38:07,671 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto]
+'2020-05-14 12:38:07,710 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:38:07,710 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, ]
+'2020-05-14 12:38:07,799 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:38:07,799 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, ]
+'2020-05-14 12:38:07,799 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:38:07,835 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:38:07,835 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:38:07,835 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:38:07,888 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:38:07,888 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:38:07,888 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:38:07,889 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:38:07,889 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:39:05,263 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:39:05,263 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto]
+'2020-05-14 12:39:05,297 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:39:05,297 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, ]
+'2020-05-14 12:39:05,360 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:39:05,360 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, ]
+'2020-05-14 12:39:05,360 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:39:05,396 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:39:05,396 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:39:05,396 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:39:05,433 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:39:05,433 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:39:05,433 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:39:05,433 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:39:05,433 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:39:48,090 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:39:48,091 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto]
+'2020-05-14 12:39:48,147 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:39:48,147 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, ]
+'2020-05-14 12:39:48,221 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:39:48,221 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, ]
+'2020-05-14 12:39:48,221 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:39:48,268 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:39:48,268 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:39:48,268 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:39:48,348 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:39:48,348 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:39:48,348 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:39:48,348 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:39:48,348 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:40:07,437 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:07,438 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto]
+'2020-05-14 12:40:07,477 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:07,477 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, ]
+'2020-05-14 12:40:07,572 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:07,572 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, ]
+'2020-05-14 12:40:07,572 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:40:07,607 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:07,607 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:40:07,607 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:40:07,660 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:07,660 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:40:07,660 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:40:07,660 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:07,660 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:40:40,018 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:40,019 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto]
+'2020-05-14 12:40:40,072 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:40,072 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, ]
+'2020-05-14 12:40:40,150 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:40,150 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, ]
+'2020-05-14 12:40:40,150 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:40:40,201 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:40,201 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:40:40,201 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:40:40,246 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:40,247 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:40:40,247 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:40:40,247 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:40,247 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:40:56,552 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:56,552 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto]
+'2020-05-14 12:40:56,591 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:56,591 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, ]
+'2020-05-14 12:40:56,657 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:56,658 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, ]
+'2020-05-14 12:40:56,658 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:40:56,704 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:56,704 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:40:56,704 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:40:56,739 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:56,739 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]
+'2020-05-14 12:40:56,739 ambiguity DEBUG No problem: Aasia (5): Etunimi @ 1
+'2020-05-14 12:40:56,739 ambiguity DEBUG Check place: <class 'str'>, http://www.yso.fi/onto/yso/p167669
+'2020-05-14 12:40:56,739 ambiguity DEBUG Find name Haavisto (14609): Sukunimi @ 1 from names [Pekka Haavisto, , , ]

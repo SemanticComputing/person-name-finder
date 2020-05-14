@@ -1,0 +1,487 @@
+'2020-05-14 11:49:16,276 werkzeug INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+'2020-05-14 11:49:21,372 werkzeug INFO 127.0.0.1 - - [14/May/2020 11:49:21] "[37mGET /?text=Pekka%20Haavisto%20on%20ottanut%20politiikassa%20ymmärtäjän,%20sovittelijan%20ja%20mahdollistajan%20roolit.%20Lähes%20tuntematon%20kolmekymppinen%20hurmasi%201987%20eduskuntavaalikeskustelussa%20ja%20tuli%20valituksi%20vihreiden%20toiseen%20eduskuntaryhmään.%20Hän%20on%20toiminut%20myös%20ministerinä.%20Haavisto%20on%20tehnyt%20lisäksi%20kansainvälisen%20uran,%20sillä%20hänen%20sovittelijan%20kykyjään%20ovat%20käyttäneet%20ulkoministeriön%20ohella%20YK%20ja%20EU%20Aasiassa,%20%20Afrikassa%20ja%20%20Euroopassa.%20Haaviston%20suosio%20on%20ulottunut%20laajemmalle%20kuin%20hänen%20puolueensa.%20Sen%20osoitti%202012%20presidentinvaalit,%20joiden%20toiselle%20kierrokselle%20Haavisto%20pääsi.&title=0&gender=0&date=0 HTTP/1.1[0m" 200 -
+'2020-05-14 11:49:37,190 werkzeug INFO 127.0.0.1 - - [14/May/2020 11:49:37] "[37mGET /?text=Pekka%20Haavisto%20on%20ottanut%20politiikassa%20ymmärtäjän,%20sovittelijan%20ja%20mahdollistajan%20roolit.%20Lähes%20tuntematon%20kolmekymppinen%20hurmasi%201987%20eduskuntavaalikeskustelussa%20ja%20tuli%20valituksi%20vihreiden%20toiseen%20eduskuntaryhmään.%20Hän%20on%20toiminut%20myös%20ministerinä.%20Haavisto%20on%20tehnyt%20lisäksi%20kansainvälisen%20uran,%20sillä%20hänen%20sovittelijan%20kykyjään%20ovat%20käyttäneet%20ulkoministeriön%20ohella%20YK%20ja%20EU%20Aasiassa,%20%20Afrikassa%20ja%20%20Euroopassa.%20Haaviston%20suosio%20on%20ulottunut%20laajemmalle%20kuin%20hänen%20puolueensa.%20Sen%20osoitti%202012%20presidentinvaalit,%20joiden%20toiselle%20kierrokselle%20Haavisto%20pääsi.&title=0&gender=0&date=0 HTTP/1.1[0m" 200 -
+'2020-05-14 12:16:00,362 werkzeug INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+'2020-05-14 12:16:03,873 werkzeug INFO 127.0.0.1 - - [14/May/2020 12:16:03] "[37mGET /?text=Pekka%20Haavisto%20on%20ottanut%20politiikassa%20ymmärtäjän,%20sovittelijan%20ja%20mahdollistajan%20roolit.%20Lähes%20tuntematon%20kolmekymppinen%20hurmasi%201987%20eduskuntavaalikeskustelussa%20ja%20tuli%20valituksi%20vihreiden%20toiseen%20eduskuntaryhmään.%20Hän%20on%20toiminut%20myös%20ministerinä.%20Haavisto%20on%20tehnyt%20lisäksi%20kansainvälisen%20uran,%20sillä%20hänen%20sovittelijan%20kykyjään%20ovat%20käyttäneet%20ulkoministeriön%20ohella%20YK%20ja%20EU%20Aasiassa,%20%20Afrikassa%20ja%20%20Euroopassa.%20Haaviston%20suosio%20on%20ulottunut%20laajemmalle%20kuin%20hänen%20puolueensa.%20Sen%20osoitti%202012%20presidentinvaalit,%20joiden%20toiselle%20kierrokselle%20Haavisto%20pääsi.&title=0&gender=0&date=0 HTTP/1.1[0m" 200 -
+'2020-05-14 12:16:58,792 werkzeug INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+'2020-05-14 12:17:03,320 werkzeug INFO 127.0.0.1 - - [14/May/2020 12:17:03] "[37mGET /?text=Pekka%20Haavisto%20on%20ottanut%20politiikassa%20ymmärtäjän,%20sovittelijan%20ja%20mahdollistajan%20roolit.%20Lähes%20tuntematon%20kolmekymppinen%20hurmasi%201987%20eduskuntavaalikeskustelussa%20ja%20tuli%20valituksi%20vihreiden%20toiseen%20eduskuntaryhmään.%20Hän%20on%20toiminut%20myös%20ministerinä.%20Haavisto%20on%20tehnyt%20lisäksi%20kansainvälisen%20uran,%20sillä%20hänen%20sovittelijan%20kykyjään%20ovat%20käyttäneet%20ulkoministeriön%20ohella%20YK%20ja%20EU%20Aasiassa,%20%20Afrikassa%20ja%20%20Euroopassa.%20Haaviston%20suosio%20on%20ulottunut%20laajemmalle%20kuin%20hänen%20puolueensa.%20Sen%20osoitti%202012%20presidentinvaalit,%20joiden%20toiselle%20kierrokselle%20Haavisto%20pääsi.&title=0&gender=0&date=0 HTTP/1.1[0m" 200 -
+'2020-05-14 12:33:33,349 werkzeug INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+'2020-05-14 12:33:36,201 run INFO results: {0: {'entities': [{'full_name': 'Pekka Haavisto', 'full_name_lemma': 'Pekka Haavisto', 'names': [{'name': 'Pekka', 'lemma': 'Pekka', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g11', 'start_ind': 0, 'end_ind': 5}, {'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '2', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 7, 'end_ind': 15}]}], 'sentence': 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit.'}, 3: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}, {'full_name': 'Aasiassa', 'full_name_lemma': 'Aasia', 'names': [{'name': 'Aasiassa', 'lemma': 'Aasia', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g19990', 'start_ind': 4, 'end_ind': 9}]}], 'sentence': 'Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa.'}, 4: {'entities': [{'full_name': 'Haaviston', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haaviston', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}], 'sentence': 'Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.'}, 5: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 32, 'end_ind': 40}]}], 'sentence': 'Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}}
+'2020-05-14 12:33:36,206 werkzeug INFO 127.0.0.1 - - [14/May/2020 12:33:36] "[37mGET /?text=Pekka%20Haavisto%20on%20ottanut%20politiikassa%20ymmärtäjän,%20sovittelijan%20ja%20mahdollistajan%20roolit.%20Lähes%20tuntematon%20kolmekymppinen%20hurmasi%201987%20eduskuntavaalikeskustelussa%20ja%20tuli%20valituksi%20vihreiden%20toiseen%20eduskuntaryhmään.%20Hän%20on%20toiminut%20myös%20ministerinä.%20Haavisto%20on%20tehnyt%20lisäksi%20kansainvälisen%20uran,%20sillä%20hänen%20sovittelijan%20kykyjään%20ovat%20käyttäneet%20ulkoministeriön%20ohella%20YK%20ja%20EU%20Aasiassa,%20%20Afrikassa%20ja%20%20Euroopassa.%20Haaviston%20suosio%20on%20ulottunut%20laajemmalle%20kuin%20hänen%20puolueensa.%20Sen%20osoitti%202012%20presidentinvaalit,%20joiden%20toiselle%20kierrokselle%20Haavisto%20pääsi.&title=0&gender=0&date=0 HTTP/1.1[0m" 200 -
+'2020-05-14 12:34:09,517 werkzeug INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+'2020-05-14 12:34:11,690 run INFO results: {0: {'entities': [{'full_name': 'Pekka Haavisto', 'full_name_lemma': 'Pekka Haavisto', 'names': [{'name': 'Pekka', 'lemma': 'Pekka', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g11', 'start_ind': 0, 'end_ind': 5}, {'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '2', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 7, 'end_ind': 15}]}], 'sentence': 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit.'}, 3: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}, {'full_name': 'Aasiassa', 'full_name_lemma': 'Aasia', 'names': [{'name': 'Aasiassa', 'lemma': 'Aasia', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g19990', 'start_ind': 4, 'end_ind': 9}]}], 'sentence': 'Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa.'}, 4: {'entities': [{'full_name': 'Haaviston', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haaviston', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}], 'sentence': 'Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.'}, 5: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 32, 'end_ind': 40}]}], 'sentence': 'Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}}
+'2020-05-14 12:34:11,693 werkzeug INFO 127.0.0.1 - - [14/May/2020 12:34:11] "[37mGET /?text=Pekka%20Haavisto%20on%20ottanut%20politiikassa%20ymmärtäjän,%20sovittelijan%20ja%20mahdollistajan%20roolit.%20Lähes%20tuntematon%20kolmekymppinen%20hurmasi%201987%20eduskuntavaalikeskustelussa%20ja%20tuli%20valituksi%20vihreiden%20toiseen%20eduskuntaryhmään.%20Hän%20on%20toiminut%20myös%20ministerinä.%20Haavisto%20on%20tehnyt%20lisäksi%20kansainvälisen%20uran,%20sillä%20hänen%20sovittelijan%20kykyjään%20ovat%20käyttäneet%20ulkoministeriön%20ohella%20YK%20ja%20EU%20Aasiassa,%20%20Afrikassa%20ja%20%20Euroopassa.%20Haaviston%20suosio%20on%20ulottunut%20laajemmalle%20kuin%20hänen%20puolueensa.%20Sen%20osoitti%202012%20presidentinvaalit,%20joiden%20toiselle%20kierrokselle%20Haavisto%20pääsi.&title=0&gender=0&date=0 HTTP/1.1[0m" 200 -
+'2020-05-14 12:34:40,684 run INFO results: {0: {'entities': [{'full_name': 'Pekka Haavisto', 'full_name_lemma': 'Pekka Haavisto', 'names': [{'name': 'Pekka', 'lemma': 'Pekka', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g11', 'start_ind': 0, 'end_ind': 5}, {'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '2', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 7, 'end_ind': 15}]}], 'sentence': 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit.'}, 3: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}, {'full_name': 'Aasiassa', 'full_name_lemma': 'Aasia', 'names': [{'name': 'Aasiassa', 'lemma': 'Aasia', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g19990', 'start_ind': 4, 'end_ind': 9}]}], 'sentence': 'Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa.'}, 4: {'entities': [{'full_name': 'Haaviston', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haaviston', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}], 'sentence': 'Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.'}, 5: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 32, 'end_ind': 40}]}], 'sentence': 'Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}}
+'2020-05-14 12:34:40,687 werkzeug INFO 127.0.0.1 - - [14/May/2020 12:34:40] "[37mGET /?text=Pekka%20Haavisto%20on%20ottanut%20politiikassa%20ymmärtäjän,%20sovittelijan%20ja%20mahdollistajan%20roolit.%20Lähes%20tuntematon%20kolmekymppinen%20hurmasi%201987%20eduskuntavaalikeskustelussa%20ja%20tuli%20valituksi%20vihreiden%20toiseen%20eduskuntaryhmään.%20Hän%20on%20toiminut%20myös%20ministerinä.%20Haavisto%20on%20tehnyt%20lisäksi%20kansainvälisen%20uran,%20sillä%20hänen%20sovittelijan%20kykyjään%20ovat%20käyttäneet%20ulkoministeriön%20ohella%20YK%20ja%20EU%20Aasiassa,%20%20Afrikassa%20ja%20%20Euroopassa.%20Haaviston%20suosio%20on%20ulottunut%20laajemmalle%20kuin%20hänen%20puolueensa.%20Sen%20osoitti%202012%20presidentinvaalit,%20joiden%20toiselle%20kierrokselle%20Haavisto%20pääsi.&title=0&gender=0&date=0 HTTP/1.1[0m" 200 -
+'2020-05-14 12:36:30,422 werkzeug INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+'2020-05-14 12:37:02,061 werkzeug INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+'2020-05-14 12:37:06,092 run DEBUG False, Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit. Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa ja tuli valituksi vihreiden toiseen eduskuntaryhmään. Hän on toiminut myös ministerinä. Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa. Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa. Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.
+'2020-05-14 12:37:06,119 run DEBUG Add abbreviation: ao
+'2020-05-14 12:37:06,119 run DEBUG Add abbreviation: eaa
+'2020-05-14 12:37:06,119 run DEBUG Add abbreviation: eKr
+'2020-05-14 12:37:06,119 run DEBUG Add abbreviation: em
+'2020-05-14 12:37:06,119 run DEBUG Add abbreviation: eo
+'2020-05-14 12:37:06,119 run DEBUG Add abbreviation: esim
+'2020-05-14 12:37:06,119 run DEBUG Add abbreviation: huom
+'2020-05-14 12:37:06,119 run DEBUG Add abbreviation: jaa
+'2020-05-14 12:37:06,119 run DEBUG Add abbreviation: jKr
+'2020-05-14 12:37:06,119 run DEBUG Add abbreviation: jms
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: jne
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: ks
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: l
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: ma
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: ml
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: mm
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: mrd
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: n
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: nk
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: no
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: ns
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: o.s
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: oto
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: puh
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: so
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: tjsp
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: tm
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: tms
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: tmv
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: ts
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: v
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: va
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: vrt
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: vs
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: vt
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: ym
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: yms
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: yo
+'2020-05-14 12:37:06,120 run DEBUG Add abbreviation: V
+'2020-05-14 12:37:07,045 run DEBUG tokenization results: None
+'2020-05-14 12:37:07,045 run DEBUG Index list: 0. 0, Pekka Haavisto on ottanut politiikassa ymmärtäjän
+'2020-05-14 12:37:07,046 run DEBUG Index list: 1. 0, sovittelijan
+'2020-05-14 12:37:07,046 run DEBUG Index list: 2. 0, mahdollistajan roolit.
+'2020-05-14 12:37:07,046 run DEBUG Index list: 3. 1, Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa
+'2020-05-14 12:37:07,046 run DEBUG Index list: 4. 1, tuli valituksi vihreiden toiseen eduskuntaryhmään.
+'2020-05-14 12:37:07,046 run DEBUG Index list: 5. 2, Hän on toiminut myös ministerinä.
+'2020-05-14 12:37:07,046 run DEBUG Index list: 6. 3, Haavisto on tehnyt lisäksi kansainvälisen uran
+'2020-05-14 12:37:07,046 run DEBUG Index list: 7. 3, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK
+'2020-05-14 12:37:07,046 run DEBUG Index list: 8. 3, EU Aasiassa
+'2020-05-14 12:37:07,047 run DEBUG Index list: 9. 3, Afrikassa ja Euroopassa.
+'2020-05-14 12:37:07,047 run DEBUG Index list: 10. 4, Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.
+'2020-05-14 12:37:07,047 run DEBUG Index list: 11. 5, Sen osoitti 2012 presidentinvaalit
+'2020-05-14 12:37:07,047 run DEBUG Index list: 12. 5, joiden toiselle kierrokselle Haavisto pääsi.
+'2020-05-14 12:37:07,047 run DEBUG data: {0: 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit. Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa ja tuli valituksi vihreiden toiseen eduskuntaryhmään. Hän on toiminut myös ministerinä. Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa. Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa. Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}
+'2020-05-14 12:37:07,047 run DEBUG DATA: {0: Pekka Haavisto on ottanut politiikassa ymmärtäjän, 1: sovittelijan, 2: mahdollistajan roolit., 3: Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa, 4: tuli valituksi vihreiden toiseen eduskuntaryhmään., 5: Hän on toiminut myös ministerinä., 6: Haavisto on tehnyt lisäksi kansainvälisen uran, 7: sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK, 8: EU Aasiassa, 9: Afrikassa ja Euroopassa., 10: Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa., 11: Sen osoitti 2012 presidentinvaalit, 12: joiden toiselle kierrokselle Haavisto pääsi.}
+'2020-05-14 12:37:07,395 run INFO results: {0: {'entities': [{'full_name': 'Pekka Haavisto', 'full_name_lemma': 'Pekka Haavisto', 'names': [{'name': 'Pekka', 'lemma': 'Pekka', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g11', 'start_ind': 0, 'end_ind': 5}, {'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '2', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 7, 'end_ind': 15}]}], 'sentence': 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit.'}, 3: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}, {'full_name': 'Aasiassa', 'full_name_lemma': 'Aasia', 'names': [{'name': 'Aasiassa', 'lemma': 'Aasia', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g19990', 'start_ind': 4, 'end_ind': 9}]}], 'sentence': 'Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa.'}, 4: {'entities': [{'full_name': 'Haaviston', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haaviston', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}], 'sentence': 'Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.'}, 5: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 32, 'end_ind': 40}]}], 'sentence': 'Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}}
+'2020-05-14 12:37:07,398 werkzeug INFO 127.0.0.1 - - [14/May/2020 12:37:07] "[37mGET /?text=Pekka%20Haavisto%20on%20ottanut%20politiikassa%20ymmärtäjän,%20sovittelijan%20ja%20mahdollistajan%20roolit.%20Lähes%20tuntematon%20kolmekymppinen%20hurmasi%201987%20eduskuntavaalikeskustelussa%20ja%20tuli%20valituksi%20vihreiden%20toiseen%20eduskuntaryhmään.%20Hän%20on%20toiminut%20myös%20ministerinä.%20Haavisto%20on%20tehnyt%20lisäksi%20kansainvälisen%20uran,%20sillä%20hänen%20sovittelijan%20kykyjään%20ovat%20käyttäneet%20ulkoministeriön%20ohella%20YK%20ja%20EU%20Aasiassa,%20%20Afrikassa%20ja%20%20Euroopassa.%20Haaviston%20suosio%20on%20ulottunut%20laajemmalle%20kuin%20hänen%20puolueensa.%20Sen%20osoitti%202012%20presidentinvaalit,%20joiden%20toiselle%20kierrokselle%20Haavisto%20pääsi.&title=0&gender=0&date=0 HTTP/1.1[0m" 200 -
+'2020-05-14 12:37:41,707 werkzeug INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+'2020-05-14 12:37:43,166 run DEBUG False, Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit. Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa ja tuli valituksi vihreiden toiseen eduskuntaryhmään. Hän on toiminut myös ministerinä. Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa. Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa. Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.
+'2020-05-14 12:37:43,200 run DEBUG Add abbreviation: ao
+'2020-05-14 12:37:43,200 run DEBUG Add abbreviation: eaa
+'2020-05-14 12:37:43,200 run DEBUG Add abbreviation: eKr
+'2020-05-14 12:37:43,200 run DEBUG Add abbreviation: em
+'2020-05-14 12:37:43,200 run DEBUG Add abbreviation: eo
+'2020-05-14 12:37:43,200 run DEBUG Add abbreviation: esim
+'2020-05-14 12:37:43,200 run DEBUG Add abbreviation: huom
+'2020-05-14 12:37:43,200 run DEBUG Add abbreviation: jaa
+'2020-05-14 12:37:43,200 run DEBUG Add abbreviation: jKr
+'2020-05-14 12:37:43,200 run DEBUG Add abbreviation: jms
+'2020-05-14 12:37:43,200 run DEBUG Add abbreviation: jne
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: ks
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: l
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: ma
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: ml
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: mm
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: mrd
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: n
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: nk
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: no
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: ns
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: o.s
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: oto
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: puh
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: so
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: tjsp
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: tm
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: tms
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: tmv
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: ts
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: v
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: va
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: vrt
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: vs
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: vt
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: ym
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: yms
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: yo
+'2020-05-14 12:37:43,201 run DEBUG Add abbreviation: V
+'2020-05-14 12:37:44,069 run DEBUG tokenization results: None
+'2020-05-14 12:37:44,069 run DEBUG Index list: 0. 0, Pekka Haavisto on ottanut politiikassa ymmärtäjän
+'2020-05-14 12:37:44,070 run DEBUG Index list: 1. 0, sovittelijan
+'2020-05-14 12:37:44,070 run DEBUG Index list: 2. 0, mahdollistajan roolit.
+'2020-05-14 12:37:44,070 run DEBUG Index list: 3. 1, Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa
+'2020-05-14 12:37:44,070 run DEBUG Index list: 4. 1, tuli valituksi vihreiden toiseen eduskuntaryhmään.
+'2020-05-14 12:37:44,071 run DEBUG Index list: 5. 2, Hän on toiminut myös ministerinä.
+'2020-05-14 12:37:44,071 run DEBUG Index list: 6. 3, Haavisto on tehnyt lisäksi kansainvälisen uran
+'2020-05-14 12:37:44,071 run DEBUG Index list: 7. 3, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK
+'2020-05-14 12:37:44,071 run DEBUG Index list: 8. 3, EU Aasiassa
+'2020-05-14 12:37:44,071 run DEBUG Index list: 9. 3, Afrikassa ja Euroopassa.
+'2020-05-14 12:37:44,071 run DEBUG Index list: 10. 4, Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.
+'2020-05-14 12:37:44,071 run DEBUG Index list: 11. 5, Sen osoitti 2012 presidentinvaalit
+'2020-05-14 12:37:44,071 run DEBUG Index list: 12. 5, joiden toiselle kierrokselle Haavisto pääsi.
+'2020-05-14 12:37:44,071 run DEBUG data: {0: 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit. Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa ja tuli valituksi vihreiden toiseen eduskuntaryhmään. Hän on toiminut myös ministerinä. Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa. Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa. Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}
+'2020-05-14 12:37:44,071 run DEBUG DATA: {0: Pekka Haavisto on ottanut politiikassa ymmärtäjän, 1: sovittelijan, 2: mahdollistajan roolit., 3: Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa, 4: tuli valituksi vihreiden toiseen eduskuntaryhmään., 5: Hän on toiminut myös ministerinä., 6: Haavisto on tehnyt lisäksi kansainvälisen uran, 7: sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK, 8: EU Aasiassa, 9: Afrikassa ja Euroopassa., 10: Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa., 11: Sen osoitti 2012 presidentinvaalit, 12: joiden toiselle kierrokselle Haavisto pääsi.}
+'2020-05-14 12:37:44,561 run INFO results: {0: {'entities': [{'full_name': 'Pekka Haavisto', 'full_name_lemma': 'Pekka Haavisto', 'names': [{'name': 'Pekka', 'lemma': 'Pekka', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g11', 'start_ind': 0, 'end_ind': 5}, {'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '2', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 7, 'end_ind': 15}]}], 'sentence': 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit.'}, 3: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}, {'full_name': 'Aasiassa', 'full_name_lemma': 'Aasia', 'names': [{'name': 'Aasiassa', 'lemma': 'Aasia', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g19990', 'start_ind': 4, 'end_ind': 9}]}], 'sentence': 'Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa.'}, 4: {'entities': [{'full_name': 'Haaviston', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haaviston', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}], 'sentence': 'Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.'}, 5: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 32, 'end_ind': 40}]}], 'sentence': 'Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}}
+'2020-05-14 12:37:44,568 werkzeug INFO 127.0.0.1 - - [14/May/2020 12:37:44] "[37mGET /?text=Pekka%20Haavisto%20on%20ottanut%20politiikassa%20ymmärtäjän,%20sovittelijan%20ja%20mahdollistajan%20roolit.%20Lähes%20tuntematon%20kolmekymppinen%20hurmasi%201987%20eduskuntavaalikeskustelussa%20ja%20tuli%20valituksi%20vihreiden%20toiseen%20eduskuntaryhmään.%20Hän%20on%20toiminut%20myös%20ministerinä.%20Haavisto%20on%20tehnyt%20lisäksi%20kansainvälisen%20uran,%20sillä%20hänen%20sovittelijan%20kykyjään%20ovat%20käyttäneet%20ulkoministeriön%20ohella%20YK%20ja%20EU%20Aasiassa,%20%20Afrikassa%20ja%20%20Euroopassa.%20Haaviston%20suosio%20on%20ulottunut%20laajemmalle%20kuin%20hänen%20puolueensa.%20Sen%20osoitti%202012%20presidentinvaalit,%20joiden%20toiselle%20kierrokselle%20Haavisto%20pääsi.&title=0&gender=0&date=0 HTTP/1.1[0m" 200 -
+'2020-05-14 12:38:05,745 werkzeug INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+'2020-05-14 12:38:06,647 run DEBUG False, Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit. Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa ja tuli valituksi vihreiden toiseen eduskuntaryhmään. Hän on toiminut myös ministerinä. Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa. Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa. Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.
+'2020-05-14 12:38:06,692 run DEBUG Add abbreviation: ao
+'2020-05-14 12:38:06,692 run DEBUG Add abbreviation: eaa
+'2020-05-14 12:38:06,692 run DEBUG Add abbreviation: eKr
+'2020-05-14 12:38:06,692 run DEBUG Add abbreviation: em
+'2020-05-14 12:38:06,692 run DEBUG Add abbreviation: eo
+'2020-05-14 12:38:06,692 run DEBUG Add abbreviation: esim
+'2020-05-14 12:38:06,692 run DEBUG Add abbreviation: huom
+'2020-05-14 12:38:06,692 run DEBUG Add abbreviation: jaa
+'2020-05-14 12:38:06,692 run DEBUG Add abbreviation: jKr
+'2020-05-14 12:38:06,692 run DEBUG Add abbreviation: jms
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: jne
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: ks
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: l
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: ma
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: ml
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: mm
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: mrd
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: n
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: nk
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: no
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: ns
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: o.s
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: oto
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: puh
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: so
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: tjsp
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: tm
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: tms
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: tmv
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: ts
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: v
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: va
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: vrt
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: vs
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: vt
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: ym
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: yms
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: yo
+'2020-05-14 12:38:06,693 run DEBUG Add abbreviation: V
+'2020-05-14 12:38:07,512 run DEBUG tokenization results: None
+'2020-05-14 12:38:07,512 run DEBUG Index list: 0. 0, Pekka Haavisto on ottanut politiikassa ymmärtäjän
+'2020-05-14 12:38:07,513 run DEBUG Index list: 1. 0, sovittelijan
+'2020-05-14 12:38:07,513 run DEBUG Index list: 2. 0, mahdollistajan roolit.
+'2020-05-14 12:38:07,513 run DEBUG Index list: 3. 1, Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa
+'2020-05-14 12:38:07,513 run DEBUG Index list: 4. 1, tuli valituksi vihreiden toiseen eduskuntaryhmään.
+'2020-05-14 12:38:07,513 run DEBUG Index list: 5. 2, Hän on toiminut myös ministerinä.
+'2020-05-14 12:38:07,513 run DEBUG Index list: 6. 3, Haavisto on tehnyt lisäksi kansainvälisen uran
+'2020-05-14 12:38:07,513 run DEBUG Index list: 7. 3, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK
+'2020-05-14 12:38:07,513 run DEBUG Index list: 8. 3, EU Aasiassa
+'2020-05-14 12:38:07,514 run DEBUG Index list: 9. 3, Afrikassa ja Euroopassa.
+'2020-05-14 12:38:07,514 run DEBUG Index list: 10. 4, Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.
+'2020-05-14 12:38:07,514 run DEBUG Index list: 11. 5, Sen osoitti 2012 presidentinvaalit
+'2020-05-14 12:38:07,514 run DEBUG Index list: 12. 5, joiden toiselle kierrokselle Haavisto pääsi.
+'2020-05-14 12:38:07,514 run DEBUG data: {0: 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit. Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa ja tuli valituksi vihreiden toiseen eduskuntaryhmään. Hän on toiminut myös ministerinä. Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa. Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa. Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}
+'2020-05-14 12:38:07,514 run DEBUG DATA: {0: Pekka Haavisto on ottanut politiikassa ymmärtäjän, 1: sovittelijan, 2: mahdollistajan roolit., 3: Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa, 4: tuli valituksi vihreiden toiseen eduskuntaryhmään., 5: Hän on toiminut myös ministerinä., 6: Haavisto on tehnyt lisäksi kansainvälisen uran, 7: sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK, 8: EU Aasiassa, 9: Afrikassa ja Euroopassa., 10: Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa., 11: Sen osoitti 2012 presidentinvaalit, 12: joiden toiselle kierrokselle Haavisto pääsi.}
+'2020-05-14 12:38:07,889 run INFO results: {0: {'entities': [{'full_name': 'Pekka Haavisto', 'full_name_lemma': 'Pekka Haavisto', 'names': [{'name': 'Pekka', 'lemma': 'Pekka', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g11', 'start_ind': 0, 'end_ind': 5}, {'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '2', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 7, 'end_ind': 15}]}], 'sentence': 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit.'}, 3: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}, {'full_name': 'Aasiassa', 'full_name_lemma': 'Aasia', 'names': [{'name': 'Aasiassa', 'lemma': 'Aasia', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g19990', 'start_ind': 4, 'end_ind': 9}]}], 'sentence': 'Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa.'}, 4: {'entities': [{'full_name': 'Haaviston', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haaviston', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}], 'sentence': 'Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.'}, 5: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 32, 'end_ind': 40}]}], 'sentence': 'Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}}
+'2020-05-14 12:38:07,895 werkzeug INFO 127.0.0.1 - - [14/May/2020 12:38:07] "[37mGET /?text=Pekka%20Haavisto%20on%20ottanut%20politiikassa%20ymmärtäjän,%20sovittelijan%20ja%20mahdollistajan%20roolit.%20Lähes%20tuntematon%20kolmekymppinen%20hurmasi%201987%20eduskuntavaalikeskustelussa%20ja%20tuli%20valituksi%20vihreiden%20toiseen%20eduskuntaryhmään.%20Hän%20on%20toiminut%20myös%20ministerinä.%20Haavisto%20on%20tehnyt%20lisäksi%20kansainvälisen%20uran,%20sillä%20hänen%20sovittelijan%20kykyjään%20ovat%20käyttäneet%20ulkoministeriön%20ohella%20YK%20ja%20EU%20Aasiassa,%20%20Afrikassa%20ja%20%20Euroopassa.%20Haaviston%20suosio%20on%20ulottunut%20laajemmalle%20kuin%20hänen%20puolueensa.%20Sen%20osoitti%202012%20presidentinvaalit,%20joiden%20toiselle%20kierrokselle%20Haavisto%20pääsi.&title=0&gender=0&date=0 HTTP/1.1[0m" 200 -
+'2020-05-14 12:39:03,797 werkzeug INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+'2020-05-14 12:39:04,280 run DEBUG False, Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit. Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa ja tuli valituksi vihreiden toiseen eduskuntaryhmään. Hän on toiminut myös ministerinä. Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa. Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa. Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: ao
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: eaa
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: eKr
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: em
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: eo
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: esim
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: huom
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: jaa
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: jKr
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: jms
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: jne
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: ks
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: l
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: ma
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: ml
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: mm
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: mrd
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: n
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: nk
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: no
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: ns
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: o.s
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: oto
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: puh
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: so
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: tjsp
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: tm
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: tms
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: tmv
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: ts
+'2020-05-14 12:39:04,304 run DEBUG Add abbreviation: v
+'2020-05-14 12:39:04,305 run DEBUG Add abbreviation: va
+'2020-05-14 12:39:04,305 run DEBUG Add abbreviation: vrt
+'2020-05-14 12:39:04,305 run DEBUG Add abbreviation: vs
+'2020-05-14 12:39:04,305 run DEBUG Add abbreviation: vt
+'2020-05-14 12:39:04,305 run DEBUG Add abbreviation: ym
+'2020-05-14 12:39:04,305 run DEBUG Add abbreviation: yms
+'2020-05-14 12:39:04,305 run DEBUG Add abbreviation: yo
+'2020-05-14 12:39:04,305 run DEBUG Add abbreviation: V
+'2020-05-14 12:39:05,114 run DEBUG tokenization results: None
+'2020-05-14 12:39:05,114 run DEBUG Index list: 0. 0, Pekka Haavisto on ottanut politiikassa ymmärtäjän
+'2020-05-14 12:39:05,115 run DEBUG Index list: 1. 0, sovittelijan
+'2020-05-14 12:39:05,115 run DEBUG Index list: 2. 0, mahdollistajan roolit.
+'2020-05-14 12:39:05,115 run DEBUG Index list: 3. 1, Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa
+'2020-05-14 12:39:05,115 run DEBUG Index list: 4. 1, tuli valituksi vihreiden toiseen eduskuntaryhmään.
+'2020-05-14 12:39:05,115 run DEBUG Index list: 5. 2, Hän on toiminut myös ministerinä.
+'2020-05-14 12:39:05,116 run DEBUG Index list: 6. 3, Haavisto on tehnyt lisäksi kansainvälisen uran
+'2020-05-14 12:39:05,116 run DEBUG Index list: 7. 3, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK
+'2020-05-14 12:39:05,116 run DEBUG Index list: 8. 3, EU Aasiassa
+'2020-05-14 12:39:05,116 run DEBUG Index list: 9. 3, Afrikassa ja Euroopassa.
+'2020-05-14 12:39:05,116 run DEBUG Index list: 10. 4, Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.
+'2020-05-14 12:39:05,116 run DEBUG Index list: 11. 5, Sen osoitti 2012 presidentinvaalit
+'2020-05-14 12:39:05,116 run DEBUG Index list: 12. 5, joiden toiselle kierrokselle Haavisto pääsi.
+'2020-05-14 12:39:05,116 run DEBUG data: {0: 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit. Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa ja tuli valituksi vihreiden toiseen eduskuntaryhmään. Hän on toiminut myös ministerinä. Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa. Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa. Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}
+'2020-05-14 12:39:05,116 run DEBUG DATA: {0: Pekka Haavisto on ottanut politiikassa ymmärtäjän, 1: sovittelijan, 2: mahdollistajan roolit., 3: Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa, 4: tuli valituksi vihreiden toiseen eduskuntaryhmään., 5: Hän on toiminut myös ministerinä., 6: Haavisto on tehnyt lisäksi kansainvälisen uran, 7: sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK, 8: EU Aasiassa, 9: Afrikassa ja Euroopassa., 10: Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa., 11: Sen osoitti 2012 presidentinvaalit, 12: joiden toiselle kierrokselle Haavisto pääsi.}
+'2020-05-14 12:39:05,433 run INFO results: {0: {'entities': [{'full_name': 'Pekka Haavisto', 'full_name_lemma': 'Pekka Haavisto', 'names': [{'name': 'Pekka', 'lemma': 'Pekka', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g11', 'start_ind': 0, 'end_ind': 5}, {'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '2', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 7, 'end_ind': 15}]}], 'sentence': 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit.'}, 3: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}, {'full_name': 'Aasiassa', 'full_name_lemma': 'Aasia', 'names': [{'name': 'Aasiassa', 'lemma': 'Aasia', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g19990', 'start_ind': 4, 'end_ind': 9}]}], 'sentence': 'Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa.'}, 4: {'entities': [{'full_name': 'Haaviston', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haaviston', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}], 'sentence': 'Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.'}, 5: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 32, 'end_ind': 40}]}], 'sentence': 'Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}}
+'2020-05-14 12:39:05,436 werkzeug INFO 127.0.0.1 - - [14/May/2020 12:39:05] "[37mGET /?text=Pekka%20Haavisto%20on%20ottanut%20politiikassa%20ymmärtäjän,%20sovittelijan%20ja%20mahdollistajan%20roolit.%20Lähes%20tuntematon%20kolmekymppinen%20hurmasi%201987%20eduskuntavaalikeskustelussa%20ja%20tuli%20valituksi%20vihreiden%20toiseen%20eduskuntaryhmään.%20Hän%20on%20toiminut%20myös%20ministerinä.%20Haavisto%20on%20tehnyt%20lisäksi%20kansainvälisen%20uran,%20sillä%20hänen%20sovittelijan%20kykyjään%20ovat%20käyttäneet%20ulkoministeriön%20ohella%20YK%20ja%20EU%20Aasiassa,%20%20Afrikassa%20ja%20%20Euroopassa.%20Haaviston%20suosio%20on%20ulottunut%20laajemmalle%20kuin%20hänen%20puolueensa.%20Sen%20osoitti%202012%20presidentinvaalit,%20joiden%20toiselle%20kierrokselle%20Haavisto%20pääsi.&title=0&gender=0&date=0 HTTP/1.1[0m" 200 -
+'2020-05-14 12:39:45,989 werkzeug INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+'2020-05-14 12:39:46,550 run DEBUG False, Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit. Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa ja tuli valituksi vihreiden toiseen eduskuntaryhmään. Hän on toiminut myös ministerinä. Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa. Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa. Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: ao
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: eaa
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: eKr
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: em
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: eo
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: esim
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: huom
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: jaa
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: jKr
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: jms
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: jne
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: ks
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: l
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: ma
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: ml
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: mm
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: mrd
+'2020-05-14 12:39:46,610 run DEBUG Add abbreviation: n
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: nk
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: no
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: ns
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: o.s
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: oto
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: puh
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: so
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: tjsp
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: tm
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: tms
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: tmv
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: ts
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: v
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: va
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: vrt
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: vs
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: vt
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: ym
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: yms
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: yo
+'2020-05-14 12:39:46,611 run DEBUG Add abbreviation: V
+'2020-05-14 12:39:47,924 run DEBUG tokenization results: None
+'2020-05-14 12:39:47,925 run DEBUG Index list: 0. 0, Pekka Haavisto on ottanut politiikassa ymmärtäjän
+'2020-05-14 12:39:47,927 run DEBUG Index list: 1. 0, sovittelijan
+'2020-05-14 12:39:47,927 run DEBUG Index list: 2. 0, mahdollistajan roolit.
+'2020-05-14 12:39:47,928 run DEBUG Index list: 3. 1, Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa
+'2020-05-14 12:39:47,929 run DEBUG Index list: 4. 1, tuli valituksi vihreiden toiseen eduskuntaryhmään.
+'2020-05-14 12:39:47,930 run DEBUG Index list: 5. 2, Hän on toiminut myös ministerinä.
+'2020-05-14 12:39:47,930 run DEBUG Index list: 6. 3, Haavisto on tehnyt lisäksi kansainvälisen uran
+'2020-05-14 12:39:47,930 run DEBUG Index list: 7. 3, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK
+'2020-05-14 12:39:47,931 run DEBUG Index list: 8. 3, EU Aasiassa
+'2020-05-14 12:39:47,932 run DEBUG Index list: 9. 3, Afrikassa ja Euroopassa.
+'2020-05-14 12:39:47,932 run DEBUG Index list: 10. 4, Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.
+'2020-05-14 12:39:47,933 run DEBUG Index list: 11. 5, Sen osoitti 2012 presidentinvaalit
+'2020-05-14 12:39:47,933 run DEBUG Index list: 12. 5, joiden toiselle kierrokselle Haavisto pääsi.
+'2020-05-14 12:39:47,934 run DEBUG data: {0: 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit. Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa ja tuli valituksi vihreiden toiseen eduskuntaryhmään. Hän on toiminut myös ministerinä. Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa. Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa. Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}
+'2020-05-14 12:39:47,934 run DEBUG DATA: {0: Pekka Haavisto on ottanut politiikassa ymmärtäjän, 1: sovittelijan, 2: mahdollistajan roolit., 3: Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa, 4: tuli valituksi vihreiden toiseen eduskuntaryhmään., 5: Hän on toiminut myös ministerinä., 6: Haavisto on tehnyt lisäksi kansainvälisen uran, 7: sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK, 8: EU Aasiassa, 9: Afrikassa ja Euroopassa., 10: Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa., 11: Sen osoitti 2012 presidentinvaalit, 12: joiden toiselle kierrokselle Haavisto pääsi.}
+'2020-05-14 12:39:48,349 run INFO results: {0: {'entities': [{'full_name': 'Pekka Haavisto', 'full_name_lemma': 'Pekka Haavisto', 'names': [{'name': 'Pekka', 'lemma': 'Pekka', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g11', 'start_ind': 0, 'end_ind': 5}, {'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '2', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 7, 'end_ind': 15}]}], 'sentence': 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit.'}, 3: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}, {'full_name': 'Aasiassa', 'full_name_lemma': 'Aasia', 'names': [{'name': 'Aasiassa', 'lemma': 'Aasia', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g19990', 'start_ind': 4, 'end_ind': 9}]}], 'sentence': 'Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa.'}, 4: {'entities': [{'full_name': 'Haaviston', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haaviston', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}], 'sentence': 'Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.'}, 5: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 32, 'end_ind': 40}]}], 'sentence': 'Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}}
+'2020-05-14 12:39:48,352 werkzeug INFO 127.0.0.1 - - [14/May/2020 12:39:48] "[37mGET /?text=Pekka%20Haavisto%20on%20ottanut%20politiikassa%20ymmärtäjän,%20sovittelijan%20ja%20mahdollistajan%20roolit.%20Lähes%20tuntematon%20kolmekymppinen%20hurmasi%201987%20eduskuntavaalikeskustelussa%20ja%20tuli%20valituksi%20vihreiden%20toiseen%20eduskuntaryhmään.%20Hän%20on%20toiminut%20myös%20ministerinä.%20Haavisto%20on%20tehnyt%20lisäksi%20kansainvälisen%20uran,%20sillä%20hänen%20sovittelijan%20kykyjään%20ovat%20käyttäneet%20ulkoministeriön%20ohella%20YK%20ja%20EU%20Aasiassa,%20%20Afrikassa%20ja%20%20Euroopassa.%20Haaviston%20suosio%20on%20ulottunut%20laajemmalle%20kuin%20hänen%20puolueensa.%20Sen%20osoitti%202012%20presidentinvaalit,%20joiden%20toiselle%20kierrokselle%20Haavisto%20pääsi.&title=0&gender=0&date=0 HTTP/1.1[0m" 200 -
+'2020-05-14 12:40:05,990 werkzeug INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+'2020-05-14 12:40:06,376 run DEBUG False, Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit. Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa ja tuli valituksi vihreiden toiseen eduskuntaryhmään. Hän on toiminut myös ministerinä. Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa. Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa. Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.
+'2020-05-14 12:40:06,400 run DEBUG Add abbreviation: ao
+'2020-05-14 12:40:06,400 run DEBUG Add abbreviation: eaa
+'2020-05-14 12:40:06,400 run DEBUG Add abbreviation: eKr
+'2020-05-14 12:40:06,400 run DEBUG Add abbreviation: em
+'2020-05-14 12:40:06,400 run DEBUG Add abbreviation: eo
+'2020-05-14 12:40:06,400 run DEBUG Add abbreviation: esim
+'2020-05-14 12:40:06,400 run DEBUG Add abbreviation: huom
+'2020-05-14 12:40:06,400 run DEBUG Add abbreviation: jaa
+'2020-05-14 12:40:06,400 run DEBUG Add abbreviation: jKr
+'2020-05-14 12:40:06,400 run DEBUG Add abbreviation: jms
+'2020-05-14 12:40:06,400 run DEBUG Add abbreviation: jne
+'2020-05-14 12:40:06,400 run DEBUG Add abbreviation: ks
+'2020-05-14 12:40:06,400 run DEBUG Add abbreviation: l
+'2020-05-14 12:40:06,400 run DEBUG Add abbreviation: ma
+'2020-05-14 12:40:06,400 run DEBUG Add abbreviation: ml
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: mm
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: mrd
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: n
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: nk
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: no
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: ns
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: o.s
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: oto
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: puh
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: so
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: tjsp
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: tm
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: tms
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: tmv
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: ts
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: v
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: va
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: vrt
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: vs
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: vt
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: ym
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: yms
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: yo
+'2020-05-14 12:40:06,401 run DEBUG Add abbreviation: V
+'2020-05-14 12:40:07,265 run DEBUG tokenization results: None
+'2020-05-14 12:40:07,265 run DEBUG Index list: 0. 0, Pekka Haavisto on ottanut politiikassa ymmärtäjän
+'2020-05-14 12:40:07,266 run DEBUG Index list: 1. 0, sovittelijan
+'2020-05-14 12:40:07,266 run DEBUG Index list: 2. 0, mahdollistajan roolit.
+'2020-05-14 12:40:07,266 run DEBUG Index list: 3. 1, Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa
+'2020-05-14 12:40:07,266 run DEBUG Index list: 4. 1, tuli valituksi vihreiden toiseen eduskuntaryhmään.
+'2020-05-14 12:40:07,266 run DEBUG Index list: 5. 2, Hän on toiminut myös ministerinä.
+'2020-05-14 12:40:07,266 run DEBUG Index list: 6. 3, Haavisto on tehnyt lisäksi kansainvälisen uran
+'2020-05-14 12:40:07,266 run DEBUG Index list: 7. 3, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK
+'2020-05-14 12:40:07,267 run DEBUG Index list: 8. 3, EU Aasiassa
+'2020-05-14 12:40:07,267 run DEBUG Index list: 9. 3, Afrikassa ja Euroopassa.
+'2020-05-14 12:40:07,267 run DEBUG Index list: 10. 4, Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.
+'2020-05-14 12:40:07,267 run DEBUG Index list: 11. 5, Sen osoitti 2012 presidentinvaalit
+'2020-05-14 12:40:07,267 run DEBUG Index list: 12. 5, joiden toiselle kierrokselle Haavisto pääsi.
+'2020-05-14 12:40:07,267 run DEBUG data: {0: 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit. Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa ja tuli valituksi vihreiden toiseen eduskuntaryhmään. Hän on toiminut myös ministerinä. Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa. Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa. Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}
+'2020-05-14 12:40:07,267 run DEBUG DATA: {0: Pekka Haavisto on ottanut politiikassa ymmärtäjän, 1: sovittelijan, 2: mahdollistajan roolit., 3: Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa, 4: tuli valituksi vihreiden toiseen eduskuntaryhmään., 5: Hän on toiminut myös ministerinä., 6: Haavisto on tehnyt lisäksi kansainvälisen uran, 7: sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK, 8: EU Aasiassa, 9: Afrikassa ja Euroopassa., 10: Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa., 11: Sen osoitti 2012 presidentinvaalit, 12: joiden toiselle kierrokselle Haavisto pääsi.}
+'2020-05-14 12:40:07,660 run INFO results: {0: {'entities': [{'full_name': 'Pekka Haavisto', 'full_name_lemma': 'Pekka Haavisto', 'names': [{'name': 'Pekka', 'lemma': 'Pekka', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g11', 'start_ind': 0, 'end_ind': 5}, {'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '2', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 7, 'end_ind': 15}]}], 'sentence': 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit.'}, 3: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}, {'full_name': 'Aasiassa', 'full_name_lemma': 'Aasia', 'names': [{'name': 'Aasiassa', 'lemma': 'Aasia', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g19990', 'start_ind': 4, 'end_ind': 9}]}], 'sentence': 'Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa.'}, 4: {'entities': [{'full_name': 'Haaviston', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haaviston', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}], 'sentence': 'Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.'}, 5: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 32, 'end_ind': 40}]}], 'sentence': 'Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}}
+'2020-05-14 12:40:07,662 werkzeug INFO 127.0.0.1 - - [14/May/2020 12:40:07] "[37mGET /?text=Pekka%20Haavisto%20on%20ottanut%20politiikassa%20ymmärtäjän,%20sovittelijan%20ja%20mahdollistajan%20roolit.%20Lähes%20tuntematon%20kolmekymppinen%20hurmasi%201987%20eduskuntavaalikeskustelussa%20ja%20tuli%20valituksi%20vihreiden%20toiseen%20eduskuntaryhmään.%20Hän%20on%20toiminut%20myös%20ministerinä.%20Haavisto%20on%20tehnyt%20lisäksi%20kansainvälisen%20uran,%20sillä%20hänen%20sovittelijan%20kykyjään%20ovat%20käyttäneet%20ulkoministeriön%20ohella%20YK%20ja%20EU%20Aasiassa,%20%20Afrikassa%20ja%20%20Euroopassa.%20Haaviston%20suosio%20on%20ulottunut%20laajemmalle%20kuin%20hänen%20puolueensa.%20Sen%20osoitti%202012%20presidentinvaalit,%20joiden%20toiselle%20kierrokselle%20Haavisto%20pääsi.&title=0&gender=0&date=0 HTTP/1.1[0m" 200 -
+'2020-05-14 12:40:38,541 werkzeug INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+'2020-05-14 12:40:38,978 run DEBUG False, Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit. Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa ja tuli valituksi vihreiden toiseen eduskuntaryhmään. Hän on toiminut myös ministerinä. Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa. Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa. Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: ao
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: eaa
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: eKr
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: em
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: eo
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: esim
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: huom
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: jaa
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: jKr
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: jms
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: jne
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: ks
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: l
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: ma
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: ml
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: mm
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: mrd
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: n
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: nk
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: no
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: ns
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: o.s
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: oto
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: puh
+'2020-05-14 12:40:39,010 run DEBUG Add abbreviation: so
+'2020-05-14 12:40:39,011 run DEBUG Add abbreviation: tjsp
+'2020-05-14 12:40:39,011 run DEBUG Add abbreviation: tm
+'2020-05-14 12:40:39,011 run DEBUG Add abbreviation: tms
+'2020-05-14 12:40:39,011 run DEBUG Add abbreviation: tmv
+'2020-05-14 12:40:39,011 run DEBUG Add abbreviation: ts
+'2020-05-14 12:40:39,011 run DEBUG Add abbreviation: v
+'2020-05-14 12:40:39,011 run DEBUG Add abbreviation: va
+'2020-05-14 12:40:39,011 run DEBUG Add abbreviation: vrt
+'2020-05-14 12:40:39,011 run DEBUG Add abbreviation: vs
+'2020-05-14 12:40:39,011 run DEBUG Add abbreviation: vt
+'2020-05-14 12:40:39,011 run DEBUG Add abbreviation: ym
+'2020-05-14 12:40:39,011 run DEBUG Add abbreviation: yms
+'2020-05-14 12:40:39,011 run DEBUG Add abbreviation: yo
+'2020-05-14 12:40:39,011 run DEBUG Add abbreviation: V
+'2020-05-14 12:40:39,804 run DEBUG tokenization results: None
+'2020-05-14 12:40:39,805 run DEBUG Index list: 0. 0, Pekka Haavisto on ottanut politiikassa ymmärtäjän
+'2020-05-14 12:40:39,806 run DEBUG Index list: 1. 0, sovittelijan
+'2020-05-14 12:40:39,807 run DEBUG Index list: 2. 0, mahdollistajan roolit.
+'2020-05-14 12:40:39,807 run DEBUG Index list: 3. 1, Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa
+'2020-05-14 12:40:39,807 run DEBUG Index list: 4. 1, tuli valituksi vihreiden toiseen eduskuntaryhmään.
+'2020-05-14 12:40:39,808 run DEBUG Index list: 5. 2, Hän on toiminut myös ministerinä.
+'2020-05-14 12:40:39,808 run DEBUG Index list: 6. 3, Haavisto on tehnyt lisäksi kansainvälisen uran
+'2020-05-14 12:40:39,809 run DEBUG Index list: 7. 3, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK
+'2020-05-14 12:40:39,809 run DEBUG Index list: 8. 3, EU Aasiassa
+'2020-05-14 12:40:39,809 run DEBUG Index list: 9. 3, Afrikassa ja Euroopassa.
+'2020-05-14 12:40:39,810 run DEBUG Index list: 10. 4, Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.
+'2020-05-14 12:40:39,810 run DEBUG Index list: 11. 5, Sen osoitti 2012 presidentinvaalit
+'2020-05-14 12:40:39,811 run DEBUG Index list: 12. 5, joiden toiselle kierrokselle Haavisto pääsi.
+'2020-05-14 12:40:39,812 run DEBUG data: {0: 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit. Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa ja tuli valituksi vihreiden toiseen eduskuntaryhmään. Hän on toiminut myös ministerinä. Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa. Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa. Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}
+'2020-05-14 12:40:39,812 run DEBUG DATA: {0: Pekka Haavisto on ottanut politiikassa ymmärtäjän, 1: sovittelijan, 2: mahdollistajan roolit., 3: Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa, 4: tuli valituksi vihreiden toiseen eduskuntaryhmään., 5: Hän on toiminut myös ministerinä., 6: Haavisto on tehnyt lisäksi kansainvälisen uran, 7: sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK, 8: EU Aasiassa, 9: Afrikassa ja Euroopassa., 10: Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa., 11: Sen osoitti 2012 presidentinvaalit, 12: joiden toiselle kierrokselle Haavisto pääsi.}
+'2020-05-14 12:40:40,248 run INFO results: {0: {'entities': [{'full_name': 'Pekka Haavisto', 'full_name_lemma': 'Pekka Haavisto', 'names': [{'name': 'Pekka', 'lemma': 'Pekka', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g11', 'start_ind': 0, 'end_ind': 5}, {'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '2', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 7, 'end_ind': 15}]}], 'sentence': 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit.'}, 3: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}, {'full_name': 'Aasiassa', 'full_name_lemma': 'Aasia', 'names': [{'name': 'Aasiassa', 'lemma': 'Aasia', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g19990', 'start_ind': 4, 'end_ind': 9}]}], 'sentence': 'Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa.'}, 4: {'entities': [{'full_name': 'Haaviston', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haaviston', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}], 'sentence': 'Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.'}, 5: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 32, 'end_ind': 40}]}], 'sentence': 'Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}}
+'2020-05-14 12:40:40,252 werkzeug INFO 127.0.0.1 - - [14/May/2020 12:40:40] "[37mGET /?text=Pekka%20Haavisto%20on%20ottanut%20politiikassa%20ymmärtäjän,%20sovittelijan%20ja%20mahdollistajan%20roolit.%20Lähes%20tuntematon%20kolmekymppinen%20hurmasi%201987%20eduskuntavaalikeskustelussa%20ja%20tuli%20valituksi%20vihreiden%20toiseen%20eduskuntaryhmään.%20Hän%20on%20toiminut%20myös%20ministerinä.%20Haavisto%20on%20tehnyt%20lisäksi%20kansainvälisen%20uran,%20sillä%20hänen%20sovittelijan%20kykyjään%20ovat%20käyttäneet%20ulkoministeriön%20ohella%20YK%20ja%20EU%20Aasiassa,%20%20Afrikassa%20ja%20%20Euroopassa.%20Haaviston%20suosio%20on%20ulottunut%20laajemmalle%20kuin%20hänen%20puolueensa.%20Sen%20osoitti%202012%20presidentinvaalit,%20joiden%20toiselle%20kierrokselle%20Haavisto%20pääsi.&title=0&gender=0&date=0 HTTP/1.1[0m" 200 -
+'2020-05-14 12:40:55,526 run DEBUG False, Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit. Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa ja tuli valituksi vihreiden toiseen eduskuntaryhmään. Hän on toiminut myös ministerinä. Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa. Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa. Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.
+'2020-05-14 12:40:55,528 run DEBUG Add abbreviation: ao
+'2020-05-14 12:40:55,528 run DEBUG Add abbreviation: eaa
+'2020-05-14 12:40:55,528 run DEBUG Add abbreviation: eKr
+'2020-05-14 12:40:55,528 run DEBUG Add abbreviation: em
+'2020-05-14 12:40:55,528 run DEBUG Add abbreviation: eo
+'2020-05-14 12:40:55,528 run DEBUG Add abbreviation: esim
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: huom
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: jaa
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: jKr
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: jms
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: jne
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: ks
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: l
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: ma
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: ml
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: mm
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: mrd
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: n
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: nk
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: no
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: ns
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: o.s
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: oto
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: puh
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: so
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: tjsp
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: tm
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: tms
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: tmv
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: ts
+'2020-05-14 12:40:55,529 run DEBUG Add abbreviation: v
+'2020-05-14 12:40:55,530 run DEBUG Add abbreviation: va
+'2020-05-14 12:40:55,530 run DEBUG Add abbreviation: vrt
+'2020-05-14 12:40:55,530 run DEBUG Add abbreviation: vs
+'2020-05-14 12:40:55,530 run DEBUG Add abbreviation: vt
+'2020-05-14 12:40:55,530 run DEBUG Add abbreviation: ym
+'2020-05-14 12:40:55,530 run DEBUG Add abbreviation: yms
+'2020-05-14 12:40:55,530 run DEBUG Add abbreviation: yo
+'2020-05-14 12:40:55,530 run DEBUG Add abbreviation: V
+'2020-05-14 12:40:56,420 run DEBUG tokenization results: None
+'2020-05-14 12:40:56,420 run DEBUG Index list: 0. 0, Pekka Haavisto on ottanut politiikassa ymmärtäjän
+'2020-05-14 12:40:56,420 run DEBUG Index list: 1. 0, sovittelijan
+'2020-05-14 12:40:56,420 run DEBUG Index list: 2. 0, mahdollistajan roolit.
+'2020-05-14 12:40:56,421 run DEBUG Index list: 3. 1, Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa
+'2020-05-14 12:40:56,421 run DEBUG Index list: 4. 1, tuli valituksi vihreiden toiseen eduskuntaryhmään.
+'2020-05-14 12:40:56,421 run DEBUG Index list: 5. 2, Hän on toiminut myös ministerinä.
+'2020-05-14 12:40:56,421 run DEBUG Index list: 6. 3, Haavisto on tehnyt lisäksi kansainvälisen uran
+'2020-05-14 12:40:56,421 run DEBUG Index list: 7. 3, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK
+'2020-05-14 12:40:56,421 run DEBUG Index list: 8. 3, EU Aasiassa
+'2020-05-14 12:40:56,421 run DEBUG Index list: 9. 3, Afrikassa ja Euroopassa.
+'2020-05-14 12:40:56,421 run DEBUG Index list: 10. 4, Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.
+'2020-05-14 12:40:56,421 run DEBUG Index list: 11. 5, Sen osoitti 2012 presidentinvaalit
+'2020-05-14 12:40:56,421 run DEBUG Index list: 12. 5, joiden toiselle kierrokselle Haavisto pääsi.
+'2020-05-14 12:40:56,422 run DEBUG data: {0: 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit. Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa ja tuli valituksi vihreiden toiseen eduskuntaryhmään. Hän on toiminut myös ministerinä. Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa. Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa. Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}
+'2020-05-14 12:40:56,422 run DEBUG DATA: {0: Pekka Haavisto on ottanut politiikassa ymmärtäjän, 1: sovittelijan, 2: mahdollistajan roolit., 3: Lähes tuntematon kolmekymppinen hurmasi 1987 eduskuntavaalikeskustelussa, 4: tuli valituksi vihreiden toiseen eduskuntaryhmään., 5: Hän on toiminut myös ministerinä., 6: Haavisto on tehnyt lisäksi kansainvälisen uran, 7: sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK, 8: EU Aasiassa, 9: Afrikassa ja Euroopassa., 10: Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa., 11: Sen osoitti 2012 presidentinvaalit, 12: joiden toiselle kierrokselle Haavisto pääsi.}
+'2020-05-14 12:40:56,739 run INFO results: {0: {'entities': [{'full_name': 'Pekka Haavisto', 'full_name_lemma': 'Pekka Haavisto', 'names': [{'name': 'Pekka', 'lemma': 'Pekka', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g11', 'start_ind': 0, 'end_ind': 5}, {'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '2', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 7, 'end_ind': 15}]}], 'sentence': 'Pekka Haavisto on ottanut politiikassa ymmärtäjän, sovittelijan ja mahdollistajan roolit.'}, 3: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}, {'full_name': 'Aasiassa', 'full_name_lemma': 'Aasia', 'names': [{'name': 'Aasiassa', 'lemma': 'Aasia', 'type': 'Etunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/g19990', 'start_ind': 4, 'end_ind': 9}]}], 'sentence': 'Haavisto on tehnyt lisäksi kansainvälisen uran, sillä hänen sovittelijan kykyjään ovat käyttäneet ulkoministeriön ohella YK ja EU Aasiassa,  Afrikassa ja  Euroopassa.'}, 4: {'entities': [{'full_name': 'Haaviston', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haaviston', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 0, 'end_ind': 8}]}], 'sentence': 'Haaviston suosio on ulottunut laajemmalle kuin hänen puolueensa.'}, 5: {'entities': [{'full_name': 'Haavisto', 'full_name_lemma': 'Haavisto', 'names': [{'name': 'Haavisto', 'lemma': 'Haavisto', 'type': 'Sukunimi', 'location': '1', 'uri': 'http://ldf.fi/henko/f208', 'start_ind': 32, 'end_ind': 40}]}], 'sentence': 'Sen osoitti 2012 presidentinvaalit, joiden toiselle kierrokselle Haavisto pääsi.'}}
+'2020-05-14 12:40:56,742 werkzeug INFO 127.0.0.1 - - [14/May/2020 12:40:56] "[37mGET /?text=Pekka%20Haavisto%20on%20ottanut%20politiikassa%20ymmärtäjän,%20sovittelijan%20ja%20mahdollistajan%20roolit.%20Lähes%20tuntematon%20kolmekymppinen%20hurmasi%201987%20eduskuntavaalikeskustelussa%20ja%20tuli%20valituksi%20vihreiden%20toiseen%20eduskuntaryhmään.%20Hän%20on%20toiminut%20myös%20ministerinä.%20Haavisto%20on%20tehnyt%20lisäksi%20kansainvälisen%20uran,%20sillä%20hänen%20sovittelijan%20kykyjään%20ovat%20käyttäneet%20ulkoministeriön%20ohella%20YK%20ja%20EU%20Aasiassa,%20%20Afrikassa%20ja%20%20Euroopassa.%20Haaviston%20suosio%20on%20ulottunut%20laajemmalle%20kuin%20hänen%20puolueensa.%20Sen%20osoitti%202012%20presidentinvaalit,%20joiden%20toiselle%20kierrokselle%20Haavisto%20pääsi.&title=0&gender=0&date=0 HTTP/1.1[0m" 200 -

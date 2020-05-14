@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d31704e3-0677-4e93-9a3a-6fd23a93f8fc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/conf/logging.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/conf/config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/namedentity.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/namedentity.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/sparql.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/sparql.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ambiguation_resolver.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/ambiguation_resolver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/las_query.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/las_query.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/namefinder.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/namefinder.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sparqlqueries.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/sparqlqueries.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/text_structure.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/text_structure.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,12 +33,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="395">
-                <caret line="74" selection-start-line="74" selection-end-line="74" selection-end-column="87" />
+              <first_editor relative-caret-position="1102">
+                <caret line="38" column="77" selection-start-line="38" selection-start-column="77" selection-end-line="38" selection-end-column="77" />
               </first_editor>
               <second_editor />
             </state>
@@ -79,7 +69,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/namefinder.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="435">
@@ -191,7 +181,6 @@
         <option value="$PROJECT_DIR$/src/namedentity.py" />
         <option value="$PROJECT_DIR$/data/abbreviations.csv" />
         <option value="$PROJECT_DIR$/src/disambiguation_resolver.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/conf/config.ini" />
         <option value="$PROJECT_DIR$/src/ambiguation_resolver.py" />
         <option value="$PROJECT_DIR$/src/las_query.py" />
@@ -200,6 +189,7 @@
         <option value="$PROJECT_DIR$/conf/logging.ini" />
         <option value="$PROJECT_DIR$/src/text_structure.py" />
         <option value="$PROJECT_DIR$/src/namefinder.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -353,16 +343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="395">
-            <caret line="74" selection-start-line="74" selection-end-line="74" selection-end-column="87" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/conf/config.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="29">
@@ -434,6 +414,16 @@
           <folding>
             <element signature="e#0#42#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1102">
+            <caret line="38" column="77" selection-start-line="38" selection-start-column="77" selection-end-line="38" selection-end-column="77" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -18,7 +18,7 @@ For more information, check [requirements.txt](requirements.txt)
 
 ## Configurations
 
-The configurations for the service can be found from the config/config.ini file and configured based on service usage.
+The configurations for the service can be found from the [config/config.ini](config/config.ini) file and configured based on service usage.
 
 List of configurations available:
 
@@ -33,6 +33,10 @@ List of configurations available:
 * context_lifespan_separators (default: '-', '–'): separators between years
 
 In order to use these configurations, set the environment variable NAME_FINDER_CONFIG_ENV to 'DEFAULT' or to you personal setting. The value is the section name in the config.ini file where the personal settings can be set for the attributes (configurations) defined above.
+
+### Logging configuration
+
+The configurations for logging are in the [conf/logging.ini](conf/logging.ini) file. In production, the configurations should be set to WARNING mode in all log files to limit the amount of logging to only errors. The INFO and DEBUG logging modes serve better the debugging in the development environment.
 
 ## Usage
 
