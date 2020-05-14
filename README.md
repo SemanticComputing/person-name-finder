@@ -105,6 +105,8 @@ Results are retuned in json format:
 
 The following configuration parameters must be passed as environment variables to the container:
 
+* IP_BACKEND_LAS
+* PORT_BACKEND_LAS
 * HENKO_ENDPOINT_URL
 * IP_BACKEND_GENDER_GUESS
 * PORT_BACKEND_GENDER_GUESS
@@ -112,3 +114,7 @@ The following configuration parameters must be passed as environment variables t
 * PORT_BACKEND_REGEX
 
 Other configuration parameters should be set by using a config.ini (see section Configurations above) which can be e.g. bind mounted to container's path `/app/conf/config.ini`.
+
+The log level can be specified by passing the following environment variable to the container:
+
+* LOG_LEVEL

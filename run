@@ -1,5 +1,11 @@
 #!/bin/sh
 
+if [ $LOG_LEVEL ]; then
+  sed -i -E s/^level=.+$/level=$LOG_LEVEL/ $LOG_CONF_FILE
+fi
+
+sed -i "s|^las_url\ *=\ *.*|las_url\ =\ http:\\/\\/$IP_BACKEND_LAS:$PORT_BACKEND_LAS\\/las|" "$CONF_FILE"
+
 sed -i "s|^henko_endpoint\ *=\ *.*|henko_endpoint\ =\ $HENKO_ENDPOINT_URL|" "$CONF_FILE"
 
 sed -i s/^gender_guess_url\ *=\ *.*$/gender_guess_url\ =\ http:\\/\\/$IP_BACKEND_GENDER_GUESS:$PORT_BACKEND_GENDER_GUESS/ "$CONF_FILE"
