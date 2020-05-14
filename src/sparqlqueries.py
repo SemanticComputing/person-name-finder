@@ -230,10 +230,10 @@ class SparqlResultSetItem():
         self.refersVocation = value
 
     def __str__(self):
-        return "SparqlResultSetItem: "+str(self.ord) + ". " + str(self.name) + " (" + str(self.label) + ", " + str(self.count) + ")"
+        return "SparqlResultSetItem: "+str(self.ord) + ". " + str(self.name) + " (" + str(self.label) + ", " + str(self.count) + ", "+ str(self.type) +")"
 
     def __repr__(self):
-        return "SparqlResultSetItem: "+str(self.ord) + ". " + str(self.name) + " (" + str(self.label) + ", " + str(self.count) + ")"
+        return "SparqlResultSetItem: "+str(self.ord) + ". " + str(self.name) + " (" + str(self.label) + ", " + str(self.count) + ", "+ str(self.type) +")"
 
     def __eq__(self, other):
         if self.label == other.get_label():

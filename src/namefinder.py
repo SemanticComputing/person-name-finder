@@ -312,6 +312,7 @@ class NameRidler:
     def parse(self, queried_names, sentence_obj):
         arr = dict()
         helper_arr = OrderedDict()
+        qn_helper = dict()
         name_links = dict()
         counter = 0
         full_name_counter = 0
@@ -327,6 +328,7 @@ class NameRidler:
             rs_queried_name = rs.get_resultset()
             counter = 1
             for i, queried_name in rs_queried_name.items():
+                print(i, queried_name)
                 if string_start != None:
                     prev_string_start = string_start
 
@@ -369,15 +371,15 @@ class NameRidler:
                                     (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1) and (prev.get_string_end()<=string_start-2) and \
                                     (prev.get_name_lemma() != prev.get_name() or original_form != label.strip()):
                                 counter = 1
-                                #print("Adding a last name:", prev.get_type(), type)
-                                #print("Adding a last name:", prev.get_name().strip(), label.strip())
-                                #print("Adding a last name:",len(list(arr.keys()))>1)
-                                #print("Adding a last name:", prev.get_string_end(),string_start-2)
+                                print("Adding a last name:", prev.get_type(), type)
+                                print("Adding a last name:", prev.get_name().strip(), label.strip())
+                                print("Adding a last name:",len(list(arr.keys()))>1)
+                                print("Adding a last name:", prev.get_string_end(),string_start-2)
 
                                 arr, full_name, full_name_counter, full_name_lemma, helper_arr, name = self.extract_name(
                                     arr,
                                     full_name_counter,
-                                    helper_arr, name,queried_name)
+                                    helper_arr, name,{label:queried_name})
 
 
                             if prev != None:
@@ -397,10 +399,17 @@ class NameRidler:
                         if name not in arr[label]:
                             arr[label].append(name)
 
+                        if label not in qn_helper.keys():
+                            qn_helper[label] = queried_name
+                        else:
+                            for item in queried_name:
+                                if item not in qn_helper[item.get_label()]:
+                                    qn_helper[label].append(item)
+
             #print(arr, full_name_counter, helper_arr, name, queried_name)
             arr, full_name, full_name_counter, full_name_lemma, helper_arr, name = self.extract_name(arr,
                                                                                                      full_name_counter,
-                                                                                                     helper_arr, name,queried_name)
+                                                                                                     helper_arr, name,qn_helper)
             #print(arr, full_name, full_name_counter, full_name_lemma, helper_arr, name)
 
     def ambiguity_solver(self, names, str_full_name_lemma):
@@ -433,6 +442,7 @@ class NameRidler:
         return arr, full_name, full_name_counter, full_name_lemma, helper_arr, name
 
     def determine_name(self, names, helper, alternatives):
+        #print("[determine_name]: ...")
         family_names = list()
         first_names = list()
         last = len(helper)
@@ -453,13 +463,13 @@ class NameRidler:
                             name_unidentified = False
                         else:
                             print("Cannot add,", prev)
-
-                if self.is_family_name(name, last, alternatives) and not(self.is_first_name(name, last)):
+                print("Before chrash:",alternatives, name.get_name())
+                if self.is_family_name(name, last, alternatives[name.get_name_lemma()]) and not(self.is_first_name(name, last)):
                     if name not in family_names:
                         family_names.append(name)
                         prev = name
                         name_unidentified = False
-                elif self.is_first_name(name, last) and not(self.is_family_name(name, last, alternatives)):
+                elif self.is_first_name(name, last) and not(self.is_family_name(name, last, alternatives[name.get_name_lemma()])):
                     if name not in first_names:
                         first_names.append(name)
                         prev = name
@@ -517,15 +527,19 @@ class NameRidler:
 
             if fname != None and lname != None:
                 if fname == lname:
+                    print("first")
                     if fname.get_link() != lname.get_link():
                         lname.add_link(fname.get_link())
                     elif fname.get_link() != lname.get_link():
                         fname.add_link(lname.get_link())
-                if fname.get_location() == lname.get_location() and self.is_family_name(lname, last, alternatives) and not(self.is_first_name(fname, last)):
+                if fname.get_location() == lname.get_location() and self.is_family_name(lname, last, alternatives[lname.get_name_lemma()]) and not(self.is_first_name(fname, last)):
+                    print("second")
                     fnames.remove(fname)
-                elif fname.get_location() == lname.get_location() and not(self.is_family_name(lname, last, alternatives)) and self.is_first_name(fname, last):
+                elif fname.get_location() == lname.get_location() and not(self.is_family_name(lname, last, alternatives[lname.get_name_lemma()])) and self.is_first_name(fname, last):
+                    print("third")
                     lnames.remove(lname)
-                elif fname.get_location() == lname.get_location() and self.is_family_name(lname, last, alternatives) and self.is_first_name(fname, last):
+                elif fname.get_location() == lname.get_location() and self.is_family_name(lname, last, alternatives[lname.get_name_lemma()]) and self.is_first_name(fname, last):
+                    print("fourth")
                     if fname.get_count() > lname.get_count():
                         lnames.remove(lname)
                     elif fname.get_count() < lname.get_count():
@@ -536,7 +550,7 @@ class NameRidler:
                     print("Probability that it is a first name:", fname.get_count())
                     print("Label:", label)
                     print("Locations:", fname.get_location(), lname.get_location())
-                    print("Is family name? ", self.is_family_name(lname, last, alternatives))
+                    print("Is family name? ", self.is_family_name(lname, last, alternatives[lname.get_name_lemma()]))
                     print("Is first name? ", self.is_first_name(fname, last))
             else:
                 if lname == None:
@@ -560,15 +574,17 @@ class NameRidler:
         return None
 
     def is_family_name(self, name, last, alternatives):
+        #print("Is lastname?", name, last, alternatives)
         other_types = [a.get_type() for a in alternatives if a.get_type() != name.get_type()]
         if name.get_type() == "Sukunimi" and name.get_location() == last:
             return True
         elif name.get_type() == "Sukunimi" and len(other_types) < 1:
+            #print("Others", other_types)
             return True
         return False
 
     def is_first_name(self, name, last):
-        #print("Location of first:", last, name.get_location(), name.get_type())
+        #print("Location of first:", last, name.get_location(), name.get_type(), name)
         if name.get_type() == "Etunimi" and ((last == 1 or name.get_location() < last) and name.get_location() < 5):
             return True
         else:
