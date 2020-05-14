@@ -8,21 +8,57 @@ from requests import Request, Session
 import requests, json
 import logging
 import json
+import traceback, sys, os
+from flask import abort
+import configparser
+from configparser import Error, ParsingError, MissingSectionHeaderError, NoOptionError, DuplicateOptionError, DuplicateSectionError, NoSectionError
 
 # logging setup
-logger = logging.getLogger('NamedEntity')
-hdlr = logging.FileHandler('logs/namedentity.log')
-formatter = logging.Formatter('%(asctime)s %(name)s %(levelname)s %(message)s')
-hdlr.setFormatter(formatter)
-logger.addHandler(hdlr)
-logger.setLevel(logging.INFO)
+logging.config.fileConfig(fname='conf/logging.ini', disable_existing_loggers=False)
+logger = logging.getLogger('las')
 
 class lasQuery:
-    def __init__(self, file_name_pattern="", path="", full_path=""):
+    def __init__(self, file_name_pattern="", path="", full_path="", url="", env='DEFAULT'):
         self.__file_name_pattern = file_name_pattern
         self.__path = path
         self.query_string_cache = dict()
-        
+        self.__url = url
+
+        self.read_configs(env)
+
+        logger.debug("Set url: %s", self.__url)
+
+    def read_configs(self, env):
+
+        try:
+            config = configparser.ConfigParser()
+            config.read('conf/config.ini')
+            if env in config:
+                self.read_env_config(config, env)
+            elif env == None or len(env) == 0:
+                err_msg = 'The environment is not set: %s' % (env)
+                raise Exception(err_msg)
+            else:
+                if 'DEFAULT' in config:
+                    self.read_env_config(config)
+                else:
+                    err_msg = 'Cannot find section headers: %s, %s' % (env, 'DEFAULT')
+                    raise MissingSectionHeaderError(err_msg)
+        except Error as e:
+            logger.error("[ERROR] ConfigParser error: %s", sys.exc_info()[0])
+            logger.error(traceback.print_exc())
+            abort(500)
+        except Exception as err:
+            logger.error("[ERROR] Unexpected error: %s", sys.exc_info()[0])
+            logger.error(traceback.print_exc())
+            abort(500)
+
+    def read_env_config(self, config, env='DEFAULT'):
+        if 'las_url' in config[env]:
+            self.__url = config[env]['las_url']
+        else:
+            logger.warning("Unable to find: las url in %s", config[env])
+
     def analysis(self, input, lookup_upos=None):
         res = " "
         j = self.morphological_analysis(input)
@@ -54,7 +90,7 @@ class lasQuery:
     def morphological_analysis(self,input):
         
         # do POST
-        url = 'http://demo.seco.tkk.fi/las/analyze'
+        url = self.__url + '/analyze'
         params = {'text': input, 'locale':'fi', "forms":"V+N+Nom+Sg"}
         data = urllib.parse.urlencode(params).encode()
         
@@ -68,7 +104,7 @@ class lasQuery:
         result = ""
 
         # do POST
-        url = 'http://demo.seco.tkk.fi/las/baseform'
+        url = self.__url + '/baseform'
         params = {'text': input, 'locale': lang}
         data = urllib.parse.urlencode(params).encode()
 
@@ -93,10 +129,10 @@ class lasQuery:
     
     def prepared_request(self, input, lang):
         s = Session()
-        url = 'http://demo.seco.tkk.fi/las/baseform'
+        url = self.__url + '/baseform'
         params = {'text': input, 'locale' : lang}
         data = urllib.parse.urlencode(params).encode()
-        req = Request('POST','http://demo.seco.tkk.fi/las/baseform',headers={'X-Custom':'Test'},data=params)
+        req = Request('POST',url,headers={'X-Custom':'Test'},data=params)
         prepared = req.prepare()
 
         logger.info(prepared.headers)
@@ -106,15 +142,15 @@ class lasQuery:
             resp = s.send(prepared)
             return resp
         except requests.ConnectionError as ce:
-            print("Unable to open with native function. Error: "  + str(ce))
+            logger.error("Unable to open with native function. Error: "  + str(ce))
         return None
-        
+
     def prepared_request_morphological(self, input):
         s = Session()
-        url = 'http://demo.seco.tkk.fi/las/baseform'
+        url = self.__url + '/analyze'
         params = {'text': input, 'locale':'fi', "forms":"V+N+Nom+Sg"}
         data = urllib.parse.urlencode(params).encode()
-        req = Request('POST','http://demo.seco.tkk.fi/las/analyze',headers={'X-Custom':'Test'},data=params)
+        req = Request('POST',url,headers={'X-Custom':'Test'},data=params)
         prepared = req.prepare()
 
         logger.info(prepared.headers)
@@ -124,9 +160,9 @@ class lasQuery:
             resp = s.send(prepared)
             return resp
         except requests.ConnectionError as ce:
-            print("Unable to open with native function. Error: "  + str(ce))
+            logger.error("Unable to open with native function. Error: "  + str(ce))
         return None
-    
+
     def pretty_print_POST(self,req):
         """
         At this point it is completely built and ready

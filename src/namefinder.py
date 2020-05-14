@@ -10,6 +10,13 @@ from src.ambiguation_resolver import AmbiguityResolver
 import sys, traceback
 from flask import abort
 from src.las_query import lasQuery
+import logging
+import logging.config
+
+
+# logging setup
+logging.config.fileConfig(fname='conf/logging.ini', disable_existing_loggers=False)
+logger = logging.getLogger('namefinder')
 
 class NameFinder:
     def __init__(self):
@@ -19,18 +26,18 @@ class NameFinder:
         self.first_name_ind = dict()
 
     def identify_name(self, env, sentence_chunk_strings, index_list, original_sentence_data, check_date=None, gender=False, title=False, date=False, word=False):
-        #print("Check titles? ",title)
+        logger.debug("Check titles? %s",title)
         names = dict()
         all_names = list()
         resp = None
         for i,name_string in sentence_chunk_strings.items():
             self.last_names[i] = list()
             self.first_names[i] = list()
-            #print("Name:",name_string)
+            logger.debug("Name: %s",name_string)
 
             dict_names, arr_names = self.split_names_to_arr(name_string, i)
             if len(arr_names) > 0:
-                #print("CHECK dates:", check_date, i, arr_names)
+                logger.debug("CHECK dates: %s, %s, %s", check_date, i, arr_names)
                 checking_date = None
                 #ind = i + 1
                 if date is True and i in check_date:
@@ -38,8 +45,8 @@ class NameFinder:
 
                 nr = NameRidler(dict_names, arr_names, name_string, env)
 
-                name_list, resp = nr.get_names(check_for_dates=checking_date, gender=gender, titles=title, dates=date, word=word, fulltext=str(original_sentence_data[index_list[i]].get_sentence_string()), complete_list_of_name=all_names)
-                #print("Using index:", index_list[i])
+                name_list, resp = nr.get_names(check_for_dates=checking_date, gender=gender, titles=title, dates=date, word=word, fulltext=str(original_sentence_data[index_list[i]].get_sentence_string()), complete_list_of_name=all_names, env=env)
+                logger.debug("Using index: %s", index_list[i])
 
                 # parsing result
                 if index_list[i] not in names.keys():
@@ -53,7 +60,7 @@ class NameFinder:
 
     def split_names_to_arr(self, name_string_obj, j):
         name_string = name_string_obj.get_lemma()
-        #print("Process string:",name_string)
+        logger.info("Process string: %s",name_string)
         names = name_string.split(" ")
         dict_names = dict()
         first_names = list()
@@ -91,7 +98,7 @@ class NameFinder:
                 elif len(builder) > 0 and (name.lower() in binders or name[0].isupper()):
                     builder = builder + " " + name
                 else:
-                    print("Unable to identify name:", name)
+                    logger.info("Unable to identify name: %s", name)
 
                     if len(builder) > 0 and (name.lower() in binders or name[0].isupper()):
                         last_names.append(builder)
@@ -108,7 +115,7 @@ class NameFinder:
                     self.last_names[j].extend(last_names)
                     self.first_names[j].extend(first_names)
 
-                    #print("Names in dict:", dict_names)
+                    logger.debug("Names in dict: %s", dict_names)
 
                     first_names = list()
                     last_names = list()
@@ -119,8 +126,8 @@ class NameFinder:
         self.last_names[j].extend(last_names)
         self.first_names[j].extend(first_names)
 
-        #print("Names:",self.first_names[j], self.last_names[j])
-        #print("Names in dict:", dict_names)
+        logger.debug("Names: %s, %s",self.first_names[j], self.last_names[j])
+        logger.debug("Names in dict: %s", dict_names)
 
         return dict_names, self.first_names[j] + self.last_names[j]
 
@@ -149,7 +156,6 @@ class NameRidler:
 
         # query and parse
         names = self.sparql.query_names(dict_names, endpoint=self.henko_endpoint)
-        #print(names)
         self.parse(names, sentence_obj)
 
         # disambiguate
@@ -178,47 +184,47 @@ class NameRidler:
                     err_msg = 'Cannot find section headers: %s, %s' % (env, 'DEFAULT')
                     raise MissingSectionHeaderError(err_msg)
         except Error as e:
-            print("[ERROR] ConfigParser error:", sys.exc_info()[0])
-            traceback.print_exc()
+            logger.error("[ERROR] ConfigParser error: %s", sys.exc_info()[0])
+            logger.error(traceback.print_exc())
             abort(500)
         except Exception as err:
-            print("[ERROR] Unexpected error:", sys.exc_info()[0])
-            traceback.print_exc()
+            logger.error("[ERROR] Unexpected error: %s", sys.exc_info()[0])
+            logger.error(traceback.print_exc())
             abort(500)
 
     def read_env_config(self, config, env='DEFAULT'):
         if 'henko_endpoint' in config[env]:
             self.henko_endpoint = config[env]['henko_endpoint']
         else:
-            print("Unable to find: henko_endpoint in ", config[env])
+            logger.warnning("Unable to find: henko_endpoint in %s", config[env])
             #self.henko_endpoint = "http://ldf.fi/henko/sparql"
 
         if 'gender_guess_url' in config[env]:
             self.gender_guess_url = config[env]['gender_guess_url']
         else:
-            print("Unable to find: gender_guess_url in ", config[env])
+            logger.warnning("Unable to find: gender_guess_url in %s", config[env])
             #self.gender_guess_url = "http://nlp.ldf.fi/gender-guess"
 
         if 'gender_guess_threshold' in config[env]:
             self.gender_guess_threshold = float(config[env]['gender_guess_threshold'])
         else:
-            print("Unable to find: gender_guess_threshold in ", config['DEFAULT'])
+            logger.warnning("Unable to find: gender_guess_threshold in %s", config['DEFAULT'])
             #self.gender_guess_threshold = 0.8
 
         if 'regex_url' in config[env]:
             self.regex_url = config[env]['regex_url']
         else:
-            print("Unable to find: regex_url in ", config[env])
+            logger.warnning("Unable to find: regex_url in %s", config[env])
             #self.regex_url = "http://nlp.ldf.fi/regex"
 
         if 'string_chunking_pattern' in config[env]:
             self.string_chunking_pattern = config[env]['string_chunking_pattern'].split(',')
         else:
-            print("Unable to find: string_chunking_pattern in ", config[env])
+            logger.warnning("Unable to find: string_chunking_pattern in %s", config[env])
             self.string_chunking_pattern = r'(, |; | \(|\)| ja | tai )'
 
     # render data into result format
-    def get_names(self, check_for_dates=None, gender=False, titles=False, dates=False, word=False, fulltext=None, complete_list_of_name=None):
+    def get_names(self, check_for_dates=None, gender=False, titles=False, dates=False, word=False, fulltext=None, complete_list_of_name=None, env='DEFAULT'):
         responses = dict()
         entities = list()
         fullnames = list()
@@ -263,20 +269,20 @@ class NameRidler:
                                 else:
                                     entity['death_date'] = item[0]
                 if titles and fulltext != None:
-                    #print("TITLE CHECK")
-                    title = self.find_title(fulltext, str_name)
+                    logger.debug("TITLE CHECK")
+                    title = self.find_title(fulltext, str_name, env)
                     entity['titles'] = list()
                     entity['titles'].append(title)
                 for item in arr:
                     if item.get_json() not in items:
-                        #print("Item:", item)
+                        logger.debug("Item: %s", item)
                         items.append(item.get_json())
 
                 entity['names'] = items
                 entities.append(entity)
                 prev_entity = entity
 
-        #print("entities", entities)
+        logger.debug("entities %s", entities)
         return entities, responses
 
     def check_string_start(self, string):
@@ -328,7 +334,7 @@ class NameRidler:
             rs_queried_name = rs.get_resultset()
             counter = 1
             for i, queried_name in rs_queried_name.items():
-                print(i, queried_name)
+                logger.info("%s, %s",i, queried_name)
                 if string_start != None:
                     prev_string_start = string_start
 
@@ -343,8 +349,8 @@ class NameRidler:
                     linkage = str(result.get_linkage())
                     place = result.get_ref_place()
                     vocation = result.get_ref_vocation()
-                    #print(result, counter, prev, name, result.get_ref_place())
-                    #print("P/V:",str(place), vocation)
+                    logger.debug("%s, %s, %s, %s, %s",result, counter, prev, name, result.get_ref_place())
+                    logger.debug("P/V: %s, %s",str(place), vocation)
 
                     if counter == 0:
                         counter += 1
@@ -355,13 +361,13 @@ class NameRidler:
                             if string_start != None:
                                 prev_string_start = string_start
                             else:
-                                print("string start none x.x", prev_string_start)
+                                logger.info("string start none x.x: %s", prev_string_start)
                         else:
-                            print("Not raising counter:", prev.get_name(), label)
+                            logger.info("Not raising counter: %s, %s", prev.get_name(), label)
 
                     string_start, string_end = sentence_obj.find_name_location(label, prev_string_start, string_end)
                     if string_start == None:
-                        print("String start none:", label, uri, type, linkage, prev_string_start, string_end)
+                        logger.info("String start none: %s, %s, %s, %s, %s, %s", label, uri, type, linkage, prev_string_start, string_end)
                     original_form = sentence_obj.find_from_text(string_start, string_end)
 
                     if string_end != None and string_start != None and original_form != None:
@@ -371,10 +377,10 @@ class NameRidler:
                                     (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1) and (prev.get_string_end()<=string_start-2) and \
                                     (prev.get_name_lemma() != prev.get_name() or original_form != label.strip()):
                                 counter = 1
-                                print("Adding a last name:", prev.get_type(), type)
-                                print("Adding a last name:", prev.get_name().strip(), label.strip())
-                                print("Adding a last name:",len(list(arr.keys()))>1)
-                                print("Adding a last name:", prev.get_string_end(),string_start-2)
+                                logger.info("Adding a last name: %s (%s)", prev.get_type(), type)
+                                logger.info("Adding a last name: %s, %s", prev.get_name().strip(), label.strip())
+                                logger.info("Adding a last name: %s",str(len(list(arr.keys()))>1))
+                                logger.info("Adding a last name: %s, %s", prev.get_string_end(),string_start-2)
 
                                 arr, full_name, full_name_counter, full_name_lemma, helper_arr, name = self.extract_name(
                                     arr,
@@ -386,7 +392,7 @@ class NameRidler:
                                 if label != prev.get_name():
                                     full_name += label + " "
 
-                        print("Add name:", label, original_form, count, type, counter, uri, linkage, string_start)
+                        logger.info("Add name: label=%s, original_form=%s, count=%s, type=%s, counter=%s, uri=%s, link=%s, start=%s", label, original_form, count, type, counter, uri, linkage, string_start)
                         name = Name(label, original_form, count, type, counter, uri, linkage, string_start, place, vocation)
 
                         if counter not in helper_arr.keys():
@@ -406,24 +412,23 @@ class NameRidler:
                                 if item not in qn_helper[item.get_label()]:
                                     qn_helper[label].append(item)
 
-            #print(arr, full_name_counter, helper_arr, name, queried_name)
+            logger.debug("%s, %s, %s, %s, %s",arr, full_name_counter, helper_arr, name, queried_name)
             arr, full_name, full_name_counter, full_name_lemma, helper_arr, name = self.extract_name(arr,
                                                                                                      full_name_counter,
                                                                                                      helper_arr, name,qn_helper)
-            #print(arr, full_name, full_name_counter, full_name_lemma, helper_arr, name)
+            logger.debug("%s, %s, %s, %s, %s, %s",arr, full_name, full_name_counter, full_name_lemma, helper_arr, name)
 
-    def ambiguity_solver(self, names, str_full_name_lemma):
-        last_name = None
-        for name_id, arr_names in self.full_names:
-            str_name = name_id.split('_')[0].strip()
-            if str_full_name_lemma != self.full_name_lemmas[str_name]:
-                pass
-
+    # def ambiguity_solver(self, names, str_full_name_lemma):
+    #     last_name = None
+    #     for name_id, arr_names in self.full_names:
+    #         str_name = name_id.split('_')[0].strip()
+    #         if str_full_name_lemma != self.full_name_lemmas[str_name]:
+    #             pass
 
     def extract_name(self, arr, full_name_counter, helper_arr, name, alternatives):
         argh, full_name, full_name_lemma = self.determine_name(arr, helper_arr, alternatives)
 
-        #print("[extract_name] Full name:", full_name, argh, full_name_counter)
+        logger.debug("[extract_name] Full name: %s %s %s", full_name, argh, full_name_counter)
         fullname_ind = full_name + "_" + str(full_name_counter)
 
         full_name_entity = FullName(full_name_counter, full_name, full_name_lemma, argh)
@@ -442,7 +447,7 @@ class NameRidler:
         return arr, full_name, full_name_counter, full_name_lemma, helper_arr, name
 
     def determine_name(self, names, helper, alternatives):
-        #print("[determine_name]: ...")
+        logger.debug("[determine_name]: ...")
         family_names = list()
         first_names = list()
         last = len(helper)
@@ -462,8 +467,8 @@ class NameRidler:
                             first_names.append(prev)
                             name_unidentified = False
                         else:
-                            print("Cannot add,", prev)
-                print("Before chrash:",alternatives, name.get_name())
+                            logger.info("Cannot add, %s", prev)
+                logger.debug("Before crash: %s, %s",alternatives, name.get_name())
                 if self.is_family_name(name, last, alternatives[name.get_name_lemma()]) and not(self.is_first_name(name, last)):
                     if name not in family_names:
                         family_names.append(name)
@@ -480,7 +485,7 @@ class NameRidler:
                         prev = name
                         name_unidentified = False
                     else:
-                        print("Unable to identify name --> ", name, last, helper)
+                        logger.warnning("Unable to identify name --> %s %s %s", name, last, helper)
                         name_unidentified = True
                         prev = name
 
@@ -494,7 +499,7 @@ class NameRidler:
                     first_names.append(prev)
                     name_unidentified = False
                 else:
-                    print("Cannot add,", prev)
+                    logger.warning("Cannot add, %s", prev)
 
         fnames = [fn.get_name() for fn in first_names]
         lnames = [fn.get_name() for fn in family_names]
@@ -502,12 +507,12 @@ class NameRidler:
         overlap = set(fnames).intersection(set(lnames))
 
         if len(overlap) > 0:
-            #print("Overlapping names:", overlap)
+            logger.debug("Overlapping names: %s", overlap)
             for o in overlap:
-                #print("Before, check last", last, helper, names)
+                logger.debug("Before, check last: %s, %s, %s", last, helper, names)
                 first_names, family_names = self.reduce_overlapping(o, first_names, family_names, last, alternatives)
 
-        #print("Return names:", first_names + family_names)
+        logger.debug("Return names: %s", first_names + family_names)
 
         full = first_names + family_names
         full_name_lemma = ' '.join(str(e.get_name_lemma()) for e in full)
@@ -520,7 +525,7 @@ class NameRidler:
             fname = self.find_name(fnames, label)
             lname = self.find_name(lnames, label)
 
-            #print(fname, lname)
+            logger.debug(fname, lname)
 
             l_last = len(lnames)-1
             f_last = len(fnames)-1
@@ -543,53 +548,52 @@ class NameRidler:
                 else:
                     prob_A = fname.get_count()
                     prob_B = lname.get_count()
-                    print("Probability that it is a first name:", fname.get_count())
-                    print("Label:", label)
-                    print("Locations:", fname.get_location(), lname.get_location())
-                    print("Is family name? ", self.is_family_name(lname, last, alternatives[lname.get_name_lemma()]))
-                    print("Is first name? ", self.is_first_name(fname, last))
+                    logger.info("Probability that it is a first name: %s", fname.get_count())
+                    logger.info("Label: %s", label)
+                    logger.info("Locations: %s, %s", fname.get_location(), lname.get_location())
+                    logger.info("Is family name? %s", self.is_family_name(lname, last, alternatives[lname.get_name_lemma()]))
+                    logger.info("Is first name? %s", self.is_first_name(fname, last))
             else:
                 if lname == None:
-                    print("Unable to find label from lastnames: ", label, lnames)
+                    logger.warnning("Unable to find label from lastnames: %s, %s", label, lnames)
                 if fname == None:
-                    print("Unable to find label from firstnames: ", label, fnames)
+                    logger.warnning("Unable to find label from firstnames: %s, %s", label, fnames)
 
             fnames.sort(key=lambda x: x.get_string_start(), reverse=False)
             lnames.sort(key=lambda x: x.get_string_start(), reverse=False)
             #lname_list = sorted(lnames, key=lambda x: x.string_start, reverse=False)
-            #print("[COMPARE]",fnames, fname_list)
-            #print("[COMPARE]",lnames, lname_list)
+
             return fnames, lnames
 
     def find_name(self, arr, label):
         for item in arr:
-            #print("Search for label from item", label, item)
+            logger.debug("Search for label %s from item %s", label, item)
             if item.get_name().strip() == label.strip():
                 return item
 
         return None
 
     def is_family_name(self, name, last, alternatives):
-        #print("Is lastname?", name, last, alternatives)
+        logger.debug("Is lastname? %s, %s, %s", name, last, alternatives)
         other_types = [a.get_type() for a in alternatives if a.get_type() != name.get_type()]
         if name.get_type() == "Sukunimi" and name.get_location() == last:
             return True
         elif name.get_type() == "Sukunimi" and len(other_types) < 1:
-            #print("Others", other_types)
+            logger.debug("Others: %s", other_types)
             return True
         return False
 
     def is_first_name(self, name, last):
-        #print("Location of first:", last, name.get_location(), name.get_type(), name)
+        logger.debug("Location of first: %s, %s, %s, %s", last, name.get_location(), name.get_type(), name)
         if name.get_type() == "Etunimi" and ((last == 1 or name.get_location() < last) and name.get_location() < 5):
             return True
         else:
             if name.get_type() != "Etunimi":
-                print("Not a first name: Type FAIL")
+                logger.info("Not a first name: Type FAIL")
             if (last != 1 or name.get_location() > last):
-                print("Not a first name: location and last FAIL")
+                logger.info("Not a first name: location and last FAIL")
             if name.get_location() >= 5:
-                print("Not a first name: Too long, FAIL")
+                logger.info("Not a first name: Too long, FAIL")
         return False
 
     def guess_gender(self, name):
@@ -631,26 +635,26 @@ class NameRidler:
 
         try:
             if resp != None:
-                print("Request parameters:", params)
-                print("Response status:", resp.status_code)
-                print("RESPONSE header:", resp.headers)
-                print("RESPONSE raw:", resp.raw)
-                print("RESPONSE content:", resp.content)
-                print("RESPONSE request URL:", resp.url)
+                logger.info("Request parameters: %s", params)
+                logger.info("Response status: %s", resp.status_code)
+                logger.info("RESPONSE header: %s", resp.headers)
+                logger.info("RESPONSE raw: %s", resp.raw)
+                logger.info("RESPONSE content: %s", resp.content)
+                logger.info("RESPONSE request URL: %s", resp.url)
             else:
-                print("Raw response")
+                logger.info("Raw response")
             data = resp.json()
         except requests.ConnectionError as ce:
-            print("Unable to open with native function. Error: " + str(ce))
+            logger.error("Unable to open with native function. Error: %s" + str(ce))
         except Exception as e:
             if resp != None:
-                print("Unable to process a request:", resp, resp.text)
+                logger.error("Unable to process a request: %s, %s", resp, resp.text)
                 return "Unknown", resp
-            print(e)
+            logger.error(e)
 
             return "Unknown", resp
 
-        print(data)
+        logger.info(data)
 
         if 'gender' in data['results']:
             return data['results']['gender'], resp
@@ -659,7 +663,7 @@ class NameRidler:
 
     def query_dates(self, string):
 
-        #print("CHECK DATE")
+        logger.debug("CHECK DATE")
 
         import requests
         import logging
@@ -681,7 +685,6 @@ class NameRidler:
         requests_log.setLevel(logging.DEBUG)
         requests_log.propagate = True
 
-        #s = Session()
         data = None
 
         # api-endpoint
@@ -697,34 +700,33 @@ class NameRidler:
 
         try:
             if resp != None:
-                print("Request parameters:", params)
-                print("Response status:", resp.status_code)
-                print("RESPONSE header:", resp.headers)
-                print("RESPONSE raw:", resp.raw)
-                print("RESPONSE content:", resp.content)
-                print("RESPONSE request URL:", resp.url)
+                logger.info("Request parameters: %s", params)
+                logger.info("Response status: %s", resp.status_code)
+                logger.info("RESPONSE header: %s", resp.headers)
+                logger.info("RESPONSE raw: %s", resp.raw)
+                logger.info("RESPONSE content: %s", resp.content)
+                logger.info("RESPONSE request URL: %s", resp.url)
             else:
-                print("Raw response")
+                logger.info("Raw response")
             resultset = resp.json()
             data = None
             if resultset['status'] == 200:
                 data = resultset['data']
         except requests.ConnectionError as ce:
-            print("Unable to open with native function. Error: "  + str(ce))
+            logger.error("Unable to open with native function. Error: %s", str(ce))
         except Exception as e:
             if resp != None:
-                print("Unable to process a request:", resp, resp.text)
-                #return "Unknown 1", resp
-            print(e)
+                logger.error("Unable to process a request: %s %s", resp, resp.text)
+            logger.error(e)
 
             return "Unknown 2", resp
 
-        #print("DATA:",data)
+        logger.debug("DATA: %s",data)
         results = dict()
 
         if data != None:
             for key,item in data.items():
-                #print('Item:',item)
+                logger.debug('Item: %s',item)
                 for i in item['entities']:
                     if 'category' in i and 'entity' in i:
                         if i['category'] == 'DATETIME':
@@ -734,14 +736,14 @@ class NameRidler:
                                 results[string] = list()
                             results[string].append((i['entity'], start, end))
                         else:
-                            print("Wrong type:", item['entities'])
+                            logger.info("Wrong type: %s", item['entities'])
                 else:
-                    print("Unable to find entity in results:", item['entities'])
+                    logger.info("Unable to find entity in results:" %s, item['entities'])
 
         return results, resp
 
-    def find_title(self, string, name):
-        las = lasQuery()
+    def find_title(self, string, name, env):
+        las = lasQuery(env)
         lookup = string.split(name)[0].strip()
         if len(lookup) > 0:
             word_before_name = ""
@@ -749,13 +751,13 @@ class NameRidler:
                 word_before_name = lookup.split(' ')[-1]
             else:
                 word_before_name = lookup
-            #print("From string: [%s], %s" % (lookup, lookup.split(' ')))
-            #print("Check string:", word_before_name)
+            logger.debug("From string: [%s], %s" % (lookup, lookup.split(' ')))
+            logger.debug("Check string: %s", word_before_name)
             result = las.analysis(input=word_before_name, lookup_upos='NOUN')
-            #print("ANALYSIS RESULT:",result)
+            logger.debug("ANALYSIS RESULT: %s",result)
             return result.strip()
         else:
-            print("Cannot fin title")
+            logger.info("Cannot find title")
 
 
 class FullName:

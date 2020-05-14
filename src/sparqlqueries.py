@@ -4,13 +4,13 @@ from collections import OrderedDict
 import requests, json
 import validators
 import sys, traceback
+import logging.config
 
-logger = logging.getLogger('SparqlQuries')
-hdlr = logging.FileHandler('logs/sparql.log')
-formatter = logging.Formatter('%(asctime)s %(name)s %(levelname)s %(message)s')
-hdlr.setFormatter(formatter)
-logger.addHandler(hdlr)
-logger.setLevel(logging.INFO)
+
+# logging setup
+logging.config.fileConfig(fname='conf/logging.ini', disable_existing_loggers=False)
+logger = logging.getLogger('sparql')
+
 class SparqlQuries:
     def __init__(self):
         pass
@@ -27,7 +27,7 @@ class SparqlQuries:
         results = sparql.query().convert()
 
         for result in results["results"]["bindings"]:
-            logging.info(result["label"]["value"])
+            logger.info(result["label"]["value"])
 
         return results
 
@@ -39,7 +39,7 @@ class SparqlQuries:
                     return {}
 
                 for i, name in names.items():
-                    #print("Query names:",name)
+                    logger.debug("Query names: %s",name)
                     # http://yasgui.org/short/ATCBjNyFz
                     #endpoint = "http://ldf.fi/henko/sparql"
 
@@ -64,8 +64,8 @@ class SparqlQuries:
 
                     query = query.replace('$names', " ".join(['"{0}"'.format(x) for x in name]))
 
-                    #print("endpoint:", endpoint)
-                    #print("query:", query)
+                    logger.debug("endpoint: %s", endpoint)
+                    logger.debug("query: %s", query)
 
                     sparql = SPARQLWrapper(endpoint)
                     sparql.setQuery(query)
@@ -73,7 +73,7 @@ class SparqlQuries:
                     sparql.setReturnFormat(JSON)
                     results = sparql.query().convert()
 
-                    #print("results:", results)
+                    logger.debug("results: %s", results)
                     n = str(i) + "_" + " ".join(name)
                     if n not in result_set.keys():
                         result_set[n] = list()
@@ -82,11 +82,11 @@ class SparqlQuries:
 
             return result_set
         except ValueError as verr:
-            print("Unable to query, url is not valid:", sys.exc_info()[0])
-            traceback.print_exc()
+            logger.error("Unable to query, url is not valid: %s", sys.exc_info()[0])
+            logger.error(traceback.print_exc())
         except Exception as err:
-            print("Unexpected error:", sys.exc_info()[0])
-            traceback.print_exc()
+            logger.error("Unexpected error: %s", sys.exc_info()[0])
+            logger.error(traceback.print_exc())
         finally:
             return result_set
 
@@ -103,7 +103,6 @@ class SparqlResultSet():
         self.len = 0
 
     def parse(self, values, results):
-        #self.len = 0
         for val in values:
             self.resultset[self.len] = list()
             item = SparqlResultSetItem()
@@ -111,18 +110,18 @@ class SparqlResultSet():
             item.set_ord(self.len)
             self.id_map[self.len] = item
             self.len += 1
-        #print(self.id_map)
-        #print(self.resultset)
+        logger.debug(self.id_map)
+        logger.debug(self.resultset)
 
         for result in results["results"]["bindings"]:
             for i in self.resultset.keys():
                 item = SparqlResultSetItem()
                 item.parse(result, i)
-                #print(item)
+                logger.debug(item)
                 if item == self.id_map[i]:
                     self.resultset[i].append(item)
-                #else:
-                #    print(item, "not in", self.id_map[i])
+                else:
+                    logger.debug("%s not in %s", str(item), str(self.id_map[i]))
 
     def get_item(self, ind, item):
         for i in self.resultset[ind]:
@@ -146,7 +145,7 @@ class SparqlResultSetItem():
         self.refersVocation = None
 
     def parse(self, result, ord):
-        #print("Result:", result)
+        logger.debug("Result: %s", str(result))
         self.ord = ord
         self.uri = str(result["name"]["value"])
         self.name = str(result["names"]["value"])
@@ -156,9 +155,9 @@ class SparqlResultSetItem():
         self.linkage = str(result["nameType"]["value"])
         if 'referencesPlace' in result:
             self.refersPlace = str(result["referencesPlace"]["value"])
-            #print("referencesPlace in results:"+self.refersPlace)
-        #else:
-        #    print("referencesPlace not in results")
+            logger.debug("referencesPlace in results: %s",str(self.refersPlace))
+        else:
+            logger.debug("referencesPlace not in results")
         if 'referencesVocation' in result:
             self.refersVocation = str(result["referencesVocation"]["value"])
 

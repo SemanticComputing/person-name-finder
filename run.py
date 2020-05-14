@@ -18,8 +18,12 @@ from distutils.util import strtobool
 from datetime import datetime as dt
 import traceback
 from flask import abort
+import logging.config
 
 app = Flask(__name__)
+
+logging.config.fileConfig(fname='conf/logging.ini', disable_existing_loggers=False)
+logger = logging.getLogger('run')
 
 @app.before_request
 def before_request():
@@ -29,6 +33,7 @@ def before_request():
         print("ARGS",request.args)
         print("DATA",request.data)
         print("FORM",request.form)
+
 
 def parse_input(request):
     input = None
@@ -45,13 +50,13 @@ def parse_input(request):
     try:
         env = os.environ['NAME_FINDER_CONFIG_ENV']
     except KeyError as kerr:
-        print("Environment variable NAME_FINDER_CONFIG_ENV not set:", sys.exc_info()[0])
-        traceback.print_exc()
+        logger.error("Environment variable NAME_FINDER_CONFIG_ENV not set: %s", sys.exc_info()[0])
+        logger.error(traceback.print_exc())
         env = None
         abort(500, 'Problem with setup: internal server error')
     except Exception as err:
-        print("Unexpected error:", sys.exc_info()[0])
-        traceback.print_exc()
+        logger.error("Unexpected error: %s", sys.exc_info()[0])
+        logger.error(traceback.print_exc())
         env = None
         abort(500, 'Unexpected Internal Server Error')
 
@@ -63,11 +68,11 @@ def parse_input(request):
         word = extract_value(get_args_data('word'))
         if text != None:
             input = {0:text}
-            #print(gender, text)
-            sentence_data, indeces, regex_checks, full_sentences = tokenization(text)
-            #print("tokenization results",sentences)
+            logger.debug("%s, %s",gender, text)
+            sentence_data, indeces, regex_checks, full_sentences = tokenization(text, env=env)
+            logger.debug("tokenization results: %s",sentences)
             sentences, index_list = do_lemmatization(sentence_data, indeces)
-            #print("data", input)
+            logger.debug("data: %s", input)
         else:
             return input, sentences, index_list, gender, title, date
     elif request.method == "POST":
@@ -92,25 +97,25 @@ def parse_input(request):
             date = extract_value(get_header_data('date'))
             word = extract_value(get_header_data('word'))
         else:
-            print("Unable to process the request! When using post, give param text using raw data or add it to form, url, or header.")
-            print("Bad type", request.headers['Content-Type'])
-            print("Missing data", request.data)
-            print("Missing from header", request.headers)
-            print("Missing from form", request.form)
-            print("Missing from args", request.args)
+            logger.warnning("Unable to process the request! When using post, give param text using raw data or add it to form, url, or header.")
+            logger.warnning("Bad type: %s", request.headers['Content-Type'])
+            logger.warnning("Missing data: %s", request.data)
+            logger.warnning("Missing from header: %s", request.headers)
+            logger.warnning("Missing from form: %s", request.form)
+            logger.warnning("Missing from arg: %ss", request.args)
 
         if text == None:
             return input, sentences, index_list, gender, title, date
         if len(text) > 0:
-            #print(gender, text)
+            logger.debug("%s, %s",gender, text)
             sentence_data, indeces, regex_checks, full_sentences = tokenization(text)
-            #print("sentences dataset:", sentence_data)
+            logger.debug("sentences dataset: %s", sentence_data)
             sentences, index_list = do_lemmatization(sentence_data, indeces)
             input = {0: str(request.data.decode('utf-8'))}
-            #print("data:", input)
-            #print("sentences:", sentences)
+            logger.debug("data: %s", input)
+            logger.debug("sentences: %s", sentences)
     else:
-        print("This method is not yet supported:", request.method)
+        logger.warnning("This method is not yet supported: %s", request.method)
     return env, input, sentences, index_list, gender, title, date, word, regex_checks, full_sentences
 
 
@@ -144,27 +149,28 @@ def setup_tokenizer():
     with open('language-resources/abbreviations.csv') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=';')
         for row in csv_reader:
-            #print("Add abbreviation", row[0])
+            logger.debug("Add abbreviation: %s", row[0])
             tokenizer._params.abbrev_types.add(row[0])
     for i in range(0, 301):
         tokenizer._params.abbrev_types.add(i)
     return tokenizer
 
-def tokenization(text):
+
+def tokenization(text, env):
     #print('Tokenize this:', text)
     sentence_list = list()
     regex_check = dict()
     structure = dict()
 
     tokenizer = setup_tokenizer()
-    tp = TextParser(text)
+    tp = TextParser(text, env)
     sentence_list, structure, regex_check, full_sentences = tp.parse_input(tokenizer)
 
     return sentence_list, structure, regex_check, full_sentences
 
 
-def has_numbers(inputString):
-    return any(char.isdigit() for char in inputString)
+# def has_numbers(inputString):
+#     return any(char.isdigit() for char in inputString)
 
 
 def do_lemmatization(sentence_data, indeces):
@@ -174,28 +180,28 @@ def do_lemmatization(sentence_data, indeces):
         output[i] = sentence_data[i]#.get_lemma()
 
         index_lists[i] = indeces[i]
-        #print("Index list:", i, indeces[i], sentence_data[i])
+        logger.debug("Index list: %s. %s, %s", i, indeces[i], sentence_data[i])
 
     return output, index_lists
 
-
-def lemmatize(text):
-    las = lasQuery()
-    lemmatized = las.lexical_analysis(text, 'fi')
-    #print("Lemmatized:", lemmatized)
-    return lemmatized
+#
+# def lemmatize(text, env):
+#     las = lasQuery(env)
+#     lemmatized = las.lexical_analysis(text, 'fi')
+#     #print("Lemmatized:", lemmatized)
+#     return lemmatized
 
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
     env, input_data, sentences, index_list, gender, title, date, word, regex_check, original_sentences = parse_input(request)
-    #print("DATA", sentences)
+    logger.debug("DATA: %s", sentences)
     if input_data != None:
         name_finder = NameFinder()
         results, code, responses = name_finder.identify_name(env, sentences, index_list, original_sentences, check_date=regex_check, gender=gender, title=title, date=date, word=word)
 
         if code == 1:
-            print('results',results)
+            logger.info('results: %s',results)
             data = {"status":200,"data":results, "service":"name-finder", "date":dt.today().strftime('%Y-%m-%d')}
             return jsonify(data)
         else:
@@ -207,7 +213,6 @@ def index():
     data = {"status": -1, "error": str(message), "service": "name-finder", "date": dt.today().strftime('%Y-%m-%d')}
 
     return jsonify(data)
-
 
 if __name__ == '__main__':
     app.run(debug=True)
