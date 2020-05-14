@@ -485,7 +485,7 @@ class NameRidler:
                         prev = name
                         name_unidentified = False
                     else:
-                        logger.warnning("Unable to identify name --> %s %s %s", name, last, helper)
+                        logger.warning("Unable to identify name --> %s %s %s", name, last, helper)
                         name_unidentified = True
                         prev = name
 
