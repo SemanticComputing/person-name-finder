@@ -1,22 +1,18 @@
-FROM alpine:3.8
-
-ENV GUNICORN_WORKER_AMOUNT 4
-ENV GUNICORN_TIMEOUT 300
-ENV GUNICORN_RELOAD ""
-
-RUN apk add python3 python3-dev build-base && rm -rf /var/cache/apk/*
+FROM python:3.6-slim-buster
 
 COPY requirements.txt ./requirements.txt
 RUN pip3 install -r requirements.txt
+RUN pip3 install gunicorn
+ENV GUNICORN_BIN /usr/local/bin/gunicorn
 
 RUN python3 -c "import nltk; nltk.download('punkt', '/usr/share/nltk_data')"
 
-RUN pip3 install gunicorn
-
 WORKDIR /app
 
-COPY src ./src
 COPY language-resources ./language-resources
+
+COPY src ./src
+
 COPY run.py ./
 
 ENV NAME_FINDER_CONFIG_ENV DEFAULT
@@ -31,6 +27,10 @@ RUN sed -i s/logging\.handlers\.RotatingFileHandler/logging\.StreamHandler/ $LOG
 
 RUN chgrp -R 0 /app \
  && chmod -R g+rwX /app
+
+ENV GUNICORN_WORKER_AMOUNT 4
+ENV GUNICORN_TIMEOUT 300
+ENV GUNICORN_RELOAD ""
 
 EXPOSE 5000
 
