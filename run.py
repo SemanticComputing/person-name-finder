@@ -202,7 +202,7 @@ def index():
 
         if code == 1:
             logger.info('results: %s',results)
-            data = {"status":200,"data":results, "service":"name-finder", "date":dt.today().strftime('%Y-%m-%d')}
+            data = {"status":200,"data":results, "service":"Person Name Finder, version 1.0", "date":dt.today().strftime('%Y-%m-%d')}
             return jsonify(data)
         else:
             data = {"status":-1,"error":results, "service":"name-finder", "date":dt.today().strftime('%Y-%m-%d')}
