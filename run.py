@@ -202,10 +202,10 @@ def index():
 
         if code == 1:
             logger.info('results: %s',results)
-            data = {"status":200,"data":results, "service":"Person Name Finder, version 1.0", "date":dt.today().strftime('%Y-%m-%d')}
+            data = {"status":200,"data":results, "service":"Person Name Finder, version 1.0-beta", "date":dt.today().strftime('%Y-%m-%d')}
             return jsonify(data)
         else:
-            data = {"status":-1,"error":results, "service":"name-finder", "date":dt.today().strftime('%Y-%m-%d')}
+            data = {"status":-1,"error":results, "service":"Person Name Finder, version 1.0-beta", "date":dt.today().strftime('%Y-%m-%d')}
             return jsonify(data)
     message = "<h3>Unable to process request</h3><p>Unable to retrieve results for text (%s).</p>" % str(request.args.get('text'))
     message += "<p>Please give parameters using GET or POST method. GET method example: <a href='http://127.0.0.1:5000/?text=Minna Susanna Claire Tamper' target='_blank'>http://127.0.0.1:5000/?text=Minna Susanna Claire Tamper</a></p>"+\
