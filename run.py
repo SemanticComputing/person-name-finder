@@ -25,14 +25,15 @@ app = Flask(__name__)
 logging.config.fileConfig(fname='conf/logging.ini', disable_existing_loggers=False)
 logger = logging.getLogger('run')
 
+
 @app.before_request
 def before_request():
     if True:
         print("HEADERS", request.headers)
         print("REQ_path", request.path)
-        print("ARGS",request.args)
-        print("DATA",request.data)
-        print("FORM",request.form)
+        print("ARGS", request.args)
+        print("DATA", request.data)
+        print("FORM", request.form)
 
 
 def parse_input(request):
@@ -66,17 +67,17 @@ def parse_input(request):
         title = extract_value(get_args_data('title'))
         date = extract_value(get_args_data('date'))
         word = extract_value(get_args_data('word'))
-        if text != None:
-            input = {0:text}
-            logger.debug("%s, %s",gender, text)
-            sentence_data, indeces, regex_checks, full_sentences = tokenization(text, env=env)
-            logger.debug("tokenization results: %s",sentences)
-            sentences, index_list = do_lemmatization(sentence_data, indeces)
+        if text is not None:
+            input = {0: text}
+            logger.debug("%s, %s", gender, text)
+            sentence_data, indexes, regex_checks, full_sentences = tokenization(text, env=env)
+            logger.debug("tokenization results: %s", sentences)
+            sentences, index_list = do_lemmatization(sentence_data, indexes)
             logger.debug("data: %s", input)
         else:
             return input, sentences, index_list, gender, title, date
     elif request.method == "POST":
-        if request.headers['Content-Type'] == 'text/plain' and len(request.data)>0:
+        if 'Content-Type' in request.headers and request.headers['Content-Type'] == 'text/plain' and len(request.data) > 0:
             text = str(request.data.decode('utf-8'))
         elif 'text' in request.form:
             text = get_form_data('text')
@@ -97,26 +98,32 @@ def parse_input(request):
             date = extract_value(get_header_data('date'))
             word = extract_value(get_header_data('word'))
         else:
-            logger.warnning("Unable to process the request! When using post, give param text using raw data or add it to form, url, or header.")
-            logger.warnning("Bad type: %s", request.headers['Content-Type'])
-            logger.warnning("Missing data: %s", request.data)
-            logger.warnning("Missing from header: %s", request.headers)
-            logger.warnning("Missing from form: %s", request.form)
-            logger.warnning("Missing from arg: %ss", request.args)
+            input_error(request)
 
-        if text == None:
+        if text is None:
             return input, sentences, index_list, gender, title, date
         if len(text) > 0:
-            logger.debug("%s, %s",gender, text)
-            sentence_data, indeces, regex_checks, full_sentences = tokenization(text)
+            logger.debug("%s, %s", gender, text)
+            sentence_data, indexes, regex_checks, full_sentences = tokenization(text)
             logger.debug("sentences dataset: %s", sentence_data)
-            sentences, index_list = do_lemmatization(sentence_data, indeces)
+            sentences, index_list = do_lemmatization(sentence_data, indexes)
             input = {0: str(request.data.decode('utf-8'))}
             logger.debug("data: %s", input)
             logger.debug("sentences: %s", sentences)
     else:
         logger.warnning("This method is not yet supported: %s", request.method)
     return env, input, sentences, index_list, gender, title, date, word, regex_checks, full_sentences
+
+
+def input_error(request):
+    logger.warnning(
+        "Unable to process the request! When using post, give param text using raw data or add it to form, url, "
+        "or header.")
+    logger.warnning("Bad type: %s", request.headers['Content-Type'])
+    logger.warnning("Missing data: %s", request.data)
+    logger.warnning("Missing from header: %s", request.headers)
+    logger.warnning("Missing from form: %s", request.form)
+    logger.warnning("Missing from arg: %ss", request.args)
 
 
 def extract_value(value):
@@ -157,7 +164,7 @@ def setup_tokenizer():
 
 
 def tokenization(text, env):
-    #print('Tokenize this:', text)
+    # print('Tokenize this:', text)
     sentence_list = list()
     regex_check = dict()
     structure = dict()
@@ -177,12 +184,13 @@ def do_lemmatization(sentence_data, indeces):
     output = dict()
     index_lists = dict()
     for i in range(0, len(sentence_data)):
-        output[i] = sentence_data[i]#.get_lemma()
+        output[i] = sentence_data[i]  # .get_lemma()
 
         index_lists[i] = indeces[i]
         logger.debug("Index list: %s. %s, %s", i, indeces[i], sentence_data[i])
 
     return output, index_lists
+
 
 #
 # def lemmatize(text, env):
@@ -194,25 +202,32 @@ def do_lemmatization(sentence_data, indeces):
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    env, input_data, sentences, index_list, gender, title, date, word, regex_check, original_sentences = parse_input(request)
+    env, input_data, sentences, index_list, gender, title, date, word, regex_check, original_sentences = parse_input(
+        request)
     logger.debug("DATA: %s", sentences)
     if input_data != None:
         name_finder = NameFinder()
-        results, code, responses = name_finder.identify_name(env, sentences, index_list, original_sentences, check_date=regex_check, gender=gender, title=title, date=date, word=word)
+        results, code, responses = name_finder.identify_name(env, sentences, index_list, original_sentences,
+                                                             check_date=regex_check, gender=gender, title=title,
+                                                             date=date, word=word)
 
         if code == 1:
-            logger.info('results: %s',results)
-            data = {"status":200,"data":results, "service":"Person Name Finder, version 1.0-beta", "date":dt.today().strftime('%Y-%m-%d')}
+            logger.info('results: %s', results)
+            data = {"status": 200, "data": results, "service": "Person Name Finder, version 1.0-beta",
+                    "date": dt.today().strftime('%Y-%m-%d')}
             return jsonify(data)
         else:
-            data = {"status":-1,"error":results, "service":"Person Name Finder, version 1.0-beta", "date":dt.today().strftime('%Y-%m-%d')}
+            data = {"status": -1, "error": results, "service": "Person Name Finder, version 1.0-beta",
+                    "date": dt.today().strftime('%Y-%m-%d')}
             return jsonify(data)
-    message = "<h3>Unable to process request</h3><p>Unable to retrieve results for text (%s).</p>" % str(request.args.get('text'))
-    message += "<p>Please give parameters using GET or POST method. GET method example: <a href='http://127.0.0.1:5000/?text=Minna Susanna Claire Tamper' target='_blank'>http://127.0.0.1:5000/?text=Minna Susanna Claire Tamper</a></p>"+\
-                    "POST method can be used by transmitting the parameters using url, header, or a form."
+    message = "<h3>Unable to process request</h3><p>Unable to retrieve results for text (%s).</p>" % str(
+        request.args.get('text'))
+    message += "<p>Please give parameters using GET or POST method. GET method example: <a href='http://127.0.0.1:5000/?text=Minna Susanna Claire Tamper' target='_blank'>http://127.0.0.1:5000/?text=Minna Susanna Claire Tamper</a></p>" + \
+               "POST method can be used by transmitting the parameters using url, header, or a form."
     data = {"status": -1, "error": str(message), "service": "name-finder", "date": dt.today().strftime('%Y-%m-%d')}
 
     return jsonify(data)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
