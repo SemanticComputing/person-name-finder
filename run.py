@@ -104,7 +104,7 @@ def parse_input(request):
             return input, sentences, index_list, gender, title, date
         if len(text) > 0:
             logger.debug("%s, %s", gender, text)
-            sentence_data, indexes, regex_checks, full_sentences = tokenization(text)
+            sentence_data, indexes, regex_checks, full_sentences = tokenization(text, env=env)
             logger.debug("sentences dataset: %s", sentence_data)
             sentences, index_list = do_lemmatization(sentence_data, indexes)
             input = {0: str(request.data.decode('utf-8'))}
