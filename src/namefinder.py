@@ -28,6 +28,7 @@ class NameFinder:
     def identify_name(self, env, sentence_chunk_strings, index_list, original_sentence_data, check_date=None, gender=False, title=False, date=False, word=False):
         logger.debug("Check titles? %s",title)
         names = dict()
+        #results = list()
         all_names = list()
         resp = None
         for i,name_string in sentence_chunk_strings.items():
@@ -53,10 +54,11 @@ class NameFinder:
                     names[index_list[i]] = dict()
                     names[index_list[i]]["entities"] = list()
                 names[index_list[i]]["entities"].extend(name_list)
-                names[index_list[i]]["sentence"]=str(original_sentence_data[index_list[i]].get_sentence_string())
+                names[index_list[i]]["text"]=str(original_sentence_data[index_list[i]].get_sentence_string())
+                names[index_list[i]]["sentence"] = str(index_list[i])
                 all_names.extend(nr.get_full_name_entities())
 
-        return names, 1, resp
+        return list(names.values()), 1, resp
 
     def split_names_to_arr(self, name_string_obj, j):
         name_string = name_string_obj.get_lemma()
@@ -525,7 +527,7 @@ class NameRidler:
             fname = self.find_name(fnames, label)
             lname = self.find_name(lnames, label)
 
-            logger.debug(fname, lname)
+            logger.debug("%s, %s", fname, lname)
 
             l_last = len(lnames)-1
             f_last = len(fnames)-1
