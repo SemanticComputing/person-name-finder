@@ -63,7 +63,7 @@ class lasQuery:
         res = " "
         j = self.morphological_analysis(input)
         reader = codecs.getreader("utf-8")
-
+        print(j)
         for w in j:
             analysis = w['analysis']
             for r in analysis:
@@ -73,7 +73,7 @@ class lasQuery:
                     upos=""
                     if 'tags' in part:
                         p = part['tags']
-
+                        print(lemma, p)
                         if 'UPOS' in p:
                             p1 = p['UPOS']
                             if len(p1)>0:
@@ -83,8 +83,45 @@ class lasQuery:
                             res = res + lemma + " "
                     elif upos == 'NOUN' or upos == 'PROPN':
                         res = res + lemma + " "
-                
         return res
+
+    def title_analysis(self, input, lookup_upos=None, get_first=False):
+        res = list()
+        j = self.morphological_analysis(input)
+        reader = codecs.getreader("utf-8")
+        #print(j)
+        for w in j:
+            analysis = w['analysis']
+            word = w['word']
+            wid = 0
+            #print("ANALYSIS FOR WORD:", word)
+            lemma, upos = self.get_first_interpretation(analysis, lookup_upos)
+            #print("AFTER ANALYSIS:",lemma, upos)
+            if upos is not None:
+                res.append((word, lemma, upos))
+
+        return res
+
+    def get_first_interpretation(self, analysis, lookup_upos):
+        for r in analysis:
+            wp = r['wordParts']
+            for part in wp:
+                lemma = part['lemma']
+                upos = ""
+                if 'tags' in part:
+                    p = part['tags']
+                    #print("TAGS:",lemma, p)
+                    if 'UPOS' in p:
+                        p1 = p['UPOS']
+                        #print("P1:", p1)
+                        if len(p1) > 0:
+                            upos = part['tags']['UPOS'][0]
+                            return lemma, upos
+                        else:
+                            return lemma, upos
+
+        return None, None
+
 
     #morphological_analysis    
     def morphological_analysis(self,input):

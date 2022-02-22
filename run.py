@@ -81,24 +81,18 @@ def parse_input(request):
             text = str(request.data.decode('utf-8'))
         elif 'text' in request.form:
             text = get_form_data('text')
-            gender = extract_value(get_form_data('gender'))
-            title = extract_value(get_form_data('title'))
-            date = extract_value(get_form_data('date'))
-            word = extract_value(get_form_data('word'))
         elif 'text' in request.args:
             text = request.args.get('text')
-            gender = extract_value(get_args_data('gender'))
-            title = extract_value(get_args_data('title'))
-            date = extract_value(get_args_data('date'))
-            word = extract_value(get_args_data('word'))
         elif 'Text' in request.headers:
             text = request.headers['Text']
-            gender = extract_value(get_header_data('gender'))
-            title = extract_value(get_header_data('title'))
-            date = extract_value(get_header_data('date'))
-            word = extract_value(get_header_data('word'))
         else:
             input_error(request)
+
+        # get other arguments that are boolean
+        gender = get_bool_argument('gender')
+        title = get_bool_argument('title')
+        date = get_bool_argument('date')
+        word = get_bool_argument('word')
 
         if text is None:
             return input, sentences, index_list, gender, title, date
@@ -124,6 +118,17 @@ def input_error(request):
     logger.warnning("Missing from header: %s", request.headers)
     logger.warnning("Missing from form: %s", request.form)
     logger.warnning("Missing from arg: %ss", request.args)
+
+
+def get_bool_argument(key):
+    val = None
+    if key in request.form:
+        val = extract_value(get_form_data(key))
+    elif key in request.args:
+        val = extract_value(get_args_data(key))
+    elif key in request.headers:
+        val = extract_value(get_header_data(key))
+    return val
 
 
 def extract_value(value):
@@ -207,6 +212,10 @@ def index():
     logger.debug("DATA: %s", sentences)
     if input_data != None:
         name_finder = NameFinder()
+        print("Params:")
+        print("Gender:", gender)
+        print("Title:", title)
+        print("Date:", date)
         results, code, responses = name_finder.identify_name(env, sentences, index_list, original_sentences,
                                                              check_date=regex_check, gender=gender, title=title,
                                                              date=date, word=word)

@@ -747,6 +747,7 @@ class NameRidler:
     def find_title(self, string, name, env):
         las = lasQuery(env)
         lookup = string.split(name)[0].strip()
+        print(lookup)
         if len(lookup) > 0:
             word_before_name = ""
             if ' ' in lookup:
@@ -755,12 +756,41 @@ class NameRidler:
                 word_before_name = lookup
             logger.debug("From string: [%s], %s" % (lookup, lookup.split(' ')))
             logger.debug("Check string: %s", word_before_name)
-            result = las.analysis(input=word_before_name, lookup_upos='NOUN')
+            result = self.find_noun_before_name(string, name, env) #las.analysis(input=lookup, lookup_upos='NOUN')
             logger.debug("ANALYSIS RESULT: %s",result)
             return result.strip()
         else:
             logger.info("Cannot find title")
 
+    def find_noun_before_name(self, string, name, env):
+        UPOS = 2
+        LEMMA = 1
+        WORD = 0
+        las = lasQuery(env)
+        result = las.title_analysis(input=string, lookup_upos='NOUN')
+        lookup = string.split(name)[0].strip()
+        if len(lookup) > 0:
+            word_before_name = ""
+            if ' ' in lookup:
+                word_before_name = lookup.split(' ')[-1]
+            else:
+                word_before_name = lookup
+        index = lookup.split(' ').index(word_before_name)
+        try:
+            tpl = result[index]
+            if tpl[UPOS] == 'NOUN':
+                return tpl[LEMMA]
+            else:
+                print("Wrong type", tpl[UPOS])
+                print("For word", tpl[WORD])
+        except Exception as err:
+            print(err)
+            print("RESULT:",result, index)
+            print("LOOKUP:", lookup, word_before_name, index)
+            print("STRING:",string)
+            print("NAME:", name)
+
+        return ""
 
 class FullName:
     def __init__(self, ind, full_name, full_name_lemma, full_name_entities):
