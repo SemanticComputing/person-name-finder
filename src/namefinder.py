@@ -258,10 +258,14 @@ class NameRidler:
                     entity['gender'], resp = self.guess_gender(str_name)
                     responses[name.strip()] = resp
                 if check_for_dates != None and dates is True and check_name == str_name:
+                    logger.debug("DATE CHECK: %s", check_for_dates)
                     output,resp = self.query_dates(check_for_dates)
                     date_type = self.check_string_start(check_for_dates)
+                    logger.debug("%s",output)
+                    logger.debug("%s",date_type)
                     if date_type > 0:
                         counter = 0
+
                         for item in output[check_for_dates]:
                             if '–' in item[0] or '-' in item[0]:
                                 entity['lifespan_time'] = item[0]
@@ -727,7 +731,7 @@ class NameRidler:
         results = dict()
 
         if data != None:
-            for key,item in data.items():
+            for item in data:
                 logger.debug('Item: %s',item)
                 for i in item['entities']:
                     if 'category' in i and 'entity' in i:
@@ -740,7 +744,7 @@ class NameRidler:
                         else:
                             logger.info("Wrong type: %s", item['entities'])
                 else:
-                    logger.info("Unable to find entity in results:" %s, item['entities'])
+                    logger.info("Unable to find entity in results:  %s", item['entities'])
 
         return results, resp
 
