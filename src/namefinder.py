@@ -663,7 +663,7 @@ class NameRidler:
         logger.info(data)
 
         if 'gender' in data['results']:
-            return data['results']['gender'], resp
+            return data['data']['gender'], resp
         else:
             return "Unknown", resp
 
