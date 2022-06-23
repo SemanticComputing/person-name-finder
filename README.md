@@ -1,6 +1,6 @@
 # name-finder-service
 
-Testing
+Person Name Finder searches for references of names based on Henko-ontology from the text and links them to it. It can also query context of a name such as titles associated with the name, name bearer's gender, or time span that can be associated with the name of a biographical person for instance.
 
 ## About
 
@@ -59,6 +59,7 @@ http://nlp.ldf.fi/name-finder?text=Minna Susanna Claire Tamper
 Post requests support parameters in the url, header, and from a form.
 
 The application supports text mining for following parameters:
+* text: the input text from which the entities are extracted
 * gender: using gender guessing service to statistically determine gender
 * date: extract dates that are related to a name, which are often lifespans or birth dates of a person
 * title: extracts possible titles situated in front of the full name, e.g., Presidentti Sauli Niinistö
