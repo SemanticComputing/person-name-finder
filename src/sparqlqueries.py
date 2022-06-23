@@ -1,7 +1,5 @@
 from SPARQLWrapper import SPARQLWrapper, JSON, BASIC
-import logging
 from collections import OrderedDict
-import requests, json
 import validators
 import sys, traceback
 import logging.config

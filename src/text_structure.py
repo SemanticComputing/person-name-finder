@@ -1,18 +1,6 @@
-import logging, json
 import re
-import time
-import datetime
-import csv
-import nltk
-import nltk.data
-from src.namefinder import NameFinder
-import xml.dom.minidom
-import xml.etree.ElementTree as ET
 from src.las_query import lasQuery
-from distutils.util import strtobool
-from datetime import datetime as dt
 from nltk.tokenize import word_tokenize
-import numpy as np
 from collections import OrderedDict
 import logging.config
 

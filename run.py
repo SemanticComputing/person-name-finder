@@ -1,19 +1,11 @@
 from flask import Flask, jsonify
 from flask import request
-import argparse
 import sys, os
-import logging, json
-import re
-import time
-import datetime
 import csv
 import nltk
 import nltk.data
 from src.namefinder import NameFinder
 from src.text_structure import SentenceChunk, TextParser
-import xml.dom.minidom
-import xml.etree.ElementTree as ET
-from src.las_query import lasQuery
 from distutils.util import strtobool
 from datetime import datetime as dt
 import traceback

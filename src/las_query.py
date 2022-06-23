@@ -7,7 +7,6 @@ import urllib, codecs
 from requests import Request, Session
 import requests, json
 import logging
-import json
 import traceback, sys, os
 from flask import abort
 import configparser

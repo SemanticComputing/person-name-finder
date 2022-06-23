@@ -1,8 +1,5 @@
 from src.sparqlqueries import SparqlQuries
-import json
 import string
-from requests import Request, Session
-import requests
 import configparser
 from configparser import Error, ParsingError, MissingSectionHeaderError, NoOptionError, DuplicateOptionError, DuplicateSectionError, NoSectionError
 from collections import OrderedDict
@@ -10,7 +7,6 @@ from src.ambiguation_resolver import AmbiguityResolver
 import sys, traceback
 from flask import abort
 from src.las_query import lasQuery
-import logging
 import logging.config
 
 
