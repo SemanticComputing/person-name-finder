@@ -76,7 +76,8 @@ class SparqlQuries:
                     if n not in result_set.keys():
                         result_set[n] = list()
                     result_set[n]=self.parse_sparql_result(name, results)
-
+            else:
+                logger.warning("Invalid endpoint: %s", endpoint)
 
             return result_set
         except ValueError as verr:
