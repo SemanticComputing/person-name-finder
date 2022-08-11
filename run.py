@@ -61,11 +61,11 @@ def parse_input(request):
         word = extract_value(get_args_data('word'))
         if text is not None:
             input = {0: text}
-            logger.debug("%s, %s", gender, text)
+            logger.warning("%s, %s", gender, text)
             sentence_data, indexes, regex_checks, full_sentences = tokenization(text, env=env)
-            logger.debug("tokenization results: %s", sentences)
+            logger.warning("tokenization results: %s", sentences)
             sentences, index_list = do_lemmatization(sentence_data, indexes)
-            logger.debug("data: %s", input)
+            logger.warning("data: %s", input)
         else:
             return input, sentences, index_list, gender, title, date
     elif request.method == "POST":
@@ -89,13 +89,13 @@ def parse_input(request):
         if text is None:
             return input, sentences, index_list, gender, title, date
         if len(text) > 0:
-            logger.debug("%s, %s", gender, text)
+            logger.warning("%s, %s", gender, text)
             sentence_data, indexes, regex_checks, full_sentences = tokenization(text, env=env)
-            logger.debug("sentences dataset: %s", sentence_data)
+            logger.warning("sentences dataset: %s", sentence_data)
             sentences, index_list = do_lemmatization(sentence_data, indexes)
             input = {0: str(request.data.decode('utf-8'))}
-            logger.debug("data: %s", input)
-            logger.debug("sentences: %s", sentences)
+            logger.warning("data: %s", input)
+            logger.warning("sentences: %s", sentences)
     else:
         logger.warning("This method is not yet supported: %s", request.method)
     logger.warning("Ultimate settup: %s, %s %s, %s, %s", env, gender, title, date, word)
@@ -154,7 +154,7 @@ def setup_tokenizer():
     with open('language-resources/abbreviations.csv') as csv_file:
         csv_reader = csv.reader(csv_file, delimiter=';')
         for row in csv_reader:
-            logger.debug("Add abbreviation: %s", row[0])
+            logger.warning("Add abbreviation: %s", row[0])
             tokenizer._params.abbrev_types.add(row[0])
     for i in range(0, 301):
         tokenizer._params.abbrev_types.add(i)
@@ -185,7 +185,7 @@ def do_lemmatization(sentence_data, indeces):
         output[i] = sentence_data[i]  # .get_lemma()
 
         index_lists[i] = indeces[i]
-        logger.debug("Index list: %s. %s, %s", i, indeces[i], sentence_data[i])
+        logger.warning("Index list: %s. %s, %s", i, indeces[i], sentence_data[i])
 
     return output, index_lists
 

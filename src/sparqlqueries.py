@@ -25,7 +25,7 @@ class SparqlQuries:
         results = sparql.query().convert()
 
         for result in results["results"]["bindings"]:
-            logger.info(result["label"]["value"])
+            logger.warning(result["label"]["value"])
 
         return results
 
@@ -37,7 +37,7 @@ class SparqlQuries:
                     return {}
 
                 for i, name in names.items():
-                    logger.debug("Query names: %s",name)
+                    logger.warning("Query names: %s",name)
                     # http://yasgui.org/short/ATCBjNyFz
                     #endpoint = "http://ldf.fi/henko/sparql"
 
@@ -62,8 +62,8 @@ class SparqlQuries:
 
                     query = query.replace('$names', " ".join(['"{0}"'.format(x) for x in name]))
 
-                    logger.debug("endpoint: %s", endpoint)
-                    logger.debug("query: %s", query)
+                    logger.warning("endpoint: %s", endpoint)
+                    logger.warning("query: %s", query)
 
                     sparql = SPARQLWrapper(endpoint)
                     sparql.setQuery(query)
@@ -71,7 +71,7 @@ class SparqlQuries:
                     sparql.setReturnFormat(JSON)
                     results = sparql.query().convert()
 
-                    logger.debug("results: %s", results)
+                    logger.warning("results: %s", results)
                     n = str(i) + "_" + " ".join(name)
                     if n not in result_set.keys():
                         result_set[n] = list()
@@ -108,18 +108,18 @@ class SparqlResultSet():
             item.set_ord(self.len)
             self.id_map[self.len] = item
             self.len += 1
-        logger.debug(self.id_map)
-        logger.debug(self.resultset)
+        logger.warning(self.id_map)
+        logger.warning(self.resultset)
 
         for result in results["results"]["bindings"]:
             for i in self.resultset.keys():
                 item = SparqlResultSetItem()
                 item.parse(result, i)
-                logger.debug(item)
+                logger.warning(item)
                 if item == self.id_map[i]:
                     self.resultset[i].append(item)
                 else:
-                    logger.debug("%s not in %s", str(item), str(self.id_map[i]))
+                    logger.warning("%s not in %s", str(item), str(self.id_map[i]))
 
     def get_item(self, ind, item):
         for i in self.resultset[ind]:
@@ -143,7 +143,7 @@ class SparqlResultSetItem():
         self.refersVocation = None
 
     def parse(self, result, ord):
-        logger.debug("Result: %s", str(result))
+        logger.warning("Result: %s", str(result))
         self.ord = ord
         self.uri = str(result["name"]["value"])
         self.name = str(result["names"]["value"])
@@ -153,9 +153,9 @@ class SparqlResultSetItem():
         self.linkage = str(result["nameType"]["value"])
         if 'referencesPlace' in result:
             self.refersPlace = str(result["referencesPlace"]["value"])
-            logger.debug("referencesPlace in results: %s",str(self.refersPlace))
+            logger.warning("referencesPlace in results: %s",str(self.refersPlace))
         else:
-            logger.debug("referencesPlace not in results")
+            logger.warning("referencesPlace not in results")
         if 'referencesVocation' in result:
             self.refersVocation = str(result["referencesVocation"]["value"])
 
