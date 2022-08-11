@@ -97,19 +97,20 @@ def parse_input(request):
             logger.debug("data: %s", input)
             logger.debug("sentences: %s", sentences)
     else:
-        logger.warnning("This method is not yet supported: %s", request.method)
+        logger.warning("This method is not yet supported: %s", request.method)
+    logger.warning("Ultimate settup: %s, %s %s, %s, %s", env, gender, title, date, word)
     return env, input, sentences, index_list, gender, title, date, word, regex_checks, full_sentences
 
 
 def input_error(request):
-    logger.warnning(
+    logger.warning(
         "Unable to process the request! When using post, give param text using raw data or add it to form, url, "
         "or header.")
-    logger.warnning("Bad type: %s", request.headers['Content-Type'])
-    logger.warnning("Missing data: %s", request.data)
-    logger.warnning("Missing from header: %s", request.headers)
-    logger.warnning("Missing from form: %s", request.form)
-    logger.warnning("Missing from arg: %ss", request.args)
+    logger.warning("Bad type: %s", request.headers['Content-Type'])
+    logger.warning("Missing data: %s", request.data)
+    logger.warning("Missing from header: %s", request.headers)
+    logger.warning("Missing from form: %s", request.form)
+    logger.warning("Missing from arg: %ss", request.args)
 
 
 def get_bool_argument(key):
@@ -201,7 +202,7 @@ def do_lemmatization(sentence_data, indeces):
 def index():
     env, input_data, sentences, index_list, gender, title, date, word, regex_check, original_sentences = parse_input(
         request)
-    logger.info("DATA: %s", sentences)
+    logger.warning("DATA: %s", sentences)
     if input_data != None:
         name_finder = NameFinder()
         print("Params:")
