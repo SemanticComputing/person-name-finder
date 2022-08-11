@@ -3,6 +3,7 @@ from collections import OrderedDict
 import validators
 import sys, traceback
 import logging.config
+from urllib.parse import urlparse
 
 
 # logging setup
@@ -32,7 +33,7 @@ class SparqlQuries:
     def query_names(self, names, endpoint):
         result_set = OrderedDict()
         try:
-            if validators.url(endpoint):
+            if self.uri_validator(endpoint):
                 if len(names) < 1:
                     return {}
 
@@ -77,7 +78,7 @@ class SparqlQuries:
                         result_set[n] = list()
                     result_set[n]=self.parse_sparql_result(name, results)
             else:
-                logger.warning("Invalid endpoint: %s", endpoint)
+                logger.error("Invalid endpoint: %s", endpoint)
 
             return result_set
         except ValueError as verr:
@@ -94,6 +95,12 @@ class SparqlQuries:
         resultset.parse(values, results)
         return resultset
 
+    def uri_validator(x):
+        try:
+            result = urlparse(x)
+            return all([result.scheme, result.netloc, result.path])
+        except:
+            return False
 
 class SparqlResultSet():
     def __init__(self):
@@ -130,6 +137,8 @@ class SparqlResultSet():
 
     def get_resultset(self):
         return self.resultset
+
+
 
 class SparqlResultSetItem():
     def __init__(self):
