@@ -212,9 +212,8 @@ def index():
         results, code, responses = name_finder.identify_name(env, sentences, index_list, original_sentences,
                                                              check_date=regex_check, gender=gender, title=title,
                                                              date=date, word=word)
-
         if code == 1:
-            logger.info('results: %s', results)
+            logger.warning('results: %s', results)
             data = {"status": 200, "data": results, "service": "Person Name Finder",
                     "timestamp": dt.today().strftime('%Y-%m-%d %H:%M:%S'), "version":"version 1.1-beta"}
             return jsonify(data)
