@@ -12,4 +12,4 @@ sed -i s/^gender_guess_url\ *=\ *.*$/gender_guess_url\ =\ http:\\/\\/$IP_BACKEND
 
 sed -i s/^regex_url\ *=\ *.*$/regex_url\ =\ http:\\/\\/$IP_BACKEND_REGEX:$PORT_BACKEND_REGEX/ "$CONF_FILE"
 
-$GUNICORN_BIN $GUNICORN_RELOAD -w $GUNICORN_WORKER_AMOUNT -t $GUNICORN_TIMEOUT -b 0.0.0.0:5000 run:app
+$GUNICORN_BIN $GUNICORN_RELOAD -w $GUNICORN_WORKER_AMOUNT -t $GUNICORN_TIMEOUT --limit-request-line $GUNICORN_LIMIT_REQUEST_LINE -b 0.0.0.0:5000 run:app
