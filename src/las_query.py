@@ -25,7 +25,7 @@ class lasQuery:
 
         self.read_configs(env)
 
-        logger.warning("Set url: %s", self.__url)
+        logger.debug("Set url: %s", self.__url)
 
     def read_configs(self, env):
 
@@ -171,8 +171,8 @@ class lasQuery:
         req = Request('POST',url,headers={'X-Custom':'Test'},data=params)
         prepared = req.prepare()
 
-        logger.warning(prepared.headers)
-        logger.warning(prepared.body)
+        logger.info(prepared.headers)
+        logger.info(prepared.body)
 
         try:
             resp = s.send(prepared)
@@ -189,8 +189,8 @@ class lasQuery:
         req = Request('POST',url,headers={'X-Custom':'Test'},data=params)
         prepared = req.prepare()
 
-        logger.warning(prepared.headers)
-        logger.warning(prepared.body)
+        logger.info(prepared.headers)
+        logger.info(prepared.body)
 
         try:
             resp = s.send(prepared)

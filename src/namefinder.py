@@ -22,7 +22,7 @@ class NameFinder:
         self.first_name_ind = dict()
 
     def identify_name(self, env, sentence_chunk_strings, index_list, original_sentence_data, check_date=None, gender=False, title=False, date=False, word=False):
-        logger.warning("Check titles? %s",title)
+        logger.debug("Check titles? %s",title)
         names = dict()
         #results = list()
         all_names = list()
@@ -30,11 +30,11 @@ class NameFinder:
         for i,name_string in sentence_chunk_strings.items():
             self.last_names[i] = list()
             self.first_names[i] = list()
-            logger.warning("Name: %s",name_string)
+            logger.info("Name: %s",name_string)
 
             dict_names, arr_names = self.split_names_to_arr(name_string, i)
             if len(arr_names) > 0:
-                logger.warning("CHECK dates: %s, %s, %s", check_date, i, arr_names)
+                logger.debug("CHECK dates: %s, %s, %s", check_date, i, arr_names)
                 checking_date = None
                 #ind = i + 1
                 if date is True and i in check_date:
@@ -43,7 +43,7 @@ class NameFinder:
                 nr = NameRidler(dict_names, arr_names, name_string, env)
 
                 name_list, resp = nr.get_names(check_for_dates=checking_date, gender=gender, titles=title, dates=date, word=word, fulltext=str(original_sentence_data[index_list[i]].get_sentence_string()), complete_list_of_name=all_names, env=env)
-                logger.warning("Using index: %s", index_list[i])
+                logger.info("Using index: %s", index_list[i])
 
                 # parsing result
                 if index_list[i] not in names.keys():
@@ -58,7 +58,7 @@ class NameFinder:
 
     def split_names_to_arr(self, name_string_obj, j):
         name_string = name_string_obj.get_lemma()
-        logger.warning("Process string: %s",name_string)
+        logger.info("Process string: %s",name_string)
         names = name_string.split(" ")
         dict_names = dict()
         first_names = list()
@@ -96,7 +96,7 @@ class NameFinder:
                 elif len(builder) > 0 and (name.lower() in binders or name[0].isupper()):
                     builder = builder + " " + name
                 else:
-                    logger.warning("Unable to identify name: %s", name)
+                    logger.info("Unable to identify name: %s", name)
 
                     if len(builder) > 0 and (name.lower() in binders or name[0].isupper()):
                         last_names.append(builder)
@@ -113,7 +113,7 @@ class NameFinder:
                     self.last_names[j].extend(last_names)
                     self.first_names[j].extend(first_names)
 
-                    logger.warning("Names in dict: %s", dict_names)
+                    logger.info("Names in dict: %s", dict_names)
 
                     first_names = list()
                     last_names = list()
@@ -124,8 +124,8 @@ class NameFinder:
         self.last_names[j].extend(last_names)
         self.first_names[j].extend(first_names)
 
-        logger.warning("Names: %s, %s",self.first_names[j], self.last_names[j])
-        logger.warning("Names in dict: %s", dict_names)
+        logger.info("Names: %s, %s",self.first_names[j], self.last_names[j])
+        logger.info("Names in dict: %s", dict_names)
 
         return dict_names, self.first_names[j] + self.last_names[j]
 
@@ -159,8 +159,8 @@ class NameRidler:
         # disambiguatedict_names
         self.ambiguity_identifier = AmbiguityResolver()
 
-        logger.warning("NameRidler set for names: %s", dict_names)
-        logger.warning("Henko query endpoint: %s", self.henko_endpoint)
+        logger.debug("NameRidler set for names: %s", dict_names)
+        logger.debug("Henko query endpoint: %s", self.henko_endpoint)
 
     def get_full_name_entities(self):
         return self.full_name_entities
@@ -257,11 +257,11 @@ class NameRidler:
                     entity['gender'], resp = self.guess_gender(str_name)
                     responses[name.strip()] = resp
                 if check_for_dates != None and dates is True and check_name == str_name:
-                    logger.warning("DATE CHECK: %s", check_for_dates)
+                    logger.debug("DATE CHECK: %s", check_for_dates)
                     output,resp = self.query_dates(check_for_dates)
                     date_type = self.check_string_start(check_for_dates)
-                    logger.warning("%s",output)
-                    logger.warning("%s",date_type)
+                    logger.info("%s",output)
+                    logger.info("%s",date_type)
                     if date_type > 0:
                         counter = 0
 
@@ -274,20 +274,20 @@ class NameRidler:
                                 else:
                                     entity['death_date'] = item[0]
                 if titles and fulltext != None:
-                    logger.warning("TITLE CHECK")
+                    logger.debug("TITLE CHECK")
                     title = self.find_title(fulltext, str_name, env)
                     entity['titles'] = list()
                     entity['titles'].append(title)
                 for item in arr:
                     if item.get_json() not in items:
-                        logger.warning("Item: %s", item)
+                        logger.info("Item: %s", item)
                         items.append(item.get_json())
 
                 entity['names'] = items
                 entities.append(entity)
                 prev_entity = entity
 
-        logger.warning("entities %s", entities)
+        logger.info("entities %s", entities)
         return entities, responses
 
     def check_string_start(self, string):
@@ -339,7 +339,7 @@ class NameRidler:
             rs_queried_name = rs.get_resultset()
             counter = 1
             for i, queried_name in rs_queried_name.items():
-                logger.warning("%s, %s",i, queried_name)
+                logger.info("%s, %s",i, queried_name)
                 if string_start != None:
                     prev_string_start = string_start
 
@@ -354,8 +354,8 @@ class NameRidler:
                     linkage = str(result.get_linkage())
                     place = result.get_ref_place()
                     vocation = result.get_ref_vocation()
-                    logger.warning("%s, %s, %s, %s, %s",result, counter, prev, name, result.get_ref_place())
-                    logger.warning("P/V: %s, %s",str(place), vocation)
+                    logger.debug("%s, %s, %s, %s, %s",result, counter, prev, name, result.get_ref_place())
+                    logger.debug("P/V: %s, %s",str(place), vocation)
 
                     if counter == 0:
                         counter += 1
@@ -366,13 +366,13 @@ class NameRidler:
                             if string_start != None:
                                 prev_string_start = string_start
                             else:
-                                logger.warning("string start none x.x: %s", prev_string_start)
+                                logger.debug("string start none x.x: %s", prev_string_start)
                         else:
-                            logger.warning("Not raising counter: %s, %s", prev.get_name(), label)
+                            logger.debug("Not raising counter: %s, %s", prev.get_name(), label)
 
                     string_start, string_end = sentence_obj.find_name_location(label, prev_string_start, string_end)
                     if string_start == None:
-                        logger.warning("String start none: %s, %s, %s, %s, %s, %s", label, uri, type, linkage, prev_string_start, string_end)
+                        logger.debug("String start none: %s, %s, %s, %s, %s, %s", label, uri, type, linkage, prev_string_start, string_end)
                     original_form = sentence_obj.find_from_text(string_start, string_end)
 
                     if string_end != None and string_start != None and original_form != None:
@@ -382,10 +382,10 @@ class NameRidler:
                                     (prev.get_name().strip() != label.strip() and len(list(arr.keys()))>1) and (prev.get_string_end()<=string_start-2) and \
                                     (prev.get_name_lemma() != prev.get_name() or original_form != label.strip()):
                                 counter = 1
-                                logger.warning("Adding a last name: %s (%s)", prev.get_type(), type)
-                                logger.warning("Adding a last name: %s, %s", prev.get_name().strip(), label.strip())
-                                logger.warning("Adding a last name: %s",str(len(list(arr.keys()))>1))
-                                logger.warning("Adding a last name: %s, %s", prev.get_string_end(),string_start-2)
+                                logger.info("Adding a last name: %s (%s)", prev.get_type(), type)
+                                logger.info("Adding a last name: %s, %s", prev.get_name().strip(), label.strip())
+                                logger.info("Adding a last name: %s",str(len(list(arr.keys()))>1))
+                                logger.info("Adding a last name: %s, %s", prev.get_string_end(),string_start-2)
 
                                 arr, full_name, full_name_counter, full_name_lemma, helper_arr, name = self.extract_name(
                                     arr,
@@ -397,7 +397,7 @@ class NameRidler:
                                 if label != prev.get_name():
                                     full_name += label + " "
 
-                        logger.warning("Add name: label=%s, original_form=%s, count=%s, type=%s, counter=%s, uri=%s, link=%s, start=%s", label, original_form, count, type, counter, uri, linkage, string_start)
+                        logger.info("Add name: label=%s, original_form=%s, count=%s, type=%s, counter=%s, uri=%s, link=%s, start=%s", label, original_form, count, type, counter, uri, linkage, string_start)
                         name = Name(label, original_form, count, type, counter, uri, linkage, string_start, place, vocation)
 
                         if counter not in helper_arr.keys():
@@ -417,11 +417,11 @@ class NameRidler:
                                 if item not in qn_helper[item.get_label()]:
                                     qn_helper[label].append(item)
 
-            logger.warning("%s, %s, %s, %s, %s",arr, full_name_counter, helper_arr, name, queried_name)
+            logger.debug("%s, %s, %s, %s, %s",arr, full_name_counter, helper_arr, name, queried_name)
             arr, full_name, full_name_counter, full_name_lemma, helper_arr, name = self.extract_name(arr,
                                                                                                      full_name_counter,
                                                                                                      helper_arr, name,qn_helper)
-            logger.warning("%s, %s, %s, %s, %s, %s",arr, full_name, full_name_counter, full_name_lemma, helper_arr, name)
+            logger.info("%s, %s, %s, %s, %s, %s",arr, full_name, full_name_counter, full_name_lemma, helper_arr, name)
 
     # def ambiguity_solver(self, names, str_full_name_lemma):
     #     last_name = None
@@ -433,7 +433,7 @@ class NameRidler:
     def extract_name(self, arr, full_name_counter, helper_arr, name, alternatives):
         argh, full_name, full_name_lemma = self.determine_name(arr, helper_arr, alternatives)
 
-        logger.warning("[extract_name] Full name: %s %s %s", full_name, argh, full_name_counter)
+        logger.info("[extract_name] Full name: %s %s %s", full_name, argh, full_name_counter)
         fullname_ind = full_name + "_" + str(full_name_counter)
 
         full_name_entity = FullName(full_name_counter, full_name, full_name_lemma, argh)
@@ -452,7 +452,7 @@ class NameRidler:
         return arr, full_name, full_name_counter, full_name_lemma, helper_arr, name
 
     def determine_name(self, names, helper, alternatives):
-        logger.warning("[determine_name]: ...")
+        logger.debug("[determine_name]: ...")
         family_names = list()
         first_names = list()
         last = len(helper)
@@ -472,8 +472,8 @@ class NameRidler:
                             first_names.append(prev)
                             name_unidentified = False
                         else:
-                            logger.warning("Cannot add, %s", prev)
-                logger.warning("Before crash: %s, %s",alternatives, name.get_name())
+                            logger.info("Cannot add, %s", prev)
+                logger.info("Before crash: %s, %s",alternatives, name.get_name())
                 if self.is_family_name(name, last, alternatives[name.get_name_lemma()]) and not(self.is_first_name(name, last)):
                     if name not in family_names:
                         family_names.append(name)
@@ -517,7 +517,7 @@ class NameRidler:
                 logger.debug("Before, check last: %s, %s, %s", last, helper, names)
                 first_names, family_names = self.reduce_overlapping(o, first_names, family_names, last, alternatives)
 
-        logger.warning("Return names: %s", first_names + family_names)
+        logger.info("Return names: %s", first_names + family_names)
 
         full = first_names + family_names
         full_name_lemma = ' '.join(str(e.get_name_lemma()) for e in full)
@@ -530,7 +530,7 @@ class NameRidler:
             fname = self.find_name(fnames, label)
             lname = self.find_name(lnames, label)
 
-            logger.warning("%s, %s", fname, lname)
+            logger.debug("%s, %s", fname, lname)
 
             l_last = len(lnames)-1
             f_last = len(fnames)-1
@@ -553,11 +553,11 @@ class NameRidler:
                 else:
                     prob_A = fname.get_count()
                     prob_B = lname.get_count()
-                    logger.warning("Probability that it is a first name: %s", fname.get_count())
-                    logger.warning("Label: %s", label)
-                    logger.warning("Locations: %s, %s", fname.get_location(), lname.get_location())
-                    logger.warning("Is family name? %s", self.is_family_name(lname, last, alternatives[lname.get_name_lemma()]))
-                    logger.warning("Is first name? %s", self.is_first_name(fname, last))
+                    logger.info("Probability that it is a first name: %s", fname.get_count())
+                    logger.info("Label: %s", label)
+                    logger.info("Locations: %s, %s", fname.get_location(), lname.get_location())
+                    logger.info("Is family name? %s", self.is_family_name(lname, last, alternatives[lname.get_name_lemma()]))
+                    logger.info("Is first name? %s", self.is_first_name(fname, last))
             else:
                 if lname == None:
                     logger.warning("Unable to find label from lastnames: %s, %s", label, lnames)
@@ -572,14 +572,14 @@ class NameRidler:
 
     def find_name(self, arr, label):
         for item in arr:
-            logger.warning("Search for label %s from item %s", label, item)
+            logger.debug("Search for label %s from item %s", label, item)
             if item.get_name().strip() == label.strip():
                 return item
 
         return None
 
     def is_family_name(self, name, last, alternatives):
-        logger.warning("Is lastname? %s, %s, %s", name, last, alternatives)
+        logger.info("Is lastname? %s, %s, %s", name, last, alternatives)
         other_types = [a.get_type() for a in alternatives if a.get_type() != name.get_type()]
         if name.get_type() == "Sukunimi" and name.get_location() == last:
             return True
@@ -589,7 +589,7 @@ class NameRidler:
         return False
 
     def is_first_name(self, name, last):
-        logger.warning("Location of first: %s, %s, %s, %s", last, name.get_location(), name.get_type(), name)
+        logger.info("Location of first: %s, %s, %s, %s", last, name.get_location(), name.get_type(), name)
         if name.get_type() == "Etunimi" and ((last == 1 or name.get_location() < last) and name.get_location() < 5):
             return True
         else:
@@ -640,12 +640,12 @@ class NameRidler:
 
         try:
             if resp != None:
-                logger.warning("Request parameters: %s", params)
-                logger.warning("Response status: %s", resp.status_code)
-                logger.warning("RESPONSE header: %s", resp.headers)
-                logger.warning("RESPONSE raw: %s", resp.raw)
-                logger.warning("RESPONSE content: %s", resp.content)
-                logger.warning("RESPONSE request URL: %s", resp.url)
+                logger.info("Request parameters: %s", params)
+                logger.info("Response status: %s", resp.status_code)
+                logger.info("RESPONSE header: %s", resp.headers)
+                logger.info("RESPONSE raw: %s", resp.raw)
+                logger.info("RESPONSE content: %s", resp.content)
+                logger.info("RESPONSE request URL: %s", resp.url)
             else:
                 logger.info("Raw response")
             data = resp.json()
@@ -659,7 +659,7 @@ class NameRidler:
 
             return "Unknown", resp
 
-        logger.warning(data)
+        logger.debug(data)
 
         if 'gender' in data['data']:
             return data['data']['gender'], resp
@@ -668,7 +668,7 @@ class NameRidler:
 
     def query_dates(self, string):
 
-        logger.warning("CHECK DATE")
+        logger.debug("CHECK DATE")
 
         import requests
         import logging
@@ -705,12 +705,12 @@ class NameRidler:
 
         try:
             if resp != None:
-                logger.warning("Request parameters: %s", params)
-                logger.warning("Response status: %s", resp.status_code)
-                logger.warning("RESPONSE header: %s", resp.headers)
-                logger.warning("RESPONSE raw: %s", resp.raw)
-                logger.warning("RESPONSE content: %s", resp.content)
-                logger.warning("RESPONSE request URL: %s", resp.url)
+                logger.info("Request parameters: %s", params)
+                logger.info("Response status: %s", resp.status_code)
+                logger.info("RESPONSE header: %s", resp.headers)
+                logger.info("RESPONSE raw: %s", resp.raw)
+                logger.info("RESPONSE content: %s", resp.content)
+                logger.info("RESPONSE request URL: %s", resp.url)
             else:
                 logger.info("Raw response")
             resultset = resp.json()
@@ -726,12 +726,12 @@ class NameRidler:
 
             return "Unknown 2", resp
 
-        logger.warning("DATA: %s",data)
+        logger.debug("DATA: %s",data)
         results = dict()
 
         if data != None:
             for item in data:
-                logger.warning('Item: %s',item)
+                logger.info('Item: %s',item)
                 for i in item['entities']:
                     if 'category' in i and 'entity' in i:
                         if i['category'] == 'DATETIME':
@@ -757,10 +757,10 @@ class NameRidler:
                 word_before_name = lookup.split(' ')[-1]
             else:
                 word_before_name = lookup
-            logger.warning("From string: [%s], %s" % (lookup, lookup.split(' ')))
-            logger.warning("Check string: %s", word_before_name)
+            logger.debug("From string: [%s], %s" % (lookup, lookup.split(' ')))
+            logger.debug("Check string: %s", word_before_name)
             result = self.find_noun_before_name(string, name, env) #las.analysis(input=lookup, lookup_upos='NOUN')
-            logger.warning("ANALYSIS RESULT: %s",result)
+            logger.info("ANALYSIS RESULT: %s",result)
             return result.strip()
         else:
             logger.info("Cannot find title")

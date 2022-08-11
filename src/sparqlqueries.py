@@ -26,7 +26,7 @@ class SparqlQuries:
         results = sparql.query().convert()
 
         for result in results["results"]["bindings"]:
-            logger.warning(result["label"]["value"])
+            logger.debug(result["label"]["value"])
 
         return results
 
@@ -34,7 +34,7 @@ class SparqlQuries:
         result_set = OrderedDict()
         try:
             if self.uri_validator(x=endpoint):
-                logger.warning("Query names: %s", names)
+                logger.info("Query names: %s", names)
                 if len(names) < 1:
                     return {}
 
@@ -118,18 +118,18 @@ class SparqlResultSet():
             item.set_ord(self.len)
             self.id_map[self.len] = item
             self.len += 1
-        logger.warning(self.id_map)
-        logger.warning(self.resultset)
+        logger.info(self.id_map)
+        logger.info(self.resultset)
 
         for result in results["results"]["bindings"]:
             for i in self.resultset.keys():
                 item = SparqlResultSetItem()
                 item.parse(result, i)
-                logger.warning(item)
+                logger.debug(item)
                 if item == self.id_map[i]:
                     self.resultset[i].append(item)
                 else:
-                    logger.warning("%s not in %s", str(item), str(self.id_map[i]))
+                    logger.info("%s not in %s", str(item), str(self.id_map[i]))
 
     def get_item(self, ind, item):
         for i in self.resultset[ind]:
@@ -155,7 +155,7 @@ class SparqlResultSetItem():
         self.refersVocation = None
 
     def parse(self, result, ord):
-        logger.warning("Result: %s", str(result))
+        logger.info("Result: %s", str(result))
         self.ord = ord
         self.uri = str(result["name"]["value"])
         self.name = str(result["names"]["value"])
@@ -165,9 +165,9 @@ class SparqlResultSetItem():
         self.linkage = str(result["nameType"]["value"])
         if 'referencesPlace' in result:
             self.refersPlace = str(result["referencesPlace"]["value"])
-            logger.warning("referencesPlace in results: %s",str(self.refersPlace))
+            logger.debug("referencesPlace in results: %s",str(self.refersPlace))
         else:
-            logger.warning("referencesPlace not in results")
+            logger.debug("referencesPlace not in results")
         if 'referencesVocation' in result:
             self.refersVocation = str(result["referencesVocation"]["value"])
 
