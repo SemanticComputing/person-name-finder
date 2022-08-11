@@ -33,7 +33,7 @@ class SparqlQuries:
     def query_names(self, names, endpoint):
         result_set = OrderedDict()
         try:
-            if self.uri_validator(endpoint):
+            if self.uri_validator(x=endpoint):
                 logger.warning("Query names: %s", names)
                 if len(names) < 1:
                     return {}
@@ -97,7 +97,7 @@ class SparqlQuries:
         resultset.parse(values, results)
         return resultset
 
-    def uri_validator(x):
+    def uri_validator(self, x=""):
         try:
             result = urlparse(x)
             return all([result.scheme, result.netloc, result.path])
