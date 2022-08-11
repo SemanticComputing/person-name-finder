@@ -156,8 +156,11 @@ class NameRidler:
         names = self.sparql.query_names(dict_names, endpoint=self.henko_endpoint)
         self.parse(names, sentence_obj)
 
-        # disambiguate
+        # disambiguatedict_names
         self.ambiguity_identifier = AmbiguityResolver()
+
+        logger.warning("NameRidler set for names: %s", dict_names)
+        logger.warning("Henko query endpoint: %s", self.henko_endpoint)
 
     def get_full_name_entities(self):
         return self.full_name_entities
