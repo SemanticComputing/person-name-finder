@@ -201,7 +201,7 @@ def do_lemmatization(sentence_data, indeces):
 def index():
     env, input_data, sentences, index_list, gender, title, date, word, regex_check, original_sentences = parse_input(
         request)
-    logger.debug("DATA: %s", sentences)
+    logger.info("DATA: %s", sentences)
     if input_data != None:
         name_finder = NameFinder()
         print("Params:")
