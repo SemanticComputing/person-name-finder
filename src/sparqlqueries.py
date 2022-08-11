@@ -34,11 +34,11 @@ class SparqlQuries:
         result_set = OrderedDict()
         try:
             if self.uri_validator(endpoint):
+                logger.warning("Query names: %s", names)
                 if len(names) < 1:
                     return {}
 
                 for i, name in names.items():
-                    logger.warning("Query names: %s",name)
                     # http://yasgui.org/short/ATCBjNyFz
                     #endpoint = "http://ldf.fi/henko/sparql"
 
@@ -84,9 +84,11 @@ class SparqlQuries:
         except ValueError as verr:
             logger.error("Unable to query, url is not valid: %s", sys.exc_info()[0])
             logger.error(traceback.print_exc())
+            logger.error(traceback.format_exc())
         except Exception as err:
             logger.error("Unexpected error: %s", sys.exc_info()[0])
             logger.error(traceback.print_exc())
+            logger.error(traceback.format_exc())
         finally:
             return result_set
 
