@@ -1,10 +1,7 @@
 # name-finder-service
 
-Person Name Finder searches for references of names based on Henko-ontology from the text and links them to it. It can also query context of a name such as titles associated with the name, name bearer's gender, or time span that can be associated with the name of a biographical person for instance.
-
 ## About
-
-Using [person name ontology (HENKO)](http://light.onki.fi/henko/en/) and [LAS](http://demo.seco.tkk.fi/las/) the application extractes probable names from given input text.
+Person Name Finder searches for references of names based on Henko-ontology from the text and links them to it. It can also query context of a name such as titles associated with the name, name bearer's gender, or time span that can be associated with the name of a biographical person for instance. It uses [person name ontology (HENKO)](http://light.onki.fi/henko/en/) and [LAS](http://demo.seco.tkk.fi/las/) to extract the most probable names from given input text.
 
 ### API
 
@@ -13,7 +10,6 @@ The service has also a usable API for testing. The service API description can b
 ### Publications
 
 * Minna Tamper, Petri Leskinen, Jouni Tuominen and Eero Hyvönen: Modeling and Publishing Finnish Person Names as a Linked Open Data Ontology. 3rd Workshop on Humanities in the Semantic Web (WHiSe 2020), pp. 3-14, CEUR Workshop Proceedings, vol. 2695, June, 2020.
-
 
 ## Dependencies
 
