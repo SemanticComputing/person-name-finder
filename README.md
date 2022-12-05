@@ -6,6 +6,15 @@ Person Name Finder searches for references of names based on Henko-ontology from
 
 Using [person name ontology (HENKO)](http://light.onki.fi/henko/en/) and [LAS](http://demo.seco.tkk.fi/las/) the application extractes probable names from given input text.
 
+### API
+
+The service has also a usable API for testing. The service API description can be found from [Swagger](https://app.swaggerhub.com/apis-docs/SeCo/nlp.ldf.fi/1.0.0#/name-finder/).
+
+### Publications
+
+* Minna Tamper, Petri Leskinen, Jouni Tuominen and Eero Hyvönen: Modeling and Publishing Finnish Person Names as a Linked Open Data Ontology. 3rd Workshop on Humanities in the Semantic Web (WHiSe 2020), pp. 3-14, CEUR Workshop Proceedings, vol. 2695, June, 2020.
+
+
 ## Dependencies
 
 * Python 3.5.2
@@ -20,7 +29,7 @@ For more information, check [requirements.txt](requirements.txt)
 
 ## Configurations
 
-The configurations for the service can be found from the [config/config.ini](config/config.ini) file and configured based on service usage.
+The configurations for the service can be found from the [config/config.ini](config/config.ini) file and configured based on service usage. Notice that all configurations here are not available on the API that contains simpler configurations for testing.
 
 List of configurations available:
 
