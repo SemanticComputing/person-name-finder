@@ -1,0 +1,43 @@
+version: "3.7"
+services:
+    name-finder:
+        build: .
+        ports:
+          - "5000:5000"
+        networks:
+          seco:
+            ipv4_address: "172.30.20.80"
+        env_file:
+          - docker.env
+    las:
+        image: jiemakel/las-ws:1.1
+        networks:
+          seco:
+            ipv4_address: "172.30.20.91"
+    regex-service:
+        build: https://github.com/SemanticComputing/reksi.git
+        networks:
+          seco:
+            ipv4_address: "172.30.20.66"
+        env_file:
+          - docker.env
+    gender-guessing-service:
+        build: https://github.com/SemanticComputing/gender-guessing-service.git
+        networks:
+          seco:
+            ipv4_address: "172.30.20.79"
+        env_file:
+          - docker.env
+    henko-fuseki:
+        build: https://version.aalto.fi/gitlab/seco/suomen-henkilonimisto.git
+        networks:
+          seco:
+            ipv4_address: "172.30.20.81"
+
+networks:
+    seco:
+      driver: "bridge"
+      ipam:
+        driver: "default"
+        config:
+          - subnet: "172.30.20.0/22"
