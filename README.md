@@ -1,4 +1,4 @@
-# name-finder-service
+# Person name finder service
 
 ## About
 Person Name Finder searches for references of names based on Henko-ontology from the text and links them to it. It can also query context of a name such as titles associated with the name, name bearer's gender, or time span that can be associated with the name of a biographical person for instance. It uses [person name ontology (HENKO)](http://light.onki.fi/henko/en/) and [LAS](http://demo.seco.tkk.fi/las/) to extract the most probable names from given input text.
